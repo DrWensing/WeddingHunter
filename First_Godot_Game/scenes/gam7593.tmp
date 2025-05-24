@@ -677,8 +677,5 @@ position = Vector2(455, -202)
 [node name="Car" parent="." instance=ExtResource("14_0ep67")]
 position = Vector2(174, -222)
 
-[node name="bunny" parent="." instance=ExtResource("15_d4sv0")]
+[node name="Node2D" parent="." instance=ExtResource("15_d4sv0")]
 position = Vector2(559, -206)
-
-[node name="projectile_container" type="Node" parent="."]
-unique_name_in_owner = true

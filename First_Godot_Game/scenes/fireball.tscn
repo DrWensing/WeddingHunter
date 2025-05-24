@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://otpk2la1v2fx"]
+
+[ext_resource type="Texture2D" uid="uid://bj5hhccpglyw2" path="res://assets/sprites/Yellow Effect Bullet Impact Explosion 32x32.png" id="1_0kph4"]
+[ext_resource type="Script" path="res://scenes/fireball.gd" id="1_0v320"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxhrp"]
+atlas = ExtResource("1_0kph4")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5o6i"]
+atlas = ExtResource("1_0kph4")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bijx"]
+atlas = ExtResource("1_0kph4")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etnfh"]
+atlas = ExtResource("1_0kph4")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vylyu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxhrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5o6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bijx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etnfh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j2thg"]
+height = 34.0
+
+[node name="Fireball" type="Area2D"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_0v320")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vylyu")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_j2thg")

@@ -5,11 +5,11 @@ extends Node
 @onready var henrik = %Player
 @onready var tabea = %Player2
 @onready var game = $".."
+@onready var projectile_container:Node = %projectiles
 
 var score = 0
 var weather = "rain"
 var paused = false
-var friendly_fire_enabled = true
 
 func add_point():
 	score += 1
@@ -38,16 +38,4 @@ func _players_receive_guns():
 	henrik.equip_gun()
 	tabea.equip_gun()
 
-func deal_damage_in_area( x0, x1, y0, y1, dmg):
-	print('Dealing damage in area')
-	print(x0, y0)
-	print(x1, y1)
-	#need to find way to get all enemies...
-	
-	if friendly_fire_enabled:
-		var x_tabea = tabea.position.x
-		var y_tabea = tabea.position.y
-		print(x_tabea, y_tabea)
-		if x0 < x_tabea && x_tabea < x1 && y0 < y_tabea && y_tabea < y1:
-			tabea.take_damage(dmg)
 

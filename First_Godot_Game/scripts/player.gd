@@ -17,6 +17,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var gunshot = $gunshot
 @onready var reload = $reload
 @onready var game_manager = %GameManager
+@onready var projectile_spawn_point:Marker2D = %ProjectileSpawnPoint
+@onready var projectile_container = %projectile_container
+
+@export var projectileprefab:PackedScene
+
 
 func take_damage(dmg):
 	hp -= dmg
@@ -43,16 +48,13 @@ func shoot():
 			if timer.is_stopped():
 				ammo -= 1
 				ammo_bar_henrik.frame = ammo
-				print('Henrik: Pew pew!')
 				timer.start(0.7)
 				fire_effect.visible=true
 				gunshot.play()
 				#apply damage to everything within range
 				var dmg=20
 				shot_fired(dmg)
-				
-			else:
-				print('not ready yet')
+
 		else:
 			print('Out of ammo: reloading')
 			reload.play()
@@ -60,21 +62,29 @@ func shoot():
 			ammo_bar_henrik.frame = ammo
 			timer.start(3)
 
-func shot_fired(dmg):
-	var x0
-	var x1
-	var shot_range = 500
-	if character.flip_h:
-		#shoot to the right
-		x0 = character.position.x + 30
-		x1 = character.position.x + shot_range
+func shot_fired(dmg):	
+	var projectile = projectileprefab.instantiate()
+	var offset = 30
+	var direction = character.flip_h
+	
+	if direction:
+		offset = offset *(-1)
+	
+	# set entry position of fireball
+	projectile.global_position = character.global_position
+	projectile.position.x += offset
+	
+	#set direction of the fireball
+	if direction:
+		projectile.direction=-1
 	else:
-		#shoot to the left
-		x0 = character.position.x - shot_range
-		x1 = character.position.x -  30
-	var y0 = character.position.y - 20
-	var y1 = character.position.y + 20
-	game_manager.deal_damage_in_area( x0, x1, y0, y1, dmg)
+		projectile.direction=+1
+		
+	#set damage fireball can deal
+	projectile.dmg = dmg
+		
+	#register fireball in its container
+	projectile_container.add_child(projectile)
 	
 func _physics_process(delta):
 	# Add the gravity.
