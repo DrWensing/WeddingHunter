@@ -30,6 +30,7 @@ func equip_gun():
 	gun.visible=true
 	gun_equipped = true
 	fire_effect.visible=false
+	reload.play()
 	
 func unequip_gun():
 	gun.visible = false
