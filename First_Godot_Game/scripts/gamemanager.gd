@@ -6,6 +6,8 @@ extends Node
 @onready var tabea = %Player2
 @onready var game = $".."
 @onready var projectile_container:Node = %projectiles
+#@onready var enemy_container:Noe = %Enemies
+@onready var enemy = %Enemies/Enemy3
 
 var score = 0
 var weather = "rain"
@@ -18,7 +20,7 @@ func add_point():
 func _process(delta):
 	if Input.is_action_just_pressed("pause"):
 		pauseMenu()
-
+		
 func pauseMenu():
 	if paused:
 		pause_menu.hide()

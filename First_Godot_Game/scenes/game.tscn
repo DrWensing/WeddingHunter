@@ -653,9 +653,16 @@ libraries = {
 autoplay = "new_animation"
 
 [node name="Enemies" type="Node" parent="."]
+unique_name_in_owner = true
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("6_uquth")]
-position = Vector2(1774, -32)
+position = Vector2(893, -107)
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("6_uquth")]
+position = Vector2(1867, -43)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("6_uquth")]
+position = Vector2(1703, -43)
 
 [node name="Player2" parent="." instance=ExtResource("1_4il06")]
 unique_name_in_owner = true

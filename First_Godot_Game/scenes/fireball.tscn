@@ -44,10 +44,13 @@ height = 34.0
 
 [node name="Fireball" type="Area2D"]
 scale = Vector2(0.3, 0.3)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_0v320")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vylyu")
+autoplay = "default"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

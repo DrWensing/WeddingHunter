@@ -16,6 +16,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var timer = $ShotTimer
 @onready var gunshot = $gunshot
 @onready var reload = $reload
+@onready var game_manager = %GameManager
+@onready var projectile_spawn_point:Marker2D = %ProjectileSpawnPoint
+@onready var projectile_container = %projectile_container
+
+@export var projectileprefab:PackedScene
 
 func take_damage(dmg):
 	hp -= dmg

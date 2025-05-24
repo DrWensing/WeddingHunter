@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwnmfy4o7oy0n"]
+[gd_scene load_steps=4 format=3 uid="uid://bwnmfy4o7oy0n"]
 
+[ext_resource type="Script" path="res://scenes/health_bar.gd" id="1_g4q8a"]
 [ext_resource type="Texture2D" uid="uid://cgk0uwrlyddim" path="res://assets/sprites/hpbar_frame.png" id="1_qiegu"]
 [ext_resource type="Texture2D" uid="uid://cma7qjio21tyu" path="res://assets/sprites/hpbar_full.png" id="2_qqvtr"]
 
 [node name="HealthBar" type="Node2D"]
+script = ExtResource("1_g4q8a")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 offset_right = 256.0
 offset_bottom = 36.0
-value = 70.0
+max_value = 30.0
+value = 29.0
 texture_under = ExtResource("1_qiegu")
 texture_progress = ExtResource("2_qqvtr")
