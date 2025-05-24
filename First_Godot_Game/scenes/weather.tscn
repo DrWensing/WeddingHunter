@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://coih15kb3xc4p"]
+
+[ext_resource type="Texture2D" uid="uid://bfir4m6hvjmoi" path="res://assets/sprites/raindrop.png" id="1_a2ql4"]
+[ext_resource type="Script" path="res://scenes/weather.gd" id="1_wnutu"]
+[ext_resource type="Script" path="res://scenes/rain.gd" id="2_etycw"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d5436"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(200, 1, 1)
+direction = Vector3(0, 0, 1)
+spread = 0.0
+flatness = 0.536
+initial_velocity_min = 500.0
+initial_velocity_max = 500.0
+gravity = Vector3(0, 200, 0)
+
+[node name="weather" type="StaticBody2D"]
+script = ExtResource("1_wnutu")
+
+[node name="raincolor" type="CanvasModulate" parent="."]
+
+[node name="rain" type="GPUParticles2D" parent="."]
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_d5436")
+texture = ExtResource("1_a2ql4")
+lifetime = 5.0
+script = ExtResource("2_etycw")
+
+[node name="Timer" type="Timer" parent="."]

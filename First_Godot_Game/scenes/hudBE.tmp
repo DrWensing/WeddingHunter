@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://c6aigfqfw3rwu"]
+
+[ext_resource type="Script" path="res://scenes/hud.gd" id="1_enk7o"]
+[ext_resource type="FontFile" uid="uid://cb25e36ag81ju" path="res://assets/fonts/PixelOperator8.ttf" id="1_w1v4t"]
+[ext_resource type="Texture2D" uid="uid://m65yenwq1o5r" path="res://assets/sprites/henrik.png" id="3_c6snd"]
+[ext_resource type="Texture2D" uid="uid://xwfdqsi35h5j" path="res://assets/sprites/tabea.png" id="4_bq7r0"]
+[ext_resource type="PackedScene" uid="uid://ehpaempejv58" path="res://scenes/pause_menu.tscn" id="5_leux1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6id8"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7kkb"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_enk7o")
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -7.0
+offset_right = 7.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_w1v4t")
+text = "Score: 0"
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Henrik" type="Sprite2D" parent="."]
+position = Vector2(69, 57)
+scale = Vector2(0.172289, 0.156831)
+texture = ExtResource("3_c6snd")
+
+[node name="Tabea" type="Sprite2D" parent="."]
+position = Vector2(1077, 58)
+scale = Vector2(0.172289, 0.156831)
+texture = ExtResource("4_bq7r0")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 139.0
+offset_top = 10.0
+offset_right = 263.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(0.901961, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_e6id8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_j7kkb")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+offset_left = 882.0
+offset_top = 14.0
+offset_right = 1006.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.901961, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_e6id8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_j7kkb")
+step = 1.0
+value = 80.0
+fill_mode = 1
+show_percentage = false
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_leux1")]
+offset_left = 518.0
+offset_top = 318.0
+offset_right = -522.0
+offset_bottom = -275.0
+rotation = -0.0188477

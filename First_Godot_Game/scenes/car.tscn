@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dks5ja8qmje3m"]
+
+[ext_resource type="Texture2D" uid="uid://crp6mq54cc360" path="res://assets/sprites/ford_focus.png" id="1_1w6ev"]
+
+[node name="Car" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_1w6ev")
+flip_h = true

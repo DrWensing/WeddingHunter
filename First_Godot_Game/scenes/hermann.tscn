@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://du3l6pnxwnof4"]
+
+[ext_resource type="Texture2D" uid="uid://cvhfpk00b4op8" path="res://assets/sprites/hermann.png" id="1_7a2xx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys4qy"]
+atlas = ExtResource("1_7a2xx")
+region = Rect2(0, 0, 60, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mk33"]
+atlas = ExtResource("1_7a2xx")
+region = Rect2(0, 45, 60, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8u7c6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys4qy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mk33")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="hermann" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_8u7c6")
+frame_progress = 0.330517

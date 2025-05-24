@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmcic3wc7i8wq"]
+
+[ext_resource type="Script" path="res://scenes/heckelmann.gd" id="1_7c1wf"]
+[ext_resource type="Texture2D" uid="uid://df4kbskto732" path="res://assets/sprites/heckelmann.png" id="1_yecu4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eb4mm"]
+atlas = ExtResource("1_yecu4")
+region = Rect2(0, 0, 60, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkttd"]
+atlas = ExtResource("1_yecu4")
+region = Rect2(60, 0, 60, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3tcfo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb4mm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkttd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Heckelmann" type="Node2D"]
+script = ExtResource("1_7c1wf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_3tcfo")
+autoplay = "default"
+frame = 1
+frame_progress = 0.965841
+
+[node name="RayCast2D_right" type="RayCast2D" parent="."]
+target_position = Vector2(30, 0)
+
+[node name="RayCast2D_left" type="RayCast2D" parent="."]
+target_position = Vector2(-28, 0)

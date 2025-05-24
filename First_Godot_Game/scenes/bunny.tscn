@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dw8re1k174h5i"]
+
+[ext_resource type="Texture2D" uid="uid://djeenui7qwhu4" path="res://assets/sprites/bunny.png" id="1_tn7ke"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0houu"]
+atlas = ExtResource("1_tn7ke")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxr2j"]
+atlas = ExtResource("1_tn7ke")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wu5b8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0houu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxr2j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wu5b8")
+autoplay = "default"
+frame_progress = 0.301275

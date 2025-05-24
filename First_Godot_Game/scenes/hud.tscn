@@ -1,0 +1,146 @@
+[gd_scene load_steps=16 format=3 uid="uid://c6aigfqfw3rwu"]
+
+[ext_resource type="Script" path="res://scenes/hud.gd" id="1_enk7o"]
+[ext_resource type="FontFile" uid="uid://cb25e36ag81ju" path="res://assets/fonts/PixelOperator8.ttf" id="1_w1v4t"]
+[ext_resource type="Texture2D" uid="uid://m65yenwq1o5r" path="res://assets/sprites/henrik.png" id="3_c6snd"]
+[ext_resource type="Texture2D" uid="uid://xwfdqsi35h5j" path="res://assets/sprites/tabea.png" id="4_bq7r0"]
+[ext_resource type="PackedScene" uid="uid://ehpaempejv58" path="res://scenes/pause_menu.tscn" id="5_leux1"]
+[ext_resource type="Texture2D" uid="uid://18s6in0jq12k" path="res://assets/sprites/ammo.png" id="6_bhvs4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6id8"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7kkb"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dv1p"]
+atlas = ExtResource("6_bhvs4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m85hr"]
+atlas = ExtResource("6_bhvs4")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2wej"]
+atlas = ExtResource("6_bhvs4")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vn0b"]
+atlas = ExtResource("6_bhvs4")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8oaat"]
+atlas = ExtResource("6_bhvs4")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6kgv"]
+atlas = ExtResource("6_bhvs4")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eyfip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dv1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m85hr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2wej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vn0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8oaat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6kgv")
+}],
+"loop": true,
+"name": &"ammo",
+"speed": 5.0
+}]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_enk7o")
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -7.0
+offset_right = 7.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_w1v4t")
+text = "Score: 0"
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Henrik" type="Sprite2D" parent="."]
+position = Vector2(69, 57)
+scale = Vector2(0.172289, 0.156831)
+texture = ExtResource("3_c6snd")
+
+[node name="Tabea" type="Sprite2D" parent="."]
+position = Vector2(1077, 58)
+scale = Vector2(0.172289, 0.156831)
+texture = ExtResource("4_bq7r0")
+
+[node name="HP_bar_henrik" type="ProgressBar" parent="."]
+offset_left = 139.0
+offset_top = 10.0
+offset_right = 263.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(0.901961, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_e6id8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_j7kkb")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="HP_bar_tabea" type="ProgressBar" parent="."]
+offset_left = 882.0
+offset_top = 14.0
+offset_right = 1006.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.901961, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_e6id8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_j7kkb")
+value = 100.0
+fill_mode = 1
+show_percentage = false
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_leux1")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -249.0
+offset_top = -78.0
+offset_right = -249.0
+offset_bottom = -78.0
+rotation = 0.00224143
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ammo_henrik" type="AnimatedSprite2D" parent="."]
+position = Vector2(175, 75)
+sprite_frames = SubResource("SpriteFrames_eyfip")
+animation = &"ammo"
+frame = 5
+
+[node name="ammo_tabea" type="AnimatedSprite2D" parent="."]
+position = Vector2(969, 75)
+sprite_frames = SubResource("SpriteFrames_eyfip")
+animation = &"ammo"
+frame = 5
+flip_h = true

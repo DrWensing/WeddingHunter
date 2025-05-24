@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwnmfy4o7oy0n"]
+
+[ext_resource type="Texture2D" uid="uid://cgk0uwrlyddim" path="res://assets/sprites/hpbar_frame.png" id="1_qiegu"]
+[ext_resource type="Texture2D" uid="uid://cma7qjio21tyu" path="res://assets/sprites/hpbar_full.png" id="2_qqvtr"]
+
+[node name="HealthBar" type="Node2D"]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 256.0
+offset_bottom = 36.0
+value = 70.0
+texture_under = ExtResource("1_qiegu")
+texture_progress = ExtResource("2_qqvtr")

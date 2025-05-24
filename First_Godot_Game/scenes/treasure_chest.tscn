@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgw8nekfsjv4l"]
+
+[ext_resource type="Script" path="res://treasure_chest.gd" id="1_qccjy"]
+[ext_resource type="Texture2D" uid="uid://cqbv270oxiwad" path="res://assets/sprites/tilesetOpenGame.png" id="2_0tuax"]
+[ext_resource type="Script" path="res://interaction/interaction_area/interaction_area.gd" id="3_6d0dk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs1t8"]
+atlas = ExtResource("2_0tuax")
+region = Rect2(32, 108, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sya1p"]
+atlas = ExtResource("2_0tuax")
+region = Rect2(32, 135, 32, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vdhiq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hs1t8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sya1p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpqwi"]
+size = Vector2(85, 36)
+
+[node name="TreasureChest" type="Node2D"]
+script = ExtResource("1_qccjy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vdhiq")
+frame_progress = 0.995397
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("3_6d0dk")
+action_name = "open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-0.5, -14)
+shape = SubResource("RectangleShape2D_lpqwi")
+
+[connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
+[connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="_on_body_exited"]

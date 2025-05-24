@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://cmr01mlt3f52b"]
+
+[ext_resource type="Script" path="res://scenes/dog.gd" id="1_1dlq0"]
+[ext_resource type="Texture2D" uid="uid://cvhfpk00b4op8" path="res://assets/sprites/hermann.png" id="1_hqpl5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwphp"]
+atlas = ExtResource("1_hqpl5")
+region = Rect2(0, 0, 60, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qithd"]
+atlas = ExtResource("1_hqpl5")
+region = Rect2(0, 45, 60, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ihqwa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwphp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qithd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1xxk"]
+size = Vector2(51, 35)
+
+[node name="Dog" type="CharacterBody2D"]
+script = ExtResource("1_1dlq0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ihqwa")
+autoplay = "default"
+frame = 1
+frame_progress = 0.603911
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -0.5)
+shape = SubResource("RectangleShape2D_g1xxk")

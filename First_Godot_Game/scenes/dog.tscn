@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://cmr01mlt3f52b"]
+
+[ext_resource type="Script" path="res://scenes/dog.gd" id="1_1dlq0"]
+[ext_resource type="Texture2D" uid="uid://cvhfpk00b4op8" path="res://assets/sprites/hermann.png" id="1_hqpl5"]
+[ext_resource type="Texture2D" uid="uid://c1p176y31cmeb" path="res://assets/sprites/hermann_jump.png" id="3_yinxr"]
+[ext_resource type="Script" path="res://interaction/interaction_area/interaction_area.gd" id="4_tv5v6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwphp"]
+atlas = ExtResource("1_hqpl5")
+region = Rect2(0, 0, 60, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qithd"]
+atlas = ExtResource("1_hqpl5")
+region = Rect2(0, 45, 60, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ihqwa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwphp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qithd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yinxr")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1xxk"]
+size = Vector2(42, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_61weg"]
+radius = 70.0286
+
+[node name="Dog" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+script = ExtResource("1_1dlq0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -28)
+scale = Vector2(1, 0.913)
+sprite_frames = SubResource("SpriteFrames_ihqwa")
+animation = &"jump"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -14)
+shape = SubResource("RectangleShape2D_g1xxk")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+script = ExtResource("4_tv5v6")
+action_name = "pet"
+
+[node name="Interaction_radius" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(4, -20)
+shape = SubResource("CircleShape2D_61weg")
