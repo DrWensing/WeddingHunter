@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://btgcf4o601akt"]
+
+[ext_resource type="Script" path="res://scenes/way_point.gd" id="1_ec4da"]
+[ext_resource type="Texture2D" uid="uid://cqbv270oxiwad" path="res://assets/sprites/tilesetOpenGame.png" id="2_rmxiv"]
+[ext_resource type="Script" path="res://interaction/interaction_area/interaction_area.gd" id="3_281ra"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri65e"]
+atlas = ExtResource("2_rmxiv")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_38of8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri65e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61npb"]
+size = Vector2(73, 67)
+
+[node name="WayPoint" type="Node2D"]
+position = Vector2(0, -15)
+script = ExtResource("1_ec4da")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_38of8")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+script = ExtResource("3_281ra")
+action_name = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-0.5, -22.5)
+shape = SubResource("RectangleShape2D_61npb")

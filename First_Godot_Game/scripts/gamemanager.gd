@@ -6,8 +6,8 @@ extends Node
 @onready var tabea = %Player2
 @onready var game = $".."
 @onready var projectile_container:Node = %projectiles
+@onready var hud = %HUD
 #@onready var enemy_container:Noe = %Enemies
-@onready var enemy = %Enemies/Enemy3
 
 var score = 0
 var weather = "rain"
@@ -39,5 +39,8 @@ func _players_receive_guns():
 	print("tabea received gun")
 	henrik.equip_gun()
 	tabea.equip_gun()
+	
+func show_message(str, time_delay):
+	hud.show_message(str, time_delay)
 
 

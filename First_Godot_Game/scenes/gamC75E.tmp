@@ -640,7 +640,7 @@ position = Vector2(838, -499)
 unique_name_in_owner = true
 
 [node name="TreasureChest" parent="." instance=ExtResource("13_u756l")]
-position = Vector2(1591, -329)
+position = Vector2(31, -209)
 
 [node name="Car" parent="." instance=ExtResource("14_0ep67")]
 position = Vector2(174, -222)

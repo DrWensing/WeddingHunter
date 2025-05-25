@@ -11,3 +11,7 @@ func _on_body_entered(body):
 	if can_interact:
 		print("Body entered")
 		InteractionManager.register_area(self)
+		
+func _on_body_exited(body):
+	if can_interact:
+		InteractionManager.unregister_area(self)

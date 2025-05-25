@@ -8,6 +8,7 @@ var gun_equipped = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+@onready var hud = %HUD
 @onready var character = $Character
 @onready var gun = $Gun
 @onready var hp_bar_tabea = %HUD/HP_bar_tabea
@@ -20,7 +21,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var projectile_spawn_point:Marker2D = %ProjectileSpawnPoint
 @onready var projectile_container = %projectile_container
 
-@export var projectileprefab:PackedScene
+@export var projectileprefab2:PackedScene
 
 func take_damage(dmg):
 	hp -= dmg
@@ -28,12 +29,15 @@ func take_damage(dmg):
 	print('Tabea HP remaining ' + str(hp))
 	
 	if hp <= 0:
+		hud.show_message('Tabea died!')
 		print('Tabea died!')
 
 func equip_gun():
+	hud.show_message('Es hat begonnen!')
 	gun.visible=true
 	gun_equipped = true
 	fire_effect.visible=false
+	reload.play()
 	
 func unequip_gun():
 	gun.visible = false
@@ -46,12 +50,13 @@ func shoot():
 			if timer.is_stopped():
 				ammo -= 1
 				ammo_bar_tabea.frame = ammo
-				print('Tabea: Pew pew!')
 				timer.start(0.7)
 				fire_effect.visible=true
 				gunshot.play()
-			else:
-				print('not ready yet')
+				#apply damage to everything within range
+				var dmg=20
+				shot_fired(dmg)
+
 		else:
 			print('Out of ammo: reloading')
 			reload.play()
@@ -59,6 +64,31 @@ func shoot():
 			ammo_bar_tabea.frame = ammo
 			timer.start(3)
 
+func shot_fired(dmg):	
+	var projectile = projectileprefab2.instantiate()
+	var offset = 30
+	var direction = character.flip_h
+	
+	if direction:
+		offset = offset *(-1)
+	
+	# set entry position of fireball
+	projectile.global_position = character.global_position
+	projectile.position.x += offset
+	
+	#set direction of the fireball
+	if direction:
+		projectile.direction=-1
+	else:
+		projectile.direction=+1
+		
+	#set damage fireball can deal
+	projectile.dmg = dmg
+			
+	#register fireball in its container
+	projectile_container.add_child(projectile)
+	print(projectile_container.get_children())
+	
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():

@@ -31,7 +31,7 @@ func _on_message_timer_timeout():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	show_message("Tabea und Henrik sind in den Flitterwochen...im Wald. Plötzlich gibt der Wagen den Geist auf. Sie sind auf sich gestellt. Bewaffnet euch und findet einen weg heraus.", 5.0)
+	show_message("Tabea und Henrik sind in den Flitterwochen...im Wald. Plötzlich gibt der Wagen den Geist auf. Sie sind auf sich gestellt...", 5.0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

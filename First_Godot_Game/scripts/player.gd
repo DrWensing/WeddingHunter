@@ -23,7 +23,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @export var projectileprefab:PackedScene
 
-
 func take_damage(dmg):
 	hp -= dmg
 	hp_bar_henrik.value = hp
