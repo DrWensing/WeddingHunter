@@ -9,14 +9,24 @@ extends Node
 @onready var hud = %HUD
 #@onready var enemy_container:Noe = %Enemies
 
+@onready var cam = %MultiTargetCam
+
 var score = 0
-var weather = "rain"
+var weather = "sun"
 var paused = false
 
 func add_point():
 	score += 1
 	ScoreLabel.text = "Score: " + str(score) + " "
 
+func _ready():
+	#set camera such that henrik an tabea are both visible
+	cam.add_target(henrik)
+	cam.add_target(tabea)
+	#set this camera as the active one
+	#cam.current = true
+	cam.make_current()
+	
 func _process(delta):
 	if Input.is_action_just_pressed("pause"):
 		pauseMenu()
@@ -26,7 +36,7 @@ func pauseMenu():
 		pause_menu.hide()
 		Engine.time_scale = 1
 	else:
-		pause_menu.show()	
+		pause_menu.show()
 		Engine.time_scale = 0
 
 	paused = !paused

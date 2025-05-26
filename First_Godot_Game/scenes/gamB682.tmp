@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dks5ja8qmje3m" path="res://scenes/car.tscn" id="14_0ep67"]
 [ext_resource type="PackedScene" uid="uid://dw8re1k174h5i" path="res://scenes/bunny.tscn" id="15_d4sv0"]
 [ext_resource type="PackedScene" uid="uid://btgcf4o601akt" path="res://scenes/way_point.tscn" id="17_e4gj8"]
-[ext_resource type="Script" path="res://scenes/MultiTargetCam.gd" id="18_213ja"]
+[ext_resource type="Script" path="res://scenes/Camera2D.gd" id="18_e07a7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8p0sm"]
 texture = ExtResource("2_plmha")
@@ -613,18 +613,6 @@ position = Vector2(2783, -409)
 [node name="Platform5" parent="Platforms" instance=ExtResource("3_omjgc")]
 position = Vector2(1948, -201)
 
-[node name="Platform4" parent="Platforms" instance=ExtResource("3_omjgc")]
-position = Vector2(3618, -568)
-
-[node name="Platform6" parent="Platforms" instance=ExtResource("3_omjgc")]
-position = Vector2(835, -159)
-
-[node name="Platform" parent="Platforms/Platform6" instance=ExtResource("3_omjgc")]
-position = Vector2(1849, -250)
-
-[node name="Platform2" parent="Platforms/Platform6" instance=ExtResource("3_omjgc")]
-position = Vector2(934, -159)
-
 [node name="Enemies" type="Node" parent="."]
 unique_name_in_owner = true
 
@@ -668,6 +656,18 @@ unique_name_in_owner = true
 [node name="WayPoint" parent="." instance=ExtResource("17_e4gj8")]
 position = Vector2(517, -209)
 
+[node name="Platform" parent="." instance=ExtResource("3_omjgc")]
+position = Vector2(756, -206)
+
+[node name="Platform" parent="Platform" instance=ExtResource("3_omjgc")]
+position = Vector2(1849, -250)
+
+[node name="Platform2" parent="Platform" instance=ExtResource("3_omjgc")]
+position = Vector2(934, -159)
+
+[node name="Platform" parent="Platform/Platform2" instance=ExtResource("3_omjgc")]
+position = Vector2(1849, -250)
+
 [node name="Area2D2" parent="." instance=ExtResource("4_br5u7")]
 position = Vector2(1294, -86)
 
@@ -677,7 +677,7 @@ position = Vector2(1876, -278)
 [node name="Area2D4" parent="." instance=ExtResource("4_br5u7")]
 position = Vector2(2029, -279)
 
-[node name="MultiTargetCam" type="Camera2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(312, -432)
-script = ExtResource("18_213ja")
+[node name="CameraRig" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="CameraRig"]
+script = ExtResource("18_e07a7")
