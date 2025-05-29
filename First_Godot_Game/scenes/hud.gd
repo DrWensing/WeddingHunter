@@ -12,8 +12,7 @@ func show_message(text, delaytime = 2):
 	$Message.show()
 	$MessageTimer.wait_time = delaytime
 	$MessageTimer.start()
-	
-	
+		
 func show_game_over():
 	show_message("Game Over")
 	# Wait until the MessageTimer has counted down.
@@ -33,9 +32,6 @@ func _on_message_timer_timeout():
 func _ready():
 	show_message("Tabea und Henrik sind in den Flitterwochen...im Wald. Plötzlich gibt der Wagen den Geist auf. Sie sind auf sich gestellt...", 5.0)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 
 

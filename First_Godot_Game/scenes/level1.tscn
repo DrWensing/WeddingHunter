@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://emmfq8lh6jgj"]
+[gd_scene load_steps=16 format=3 uid="uid://emmfq8lh6jgj"]
 
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="1_8vmjm"]
 [ext_resource type="TileSet" uid="uid://d3k1ar04o4po5" path="res://scenes/tileset.tres" id="2_8out0"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dicdpchxv8chk" path="res://scenes/platform.tscn" id="6_y2341"]
 [ext_resource type="PackedScene" uid="uid://duiiwlk637k1h" path="res://scenes/enemy.tscn" id="7_ijaea"]
 [ext_resource type="PackedScene" uid="uid://cmr01mlt3f52b" path="res://scenes/dog.tscn" id="8_xlu1b"]
-[ext_resource type="PackedScene" uid="uid://coih15kb3xc4p" path="res://scenes/weather.tscn" id="9_rlr6s"]
 [ext_resource type="PackedScene" uid="uid://c6aigfqfw3rwu" path="res://scenes/hud.tscn" id="10_vdx48"]
 [ext_resource type="PackedScene" uid="uid://bgw8nekfsjv4l" path="res://scenes/treasure_chest.tscn" id="11_iac7m"]
 [ext_resource type="PackedScene" uid="uid://dks5ja8qmje3m" path="res://scenes/car.tscn" id="12_jkyan"]
@@ -99,9 +98,6 @@ position = Vector2(1703, -43)
 [node name="Dog" parent="." instance=ExtResource("8_xlu1b")]
 position = Vector2(349, -204)
 
-[node name="weather" parent="." instance=ExtResource("9_rlr6s")]
-position = Vector2(838, -499)
-
 [node name="HUD" parent="." instance=ExtResource("10_vdx48")]
 unique_name_in_owner = true
 
@@ -125,7 +121,7 @@ position = Vector2(517, -209)
 unique_name_in_owner = true
 
 [node name="NextLevel" parent="." instance=ExtResource("16_ks41l")]
-position = Vector2(1385, -423)
+position = Vector2(636, -234)
 collision_layer = 3
 collision_mask = 3
 

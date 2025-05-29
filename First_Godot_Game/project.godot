@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 Music="*res://scenes/music.tscn"
 InteractionManager="*res://interaction/InteractionManager.tscn"
+MultiTargetCam="*res://scenes/multi_target_cam.tscn"
+Player="*res://scenes/player.tscn"
 
 [input]
 

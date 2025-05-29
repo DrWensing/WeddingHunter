@@ -12,7 +12,6 @@ extends Node
 @onready var cam = %MultiTargetCam
 
 var score = 0
-var weather = "sun"
 var paused = false
 
 func add_point():
@@ -23,8 +22,7 @@ func _ready():
 	#set camera such that henrik an tabea are both visible
 	cam.add_target(henrik)
 	cam.add_target(tabea)
-	#set this camera as the active one
-	#cam.current = true
+	#set camera as the active one
 	cam.make_current()		
 	
 func _process(delta):
@@ -41,9 +39,6 @@ func pauseMenu():
 
 	paused = !paused
 	
-func _on_test_area_2d_body_entered(body):
-	pass # Replace with function body.
-
 func _players_receive_guns():
 	print("Henrik received gun")
 	print("tabea received gun")
