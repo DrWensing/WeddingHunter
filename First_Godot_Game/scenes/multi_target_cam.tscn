@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddw13eshdxjaf"]
+
+[ext_resource type="Script" path="res://scenes/MultiTargetCam.gd" id="1_8d2lx"]
+
+[node name="MultiTargetCam" type="Camera2D"]
+position = Vector2(312, -432)
+script = ExtResource("1_8d2lx")

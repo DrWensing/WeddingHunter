@@ -33,7 +33,7 @@ func take_damage(dmg):
 		print('Henrik died!')
 
 func equip_gun():
-	hud.show_message('Es hat begonnen!')
+	hud.show_message('Es hat begonnen!\n [Leertaste] Schießen (Henrik)\n [Enter] Schießen (Tabea)',5)
 	gun.visible=true
 	gun_equipped = true
 	fire_effect.visible=false
