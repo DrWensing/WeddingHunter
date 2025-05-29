@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgboi5v27efyg"]
+
+[ext_resource type="Script" path="res://NextLevel.gd" id="1_qlupw"]
+[ext_resource type="Texture2D" uid="uid://o6hjmlmwk4el" path="res://assets/sprites/Green Effect Bullet Impact Explosion 32x32.png" id="2_1u2mm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31aqn"]
+atlas = ExtResource("2_1u2mm")
+region = Rect2(512, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvk7r"]
+atlas = ExtResource("2_1u2mm")
+region = Rect2(544, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwglv"]
+atlas = ExtResource("2_1u2mm")
+region = Rect2(576, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v07ry"]
+atlas = ExtResource("2_1u2mm")
+region = Rect2(608, 256, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w46tl"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31aqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvk7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwglv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v07ry")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nwauv"]
+radius = 17.0294
+
+[node name="NextLevel" type="Area2D"]
+script = ExtResource("1_qlupw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w46tl")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame = 1
+frame_progress = 0.447805
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nwauv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

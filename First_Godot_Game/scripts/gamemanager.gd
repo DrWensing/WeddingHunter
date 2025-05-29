@@ -15,8 +15,6 @@ var score = 0
 var weather = "sun"
 var paused = false
 
-var level2_scene = preload("res://scenes/Levels/level_2.tscn").instantiate()
-
 func add_point():
 	score += 1
 	ScoreLabel.text = "Score: " + str(score) + " "
@@ -27,11 +25,7 @@ func _ready():
 	cam.add_target(tabea)
 	#set this camera as the active one
 	#cam.current = true
-	cam.make_current()
-	
-	print("Switch to level 2")
-	get_tree().root.add_child(level2_scene)
-	
+	cam.make_current()		
 	
 func _process(delta):
 	if Input.is_action_just_pressed("pause"):

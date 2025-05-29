@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://emmfq8lh6jgj"]
+[gd_scene load_steps=17 format=3 uid="uid://emmfq8lh6jgj"]
 
 [ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="1_4il06"]
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="1_dbg81"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dks5ja8qmje3m" path="res://scenes/car.tscn" id="14_0ep67"]
 [ext_resource type="PackedScene" uid="uid://dw8re1k174h5i" path="res://scenes/bunny.tscn" id="15_d4sv0"]
 [ext_resource type="PackedScene" uid="uid://cwpg2sneyq6rf" path="res://scenes/player2.tscn" id="16_4n0h5"]
+[ext_resource type="PackedScene" uid="uid://cgboi5v27efyg" path="res://scenes/next_level.tscn" id="16_dbjv2"]
 [ext_resource type="PackedScene" uid="uid://ddw13eshdxjaf" path="res://scenes/multi_target_cam.tscn" id="16_gfhrj"]
 [ext_resource type="PackedScene" uid="uid://btgcf4o601akt" path="res://scenes/way_point.tscn" id="17_e4gj8"]
 
@@ -125,3 +126,8 @@ position = Vector2(517, -209)
 
 [node name="MultiTargetCam" parent="." instance=ExtResource("16_gfhrj")]
 unique_name_in_owner = true
+
+[node name="NextLevel" parent="." instance=ExtResource("16_dbjv2")]
+position = Vector2(637, -224)
+collision_layer = 3
+collision_mask = 3
