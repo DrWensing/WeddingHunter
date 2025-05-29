@@ -1,19 +1,18 @@
-[gd_scene load_steps=17 format=3 uid="uid://emmfq8lh6jgj"]
+[gd_scene load_steps=16 format=3 uid="uid://emmfq8lh6jgj"]
 
 [ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="1_4il06"]
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="1_dbg81"]
 [ext_resource type="TileSet" uid="uid://d3k1ar04o4po5" path="res://scenes/tileset.tres" id="2_l06dl"]
 [ext_resource type="PackedScene" uid="uid://dicdpchxv8chk" path="res://scenes/platform.tscn" id="3_omjgc"]
 [ext_resource type="PackedScene" uid="uid://dtpn5wksg1o0v" path="res://scenes/coin.tscn" id="4_br5u7"]
-[ext_resource type="PackedScene" uid="uid://otpk2la1v2fx" path="res://scenes/fireball.tscn" id="6_c15x2"]
 [ext_resource type="PackedScene" uid="uid://duiiwlk637k1h" path="res://scenes/enemy.tscn" id="6_uquth"]
-[ext_resource type="Script" path="res://scenes/player2.gd" id="10_1lyok"]
 [ext_resource type="PackedScene" uid="uid://cmr01mlt3f52b" path="res://scenes/dog.tscn" id="10_upiun"]
 [ext_resource type="PackedScene" uid="uid://coih15kb3xc4p" path="res://scenes/weather.tscn" id="12_huaph"]
 [ext_resource type="PackedScene" uid="uid://c6aigfqfw3rwu" path="res://scenes/hud.tscn" id="13_sovpx"]
 [ext_resource type="PackedScene" uid="uid://bgw8nekfsjv4l" path="res://scenes/treasure_chest.tscn" id="13_u756l"]
 [ext_resource type="PackedScene" uid="uid://dks5ja8qmje3m" path="res://scenes/car.tscn" id="14_0ep67"]
 [ext_resource type="PackedScene" uid="uid://dw8re1k174h5i" path="res://scenes/bunny.tscn" id="15_d4sv0"]
+[ext_resource type="PackedScene" uid="uid://cwpg2sneyq6rf" path="res://scenes/player2.tscn" id="16_4n0h5"]
 [ext_resource type="PackedScene" uid="uid://ddw13eshdxjaf" path="res://scenes/multi_target_cam.tscn" id="16_gfhrj"]
 [ext_resource type="PackedScene" uid="uid://btgcf4o601akt" path="res://scenes/way_point.tscn" id="17_e4gj8"]
 
@@ -39,7 +38,10 @@ layer_1/tile_data = PackedInt32Array(-393203, 196613, 3, -393202, 196613, 3, -39
 unique_name_in_owner = true
 z_index = 5
 position = Vector2(284, -193)
-projectileprefab = ExtResource("6_c15x2")
+
+[node name="Player2" parent="." instance=ExtResource("16_4n0h5")]
+unique_name_in_owner = true
+position = Vector2(253, -193)
 
 [node name="Coins" type="Node" parent="."]
 
@@ -48,6 +50,12 @@ position = Vector2(943, -190)
 
 [node name="Area2D2" parent="Coins" instance=ExtResource("4_br5u7")]
 position = Vector2(844, -189)
+
+[node name="Area2D3" parent="Coins" instance=ExtResource("4_br5u7")]
+position = Vector2(1373, -39)
+
+[node name="Area2D4" parent="Coins" instance=ExtResource("4_br5u7")]
+position = Vector2(2108, -232)
 
 [node name="Platforms" type="Node" parent="."]
 
@@ -75,6 +83,9 @@ position = Vector2(1849, -250)
 [node name="Platform2" parent="Platforms/Platform6" instance=ExtResource("3_omjgc")]
 position = Vector2(934, -159)
 
+[node name="Area2D3" parent="Platforms" instance=ExtResource("4_br5u7")]
+position = Vector2(1955, -231)
+
 [node name="Enemies" type="Node" parent="."]
 unique_name_in_owner = true
 
@@ -86,12 +97,6 @@ position = Vector2(1867, -43)
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("6_uquth")]
 position = Vector2(1703, -43)
-
-[node name="Player2" parent="." instance=ExtResource("1_4il06")]
-unique_name_in_owner = true
-position = Vector2(249, -191)
-script = ExtResource("10_1lyok")
-projectileprefab2 = ExtResource("6_c15x2")
 
 [node name="Dog" parent="." instance=ExtResource("10_upiun")]
 position = Vector2(349, -204)
@@ -117,15 +122,6 @@ unique_name_in_owner = true
 
 [node name="WayPoint" parent="." instance=ExtResource("17_e4gj8")]
 position = Vector2(517, -209)
-
-[node name="Area2D2" parent="." instance=ExtResource("4_br5u7")]
-position = Vector2(1294, -86)
-
-[node name="Area2D3" parent="." instance=ExtResource("4_br5u7")]
-position = Vector2(1876, -278)
-
-[node name="Area2D4" parent="." instance=ExtResource("4_br5u7")]
-position = Vector2(2029, -279)
 
 [node name="MultiTargetCam" parent="." instance=ExtResource("16_gfhrj")]
 unique_name_in_owner = true

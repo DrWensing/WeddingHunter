@@ -2,17 +2,14 @@
 
 [ext_resource type="TileSet" uid="uid://d3k1ar04o4po5" path="res://scenes/tileset.tres" id="1_1yby7"]
 [ext_resource type="PackedScene" uid="uid://ddw13eshdxjaf" path="res://scenes/multi_target_cam.tscn" id="1_i2xxj"]
-[ext_resource type="PackedScene" uid="uid://du3l6pnxwnof4" path="res://scenes/hermann.tscn" id="2_hbbkf"]
 [ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="3_1gkuv"]
+[ext_resource type="PackedScene" uid="uid://cmr01mlt3f52b" path="res://scenes/dog.tscn" id="5_ge65a"]
 [ext_resource type="PackedScene" uid="uid://cwpg2sneyq6rf" path="res://scenes/player2.tscn" id="5_lifp0"]
 
 [node name="Level2" type="Node2D"]
 
 [node name="MultiTargetCam" parent="." instance=ExtResource("1_i2xxj")]
 position = Vector2(237, -24)
-
-[node name="hermann" parent="." instance=ExtResource("2_hbbkf")]
-position = Vector2(173, -55)
 
 [node name="Player" parent="." instance=ExtResource("3_1gkuv")]
 position = Vector2(337, -89)
@@ -24,3 +21,6 @@ layer_0/tile_data = PackedInt32Array(0, 196613, 3, 1, 196613, 3, 2, 196613, 3, 3
 
 [node name="Player2" parent="." instance=ExtResource("5_lifp0")]
 position = Vector2(71, -36)
+
+[node name="Dog" parent="." instance=ExtResource("5_ge65a")]
+position = Vector2(203, -51)

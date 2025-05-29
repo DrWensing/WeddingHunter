@@ -21,7 +21,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var projectile_spawn_point:Marker2D = %ProjectileSpawnPoint
 @onready var projectile_container = %projectile_container
 
-@export var projectileprefab2:PackedScene
+@export var projectilePrefab:PackedScene
 
 func take_damage(dmg):
 	hp -= dmg
@@ -62,9 +62,9 @@ func shoot():
 			ammo = 5
 			ammo_bar_tabea.frame = ammo
 			timer.start(3)
-
+	
 func shot_fired(dmg):	
-	var projectile = projectileprefab2.instantiate()
+	var projectile = projectilePrefab.instantiate()
 	var offset = 30
 	var direction = character.flip_h
 	

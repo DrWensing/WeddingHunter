@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwpg2sneyq6rf"]
+
+[ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="1_o5on6"]
+[ext_resource type="Script" path="res://scenes/player2.gd" id="2_4v3kc"]
+
+[node name="Player2" instance=ExtResource("1_o5on6")]
+script = ExtResource("2_4v3kc")
+projectileprefab2 = null
+
+[node name="Character" parent="." index="1"]
+animation = &"tabea_walking"
+frame = 0
+frame_progress = 0.0
