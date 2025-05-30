@@ -1,25 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwavxmautjwpp"]
+[gd_scene load_steps=8 format=3 uid="uid://bwavxmautjwpp"]
 
 [ext_resource type="TileSet" uid="uid://d3k1ar04o4po5" path="res://scenes/tileset.tres" id="1_1yby7"]
+[ext_resource type="Script" path="res://scenes/Levels/level_2.gd" id="1_xt6kv"]
 [ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="3_1gkuv"]
 [ext_resource type="PackedScene" uid="uid://cmr01mlt3f52b" path="res://scenes/dog.tscn" id="5_ge65a"]
 [ext_resource type="PackedScene" uid="uid://cwpg2sneyq6rf" path="res://scenes/player2.tscn" id="5_lifp0"]
+[ext_resource type="PackedScene" uid="uid://cgboi5v27efyg" path="res://scenes/next_level.tscn" id="6_iflqh"]
+[ext_resource type="PackedScene" uid="uid://duiiwlk637k1h" path="res://scenes/enemy.tscn" id="7_hsrr2"]
 
 [node name="Level2" type="Node2D"]
-position = Vector2(1, -231)
+position = Vector2(18, 132)
+script = ExtResource("1_xt6kv")
 
 [node name="Player" parent="." instance=ExtResource("3_1gkuv")]
 unique_name_in_owner = true
 position = Vector2(337, -89)
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource("1_1yby7")
-format = 2
-layer_0/tile_data = PackedInt32Array(262144, 196613, 3, 262145, 196613, 3, 262146, 196613, 3, 262147, 196613, 3, 262148, 196613, 3, 262149, 196613, 3, 262150, 196613, 3, 262151, 196613, 3, 262152, 196613, 3, 262153, 196613, 3, 262154, 196613, 3, 262155, 196613, 3, 262156, 196613, 3)
-
 [node name="Player2" parent="." instance=ExtResource("5_lifp0")]
 unique_name_in_owner = true
 position = Vector2(71, -36)
 
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_1yby7")
+format = 2
+layer_0/tile_data = PackedInt32Array(262144, 196613, 3, 262145, 196613, 3, 262146, 196613, 3, 262147, 196613, 3, 262148, 196613, 3, 262149, 196613, 3, 262150, 196613, 3, 262151, 196613, 3, 262152, 196613, 3, 262153, 196613, 3, 262154, 196613, 3, 262155, 196613, 3, 262156, 196613, 3, 196621, 131077, 3, 131086, 131077, 3, 131087, 196613, 3, 131088, 196613, 3, 131089, 196613, 3, 131090, 196613, 3, 131091, 196613, 3, 131092, 196613, 3, 131093, 196613, 3, 131094, 196613, 3, 131095, 196613, 3, 131096, 196613, 3, 131097, 262149, 3, 196634, 262149, 3, 262171, 262149, 3, 327708, 196613, 3, 327709, 196613, 3, 327710, 196613, 3, 327711, 196613, 3, 327712, 196613, 3, 327713, 196613, 3, 327714, 196613, 3, 262180, 196613, 3, 262181, 196613, 3, 196645, 196613, 3, 196646, 196613, 3, 196647, 196613, 3, 131111, 196613, 3, 131112, 196613, 3, 131113, 196613, 3, 131114, 196613, 3, 131115, 196613, 3, 131116, 196613, 3, 65580, 196613, 3, 65581, 196613, 3, 65582, 196613, 3, 65583, 196613, 3, 65584, 196613, 3, 65585, 196613, 3, 65586, 196613, 3, 65587, 196613, 3, 65588, 196613, 3, 65589, 196613, 3, 65590, 196613, 3, 65591, 196613, 3, 65592, 196613, 3, 65593, 196613, 3, 65594, 196613, 3, 65595, 196613, 3, 65596, 196613, 3, 65597, 196613, 3, 65598, 196613, 3, 65599, 196613, 3, 65600, 196613, 3, 65601, 196613, 3, 65602, 196613, 3, 65603, 196613, 3, 65604, 196613, 3, 65605, 196613, 3, 65606, 196613, 3, 65607, 196613, 3, 65608, 196613, 3, 65609, 196613, 3, 65610, 196613, 3, 65611, 196613, 3, 131148, 196613, 3, 196684, 196613, 3, 196685, 196613, 3, 262221, 196613, 3, 262222, 196613, 3, 327758, 196613, 3, 327759, 196613, 3, 327760, 196613, 3, 327761, 196613, 3, 327762, 196613, 3, 327763, 196613, 3, 393299, 196613, 3, 393300, 196613, 3, 393301, 196613, 3, 393302, 196613, 3, 458839, 196613, 3, 458840, 196613, 3, 458841, 196613, 3, 458842, 196613, 3, 458843, 196613, 3, 458844, 196613, 3, 458845, 196613, 3, 458846, 196613, 3, 393311, 196613, 3, 393312, 196613, 3, 327776, 196613, 3, 327777, 196613, 3, 262242, 196613, 3, 262243, 196613, 3, 196708, 196613, 3, 196709, 196613, 3, 131174, 196613, 3, 131175, 196613, 3, 131176, 196613, 3, 131177, 196613, 3, 65642, 196613, 3, 65643, 196613, 3, 262179, 131077, 3)
+
 [node name="Dog" parent="." instance=ExtResource("5_ge65a")]
 position = Vector2(203, -51)
+
+[node name="NextLevel" parent="." instance=ExtResource("6_iflqh")]
+position = Vector2(605, 35)
+
+[node name="Enemy" parent="." instance=ExtResource("7_hsrr2")]
+position = Vector2(921, 132)
+
+[node name="Enemy2" parent="." instance=ExtResource("7_hsrr2")]
+position = Vector2(996, 134)
+
+[node name="Enemy3" parent="." instance=ExtResource("7_hsrr2")]
+position = Vector2(1055, 132)

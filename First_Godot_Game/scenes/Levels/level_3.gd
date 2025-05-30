@@ -5,11 +5,12 @@ extends Node2D
 #@onready var cam = get_tree().root.get_node("/root/MultiTargetCam")
 
 func _ready():
-		
 	MultiTargetCam.add_target(henrik)
 	MultiTargetCam.add_target(tabea)
 	#set camera as the active one
-	MultiTargetCam.make_current()		
-
-	HUD.show_message("Tabea und Henrik sind in den Flitterwochen...im Wald. Plötzlich gibt der Wagen den Geist auf. Sie sind auf sich gestellt...", 5.0)
-
+	MultiTargetCam.make_current()
+	
+	henrik.equip_gun()
+	tabea.equip_gun()
+	
+	HUD.show_message("Level 3: Das Untier")

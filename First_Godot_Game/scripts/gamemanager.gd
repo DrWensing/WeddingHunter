@@ -24,21 +24,12 @@ func add_point():
 	#print(projectile_container.get_children())
 
 func _ready():
-	#set camera such that henrik an tabea are both visible
-	#cam.add_target(henrik)
-	#cam.add_target(tabea)
-	#set camera as the active one
-	#cam.make_current()
-	load_level(1)
-	hud = load("res://scenes/hud.tscn").instantiate()
-	add_child(hud)
-	#pass
+	var starting_level = 3
+	load_level(starting_level)
+
 	
 func load_level(level: int) -> void:
 	# Remove the current level if it exists		
-	#reset camera
-	if level >1:
-		cam.reset()
 	
 	if current_level:
 		current_level.queue_free()
@@ -47,6 +38,8 @@ func load_level(level: int) -> void:
 		
 	# Instance the level scene and add it to the tree
 	get_tree().change_scene_to_file(LevelPath + "level_" + str(level) +".tscn")
+	hud = load("res://scenes/hud.tscn").instantiate()
+	add_child(hud)
 	
 func switch_to_next_level():
 		var current_scene = get_tree().current_scene.scene_file_path

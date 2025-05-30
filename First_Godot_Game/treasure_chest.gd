@@ -11,3 +11,4 @@ func _open_chest():
 	InteractionManager.unregister_area(interaction_area)
 	interaction_area.can_interact = false
 	Main.players_receive_guns()
+	Main.show_message('Es hat begonnen!\n [Leertaste] Schießen (Henrik)\n [Enter] Schießen (Tabea)',5)

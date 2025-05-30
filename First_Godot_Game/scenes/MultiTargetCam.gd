@@ -18,9 +18,14 @@ func _process(delta):
 		return
 	# Keep the camera centered between the targets
 	var p = Vector2.ZERO
-	print(targets)
+	
 	for target in targets:
-		p += target.position
+		#remove targets, must be done once a new level loads
+		if not is_instance_valid(target):
+			remove_target(target)
+			return
+		#compute the average position
+		p += target.global_position
 	p /= targets.size()
 	position = lerp(position, p, move_speed)
 	# Find the zoom that will contain all targets
