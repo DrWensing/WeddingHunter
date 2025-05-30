@@ -1,32 +1,37 @@
-[gd_scene load_steps=15 format=3 uid="uid://pcaofyls6j15"]
+[gd_scene load_steps=17 format=3 uid="uid://pcaofyls6j15"]
 
 [ext_resource type="Script" path="res://scenes/boss_balrog.gd" id="1_i50s3"]
 [ext_resource type="Texture2D" uid="uid://bm5xrrmn5npas" path="res://assets/sprites/Balrog.png" id="2_dcfpd"]
 [ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="3_5tqrx"]
 [ext_resource type="PackedScene" uid="uid://bwnmfy4o7oy0n" path="res://scenes/health_bar.tscn" id="4_sjh4q"]
 [ext_resource type="Script" path="res://scenes/CollisionShape2D.gd" id="5_21o1p"]
+[ext_resource type="LabelSettings" uid="uid://ii4fh6vh28xn" path="res://assets/fonts/BossLabelFont.tres" id="6_wuqkq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yjkjc"]
-atlas = ExtResource("2_dcfpd")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4qunj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_onqex"]
 atlas = ExtResource("2_dcfpd")
 region = Rect2(128, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2pbqt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yc4s5"]
 atlas = ExtResource("2_dcfpd")
 region = Rect2(128, 128, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kclym"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l75l"]
+atlas = ExtResource("2_dcfpd")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkh4x"]
+atlas = ExtResource("2_dcfpd")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8qoe"]
 atlas = ExtResource("2_dcfpd")
 region = Rect2(0, 128, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8kokj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ylnj"]
 atlas = ExtResource("2_dcfpd")
 region = Rect2(0, 256, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ubllf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_53lw3"]
 atlas = ExtResource("2_dcfpd")
 region = Rect2(128, 256, 128, 128)
 
@@ -34,26 +39,39 @@ region = Rect2(128, 256, 128, 128)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yjkjc")
+"texture": SubResource("AtlasTexture_onqex")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4qunj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2pbqt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kclym")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8kokj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ubllf")
+"texture": SubResource("AtlasTexture_yc4s5")
 }],
 "loop": true,
-"name": &"default",
-"speed": 10.0
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l75l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkh4x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8qoe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ylnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53lw3")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fus2r"]
@@ -69,8 +87,9 @@ script = ExtResource("1_i50s3")
 position = Vector2(-8, -88)
 scale = Vector2(2.79, 2.79)
 sprite_frames = SubResource("SpriteFrames_46vth")
-autoplay = "default"
-frame_progress = 0.33499
+animation = &"walk"
+autoplay = "idle"
+frame_progress = 0.0565604
 flip_h = true
 
 [node name="KillZone" parent="." instance=ExtResource("3_5tqrx")]
@@ -98,6 +117,14 @@ position = Vector2(-4, -50)
 position = Vector2(-18.5, -15)
 shape = SubResource("RectangleShape2D_hhh4x")
 script = ExtResource("5_21o1p")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -93.0
+offset_top = -204.0
+offset_right = 100.0
+offset_bottom = -181.0
+text = "Balrog - Durins Fluch"
+label_settings = ExtResource("6_wuqkq")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

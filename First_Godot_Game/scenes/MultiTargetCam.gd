@@ -10,6 +10,8 @@ extends Camera2D
 
 @onready var screen_size = get_viewport_rect().size
 
+const y_offset = -20
+
 func reset():
 	targets = []
 
@@ -25,20 +27,22 @@ func _process(delta):
 			remove_target(target)
 			return
 		#compute the average position
-		p += target.global_position
+		p += target.global_position 		
 	p /= targets.size()
 	position = lerp(position, p, move_speed)
+	position[1]+=y_offset
 	# Find the zoom that will contain all targets
 	var r = Rect2(position, Vector2.ONE)
 	for target in targets:
 		r = r.expand(target.position)
 	r = r.grow_individual(margin.x, margin.y, margin.x, margin.y)
+	
 	var d = max(r.size.x, r.size.y)
 	var z
 	if r.size.x > r.size.y * screen_size.aspect():
 		z = clamp(r.size.x / screen_size.x, min_zoom, max_zoom)
 	else:
-		z = clamp(r.size.y / screen_size.y, min_zoom, max_zoom)
+		z = clamp(r.size.y / screen_size.y, min_zoom, max_zoom)	
 	zoom = lerp(zoom, Vector2.ONE * z, zoom_speed)
 
 func add_target(t):

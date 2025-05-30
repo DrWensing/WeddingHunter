@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvyifgfcn6h34"]
+[gd_scene load_steps=12 format=3 uid="uid://cvyifgfcn6h34"]
 
 [ext_resource type="Script" path="res://scenes/boss_bunny.gd" id="1_65hsf"]
 [ext_resource type="Texture2D" uid="uid://djeenui7qwhu4" path="res://assets/sprites/bunny.png" id="2_gv7bb"]
 [ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="3_x51t6"]
 [ext_resource type="PackedScene" uid="uid://bwnmfy4o7oy0n" path="res://scenes/health_bar.tscn" id="4_ej55j"]
 [ext_resource type="Script" path="res://scenes/CollisionShape2D.gd" id="5_1chog"]
+[ext_resource type="LabelSettings" uid="uid://ii4fh6vh28xn" path="res://assets/fonts/BossLabelFont.tres" id="6_wl1q4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3br1a"]
 atlas = ExtResource("2_gv7bb")
@@ -70,6 +71,14 @@ position = Vector2(1, 12)
 position = Vector2(-2, 1)
 shape = SubResource("CircleShape2D_ygv7g")
 script = ExtResource("5_1chog")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -21.0
+offset_top = 46.0
+offset_right = 61.0
+offset_bottom = 69.0
+text = "Das Untier"
+label_settings = ExtResource("6_wl1q4")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -5,11 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://cma7qjio21tyu" path="res://assets/sprites/hpbar_full.png" id="2_qqvtr"]
 
 [node name="HealthBar" type="Node2D"]
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_g4q8a")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_right = 256.0
-offset_bottom = 36.0
+offset_right = 765.0
+offset_bottom = 76.0
 max_value = 30.0
 value = 29.0
 texture_under = ExtResource("1_qiegu")

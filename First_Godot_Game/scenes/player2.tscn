@@ -418,6 +418,7 @@ position = Vector2(3, -29)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_b1ngt")
 animation = &"tabea_walking"
+frame_progress = 0.578609
 script = ExtResource("7_hru8w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

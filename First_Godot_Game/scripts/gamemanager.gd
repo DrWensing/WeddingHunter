@@ -24,7 +24,7 @@ func add_point():
 	#print(projectile_container.get_children())
 
 func _ready():
-	var starting_level = 2
+	var starting_level = 4
 	load_level(starting_level)
 
 	
