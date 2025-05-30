@@ -5,8 +5,10 @@ extends Node2D
 @onready var BossMusic = $BossMusic
 #@onready var cam = get_tree().root.get_node("/root/MultiTargetCam")
 @onready var NextLevelPortal = $NextLevel
+@onready var Boss_Balrog = $Boss_Balrog
 
 @onready var Warnung_ausgesprochen = false
+@onready var boss_alive = true
 
 func _ready():
 	MultiTargetCam.add_target(henrik)
@@ -24,4 +26,20 @@ func _process(delta):
 		if henrik.position.x > 500 or tabea.position.x > 500:
 			HUD.show_message("Bei Balin's Bart was treiben Menschen in Khazad-dûm?\n Wie dem auch sei, geht ruhig weiter. Hier gibt es keinerlei Gefahren",10.0)
 			Warnung_ausgesprochen = true
-	
+			
+			
+		#start boss music once tabea and henrik enter arena
+	if not is_instance_valid(Boss_Balrog):
+			Boss_defeated()
+			boss_alive = false
+	if boss_alive:
+		if henrik.position.x > 1000 or tabea.position.x > 1000:
+			print('Start Music')
+			if not BossMusic.playing:
+				BossMusic.play()
+
+func Boss_defeated():
+	BossMusic.stop()
+	HUD.show_message('Waidmannsheil. Das Untier wurde erlegt. Der Weg ist nun frei.')
+	NextLevelPortal.global_position = Vector2(1150,950)
+	NextLevelPortal.global_position = Vector2(1270,820)

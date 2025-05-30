@@ -1,6 +1,6 @@
 extends Node2D
 
-const SPEED = 60
+const SPEED = 10
 var direction = 1
 @onready var hp = 200
 

@@ -18,7 +18,7 @@ func _ready():
 	henrik.equip_gun()
 	tabea.equip_gun()
 	
-	HUD.show_message("Level 3: Das Untier")
+	HUD.show_message("Level 3: England 932 n.Chr.")
 	
 
 func _process(delta):

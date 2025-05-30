@@ -6,8 +6,8 @@
 [ext_resource type="TileSet" uid="uid://d3k1ar04o4po5" path="res://scenes/tileset.tres" id="4_qkbe4"]
 [ext_resource type="PackedScene" uid="uid://cmr01mlt3f52b" path="res://scenes/dog.tscn" id="5_meaf1"]
 [ext_resource type="PackedScene" uid="uid://cgboi5v27efyg" path="res://scenes/next_level.tscn" id="6_3gsdn"]
+[ext_resource type="AudioStream" uid="uid://chtovm7p74sr2" path="res://assets/music/DS3_yhorm.mp3" id="7_ju2j3"]
 [ext_resource type="PackedScene" uid="uid://pcaofyls6j15" path="res://scenes/boss_balrog.tscn" id="9_1dfpe"]
-[ext_resource type="AudioStream" uid="uid://cyou7r22tj2ee" path="res://assets/music/DS3_vordt.mp3" id="9_vjuml"]
 [ext_resource type="PackedScene" uid="uid://b5cs6ubf1g8ex" path="res://scenes/zwockel.tscn" id="10_or2vq"]
 
 [node name="Level4" type="Node2D"]
@@ -34,10 +34,10 @@ position = Vector2(172, -27)
 position = Vector2(1847, -126)
 
 [node name="BossMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_vjuml")
+stream = ExtResource("7_ju2j3")
 
 [node name="Zwockel" parent="." instance=ExtResource("10_or2vq")]
 position = Vector2(514, -16)
 
-[node name="Boss_Bunny" parent="." instance=ExtResource("9_1dfpe")]
+[node name="Boss_Balrog" parent="." instance=ExtResource("9_1dfpe")]
 position = Vector2(1416, 190)
