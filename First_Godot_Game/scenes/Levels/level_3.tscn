@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqs0wwguahnsp"]
+[gd_scene load_steps=11 format=3 uid="uid://cqs0wwguahnsp"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_3.gd" id="1_ihune"]
 [ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="2_g8cr8"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cgboi5v27efyg" path="res://scenes/next_level.tscn" id="6_i06xo"]
 [ext_resource type="PackedScene" uid="uid://cvyifgfcn6h34" path="res://scenes/boss_bunny.tscn" id="7_4aj25"]
 [ext_resource type="PackedScene" uid="uid://dicdpchxv8chk" path="res://scenes/platform.tscn" id="8_k184q"]
+[ext_resource type="AudioStream" uid="uid://cyou7r22tj2ee" path="res://assets/music/DS3_vordt.mp3" id="9_fws0j"]
+[ext_resource type="PackedScene" uid="uid://b5cs6ubf1g8ex" path="res://scenes/zwockel.tscn" id="10_s83ah"]
 
 [node name="Level3" type="Node2D"]
 position = Vector2(18, 132)
@@ -42,7 +44,22 @@ position = Vector2(1099, 763)
 position = Vector2(1169, 719)
 
 [node name="Platform3" parent="." instance=ExtResource("8_k184q")]
-position = Vector2(1207, 720)
+position = Vector2(1315, 759)
 
 [node name="Platform4" parent="." instance=ExtResource("8_k184q")]
 position = Vector2(1247, 719)
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_fws0j")
+
+[node name="Zwockel" parent="." instance=ExtResource("10_s83ah")]
+position = Vector2(581, 432)
+
+[node name="Platform5" parent="." instance=ExtResource("8_k184q")]
+position = Vector2(1739, 759)
+
+[node name="Platform6" parent="." instance=ExtResource("8_k184q")]
+position = Vector2(1674, 732)
+
+[node name="Platform7" parent="." instance=ExtResource("8_k184q")]
+position = Vector2(1599, 757)

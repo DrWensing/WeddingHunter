@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5cs6ubf1g8ex"]
+
+[ext_resource type="Texture2D" uid="uid://bjd7vunvs86r6" path="res://assets/sprites/zwockel.png" id="1_oduaa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y10ir"]
+atlas = ExtResource("1_oduaa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nrgo"]
+atlas = ExtResource("1_oduaa")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eel0v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y10ir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nrgo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eel0v")
+autoplay = "default"
+frame_progress = 0.327081

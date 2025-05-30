@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cvyifgfcn6h34"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_3fhsw"]
+[ext_resource type="Script" path="res://scenes/boss_bunny.gd" id="1_65hsf"]
 [ext_resource type="Texture2D" uid="uid://djeenui7qwhu4" path="res://assets/sprites/bunny.png" id="2_gv7bb"]
 [ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="3_x51t6"]
 [ext_resource type="PackedScene" uid="uid://bwnmfy4o7oy0n" path="res://scenes/health_bar.tscn" id="4_ej55j"]
@@ -35,10 +35,10 @@ size = Vector2(20.25, 24)
 radius = 17.0
 
 [node name="Boss_Bunny" type="Node2D"]
-script = ExtResource("1_3fhsw")
+script = ExtResource("1_65hsf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
+position = Vector2(0, 10)
 sprite_frames = SubResource("SpriteFrames_46vth")
 autoplay = "default"
 frame = 1
@@ -60,12 +60,14 @@ position = Vector2(-8, 11)
 target_position = Vector2(-6, 0)
 
 [node name="HealthBar" parent="." instance=ExtResource("4_ej55j")]
-position = Vector2(-399, 42)
+position = Vector2(-164, 39)
+scale = Vector2(0.5, 0.5)
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1, 12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 12)
+position = Vector2(-2, 1)
 shape = SubResource("CircleShape2D_ygv7g")
 script = ExtResource("5_1chog")
 
