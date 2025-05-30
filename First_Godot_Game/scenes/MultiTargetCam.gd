@@ -6,7 +6,7 @@ extends Camera2D
 @export var max_zoom = 5  # camera won't zoom farther than this
 @export var margin = Vector2(400, 200)  # include some buffer area around targets
 
-var targets = []  # Array of targets to be tracked.
+@onready var targets = []  # Array of targets to be tracked.
 
 @onready var screen_size = get_viewport_rect().size
 
@@ -18,6 +18,7 @@ func _process(delta):
 		return
 	# Keep the camera centered between the targets
 	var p = Vector2.ZERO
+	print(targets)
 	for target in targets:
 		p += target.position
 	p /= targets.size()

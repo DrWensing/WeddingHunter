@@ -48,6 +48,7 @@ animations = [{
 radius = 17.0294
 
 [node name="NextLevel" type="Area2D"]
+collision_layer = 3
 script = ExtResource("1_qlupw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

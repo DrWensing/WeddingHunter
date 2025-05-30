@@ -8,33 +8,30 @@ var gun_equipped = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-@onready var hud = %HUD
+#@onready var hud = %HUD
 @onready var character = $Character
 @onready var gun = $Gun
-@onready var hp_bar_henrik = %HUD/HP_bar_henrik
-@onready var ammo_bar_henrik = %HUD/ammo_henrik
+#@onready var hp_bar_henrik   = %hud/hp_bar_henrik
+#@onready var ammo_bar_henrik = %hud/ammo_henrik
 @onready var fire_effect = $FireEffect
 @onready var timer = $ShotTimer
 @onready var gunshot = $gunshot
 @onready var reload = $reload
-@onready var game_manager = %GameManager
-@onready var projectile_spawn_point:Marker2D = %ProjectileSpawnPoint
 @onready var projectile_container = %projectile_container
 
 @export var projectilePrefab:PackedScene
 
-
 func take_damage(dmg):
 	hp -= dmg
-	hp_bar_henrik.value = hp
+	HUD.hp_bar_henrik.value = hp
 	print('Henrik HP remaining ' + str(hp))
 	
 	if hp <= 0:
-		hud.show_message('Henrik died!')
+		HUD.show_message('Henrik died!')
 		print('Henrik died!')
 
 func equip_gun():
-	hud.show_message('Es hat begonnen!\n [Leertaste] Schießen (Henrik)\n [Enter] Schießen (Tabea)',5)
+	Main.show_message('Es hat begonnen!\n [Leertaste] Schießen (Henrik)\n [Enter] Schießen (Tabea)',5)
 	gun.visible=true
 	gun_equipped = true
 	fire_effect.visible=false
@@ -50,7 +47,7 @@ func shoot():
 		if ammo > 0:
 			if timer.is_stopped():
 				ammo -= 1
-				ammo_bar_henrik.frame = ammo
+				HUD.ammo_henrik.frame = ammo
 				timer.start(0.7)
 				fire_effect.visible=true
 				gunshot.play()
@@ -62,7 +59,7 @@ func shoot():
 			print('Out of ammo: reloading')
 			reload.play()
 			ammo = 5
-			ammo_bar_henrik.frame = ammo
+			HUD.ammo_henrik.frame = ammo
 			timer.start(3)
 
 func shot_fired(dmg):	
@@ -87,8 +84,7 @@ func shot_fired(dmg):
 	projectile.dmg = dmg
 			
 	#register fireball in its container
-	projectile_container.add_child(projectile)
-	print(projectile_container.get_children())
+	Projectiles.add_child(projectile)
 	
 func _physics_process(delta):
 	# Add the gravity.

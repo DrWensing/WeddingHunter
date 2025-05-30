@@ -10,7 +10,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var ray_cast_right = $RayCast_Right
 @onready var ray_cast_left = $RayCast_Left
-@onready var game_manager = %GameManager
 
 func _ready():
 	health_bar.initialize(hp)
@@ -30,7 +29,7 @@ func receive_damage(dmg):
 	health_bar.take_dmg(dmg)
 	if health_bar.is_dead():
 		print('Enemy slain!')
-		game_manager.add_point()
+		Main.add_point()
 		queue_free()
 
 func _on_area_2d_area_entered(area):

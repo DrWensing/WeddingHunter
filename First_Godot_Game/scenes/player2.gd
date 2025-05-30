@@ -8,28 +8,23 @@ var gun_equipped = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-@onready var hud = %HUD
 @onready var character = $Character
 @onready var gun = $Gun
-@onready var hp_bar_tabea = %HUD/HP_bar_tabea
-@onready var ammo_bar_tabea = %HUD/ammo_tabea
 @onready var fire_effect = $FireEffect
 @onready var timer = $ShotTimer
 @onready var gunshot = $gunshot
 @onready var reload = $reload
-@onready var game_manager = %GameManager
-@onready var projectile_spawn_point:Marker2D = %ProjectileSpawnPoint
 @onready var projectile_container = %projectile_container
 
 @export var projectilePrefab:PackedScene
-
+	
 func take_damage(dmg):
-	hp -= dmg
-	hp_bar_tabea.value = hp
+	hp -= dmg	
+	HUD.hp_bar_tabea.valuea = hp
 	print('Tabea HP remaining ' + str(hp))
 	
 	if hp <= 0:
-		hud.show_message('Tabea died!')
+		HUD.show_message('Tabea died!')
 		print('Tabea died!')
 
 func equip_gun():
@@ -45,10 +40,10 @@ func unequip_gun():
 
 func shoot():
 	if gun_equipped:
-		if ammo > 0:
+		if HUD.get_ammo_tabea() > 0:
 			if timer.is_stopped():
 				ammo -= 1
-				ammo_bar_tabea.frame = ammo
+				HUD.set_ammo_tabea(ammo)
 				timer.start(0.7)
 				fire_effect.visible=true
 				gunshot.play()
@@ -60,7 +55,7 @@ func shoot():
 			print('Out of ammo: reloading')
 			reload.play()
 			ammo = 5
-			ammo_bar_tabea.frame = ammo
+			HUD.ammo_tabea.frame = ammo
 			timer.start(3)
 	
 func shot_fired(dmg):	
@@ -85,8 +80,7 @@ func shot_fired(dmg):
 	projectile.dmg = dmg
 			
 	#register fireball in its container
-	projectile_container.add_child(projectile)
-	print(projectile_container.get_children())
+	Projectiles.add_child(projectile)	
 	
 func _physics_process(delta):
 	# Add the gravity.

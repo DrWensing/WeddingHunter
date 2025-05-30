@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://emmfq8lh6jgj"]
+
+[ext_resource type="Script" path="res://scripts/gamemanager.gd" id="1_a3x08"]
+[ext_resource type="PackedScene" uid="uid://c6aigfqfw3rwu" path="res://scenes/hud.tscn" id="2_ccfcw"]
+[ext_resource type="PackedScene" uid="uid://ddw13eshdxjaf" path="res://scenes/multi_target_cam.tscn" id="3_qm0kp"]
+
+[node name="Main" type="Node2D"]
+process_mode = 1
+position = Vector2(79, 47)
+script = ExtResource("1_a3x08")
+metadata/_edit_horizontal_guides_ = [-252.0]
+
+[node name="HUD" parent="." instance=ExtResource("2_ccfcw")]
+unique_name_in_owner = true
+
+[node name="projectile_container" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="Main2D" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="MultiTargetCam" parent="Main2D" instance=ExtResource("3_qm0kp")]
+unique_name_in_owner = true

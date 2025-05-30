@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="WeddingHunter"
-run/main_scene="res://scenes/level1.tscn"
+run/main_scene="res://scenes/maingame.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,7 +20,9 @@ config/icon="res://icon.svg"
 Music="*res://scenes/music.tscn"
 InteractionManager="*res://interaction/InteractionManager.tscn"
 MultiTargetCam="*res://scenes/multi_target_cam.tscn"
-Player="*res://scenes/player.tscn"
+Main="*res://scripts/gamemanager.gd"
+HUD="*res://scenes/hud.tscn"
+Projectiles="*res://scenes/projectiles.tscn"
 
 [input]
 
