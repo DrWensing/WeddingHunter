@@ -8,6 +8,16 @@ signal start_game
 @onready var ammo_henrik = $ammo_henrik
 @onready var ammo_tabea = $ammo_tabea
 
+@onready var HP_bar_henrik = %HP_bar_henrik
+@onready var HP_bar_tabea = %HP_bar_tabea
+
+
+func set_hp_henrik(hp):
+	HP_bar_henrik.value = hp
+	
+func set_hp_tabea(hp):
+	HP_bar_tabea.value = hp
+
 func set_ammo_henrik(ammo):
 	ammo_henrik.frame = ammo
 	

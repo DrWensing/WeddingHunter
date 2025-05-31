@@ -14,3 +14,10 @@ func _ready():
 	tabea.equip_gun()
 	
 	HUD.show_message("Level 2: Ballert euch den Weg frei.")
+
+func _process(delta):
+	if get_max_player_xpos() > 3300:
+		HUD.show_message("Diese Portale scheinen Risse in der Raum-Zeit zu sein...Wo wir wohl jetzt rauskommen?",5.0)
+	
+func get_max_player_xpos():
+	return max(henrik.position.x,tabea.position.x)

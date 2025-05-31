@@ -20,7 +20,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 	
 func take_damage(dmg):
 	hp -= dmg	
-	HUD.hp_bar_tabea.valuea = hp
+	HUD.set_hp_tabea(hp)
 	print('Tabea HP remaining ' + str(hp))
 	
 	if hp <= 0:

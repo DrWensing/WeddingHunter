@@ -5,6 +5,7 @@ extends Node
 @onready var hud = %HUD
 
 @onready var cam = %Main2D/MultiTargetCam
+@onready var timer = $Timer
 
 const LevelPath = "res://scenes/Levels/"
 
@@ -15,18 +16,10 @@ var score: int = 0
 func add_point():
 	score += 1
 	hud.update_score_label(score)
-	
-#func add_projectile(projectile):
-	#add projectile
-	#print(projectile)
-	#print(projectile_container)
-	#projectile_container.add_child(projectile)
-	#print(projectile_container.get_children())
 
 func _ready():
-	var starting_level = 4
+	var starting_level = 1
 	load_level(starting_level)
-
 	
 func load_level(level: int) -> void:
 	# Remove the current level if it exists		
@@ -58,5 +51,30 @@ func players_receive_guns():
 	
 func show_message(str, time_delay):
 	hud.show_message(str, time_delay)
+	
+func player_died(body):
+	Engine.time_scale = 0.5
+	body.get_node("CollisionShape2D").queue_free()
+	body.velocity.y = +100
 
+	#launch timer
+	var kill_timer: Timer = Timer.new()
+	add_child(kill_timer)
+	kill_timer.one_shot = true
+	kill_timer.autostart = false
+	kill_timer.wait_time = 1.0
+	kill_timer.timeout.connect(_on_kill_timer_timeout)
+	kill_timer.start()
+	match body.name:
+		'Player': 
+			HUD.show_message("Game Over: Henrik wurde gekillt!")
+		'Player2':
+			HUD.show_message("Game Over: Tabea wurde gekillt!")
+		'Dog':
+			HUD.show_message("Game Over: Hermann wurde gekillt!")
 
+func _on_kill_timer_timeout():
+	print('TIMEOUT')
+	Engine.time_scale = 1.0
+	get_tree().reload_current_scene()
+	pass # Replace with function body.

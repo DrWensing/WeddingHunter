@@ -33,13 +33,26 @@ func _process(delta):
 			Boss_defeated()
 			boss_alive = false
 	if boss_alive:
-		if henrik.position.x > 1000 or tabea.position.x > 1000:
-			print('Start Music')
+		if get_max_player_xpos() > 1000:
 			if not BossMusic.playing:
 				BossMusic.play()
+		
+		#if Boss is close enough, perform attack, stop walking
+		#player is pushed back
+		if Boss_Balrog.position.x - get_max_player_xpos() < 100:
+			Boss_Balrog.attack()
+			if Boss_Balrog.position.x - henrik.position.x < 100:
+				henrik.take_damage(30)				
+				henrik.position.x = Boss_Balrog.position.x - 200
+			if Boss_Balrog.position.x - tabea.position.x < 100:
+				tabea.take_damage(30)
+				tabea.position.x = Boss_Balrog.position.x - 200
+
+func get_max_player_xpos():
+	return max(henrik.position.x,tabea.position.x)
 
 func Boss_defeated():
 	BossMusic.stop()
-	HUD.show_message("DU KOMMST NICHT VORBEI! Weiter geht's")
-	NextLevelPortal.global_position = Vector2(1150,950)
-	NextLevelPortal.global_position = Vector2(1270,820)
+	HUD.show_message("Henrik & Tabea: 'DU KOMMST NICHT VORBEI!' \n Weiter geht's")
+	NextLevelPortal.global_position = Vector2(1500,270)
+

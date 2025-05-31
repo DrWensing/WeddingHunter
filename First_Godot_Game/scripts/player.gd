@@ -23,7 +23,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func take_damage(dmg):
 	hp -= dmg
-	HUD.hp_bar_henrik.value = hp
+	HUD.set_hp_henrik(hp)
 	print('Henrik HP remaining ' + str(hp))
 	
 	if hp <= 0:

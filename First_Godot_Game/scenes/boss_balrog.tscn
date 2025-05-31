@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://pcaofyls6j15"]
+[gd_scene load_steps=25 format=3 uid="uid://pcaofyls6j15"]
 
 [ext_resource type="Script" path="res://scenes/boss_balrog.gd" id="1_i50s3"]
 [ext_resource type="Texture2D" uid="uid://bm5xrrmn5npas" path="res://assets/sprites/Balrog.png" id="2_dcfpd"]
 [ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="3_5tqrx"]
+[ext_resource type="Texture2D" uid="uid://mp04jipovpv5" path="res://assets/sprites/Balrog 2.png" id="3_in4qa"]
 [ext_resource type="PackedScene" uid="uid://bwnmfy4o7oy0n" path="res://scenes/health_bar.tscn" id="4_sjh4q"]
 [ext_resource type="Script" path="res://scenes/CollisionShape2D.gd" id="5_21o1p"]
 [ext_resource type="LabelSettings" uid="uid://ii4fh6vh28xn" path="res://assets/fonts/BossLabelFont.tres" id="6_wuqkq"]
@@ -14,6 +15,22 @@ region = Rect2(128, 0, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_yc4s5"]
 atlas = ExtResource("2_dcfpd")
 region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_to3ok"]
+atlas = ExtResource("3_in4qa")
+region = Rect2(80, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymwhk"]
+atlas = ExtResource("3_in4qa")
+region = Rect2(160, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2lxb"]
+atlas = ExtResource("3_in4qa")
+region = Rect2(0, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlv3i"]
+atlas = ExtResource("3_in4qa")
+region = Rect2(0, 80, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2l75l"]
 atlas = ExtResource("2_dcfpd")
@@ -35,6 +52,18 @@ region = Rect2(0, 256, 128, 128)
 atlas = ExtResource("2_dcfpd")
 region = Rect2(128, 256, 128, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_n18us"]
+atlas = ExtResource("3_in4qa")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3cvb"]
+atlas = ExtResource("3_in4qa")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_murba"]
+atlas = ExtResource("3_in4qa")
+region = Rect2(160, 0, 80, 80)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_46vth"]
 animations = [{
 "frames": [{
@@ -46,6 +75,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_to3ok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymwhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2lxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlv3i")
+}],
+"loop": true,
+"name": &"attack2",
 "speed": 5.0
 }, {
 "frames": [{
@@ -72,10 +118,24 @@ animations = [{
 "loop": true,
 "name": &"walk",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n18us")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3cvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_murba")
+}],
+"loop": true,
+"name": &"walk2",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fus2r"]
-size = Vector2(20.25, 24)
+size = Vector2(77.125, 85)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hhh4x"]
 size = Vector2(111, 132)
@@ -87,24 +147,16 @@ script = ExtResource("1_i50s3")
 position = Vector2(-8, -88)
 scale = Vector2(2.79, 2.79)
 sprite_frames = SubResource("SpriteFrames_46vth")
-animation = &"walk"
-autoplay = "idle"
-frame_progress = 0.0565604
+animation = &"attack2"
+autoplay = "attack2"
+frame_progress = 0.503484
 flip_h = true
 
 [node name="KillZone" parent="." instance=ExtResource("3_5tqrx")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(2, -12)
+position = Vector2(-6.5625, -47.5)
 shape = SubResource("RectangleShape2D_fus2r")
-
-[node name="RayCast_Right" type="RayCast2D" parent="."]
-position = Vector2(6, 11)
-target_position = Vector2(8, 0)
-
-[node name="RayCast_Left" type="RayCast2D" parent="."]
-position = Vector2(-8, 11)
-target_position = Vector2(-6, 0)
 
 [node name="HealthBar" parent="." instance=ExtResource("4_sjh4q")]
 position = Vector2(-193, -212)
@@ -114,7 +166,7 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(-4, -50)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-18.5, -15)
+position = Vector2(-19, -21)
 shape = SubResource("RectangleShape2D_hhh4x")
 script = ExtResource("5_21o1p")
 
@@ -126,5 +178,8 @@ offset_bottom = -181.0
 text = "Balrog - Durins Fluch"
 label_settings = ExtResource("6_wuqkq")
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

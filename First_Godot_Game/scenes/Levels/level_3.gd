@@ -51,7 +51,6 @@ func _process(delta):
 func Boss_defeated():
 	BossMusic.stop()
 	HUD.show_message('Waidmannsheil. Das Untier wurde erlegt. Der Weg ist nun frei.')
-	NextLevelPortal.global_position = Vector2(1150,950)
 	NextLevelPortal.global_position = Vector2(1270,820)
 	
 	

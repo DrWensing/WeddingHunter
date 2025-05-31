@@ -1,7 +1,7 @@
 extends Node2D
 
-const SPEED = 10
-var direction = 1
+const SPEED = 20
+var direction = -1
 @onready var hp = 200
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -10,20 +10,23 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var ray_cast_right = $RayCast_Right
 @onready var ray_cast_left = $RayCast_Left
+@onready var KillZone = $KillZone
+@onready var attack_timer = $Timer
+
+@onready var is_attacking = false
 
 func _ready():
 	health_bar.initialize(hp)
 
-func _process(delta):
-	if ray_cast_right.is_colliding():
-		direction = -1
-		animated_sprite_2d.flip_h = true
-	if ray_cast_left.is_colliding():
-		direction = +1
-		animated_sprite_2d.flip_h = false
-	
+func _physics_process(delta):
 	#move enemy from left to right (switching direction on collision)
-	position.x +=  direction * SPEED * delta
+	if !is_attacking:
+		position.x +=  direction * SPEED * delta
+	
+	if is_attacking:
+		animated_sprite_2d.play("attack2")
+	else:
+		animated_sprite_2d.play("walk2")
 	
 func receive_damage(dmg):
 	health_bar.take_dmg(dmg)
@@ -38,3 +41,14 @@ func _on_area_2d_area_entered(area):
 	if area.name == "Fireball" or area.name.begins_with("@Area2D"):
 		receive_damage(area.dmg)
 		area.free()
+		
+func attack():
+	is_attacking = true
+	attack_timer.start()
+	print('Balrog attack')
+
+func walk():
+	is_attacking = false
+	
+func _on_timer_timeout():
+	walk()
