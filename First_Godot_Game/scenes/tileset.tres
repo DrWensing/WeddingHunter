@@ -1,8 +1,9 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://d3k1ar04o4po5"]
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://d3k1ar04o4po5"]
 
 [ext_resource type="Texture2D" uid="uid://bxsfle0f2j4nu" path="res://assets/sprites/flowers.png" id="1_0uxxg"]
 [ext_resource type="Texture2D" uid="uid://dfyatufxodnfm" path="res://assets/sprites/world_tileset.png" id="2_bim8x"]
 [ext_resource type="Texture2D" uid="uid://d3yylj4kubawy" path="res://assets/sprites/tilesetcave.png" id="3_p2lgc"]
+[ext_resource type="Texture2D" uid="uid://cc2x0ckulcwqp" path="res://assets/sprites/stein.png" id="3_vnx1j"]
 [ext_resource type="Texture2D" uid="uid://cqbv270oxiwad" path="res://assets/sprites/tilesetOpenGame.png" id="3_w1jec"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8p0sm"]
@@ -454,6 +455,22 @@ texture = ExtResource("2_bim8x")
 2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:4/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i813x"]
+texture = ExtResource("3_vnx1j")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_77asc"]
 texture = ExtResource("3_p2lgc")
 texture_region_size = Vector2i(32, 32)
@@ -632,3 +649,4 @@ sources/1 = SubResource("TileSetAtlasSource_opn1e")
 sources/5 = SubResource("TileSetAtlasSource_sh7i7")
 sources/0 = SubResource("TileSetAtlasSource_8p0sm")
 sources/4 = SubResource("TileSetAtlasSource_77asc")
+sources/2 = SubResource("TileSetAtlasSource_i813x")
