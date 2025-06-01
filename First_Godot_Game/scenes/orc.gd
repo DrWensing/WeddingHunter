@@ -8,7 +8,7 @@ var direction = 1
 @onready var hp = 70
 @onready var health_bar = $HealthBar
 
-var registered_player = null
+var registered_player = []
 var on_cooldown=false
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -22,7 +22,7 @@ func _ready():
 
 func _on_alert_area_body_entered(body):
 	if body.name.begins_with("Player"):
-		registered_player = body
+		registered_player.append(body)
 		alert = true
 		animation_sprite.play("walk")
 		alert_label.text = "?!"
@@ -37,12 +37,13 @@ func _physics_process(delta):
 	if on_cooldown:
 		return
 		
-	if registered_player:
-		var distance_to_player = registered_player.position.x - self.position.x 
-		if abs(distance_to_player)>30:
+	if not registered_player.is_empty():
+		var closest_player = get_closest_player()
+		var distance_to_closest_player = closest_player.position.x - self.position.x 
+		if abs(distance_to_closest_player)>30:
 			animation_sprite.play("walk")
 			#follow player
-			if distance_to_player < 0:
+			if distance_to_closest_player < 0:
 				direction = -1
 			else:
 				direction = +1
@@ -52,9 +53,9 @@ func _physics_process(delta):
 			animation_sprite.play("attack")
 			velocity.x = 0
 			#deal damage
-			registered_player.take_damage(20)
+			closest_player.take_damage(20)
 			#knockback
-			registered_player.position.x += direction*20
+			closest_player.position.x += direction*20
 			
 			#start timer until orc moves again
 			var attack_timer: Timer = Timer.new()
@@ -68,6 +69,20 @@ func _physics_process(delta):
 		
 	move_and_slide()
 
+func get_closest_player():
+	#only 1 player detected
+	if registered_player.size()==1:
+		return registered_player[0]
+	
+	#2 players:
+	var dist0 = registered_player[0].position.x - self.position.x
+	var dist1 = registered_player[1].position.x - self.position.x
+	
+	if abs(dist0) < abs(dist1):
+		return registered_player[0]
+	else:
+		return registered_player[1]
+	
 func _on_attack_timer_timeout():
 	on_cooldown = false
 	

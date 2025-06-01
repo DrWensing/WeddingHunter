@@ -28,7 +28,7 @@ func take_damage(dmg):
 	
 	if hp <= 0:
 		HUD.show_message('Henrik died!')
-		print('Henrik died!')
+		Main.player_died(self)
 
 func equip_gun():	
 	gun.visible=true
