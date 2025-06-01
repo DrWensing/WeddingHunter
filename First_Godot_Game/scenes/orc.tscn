@@ -323,6 +323,7 @@ frame = 3
 frame_progress = 0.450538
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_avy4u")
 
@@ -335,6 +336,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlertArea"]
+visible = false
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_nglqh")
 
@@ -347,6 +349,7 @@ offset_bottom = -45.0
 [node name="HitBox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+visible = false
 position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_fmedu")
 
