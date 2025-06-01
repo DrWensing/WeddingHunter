@@ -5,12 +5,11 @@ signal start_game
 @onready var score_label = $ScoreLabel
 @onready var message = $Message
 @onready var message_timer = $MessageTimer
-@onready var ammo_henrik = $ammo_henrik
-@onready var ammo_tabea = $ammo_tabea
+@onready var ammo_henrik = %ammo_henrik
+@onready var ammo_tabea = %ammo_tabea
 
 @onready var HP_bar_henrik = %HP_bar_henrik
 @onready var HP_bar_tabea = %HP_bar_tabea
-
 
 func set_hp_henrik(hp):
 	HP_bar_henrik.value = hp
@@ -56,5 +55,3 @@ func _on_message_timer_timeout():
 	$Message.hide()
 	$Message.text=""
 
-func _ready():
-	$Message.text=""

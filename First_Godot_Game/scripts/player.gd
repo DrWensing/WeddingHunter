@@ -36,6 +36,7 @@ func equip_gun():
 	gun.visible=true
 	gun_equipped = true
 	fire_effect.visible=false
+	HUD.set_ammo_henrik(ammo)
 	reload.play()
 	
 func unequip_gun():
@@ -48,7 +49,7 @@ func shoot():
 		if ammo > 0:
 			if timer.is_stopped():
 				ammo -= 1
-				HUD.ammo_henrik.frame = ammo
+				HUD.set_ammo_henrik(ammo)
 				timer.start(0.7)
 				fire_effect.visible=true
 				gunshot.play()
@@ -60,8 +61,8 @@ func shoot():
 			print('Out of ammo: reloading')
 			reload.play()
 			ammo = 5
-			HUD.ammo_henrik.frame = ammo
-			timer.start(3)
+			HUD.set_ammo_henrik(ammo)
+			timer.start(2.5)
 
 func shot_fired(dmg):	
 	var projectile = projectilePrefab.instantiate()

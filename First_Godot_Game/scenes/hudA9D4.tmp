@@ -13,27 +13,27 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7kkb"]
 bg_color = Color(1, 0, 0, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mm52p"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dv1p"]
 atlas = ExtResource("6_bhvs4")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8bcl0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m85hr"]
 atlas = ExtResource("6_bhvs4")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bqslj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2wej"]
 atlas = ExtResource("6_bhvs4")
 region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qcbjn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vn0b"]
 atlas = ExtResource("6_bhvs4")
 region = Rect2(192, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_66akk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8oaat"]
 atlas = ExtResource("6_bhvs4")
 region = Rect2(256, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ebglg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6kgv"]
 atlas = ExtResource("6_bhvs4")
 region = Rect2(320, 0, 64, 64)
 
@@ -41,22 +41,22 @@ region = Rect2(320, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mm52p")
+"texture": SubResource("AtlasTexture_8dv1p")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8bcl0")
+"texture": SubResource("AtlasTexture_m85hr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bqslj")
+"texture": SubResource("AtlasTexture_a2wej")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qcbjn")
+"texture": SubResource("AtlasTexture_2vn0b")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_66akk")
+"texture": SubResource("AtlasTexture_8oaat")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ebglg")
+"texture": SubResource("AtlasTexture_e6kgv")
 }],
 "loop": true,
 "name": &"ammo",
@@ -146,12 +146,14 @@ unique_name_in_owner = true
 position = Vector2(175, 75)
 sprite_frames = SubResource("SpriteFrames_eyfip")
 animation = &"ammo"
+frame = 5
 
 [node name="ammo_tabea" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(969, 75)
 sprite_frames = SubResource("SpriteFrames_eyfip")
 animation = &"ammo"
+frame = 5
 flip_h = true
 
 [node name="Message" type="Label" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dbxv3dvdgxqku"]
+[gd_scene load_steps=14 format=3 uid="uid://dbxv3dvdgxqku"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_4.gd" id="1_kyprc"]
 [ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="2_0xqfv"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b5cs6ubf1g8ex" path="res://scenes/zwockel.tscn" id="10_or2vq"]
 [ext_resource type="PackedScene" uid="uid://dicdpchxv8chk" path="res://scenes/platform.tscn" id="11_vvatw"]
 [ext_resource type="PackedScene" uid="uid://dtpn5wksg1o0v" path="res://scenes/coin.tscn" id="12_jgi64"]
+[ext_resource type="Texture2D" uid="uid://dick1114k4bpt" path="res://assets/background/7MF3Jn.png" id="13_mck5c"]
 
 [node name="Level4" type="Node2D"]
 position = Vector2(18, 132)
@@ -44,7 +45,7 @@ stream = ExtResource("7_ju2j3")
 position = Vector2(514, -16)
 
 [node name="Boss_Balrog" parent="." instance=ExtResource("9_1dfpe")]
-position = Vector2(1559, 196)
+position = Vector2(1578, 207)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("10_di7sg")]
 position = Vector2(873, -47)
@@ -114,3 +115,25 @@ position = Vector2(-1285, 162)
 
 [node name="CharacterBody2D13" parent="." instance=ExtResource("10_di7sg")]
 position = Vector2(-1343, 167)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(459.125, 187.625)
+scale = Vector2(0.499297, 0.526094)
+texture = ExtResource("13_mck5c")
+
+[node name="Platform7" parent="." instance=ExtResource("11_vvatw")]
+position = Vector2(-362, -23)
+
+[node name="Platform8" parent="." instance=ExtResource("11_vvatw")]
+position = Vector2(-118, -64)
+
+[node name="Platform9" parent="." instance=ExtResource("11_vvatw")]
+position = Vector2(-51, -73)
+
+[node name="Platform10" parent="." instance=ExtResource("11_vvatw")]
+position = Vector2(-400, -23)

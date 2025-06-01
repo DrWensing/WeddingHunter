@@ -58,7 +58,7 @@ func shoot():
 			reload.play()
 			ammo = 5
 			HUD.ammo_tabea.frame = ammo
-			timer.start(3)
+			timer.start(2.5)
 	
 func shot_fired(dmg):	
 	var projectile = projectilePrefab.instantiate()

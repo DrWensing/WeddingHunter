@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqs0wwguahnsp"]
+[gd_scene load_steps=12 format=3 uid="uid://cqs0wwguahnsp"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_3.gd" id="1_ihune"]
 [ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="2_g8cr8"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dicdpchxv8chk" path="res://scenes/platform.tscn" id="8_k184q"]
 [ext_resource type="AudioStream" uid="uid://cyou7r22tj2ee" path="res://assets/music/DS3_vordt.mp3" id="9_fws0j"]
 [ext_resource type="PackedScene" uid="uid://b5cs6ubf1g8ex" path="res://scenes/zwockel.tscn" id="10_s83ah"]
+[ext_resource type="Texture2D" uid="uid://d0ftkeprcgg5y" path="res://assets/background/wald3.jpg" id="11_f1jax"]
 
 [node name="Level3" type="Node2D"]
 position = Vector2(18, 132)
@@ -63,3 +64,13 @@ position = Vector2(1674, 732)
 
 [node name="Platform7" parent="." instance=ExtResource("8_k184q")]
 position = Vector2(1599, 757)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(316, 156)
+scale = Vector2(0.618206, 0.606318)
+texture = ExtResource("11_f1jax")

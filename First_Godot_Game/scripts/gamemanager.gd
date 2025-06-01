@@ -18,7 +18,7 @@ func add_point():
 	hud.update_score_label(score)
 
 func _ready():
-	var starting_level = 4
+	var starting_level = 3
 	load_level(starting_level)
 	
 func load_level(level: int) -> void:
