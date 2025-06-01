@@ -1,10 +1,13 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://d3k1ar04o4po5"]
+[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://d3k1ar04o4po5"]
 
 [ext_resource type="Texture2D" uid="uid://bxsfle0f2j4nu" path="res://assets/sprites/flowers.png" id="1_0uxxg"]
 [ext_resource type="Texture2D" uid="uid://dfyatufxodnfm" path="res://assets/sprites/world_tileset.png" id="2_bim8x"]
 [ext_resource type="Texture2D" uid="uid://d3yylj4kubawy" path="res://assets/sprites/tilesetcave.png" id="3_p2lgc"]
 [ext_resource type="Texture2D" uid="uid://cc2x0ckulcwqp" path="res://assets/sprites/stein.png" id="3_vnx1j"]
 [ext_resource type="Texture2D" uid="uid://cqbv270oxiwad" path="res://assets/sprites/tilesetOpenGame.png" id="3_w1jec"]
+[ext_resource type="Texture2D" uid="uid://ucda8q7q3p26" path="res://assets/sprites/tombstone.png" id="4_sno2j"]
+[ext_resource type="Texture2D" uid="uid://b3fd2revxwpp4" path="res://assets/sprites/Goldlore.png" id="7_sb6f0"]
+[ext_resource type="Texture2D" uid="uid://cawirn0b5cwdx" path="res://assets/sprites/Geld.png" id="8_d0fei"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8p0sm"]
 texture = ExtResource("1_0uxxg")
@@ -471,6 +474,13 @@ texture_region_size = Vector2i(32, 32)
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iwc2u"]
+texture = ExtResource("4_sno2j")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_77asc"]
 texture = ExtResource("3_p2lgc")
 texture_region_size = Vector2i(32, 32)
@@ -642,6 +652,23 @@ texture_region_size = Vector2i(32, 32)
 1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:4/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m3ne0"]
+texture = ExtResource("7_sb6f0")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_36xcx"]
+texture = ExtResource("8_d0fei")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
 [resource]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
@@ -650,3 +677,6 @@ sources/5 = SubResource("TileSetAtlasSource_sh7i7")
 sources/0 = SubResource("TileSetAtlasSource_8p0sm")
 sources/4 = SubResource("TileSetAtlasSource_77asc")
 sources/2 = SubResource("TileSetAtlasSource_i813x")
+sources/3 = SubResource("TileSetAtlasSource_iwc2u")
+sources/6 = SubResource("TileSetAtlasSource_m3ne0")
+sources/7 = SubResource("TileSetAtlasSource_36xcx")
