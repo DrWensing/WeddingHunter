@@ -19,13 +19,15 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var projectilePrefab:PackedScene
 	
 func take_damage(dmg):
+	if hp <= 0:
+		#already dead
+		return
 	hp -= dmg	
 	HUD.set_hp_tabea(hp)
 	print('Tabea HP remaining ' + str(hp))
 	
 	if hp <= 0:
-		HUD.show_message('Tabea died!')
-		print('Tabea died!')
+		Main.player_died(self)
 
 func equip_gun():
 	gun.visible=true

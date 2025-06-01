@@ -12,6 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var ray_cast_left = $RayCast_Left
 @onready var KillZone = $KillZone
 @onready var attack_timer = $Timer
+@onready var active = false
 
 @onready var is_attacking = false
 
@@ -20,6 +21,9 @@ func _ready():
 
 func _physics_process(delta):
 	#move enemy from left to right (switching direction on collision)
+	if active == false:
+		return
+		
 	if !is_attacking:
 		position.x +=  direction * SPEED * delta
 	

@@ -36,6 +36,7 @@ func _process(delta):
 		if get_max_player_xpos() > 1000:
 			if not BossMusic.playing:
 				BossMusic.play()
+				Boss_Balrog.active = true
 		
 		#if Boss is close enough, perform attack, stop walking
 		#player is pushed back

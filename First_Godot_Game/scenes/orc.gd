@@ -19,6 +19,8 @@ func _ready():
 	#set alert label to nothing
 	alert_label.text = ""
 	alert_label.hide()
+	
+	health_bar.initialize(hp)
 
 func _on_alert_area_body_entered(body):
 	if body.name.begins_with("Player"):
@@ -39,14 +41,17 @@ func _physics_process(delta):
 		
 	if not registered_player.is_empty():
 		var closest_player = get_closest_player()
-		var distance_to_closest_player = closest_player.position.x - self.position.x 
-		if abs(distance_to_closest_player)>30:
+		var x_distance_to_closest_player = closest_player.position.x - self.position.x 
+		var y_distance_to_closest_player = closest_player.position.y - self.position.y
+		if abs(x_distance_to_closest_player)>30 or abs(y_distance_to_closest_player)>30:
 			animation_sprite.play("walk")
 			#follow player
-			if distance_to_closest_player < 0:
+			if x_distance_to_closest_player < 0:
 				direction = -1
+				animation_sprite.flip_h = false
 			else:
 				direction = +1
+				animation_sprite.flip_h = true
 				
 			velocity.x = SPEED*direction
 		else:
