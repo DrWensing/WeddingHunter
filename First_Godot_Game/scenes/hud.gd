@@ -54,4 +54,8 @@ func show_game_over():
 func _on_message_timer_timeout():
 	$Message.hide()
 	$Message.text=""
+	
+func _ready():
+	$Message.hide()
+	$Message.text=""
 

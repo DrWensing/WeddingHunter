@@ -319,8 +319,7 @@ script = ExtResource("1_a1apt")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_iuvjf")
 animation = &"attack"
-frame = 3
-frame_progress = 0.450538
+frame_progress = 0.091063
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
