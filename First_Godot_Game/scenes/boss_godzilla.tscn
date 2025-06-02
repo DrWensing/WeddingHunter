@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=3 uid="uid://ctic5suotwouq"]
+
+[ext_resource type="Script" path="res://scenes/boss_godzilla.gd" id="1_0jrdn"]
+[ext_resource type="Texture2D" uid="uid://c6y6lhliqb1mb" path="res://assets/sprites/godzilla.png" id="2_dss0o"]
+[ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="4_7seis"]
+[ext_resource type="PackedScene" uid="uid://bwnmfy4o7oy0n" path="res://scenes/health_bar.tscn" id="5_yhr0i"]
+[ext_resource type="AudioStream" uid="uid://bfu3w61y28o6h" path="res://assets/sounds/Godzilla_Roar-Marc-1912765428.mp3" id="6_adok4"]
+[ext_resource type="PackedScene" uid="uid://y051v6gplna2" path="res://scenes/laser.tscn" id="6_i10hi"]
+[ext_resource type="LabelSettings" uid="uid://ii4fh6vh28xn" path="res://assets/fonts/BossLabelFont.tres" id="7_r7cqd"]
+[ext_resource type="AudioStream" uid="uid://cv6ug6um625xf" path="res://assets/sounds/Godzilla_Walking-Marc-806484099.mp3" id="8_njow3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wftk5"]
+atlas = ExtResource("2_dss0o")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_46vth"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wftk5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fus2r"]
+size = Vector2(129, 81.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yh2x4"]
+size = Vector2(330, 535)
+
+[node name="Boss_Godzilla" type="Node2D"]
+script = ExtResource("1_0jrdn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(413, 235)
+scale = Vector2(0.575, 0.575)
+sprite_frames = SubResource("SpriteFrames_46vth")
+animation = &"idle"
+
+[node name="KillZone" parent="." instance=ExtResource("4_7seis")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(298.5, 28.25)
+shape = SubResource("RectangleShape2D_fus2r")
+
+[node name="HealthBar" parent="." instance=ExtResource("5_yhr0i")]
+position = Vector2(230, -72)
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 310.0
+offset_top = -68.0
+offset_right = 529.0
+offset_bottom = -45.0
+text = "Godzilla - König der Monster"
+label_settings = ExtResource("7_r7cqd")
+
+[node name="Roar" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_adok4")
+
+[node name="laser" parent="." instance=ExtResource("6_i10hi")]
+z_index = -1
+position = Vector2(-131, 18)
+
+[node name="GodzillaSteps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_njow3")
+
+[node name="FireTimer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+
+[node name="ChargeTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="MoveTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(474, 256.5)
+shape = SubResource("RectangleShape2D_yh2x4")
+
+[connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
+[connection signal="timeout" from="ChargeTimer" to="." method="_on_charge_timer_timeout"]
+[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

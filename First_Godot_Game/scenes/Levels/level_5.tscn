@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8ojgxolsorr8"]
+[gd_scene load_steps=11 format=3 uid="uid://bjf3udm32mp8s"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_5.gd" id="1_xgvtm"]
 [ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="2_sj70q"]
@@ -6,9 +6,10 @@
 [ext_resource type="TileSet" uid="uid://d3k1ar04o4po5" path="res://scenes/tileset.tres" id="4_uur56"]
 [ext_resource type="PackedScene" uid="uid://cmr01mlt3f52b" path="res://scenes/dog.tscn" id="5_bo28f"]
 [ext_resource type="PackedScene" uid="uid://cgboi5v27efyg" path="res://scenes/next_level.tscn" id="6_lmep4"]
-[ext_resource type="AudioStream" uid="uid://cyou7r22tj2ee" path="res://assets/music/DS3_vordt.mp3" id="9_kf6li"]
+[ext_resource type="AudioStream" uid="uid://dyhn4c7gm4cgu" path="res://assets/music/DS3_Demon_Prince.mp3" id="7_2uohg"]
 [ext_resource type="Texture2D" uid="uid://bdud7uh4speyw" path="res://assets/background/tokio.png" id="9_rmuej"]
-[ext_resource type="PackedScene" uid="uid://0y22nk1jv1nx" path="res://scenes/platform_very_long.tscn" id="10_xnfvq"]
+[ext_resource type="PackedScene" uid="uid://ctic5suotwouq" path="res://scenes/boss_godzilla.tscn" id="10_pstji"]
+[ext_resource type="PackedScene" path="res://scenes/platform_very_long.tscn" id="10_xnfvq"]
 
 [node name="Level5" type="Node2D"]
 position = Vector2(18, 132)
@@ -22,18 +23,19 @@ position = Vector2(128, -36)
 unique_name_in_owner = true
 position = Vector2(71, -36)
 
+[node name="Dog" parent="." instance=ExtResource("5_bo28f")]
+position = Vector2(172, -27)
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("4_uur56")
 format = 2
-
-[node name="Dog" parent="." instance=ExtResource("5_bo28f")]
-position = Vector2(172, -27)
 
 [node name="NextLevel" parent="." instance=ExtResource("6_lmep4")]
 position = Vector2(1521, -41)
 
 [node name="BossMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_kf6li")
+stream = ExtResource("7_2uohg")
+volume_db = 4.274
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -45,14 +47,31 @@ position = Vector2(316, 156)
 scale = Vector2(0.618206, 0.606318)
 texture = ExtResource("9_rmuej")
 
-[node name="Platform2" parent="." instance=ExtResource("10_xnfvq")]
-position = Vector2(84, 25)
+[node name="Boss_Godzilla" parent="." instance=ExtResource("10_pstji")]
+position = Vector2(467, -44)
 
-[node name="Platform" parent="." instance=ExtResource("10_xnfvq")]
-position = Vector2(186, 74)
+[node name="Platforms" type="Node" parent="."]
 
-[node name="Platform3" parent="." instance=ExtResource("10_xnfvq")]
-position = Vector2(298, 74)
+[node name="Platform2" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(597, 63)
 
-[node name="Platform4" parent="." instance=ExtResource("10_xnfvq")]
-position = Vector2(412, 74)
+[node name="Platform" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(204, 206)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(316, 206)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(430, 206)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(532, 106)
+
+[node name="Platform5" parent="Platforms/Platform5" instance=ExtResource("10_xnfvq")]
+position = Vector2(68, 40)
+
+[node name="Platform5" parent="Platforms/Platform5/Platform5" instance=ExtResource("10_xnfvq")]
+position = Vector2(-67, 39)
+
+[node name="Platform5" parent="." instance=ExtResource("10_xnfvq")]
+position = Vector2(68, 40)

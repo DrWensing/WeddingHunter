@@ -1,0 +1,62 @@
+extends Node2D
+
+func _ready():
+	$AnimatedSprite2D.play()
+	$AnimatedSprite2D2.play()
+	$AnimatedSprite2D3.play()
+	$AnimatedSprite2D4.play()
+	$AnimatedSprite2D5.play()
+	$AnimatedSprite2D6.play()
+	$AnimatedSprite2D7.play()
+	$AnimatedSprite2D8.play()
+	$AnimatedSprite2D9.play()
+	$AnimatedSprite2D10.play()
+	$AnimatedSprite2D11.play()
+	$AnimatedSprite2D12.play()
+	$AnimatedSprite2D13.play()
+	$AnimatedSprite2D14.play()
+	$AnimatedSprite2D15.play()
+	$AnimatedSprite2D16.play()
+
+func hide_animation():
+	$AnimatedSprite2D.hide()
+	$AnimatedSprite2D2.hide()
+	$AnimatedSprite2D3.hide()
+	$AnimatedSprite2D4.hide()
+	$AnimatedSprite2D5.hide()
+	$AnimatedSprite2D6.hide()
+	$AnimatedSprite2D7.hide()
+	$AnimatedSprite2D8.hide()
+	$AnimatedSprite2D9.hide()
+	$AnimatedSprite2D10.hide()
+	$AnimatedSprite2D11.hide()
+	$AnimatedSprite2D12.hide()
+	$AnimatedSprite2D13.hide()
+	$AnimatedSprite2D14.hide()
+	$AnimatedSprite2D15.hide()
+	$AnimatedSprite2D16.hide()
+
+func show_animation():
+	$AnimatedSprite2D.show()
+	$AnimatedSprite2D2.show()
+	$AnimatedSprite2D3.show()
+	$AnimatedSprite2D4.show()
+	$AnimatedSprite2D5.show()
+	$AnimatedSprite2D6.show()
+	$AnimatedSprite2D7.show()
+	$AnimatedSprite2D8.show()
+	$AnimatedSprite2D9.show()
+	$AnimatedSprite2D10.show()
+	$AnimatedSprite2D11.show()
+	$AnimatedSprite2D12.show()
+	$AnimatedSprite2D13.show()
+	$AnimatedSprite2D14.show()
+	$AnimatedSprite2D15.show()
+	$AnimatedSprite2D16.show()
+
+func charging():
+	#only show charging beams
+	hide_animation()
+	$AnimatedSprite2D15.show()
+	$AnimatedSprite2D16.show()
+	

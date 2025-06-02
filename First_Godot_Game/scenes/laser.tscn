@@ -1,0 +1,209 @@
+[gd_scene load_steps=15 format=3 uid="uid://y051v6gplna2"]
+
+[ext_resource type="Script" path="res://scenes/laser.gd" id="1_n6ram"]
+[ext_resource type="Texture2D" uid="uid://ce2gk028y35jt" path="res://assets/sprites/Blue Effect Bullet Impact Explosion 32x32.png" id="1_v4jdg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbntx"]
+atlas = ExtResource("1_v4jdg")
+region = Rect2(512, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2x4ji"]
+atlas = ExtResource("1_v4jdg")
+region = Rect2(544, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih65s"]
+atlas = ExtResource("1_v4jdg")
+region = Rect2(576, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lluh6"]
+atlas = ExtResource("1_v4jdg")
+region = Rect2(608, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp27q"]
+atlas = ExtResource("1_v4jdg")
+region = Rect2(352, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14kqc"]
+atlas = ExtResource("1_v4jdg")
+region = Rect2(384, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvm57"]
+atlas = ExtResource("1_v4jdg")
+region = Rect2(416, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bborp"]
+atlas = ExtResource("1_v4jdg")
+region = Rect2(448, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxokr"]
+atlas = ExtResource("1_v4jdg")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t41e"]
+atlas = ExtResource("1_v4jdg")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbi6k"]
+atlas = ExtResource("1_v4jdg")
+region = Rect2(128, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_btkth"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbntx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2x4ji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ih65s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lluh6")
+}],
+"loop": true,
+"name": &"charging",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fp27q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14kqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvm57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bborp")
+}],
+"loop": true,
+"name": &"laser_fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxokr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4t41e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbi6k")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="laser" type="Node2D"]
+scale = Vector2(2, 1)
+script = ExtResource("1_n6ram")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_btkth")
+animation = &"laser_fire"
+frame_progress = 0.577818
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 0)
+sprite_frames = SubResource("SpriteFrames_btkth")
+animation = &"laser_fire"
+frame_progress = 0.0450483
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(64, 0)
+sprite_frames = SubResource("SpriteFrames_btkth")
+animation = &"laser_fire"
+frame_progress = 0.62999
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(96, 0)
+sprite_frames = SubResource("SpriteFrames_btkth")
+animation = &"laser_fire"
+frame_progress = 0.330811
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+position = Vector2(128, 0)
+sprite_frames = SubResource("SpriteFrames_btkth")
+animation = &"laser_fire"
+frame = 3
+frame_progress = 0.253944
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 0)
+sprite_frames = SubResource("SpriteFrames_btkth")
+animation = &"laser_fire"
+frame_progress = 0.927305
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="."]
+position = Vector2(192, 1)
+sprite_frames = SubResource("SpriteFrames_btkth")
+animation = &"laser_fire"
+frame_progress = 0.242489
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 32)
+sprite_frames = SubResource("SpriteFrames_btkth")
+animation = &"laser_fire"
+frame_progress = 0.460124
+flip_v = true
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="."]
+position = Vector2(64, 32)
+sprite_frames = SubResource("SpriteFrames_btkth")
+animation = &"laser_fire"
+frame_progress = 0.0152201
+flip_v = true
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="."]
+position = Vector2(96, 32)
+sprite_frames = SubResource("SpriteFrames_btkth")
+animation = &"laser_fire"
+frame_progress = 0.304139
+flip_v = true
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="."]
+position = Vector2(128, 32)
+sprite_frames = SubResource("SpriteFrames_btkth")
+animation = &"laser_fire"
+frame_progress = 0.83009
+flip_v = true
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 32)
+sprite_frames = SubResource("SpriteFrames_btkth")
+animation = &"laser_fire"
+frame_progress = 0.559262
+flip_v = true
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="."]
+position = Vector2(192, 33)
+sprite_frames = SubResource("SpriteFrames_btkth")
+animation = &"laser_fire"
+frame_progress = 0.795367
+flip_v = true
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 32)
+sprite_frames = SubResource("SpriteFrames_btkth")
+animation = &"laser_fire"
+frame_progress = 0.448152
+flip_v = true
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="."]
+position = Vector2(179, -6)
+scale = Vector2(2.28125, 1.3125)
+sprite_frames = SubResource("SpriteFrames_btkth")
+animation = &"new_animation"
+frame_progress = 0.0790257
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="."]
+position = Vector2(179, 40)
+scale = Vector2(2.28125, 1.3125)
+sprite_frames = SubResource("SpriteFrames_btkth")
+animation = &"new_animation"
+frame_progress = 0.359502
+flip_v = true

@@ -53,3 +53,8 @@ func add_target(t):
 func remove_target(t):
 	if t in targets:
 		targets.erase(t)
+		
+func manual_set(position_vector, zoom_factor):
+	self.position = lerp(self.position, position_vector, move_speed)
+	self.zoom = lerp(zoom, zoom_factor, zoom_speed)
+	
