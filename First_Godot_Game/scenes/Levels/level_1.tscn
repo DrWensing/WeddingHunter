@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cuxswnst42fwe"]
+[gd_scene load_steps=14 format=3 uid="uid://cuxswnst42fwe"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_1.gd" id="1_3hmpi"]
 [ext_resource type="TileSet" uid="uid://d3k1ar04o4po5" path="res://scenes/tileset.tres" id="1_lufmf"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dks5ja8qmje3m" path="res://scenes/car.tscn" id="9_4q4rr"]
 [ext_resource type="PackedScene" uid="uid://cgboi5v27efyg" path="res://scenes/next_level.tscn" id="11_f2w5q"]
 [ext_resource type="Texture2D" uid="uid://dagfys8l4bq0" path="res://assets/background/forest.jpg" id="12_k7voe"]
+[ext_resource type="PackedScene" uid="uid://umtsvb7pei0j" path="res://scenes/lama.tscn" id="13_gs2ep"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_3hmpi")
@@ -104,3 +105,6 @@ motion_scale = Vector2(0, 0)
 position = Vector2(320.897, 148.231)
 scale = Vector2(0.618206, 0.606318)
 texture = ExtResource("12_k7voe")
+
+[node name="Node2D" parent="." instance=ExtResource("13_gs2ep")]
+position = Vector2(1944, -279)

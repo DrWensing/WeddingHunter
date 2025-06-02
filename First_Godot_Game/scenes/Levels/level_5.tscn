@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://c8ojgxolsorr8"]
+
+[ext_resource type="Script" path="res://scenes/Levels/level_5.gd" id="1_xgvtm"]
+[ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="2_sj70q"]
+[ext_resource type="PackedScene" uid="uid://cwpg2sneyq6rf" path="res://scenes/player2.tscn" id="3_kiwle"]
+[ext_resource type="TileSet" uid="uid://d3k1ar04o4po5" path="res://scenes/tileset.tres" id="4_uur56"]
+[ext_resource type="PackedScene" uid="uid://cmr01mlt3f52b" path="res://scenes/dog.tscn" id="5_bo28f"]
+[ext_resource type="PackedScene" uid="uid://cgboi5v27efyg" path="res://scenes/next_level.tscn" id="6_lmep4"]
+[ext_resource type="AudioStream" uid="uid://cyou7r22tj2ee" path="res://assets/music/DS3_vordt.mp3" id="9_kf6li"]
+[ext_resource type="Texture2D" uid="uid://bdud7uh4speyw" path="res://assets/background/tokio.png" id="9_rmuej"]
+[ext_resource type="PackedScene" uid="uid://0y22nk1jv1nx" path="res://scenes/platform_very_long.tscn" id="10_xnfvq"]
+
+[node name="Level5" type="Node2D"]
+position = Vector2(18, 132)
+script = ExtResource("1_xgvtm")
+
+[node name="Player" parent="." instance=ExtResource("2_sj70q")]
+unique_name_in_owner = true
+position = Vector2(128, -36)
+
+[node name="Player2" parent="." instance=ExtResource("3_kiwle")]
+unique_name_in_owner = true
+position = Vector2(71, -36)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("4_uur56")
+format = 2
+
+[node name="Dog" parent="." instance=ExtResource("5_bo28f")]
+position = Vector2(172, -27)
+
+[node name="NextLevel" parent="." instance=ExtResource("6_lmep4")]
+position = Vector2(1521, -41)
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_kf6li")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(316, 156)
+scale = Vector2(0.618206, 0.606318)
+texture = ExtResource("9_rmuej")
+
+[node name="Platform2" parent="." instance=ExtResource("10_xnfvq")]
+position = Vector2(84, 25)
+
+[node name="Platform" parent="." instance=ExtResource("10_xnfvq")]
+position = Vector2(186, 74)
+
+[node name="Platform3" parent="." instance=ExtResource("10_xnfvq")]
+position = Vector2(298, 74)
+
+[node name="Platform4" parent="." instance=ExtResource("10_xnfvq")]
+position = Vector2(412, 74)
