@@ -50,10 +50,12 @@ script = ExtResource("1_1dlq0")
 position = Vector2(4, -28)
 scale = Vector2(1, 0.913)
 sprite_frames = SubResource("SpriteFrames_ihqwa")
-animation = &"jump"
 autoplay = "default"
+frame = 1
+frame_progress = 0.359341
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(6, -14)
 shape = SubResource("RectangleShape2D_g1xxk")
 
@@ -62,5 +64,6 @@ script = ExtResource("4_tv5v6")
 action_name = "pet"
 
 [node name="Interaction_radius" type="CollisionShape2D" parent="InteractionArea"]
+visible = false
 position = Vector2(4, -20)
 shape = SubResource("CircleShape2D_61weg")
