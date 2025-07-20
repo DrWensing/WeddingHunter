@@ -18,7 +18,7 @@ func _ready():
 	henrik.equip_gun()
 	tabea.equip_gun()
 	
-	HUD.show_message("Level 5: Tokia \n  2016 n. Chr.")
+	HUD.show_message("Level 5: Tokio \n  2016 n. Chr.")
 	Boss_Godzilla.steps()
 
 func _process(delta):
@@ -42,5 +42,5 @@ func boss_activate():
 	
 func Boss_defeated():
 	BossMusic.stop()
-	HUD.show_message("Henrik & Tabea: \n Der König der Monster wurde gerade entthront")
+	HUD.show_message("Henrik & Tabea: \n Der König der Monster wurde soeben entthront")
 	$NextLevel.global_position = Vector2(1500,270)

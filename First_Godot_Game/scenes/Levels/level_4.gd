@@ -6,6 +6,7 @@ extends Node2D
 #@onready var cam = get_tree().root.get_node("/root/MultiTargetCam")
 @onready var NextLevelPortal = $NextLevel
 @onready var Boss_Balrog = $Boss_Balrog
+@onready var zwockel = $Zwockel
 
 @onready var Warnung_ausgesprochen = false
 @onready var boss_alive = true
@@ -23,7 +24,7 @@ func _ready():
 	
 func _process(delta):
 	if !Warnung_ausgesprochen:
-		if henrik.position.x > 500 or tabea.position.x > 500:
+		if abs(henrik.position.x - zwockel.position.x) < 50 or abs(tabea.position.x - zwockel.position.x) < 50:
 			HUD.show_message("Bei Balin's Bart was treiben Menschen in Khazad-dûm?\n Wie dem auch sei, geht ruhig weiter. Hier gibt es keinerlei Gefahren",10.0)
 			Warnung_ausgesprochen = true
 			

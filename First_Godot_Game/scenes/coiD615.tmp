@@ -169,4 +169,3 @@ libraries = {
 autoplay = "RESET"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="finished" from="pickup_sound" to="." method="_on_pickup_sound_finished"]

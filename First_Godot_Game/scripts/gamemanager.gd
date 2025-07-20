@@ -13,13 +13,10 @@ var current_level: Node = null
 
 var score: int = 0
 
-func add_point():
-	score += 1
-	hud.update_score_label(score)
-
 func _ready():
-	var starting_level = 1
+	var starting_level = 4
 	load_level(starting_level)
+	hud.update_score_label(score)	
 	
 func load_level(level: int) -> void:
 	# Remove the current level if it exists		
@@ -43,6 +40,13 @@ func switch_to_next_level():
 		
 		load_level(next_level_number)
 		
+func add_point():
+	set_score(score + 1)
+	
+func set_score(points):
+	score = points
+	hud.update_score_label(score)
+	
 func players_receive_guns():
 	var player = get_tree().current_scene.get_node("Player") 
 	var player2 = get_tree().current_scene.get_node("Player2") 
@@ -53,8 +57,11 @@ func show_message(str, time_delay):
 	hud.show_message(str, time_delay)
 	
 func player_died(body):
+	set_score(0)
+
 	Engine.time_scale = 0.5
-	body.get_node("CollisionShape2D").queue_free()
+	if body.get_node("CollisionShape2D") != null:
+		body.get_node("CollisionShape2D").queue_free()	
 	body.velocity.y = +100
 
 	#launch timer
@@ -74,7 +81,6 @@ func player_died(body):
 			HUD.show_message("Game Over: Hermann wurde gekillt!")
 
 func _on_kill_timer_timeout():
-	print('TIMEOUT')
 	Engine.time_scale = 1.0
 	get_tree().reload_current_scene()
 	pass # Replace with function body.

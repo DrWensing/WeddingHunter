@@ -4,6 +4,7 @@ extends CanvasLayer
 signal start_game
 @onready var score_label = $ScoreLabel
 @onready var message = $Message
+@onready var message_frame = $MessageFrame
 @onready var message_timer = $MessageTimer
 @onready var ammo_henrik = %ammo_henrik
 @onready var ammo_tabea = %ammo_tabea
@@ -32,9 +33,11 @@ func get_ammo_tabea():
 func update_score_label(score):
 	#sets the score at the top of the screen
 	score_label.text = "Score: " + str(score)
+	print(score_label.text)
 	
 func show_message(text, delaytime = 2):
 	#delaytime is an optional parameter in [s]
+	$MessageFrame.show()
 	$Message.text = text
 	$Message.show()
 	$MessageTimer.wait_time = delaytime
@@ -54,6 +57,7 @@ func show_game_over():
 func _on_message_timer_timeout():
 	$Message.hide()
 	$Message.text=""
+	$MessageFrame.hide()
 	
 func _ready():
 	$Message.hide()

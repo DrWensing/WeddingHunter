@@ -25,7 +25,7 @@ func _process(delta):
 	
 	if !warnung_ausgesprochen and (henrik.position.x > 600 or tabea.position.x > 600):
 		warnung_ausgesprochen = true
-		HUD.show_message("Nehmt euch in Acht. Ein Untier durchstreift diese Gegend.",3.0)
+		HUD.show_message("Nehmt euch in Acht. Ein Untier durchstreift diese Gegend.",4.0)
 	
 	#start boss music once tabea and henrik enter arena
 	if not is_instance_valid(Boss_Bunny):
@@ -33,7 +33,6 @@ func _process(delta):
 			boss_alive = false
 	if boss_alive:
 		if henrik.position.x > 1000 or tabea.position.x > 1000:
-			print('Start Music')
 			if not BossMusic.playing:
 				BossMusic.play()
 				

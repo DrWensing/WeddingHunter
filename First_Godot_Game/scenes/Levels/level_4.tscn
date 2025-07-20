@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dbxv3dvdgxqku"]
+[gd_scene load_steps=16 format=3 uid="uid://dbxv3dvdgxqku"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_4.gd" id="1_kyprc"]
 [ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="2_0xqfv"]
@@ -13,6 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://dicdpchxv8chk" path="res://scenes/platform.tscn" id="11_vvatw"]
 [ext_resource type="PackedScene" uid="uid://dtpn5wksg1o0v" path="res://scenes/coin.tscn" id="12_jgi64"]
 [ext_resource type="Texture2D" uid="uid://dick1114k4bpt" path="res://assets/background/7MF3Jn.png" id="13_mck5c"]
+[ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="14_u1xh5"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_slan4"]
+a = Vector2(2771, -18)
+b = Vector2(-2325, 3)
 
 [node name="Level4" type="Node2D"]
 position = Vector2(18, 132)
@@ -42,81 +47,13 @@ position = Vector2(1847, -126)
 stream = ExtResource("7_ju2j3")
 
 [node name="Zwockel" parent="." instance=ExtResource("10_or2vq")]
-position = Vector2(514, -16)
+position = Vector2(722, -6)
 
 [node name="Boss_Balrog" parent="." instance=ExtResource("9_1dfpe")]
 position = Vector2(1578, 207)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("10_di7sg")]
-position = Vector2(873, -47)
-
-[node name="Platform" parent="." instance=ExtResource("11_vvatw")]
-position = Vector2(-2250, -94)
-
-[node name="Platform2" parent="." instance=ExtResource("11_vvatw")]
-position = Vector2(-2236, -129)
-
-[node name="Platform3" parent="." instance=ExtResource("11_vvatw")]
-position = Vector2(-1531, 165)
-
-[node name="Coin" parent="." instance=ExtResource("12_jgi64")]
-position = Vector2(-1523, 137)
-
-[node name="Platform4" parent="." instance=ExtResource("11_vvatw")]
-position = Vector2(-1236, 165)
-
-[node name="Coin2" parent="." instance=ExtResource("12_jgi64")]
-position = Vector2(-1228, 139)
-
-[node name="Platform5" parent="." instance=ExtResource("11_vvatw")]
-position = Vector2(-1418, 167)
-
-[node name="Coin3" parent="." instance=ExtResource("12_jgi64")]
-position = Vector2(-1410, 137)
-
-[node name="Platform6" parent="." instance=ExtResource("11_vvatw")]
-position = Vector2(-899, 167)
-
-[node name="Coin4" parent="." instance=ExtResource("12_jgi64")]
-position = Vector2(-891, 133)
-
-[node name="CharacterBody2D2" parent="." instance=ExtResource("10_di7sg")]
-position = Vector2(445, -117)
-
-[node name="CharacterBody2D3" parent="." instance=ExtResource("10_di7sg")]
-position = Vector2(342, -124)
-
-[node name="CharacterBody2D4" parent="." instance=ExtResource("10_di7sg")]
-position = Vector2(200, -127)
-
-[node name="CharacterBody2D5" parent="." instance=ExtResource("10_di7sg")]
-position = Vector2(97, -134)
-
-[node name="CharacterBody2D6" parent="." instance=ExtResource("10_di7sg")]
-position = Vector2(-179, -128)
-
-[node name="CharacterBody2D7" parent="." instance=ExtResource("10_di7sg")]
-position = Vector2(-268, -107)
-
-[node name="CharacterBody2D8" parent="." instance=ExtResource("10_di7sg")]
-position = Vector2(-971, 123)
-
-[node name="CharacterBody2D9" parent="." instance=ExtResource("10_di7sg")]
-position = Vector2(-1029, 128)
-
-[node name="CharacterBody2D10" parent="." instance=ExtResource("10_di7sg")]
-position = Vector2(-1136, 174)
-
-[node name="CharacterBody2D11" parent="." instance=ExtResource("10_di7sg")]
-position = Vector2(-1194, 179)
-
-[node name="CharacterBody2D12" parent="." instance=ExtResource("10_di7sg")]
-position = Vector2(-1285, 162)
-
-[node name="CharacterBody2D13" parent="." instance=ExtResource("10_di7sg")]
-position = Vector2(-1343, 167)
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0, 0)
@@ -126,14 +63,96 @@ position = Vector2(459.125, 187.625)
 scale = Vector2(0.499297, 0.526094)
 texture = ExtResource("13_mck5c")
 
-[node name="Platform7" parent="." instance=ExtResource("11_vvatw")]
-position = Vector2(-362, -23)
+[node name="Platforms" type="Node" parent="."]
 
-[node name="Platform8" parent="." instance=ExtResource("11_vvatw")]
-position = Vector2(-118, -64)
+[node name="Platform7" parent="Platforms" instance=ExtResource("11_vvatw")]
+position = Vector2(-344, 109)
 
-[node name="Platform9" parent="." instance=ExtResource("11_vvatw")]
-position = Vector2(-51, -73)
+[node name="Platform8" parent="Platforms" instance=ExtResource("11_vvatw")]
+position = Vector2(-100, 68)
 
-[node name="Platform10" parent="." instance=ExtResource("11_vvatw")]
-position = Vector2(-400, -23)
+[node name="Platform9" parent="Platforms" instance=ExtResource("11_vvatw")]
+position = Vector2(-33, 59)
+
+[node name="Platform10" parent="Platforms" instance=ExtResource("11_vvatw")]
+position = Vector2(-382, 109)
+
+[node name="Platform" parent="Platforms" instance=ExtResource("11_vvatw")]
+position = Vector2(-2232, 38)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("11_vvatw")]
+position = Vector2(-2218, 3)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("11_vvatw")]
+position = Vector2(-1513, 297)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("11_vvatw")]
+position = Vector2(-1218, 297)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("11_vvatw")]
+position = Vector2(-1400, 299)
+
+[node name="Platform6" parent="Platforms" instance=ExtResource("11_vvatw")]
+position = Vector2(-881, 299)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="CharacterBody2D2" parent="Enemies" instance=ExtResource("10_di7sg")]
+position = Vector2(463, 15)
+
+[node name="CharacterBody2D3" parent="Enemies" instance=ExtResource("10_di7sg")]
+position = Vector2(360, 8)
+
+[node name="CharacterBody2D4" parent="Enemies" instance=ExtResource("10_di7sg")]
+position = Vector2(218, 5)
+
+[node name="CharacterBody2D5" parent="Enemies" instance=ExtResource("10_di7sg")]
+position = Vector2(115, -2)
+
+[node name="CharacterBody2D6" parent="Enemies" instance=ExtResource("10_di7sg")]
+position = Vector2(-161, 4)
+
+[node name="CharacterBody2D7" parent="Enemies" instance=ExtResource("10_di7sg")]
+position = Vector2(-250, 25)
+
+[node name="CharacterBody2D8" parent="Enemies" instance=ExtResource("10_di7sg")]
+position = Vector2(-953, 255)
+
+[node name="CharacterBody2D9" parent="Enemies" instance=ExtResource("10_di7sg")]
+position = Vector2(-1011, 260)
+
+[node name="CharacterBody2D10" parent="Enemies" instance=ExtResource("10_di7sg")]
+position = Vector2(-1118, 306)
+
+[node name="CharacterBody2D11" parent="Enemies" instance=ExtResource("10_di7sg")]
+position = Vector2(-1176, 311)
+
+[node name="CharacterBody2D12" parent="Enemies" instance=ExtResource("10_di7sg")]
+position = Vector2(-1267, 294)
+
+[node name="CharacterBody2D13" parent="Enemies" instance=ExtResource("10_di7sg")]
+position = Vector2(-1325, 299)
+
+[node name="CharacterBody2D" parent="Enemies" instance=ExtResource("10_di7sg")]
+position = Vector2(891, 85)
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("12_jgi64")]
+position = Vector2(-1505, 269)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("12_jgi64")]
+position = Vector2(-1210, 271)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("12_jgi64")]
+position = Vector2(-1392, 269)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("12_jgi64")]
+position = Vector2(-873, 265)
+
+[node name="KillZone" parent="." instance=ExtResource("14_u1xh5")]
+position = Vector2(-567, 35)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(138, 440)
+shape = SubResource("SegmentShape2D_slan4")

@@ -33,7 +33,6 @@ func receive_damage(dmg):
 		queue_free()
 
 func _on_area_2d_area_entered(area):
-	print(area)
 	#this is a bit of a hack, for some reason the different fireballs are not all of the fireball class
 	if area.name == "Fireball" or area.name.begins_with("@Area2D"):
 		receive_damage(area.dmg)

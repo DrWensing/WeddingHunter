@@ -23,13 +23,12 @@ func _ready():
 	health_bar.initialize(hp)
 
 func _on_alert_area_body_entered(body):
-	if body.name.begins_with("Player"):
+	if body.name.begins_with("Player"):	
 		registered_player.append(body)
 		alert = true
 		animation_sprite.play("walk")
 		alert_label.text = "?!"
 		alert_label.show()
-	
 
 func _physics_process(delta):
 	# Add the gravity
@@ -89,8 +88,7 @@ func get_closest_player():
 		return registered_player[1]
 	
 func _on_attack_timer_timeout():
-	on_cooldown = false
-	
+	on_cooldown = false	
 
 func receive_damage(dmg):
 	health_bar.take_dmg(dmg)

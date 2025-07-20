@@ -66,7 +66,7 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_mphff"]
 line_spacing = 1.0
-font_size = 30
+font_size = 24
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
@@ -82,7 +82,6 @@ offset_right = 7.0
 offset_bottom = 16.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_w1v4t")
-text = "Score: 0"
 
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -155,14 +154,20 @@ sprite_frames = SubResource("SpriteFrames_eyfip")
 animation = &"ammo"
 flip_h = true
 
+[node name="MessageFrame" type="Polygon2D" parent="."]
+modulate = Color(0.383406, 0.744011, 0.363321, 1)
+position = Vector2(-29, -54.5)
+scale = Vector2(1.21859, 0.825)
+polygon = PackedVector2Array(300, 100, 700, 100, 700, 300, 502.032, 300, 300, 300)
+
 [node name="Message" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -242.0
-offset_top = 137.0
-offset_right = 274.0
-offset_bottom = 348.0
+offset_left = -237.0
+offset_top = 33.0
+offset_right = 249.0
+offset_bottom = 196.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_w1v4t")
 text = "Message"

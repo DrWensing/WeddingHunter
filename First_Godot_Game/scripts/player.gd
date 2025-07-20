@@ -17,9 +17,19 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var timer = $ShotTimer
 @onready var gunshot = $gunshot
 @onready var reload = $reload
+@onready var jump_sound = $jump
+@onready var death_sound = $death_sound
 @onready var projectile_container = %projectile_container
 
 @export var projectilePrefab:PackedScene
+
+func _ready():
+	HUD.set_hp_henrik(hp)
+
+func die():
+	death_sound.play()
+	HUD.set_hp_henrik(0)
+	Main.player_died(self)
 
 func take_damage(dmg):
 	if hp <= 0:
@@ -30,7 +40,7 @@ func take_damage(dmg):
 	print('Henrik HP remaining ' + str(hp))
 	
 	if hp <= 0:
-		Main.player_died(self)
+		die()
 
 func equip_gun():	
 	gun.visible=true
@@ -88,6 +98,10 @@ func shot_fired(dmg):
 	#register fireball in its container
 	Projectiles.add_child(projectile)
 	
+func jump():
+	velocity.y = JUMP_VELOCITY
+	jump_sound.play()
+	
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -100,7 +114,7 @@ func _physics_process(delta):
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		jump()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

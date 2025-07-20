@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjf3udm32mp8s"]
+[gd_scene load_steps=13 format=3 uid="uid://bjf3udm32mp8s"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_5.gd" id="1_xgvtm"]
 [ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="2_sj70q"]
@@ -10,6 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://bdud7uh4speyw" path="res://assets/background/tokio.png" id="9_rmuej"]
 [ext_resource type="PackedScene" uid="uid://ctic5suotwouq" path="res://scenes/boss_godzilla.tscn" id="10_pstji"]
 [ext_resource type="PackedScene" path="res://scenes/platform_very_long.tscn" id="10_xnfvq"]
+[ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="11_xwh64"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_klrri"]
+a = Vector2(2771, -18)
+b = Vector2(-2325, 3)
 
 [node name="Level5" type="Node2D"]
 position = Vector2(18, 132)
@@ -62,16 +67,23 @@ position = Vector2(204, 206)
 position = Vector2(316, 206)
 
 [node name="Platform4" parent="Platforms" instance=ExtResource("10_xnfvq")]
-position = Vector2(430, 206)
+position = Vector2(409, 216)
 
 [node name="Platform5" parent="Platforms" instance=ExtResource("10_xnfvq")]
 position = Vector2(532, 106)
 
-[node name="Platform5" parent="Platforms/Platform5" instance=ExtResource("10_xnfvq")]
-position = Vector2(68, 40)
+[node name="Platform6" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(600, 146)
 
-[node name="Platform5" parent="Platforms/Platform5/Platform5" instance=ExtResource("10_xnfvq")]
-position = Vector2(-67, 39)
+[node name="Platform7" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(533, 185)
 
-[node name="Platform5" parent="." instance=ExtResource("10_xnfvq")]
-position = Vector2(68, 40)
+[node name="Platform8" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(86, 172)
+
+[node name="KillZone" parent="." instance=ExtResource("11_xwh64")]
+position = Vector2(-567, 35)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(840, 160)
+shape = SubResource("SegmentShape2D_klrri")

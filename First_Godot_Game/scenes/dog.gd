@@ -16,6 +16,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	interaction_area.interact = Callable(self, "_pet_dog")
+	
+func die():
+	Main.player_died(self)
 
 func _pet_dog():
 	print("Wuff wuff")
