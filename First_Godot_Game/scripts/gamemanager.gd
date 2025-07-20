@@ -14,7 +14,7 @@ var current_level: Node = null
 var score: int = 0
 
 func _ready():
-	var starting_level = 4
+	var starting_level = 1
 	load_level(starting_level)
 	hud.update_score_label(score)	
 	
@@ -84,3 +84,9 @@ func _on_kill_timer_timeout():
 	Engine.time_scale = 1.0
 	get_tree().reload_current_scene()
 	pass # Replace with function body.
+	
+func get_min_player_distance_to_node(p1,p2,node):
+	#computes the minimum distance between players and a given node
+	var p1_dist = p1.get_distance_to(node)
+	var p2_dist = p2.get_distance_to(node)
+	return min(p1_dist,p2_dist)

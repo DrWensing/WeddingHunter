@@ -25,6 +25,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	HUD.set_hp_henrik(hp)
+	
+func get_distance_to(node):
+	#computes the distance between Player and the given node
+	return self.position.distance_to(node.position)
 
 func die():
 	death_sound.play()
