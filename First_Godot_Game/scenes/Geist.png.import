@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bukupfqky0xtq"
-path="res://.godot/imported/orc.png-6b18d1451d91b6250c272c065a98f305.ctex"
+uid="uid://q4u2sep8n6qr"
+path="res://.godot/imported/Geist.png-e65637f06a8df993cb3ee500fc177da1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Neuer Ordner/orc.png"
-dest_files=["res://.godot/imported/orc.png-6b18d1451d91b6250c272c065a98f305.ctex"]
+source_file="res://scenes/Geist.png"
+dest_files=["res://.godot/imported/Geist.png-e65637f06a8df993cb3ee500fc177da1.ctex"]
 
 [params]
 

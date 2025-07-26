@@ -42,7 +42,8 @@ func _physics_process(delta):
 		var closest_player = get_closest_player()
 		var x_distance_to_closest_player = closest_player.position.x - self.position.x 
 		var y_distance_to_closest_player = closest_player.position.y - self.position.y
-		if abs(x_distance_to_closest_player)>30 or abs(y_distance_to_closest_player)>30:
+		if abs(x_distance_to_closest_player)>40 or abs(y_distance_to_closest_player)>30:
+			print(x_distance_to_closest_player, y_distance_to_closest_player)
 			animation_sprite.play("walk")
 			#follow player
 			if x_distance_to_closest_player < 0:

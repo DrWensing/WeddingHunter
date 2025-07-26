@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do0qejw7r3652"
-path="res://.godot/imported/attack.png-33ac2b792bdd3773b0c00756a7eadc18.ctex"
+uid="uid://b8gyb7uilbru5"
+path="res://.godot/imported/walk.png-a7b83cd18d0775244068309a191636b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Neuer Ordner/attack.png"
-dest_files=["res://.godot/imported/attack.png-33ac2b792bdd3773b0c00756a7eadc18.ctex"]
+source_file="res://assets/sprites/orc/walk.png"
+dest_files=["res://.godot/imported/walk.png-a7b83cd18d0775244068309a191636b4.ctex"]
 
 [params]
 
