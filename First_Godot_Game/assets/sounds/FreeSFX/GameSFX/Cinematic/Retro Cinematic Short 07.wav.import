@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ci4ecvlv3t6jn"
+path="res://.godot/imported/Retro Cinematic Short 07.wav-83989006c1168051b5708ab2923e7a8c.sample"
+
+[deps]
+
+source_file="res://assets/sounds/FreeSFX/GameSFX/Cinematic/Retro Cinematic Short 07.wav"
+dest_files=["res://.godot/imported/Retro Cinematic Short 07.wav-83989006c1168051b5708ab2923e7a8c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

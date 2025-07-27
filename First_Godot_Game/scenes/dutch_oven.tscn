@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dn4hnn7jbsq05"]
+
+[ext_resource type="Script" path="res://scenes/dutch_oven.gd" id="1_bg2uc"]
+[ext_resource type="Texture2D" uid="uid://b1aqys8rgk5u7" path="res://scenes/DutchOfen.png" id="1_h1doc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vp2rm"]
+atlas = ExtResource("1_h1doc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdycg"]
+atlas = ExtResource("1_h1doc")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tgn3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vp2rm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdycg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="DutchOven" type="Node2D"]
+script = ExtResource("1_bg2uc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tgn3w")
+autoplay = "default"
+frame_progress = 0.084371

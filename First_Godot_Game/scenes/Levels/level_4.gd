@@ -7,6 +7,7 @@ extends Node2D
 @onready var NextLevelPortal = $NextLevel
 @onready var Boss_Balrog = $Boss_Balrog
 @onready var zwockel = $Zwockel
+@onready var ingredient = $dutch_ingredient
 
 @onready var Warnung_ausgesprochen = false
 @onready var boss_alive = true
@@ -21,6 +22,7 @@ func _ready():
 	tabea.equip_gun()
 	
 	HUD.show_message("Level 4: Khazad-dûm - Die Minen von Moria")
+	ingredient.set_type('carotte')
 	
 func _process(delta):
 	if !Warnung_ausgesprochen:

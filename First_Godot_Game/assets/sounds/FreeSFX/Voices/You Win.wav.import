@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dnlrrdj8jw7ul"
+path="res://.godot/imported/You Win.wav-9b18a9d152c963799d27d208a1a9e7aa.sample"
+
+[deps]
+
+source_file="res://assets/sounds/FreeSFX/Voices/You Win.wav"
+dest_files=["res://.godot/imported/You Win.wav-9b18a9d152c963799d27d208a1a9e7aa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

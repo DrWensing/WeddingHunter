@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bjf3udm32mp8s"]
+[gd_scene load_steps=14 format=3 uid="uid://bjf3udm32mp8s"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_5.gd" id="1_xgvtm"]
 [ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="2_sj70q"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ctic5suotwouq" path="res://scenes/boss_godzilla.tscn" id="10_pstji"]
 [ext_resource type="PackedScene" path="res://scenes/platform_very_long.tscn" id="10_xnfvq"]
 [ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="11_xwh64"]
+[ext_resource type="PackedScene" uid="uid://da8cxn8q226je" path="res://scenes/dutch_ingredient.tscn" id="12_28qwd"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_klrri"]
 a = Vector2(2771, -18)
@@ -87,3 +88,6 @@ position = Vector2(-567, 35)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 position = Vector2(840, 160)
 shape = SubResource("SegmentShape2D_klrri")
+
+[node name="dutch_ingredient" parent="." instance=ExtResource("12_28qwd")]
+position = Vector2(101, 1)

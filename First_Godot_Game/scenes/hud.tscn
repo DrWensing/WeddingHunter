@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c6aigfqfw3rwu"]
+[gd_scene load_steps=19 format=3 uid="uid://c6aigfqfw3rwu"]
 
 [ext_resource type="Script" path="res://scenes/hud.gd" id="1_enk7o"]
 [ext_resource type="FontFile" uid="uid://cb25e36ag81ju" path="res://assets/fonts/PixelOperator8.ttf" id="1_w1v4t"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ehpaempejv58" path="res://scenes/pause_menu.tscn" id="5_leux1"]
 [ext_resource type="FontFile" uid="uid://bea22tcsj8788" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_osbuy"]
 [ext_resource type="Texture2D" uid="uid://18s6in0jq12k" path="res://assets/sprites/ammo.png" id="6_bhvs4"]
+[ext_resource type="PackedScene" uid="uid://da8cxn8q226je" path="res://scenes/dutch_ingredient.tscn" id="8_4w8fk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6id8"]
 bg_color = Color(0, 0, 0, 1)
@@ -174,5 +175,23 @@ text = "Message"
 label_settings = SubResource("LabelSettings_mphff")
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="dutch_ingredient" parent="." instance=ExtResource("8_4w8fk")]
+position = Vector2(981, 133)
+
+[node name="dutch_ingredient2" parent="." instance=ExtResource("8_4w8fk")]
+position = Vector2(1013, 133)
+
+[node name="dutch_ingredient3" parent="." instance=ExtResource("8_4w8fk")]
+position = Vector2(1044, 134)
+
+[node name="dutch_ingredient4" parent="." instance=ExtResource("8_4w8fk")]
+position = Vector2(1076, 136)
+
+[node name="dutch_ingredient5" parent="." instance=ExtResource("8_4w8fk")]
+position = Vector2(1107, 137)
+
+[node name="dutch_ingredient6" parent="." instance=ExtResource("8_4w8fk")]
+position = Vector2(1138, 137)
 
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]

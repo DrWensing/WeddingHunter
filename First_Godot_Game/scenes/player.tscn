@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://3mct11p4wljk" path="res://assets/sprites/gun.png" id="2_p33h4"]
 [ext_resource type="PackedScene" uid="uid://otpk2la1v2fx" path="res://scenes/fireball.tscn" id="2_poylw"]
 [ext_resource type="Texture2D" uid="uid://bj5hhccpglyw2" path="res://assets/sprites/Yellow Effect Bullet Impact Explosion 32x32.png" id="3_qthrx"]
-[ext_resource type="Script" path="res://scenes/AnimatedSprite2D.gd" id="3_vb2es"]
 [ext_resource type="Texture2D" uid="uid://b1yb4ritr43ln" path="res://assets/sprites/henrik_character.png" id="3_yi174"]
 [ext_resource type="Texture2D" uid="uid://ci08ml0oa3bwy" path="res://assets/sprites/tabea_character.png" id="5_1opx5"]
 [ext_resource type="AudioStream" uid="uid://chuffcyfsuoaw" path="res://assets/sounds/gunshot1.mp3" id="8_l8hvo"]
@@ -307,6 +306,20 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_ml0lq"]
+script/source = "extends AnimatedSprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lk4my"]
 radius = 6.0
 height = 40.0
@@ -422,7 +435,7 @@ sprite_frames = SubResource("SpriteFrames_b1ngt")
 animation = &"henrik_walking"
 frame = 2
 frame_progress = 0.646989
-script = ExtResource("3_vb2es")
+script = SubResource("GDScript_ml0lq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -25)

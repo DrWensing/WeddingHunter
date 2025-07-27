@@ -5,6 +5,7 @@ extends Node2D
 @onready var BossMusic = $BossMusic
 @onready var Boss_Godzilla = $Boss_Godzilla
 @onready var NextLevelPortal = $NextLevel
+@onready var ingredient = $dutch_ingredient
 
 var boss_activated = false
 var boss_alive = true
@@ -14,6 +15,7 @@ func _ready():
 	MultiTargetCam.add_target(tabea)
 	#set camera as the active one
 	MultiTargetCam.make_current()
+	ingredient.set_type('grape')
 	
 	henrik.equip_gun()
 	tabea.equip_gun()
@@ -36,11 +38,11 @@ func _process(delta):
 
 func boss_activate():	
 	MultiTargetCam.reset()
-	MultiTargetCam.manual_set(Vector2(1400, 140), Vector2(2, 2))
-	Boss_Godzilla.rawr()
+	MultiTargetCam.manual_set(Vector2(1400, 140), Vector2(2, 2))	
+	Boss_Godzilla.activate()
 	BossMusic.play()
 	
 func Boss_defeated():
 	BossMusic.stop()
 	HUD.show_message("Henrik & Tabea: \n Der König der Monster wurde soeben entthront")
-	$NextLevel.global_position = Vector2(1500,270)
+	$NextLevel.global_position = Vector2(650,25)

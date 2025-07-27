@@ -4,6 +4,7 @@ extends Node2D
 @onready var tabea = %Player2
 @onready var hermann = %Dog 
 @onready var lama = $Lama
+@onready var ingredient = $dutch_ingredient
 
 var lama_activated = false
 
@@ -12,7 +13,9 @@ func _ready():
 	MultiTargetCam.add_target(henrik)
 	MultiTargetCam.add_target(tabea)
 	#set camera as the active one
-	MultiTargetCam.make_current()		
+	MultiTargetCam.make_current()
+	ingredient.set_type('cauliflower')
+	$DutchOven.pause()
 
 	HUD.show_message("Level 1: \nTabea und Henrik sind in den Flitterwochen...im Wald. Plötzlich bleibt der Wagen liegen. Sie sind auf sich gestellt...", 5.0)
 
@@ -23,7 +26,7 @@ func _process(delta):
 	
 	#text box Lama
 	if lama_activated == false and Main.get_min_player_distance_to_node(henrik, tabea, lama) < 50:
-		HUD.show_message("Lama: boing boing",3.0)
+		HUD.show_message("Lama: 'Mist...mir fehlen noch Zutaten. So lohnt es sich gar nicht den Dutch Oven anzuschmeißen...'",3.0)
 	
 func get_max_player_xpos():
 	return max(henrik.global_position.x,tabea.global_position.x)

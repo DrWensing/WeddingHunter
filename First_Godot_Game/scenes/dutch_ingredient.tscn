@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://da8cxn8q226je"]
+
+[ext_resource type="Script" path="res://scenes/dutch_ingredient.gd" id="1_1756k"]
+[ext_resource type="Texture2D" uid="uid://hovxyg2wsnim" path="res://assets/sprites/FreePack.png" id="1_sxs4t"]
+[ext_resource type="AudioStream" uid="uid://vqcendp8xyjq" path="res://assets/sounds/FreeSFX/GameSFX/PowerUp/Retro PowerUP 09.wav" id="3_n3jx1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vfyf"]
+atlas = ExtResource("1_sxs4t")
+region = Rect2(416, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a20wi"]
+atlas = ExtResource("1_sxs4t")
+region = Rect2(448, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n88f8"]
+atlas = ExtResource("1_sxs4t")
+region = Rect2(480, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4luqt"]
+atlas = ExtResource("1_sxs4t")
+region = Rect2(416, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu7pr"]
+atlas = ExtResource("1_sxs4t")
+region = Rect2(448, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtijp"]
+atlas = ExtResource("1_sxs4t")
+region = Rect2(480, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g0ssq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vfyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a20wi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n88f8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4luqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu7pr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtijp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ajs7u"]
+radius = 16.0312
+
+[node name="dutch_ingredient" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_1756k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g0ssq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ajs7u")
+
+[node name="pickup_sound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, 1)
+stream = ExtResource("3_n3jx1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="pickup_sound" to="." method="_on_pickup_sound_finished"]

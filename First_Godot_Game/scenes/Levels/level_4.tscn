@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dbxv3dvdgxqku"]
+[gd_scene load_steps=17 format=3 uid="uid://dbxv3dvdgxqku"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_4.gd" id="1_kyprc"]
 [ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="2_0xqfv"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dtpn5wksg1o0v" path="res://scenes/coin.tscn" id="12_jgi64"]
 [ext_resource type="Texture2D" uid="uid://dick1114k4bpt" path="res://assets/background/7MF3Jn.png" id="13_mck5c"]
 [ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="14_u1xh5"]
+[ext_resource type="PackedScene" uid="uid://da8cxn8q226je" path="res://scenes/dutch_ingredient.tscn" id="15_p20n5"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_slan4"]
 a = Vector2(2771, -18)
@@ -147,7 +148,7 @@ position = Vector2(-1210, 271)
 position = Vector2(-1392, 269)
 
 [node name="Coin4" parent="Coins" instance=ExtResource("12_jgi64")]
-position = Vector2(-873, 265)
+position = Vector2(-879, 267)
 
 [node name="KillZone" parent="." instance=ExtResource("14_u1xh5")]
 position = Vector2(-567, 35)
@@ -155,3 +156,6 @@ position = Vector2(-567, 35)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 position = Vector2(138, 440)
 shape = SubResource("SegmentShape2D_slan4")
+
+[node name="dutch_ingredient" parent="." instance=ExtResource("15_p20n5")]
+position = Vector2(-870, 134)

@@ -11,6 +11,7 @@ signal start_game
 
 @onready var HP_bar_henrik = %HP_bar_henrik
 @onready var HP_bar_tabea = %HP_bar_tabea
+@onready var ingredients_collected = [0,0,0,0,0,0]
 
 func set_hp_henrik(hp):
 	HP_bar_henrik.value = hp
@@ -59,7 +60,60 @@ func _on_message_timer_timeout():
 	$Message.text=""
 	$MessageFrame.hide()
 	
+func update_ingredients():
+	var gray  = Color(0.1, 0.1, 0.1)
+	var white = Color(1, 1, 1)
+	
+	print('ingredients_collected', ingredients_collected)
+	#ingredient 1
+	if ingredients_collected[0]:
+		$dutch_ingredient.modulate = white
+	else:
+		$dutch_ingredient.modulate = gray
+		
+	#ingredient 2
+	if ingredients_collected[1]:
+		$dutch_ingredient2.modulate = white
+	else:
+		$dutch_ingredient2.modulate = gray
+		
+	#ingredient 3
+	if ingredients_collected[2]:
+		$dutch_ingredient3.modulate = white
+	else:
+		$dutch_ingredient3.modulate = gray
+		
+	#ingredient 4
+	if ingredients_collected[3]:
+		$dutch_ingredient4.modulate = white
+	else:
+		$dutch_ingredient4.modulate = gray
+		
+	#ingredient 5
+	if ingredients_collected[4]:
+		$dutch_ingredient5.modulate = white
+	else:
+		$dutch_ingredient5.modulate = gray
+		
+	#ingredient 6
+	if ingredients_collected[5]:
+		$dutch_ingredient6.modulate = white
+	else:
+		$dutch_ingredient6.modulate = gray
+
+	
 func _ready():
 	$Message.hide()
 	$Message.text=""
+		
+	$dutch_ingredient.sprite.frame = 0
+	$dutch_ingredient2.sprite.frame = 1
+	$dutch_ingredient3.sprite.frame = 2
+	$dutch_ingredient4.sprite.frame = 3
+	$dutch_ingredient5.sprite.frame = 4
+	$dutch_ingredient6.sprite.frame = 5
+	
+	update_ingredients()
+	
 
+	

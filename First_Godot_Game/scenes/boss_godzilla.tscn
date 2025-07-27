@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ctic5suotwouq"]
+[gd_scene load_steps=14 format=3 uid="uid://ctic5suotwouq"]
 
 [ext_resource type="Script" path="res://scenes/boss_godzilla.gd" id="1_0jrdn"]
 [ext_resource type="Texture2D" uid="uid://c6y6lhliqb1mb" path="res://assets/sprites/godzilla.png" id="2_dss0o"]
@@ -29,6 +29,9 @@ size = Vector2(129, 81.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yh2x4"]
 size = Vector2(330, 535)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyoq3"]
+size = Vector2(391.5, 38)
 
 [node name="Boss_Godzilla" type="Node2D"]
 script = ExtResource("1_0jrdn")
@@ -83,6 +86,13 @@ wait_time = 7.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(474, 256.5)
 shape = SubResource("RectangleShape2D_yh2x4")
+
+[node name="KillZone_Laser" parent="." instance=ExtResource("4_7seis")]
+position = Vector2(-75, 292)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone_Laser"]
+position = Vector2(108.75, -259)
+shape = SubResource("RectangleShape2D_hyoq3")
 
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
 [connection signal="timeout" from="ChargeTimer" to="." method="_on_charge_timer_timeout"]

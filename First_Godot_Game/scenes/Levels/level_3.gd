@@ -8,6 +8,7 @@ extends Node2D
 @onready var warnung_ausgesprochen = false
 @onready var boss_alive = true
 @onready var NextLevelPortal = $NextLevel
+@onready var ingredient = $dutch_ingredient
 
 func _ready():
 	MultiTargetCam.add_target(henrik)
@@ -19,6 +20,7 @@ func _ready():
 	tabea.equip_gun()
 	
 	HUD.show_message("Level 3: England 932 n.Chr.")
+	ingredient.set_type('tomato')
 	
 
 func _process(delta):

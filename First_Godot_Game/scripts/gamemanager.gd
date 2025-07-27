@@ -14,9 +14,15 @@ var current_level: Node = null
 var score: int = 0
 
 func _ready():
-	var starting_level = 4
+	var starting_level = 1
 	load_level(starting_level)
-	hud.update_score_label(score)	
+	hud.update_score_label(score)
+
+func receive_ingredient(ingredient_type):
+	var frame = ing_type_to_frame(ingredient_type)
+	HUD.ingredients_collected[frame] = 1
+	HUD.update_ingredients()
+	print(ingredient_type + ' collected')
 	
 func load_level(level: int) -> void:
 	# Remove the current level if it exists		
@@ -90,3 +96,23 @@ func get_min_player_distance_to_node(p1,p2,node):
 	var p1_dist = p1.get_distance_to(node)
 	var p2_dist = p2.get_distance_to(node)
 	return min(p1_dist,p2_dist)
+
+func ing_type_to_frame(ing_type):
+	#returns the ingredient type
+	var frame = -1
+	match(ing_type):
+		'apple':
+			frame = 0
+		'grape':
+			frame = 1
+		'cauliflower':
+			frame = 2
+		'tomato':
+			frame = 3
+		'mais':
+			frame = 4
+		'carotte':
+			frame = 5
+		'_':
+			print('ERROR: dutch ingredient type not yet registered')
+	return frame
