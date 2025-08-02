@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cqs0wwguahnsp"]
+[gd_scene load_steps=16 format=3 uid="uid://cqs0wwguahnsp"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_3.gd" id="1_ihune"]
 [ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="2_g8cr8"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://d0ftkeprcgg5y" path="res://assets/background/wald3.jpg" id="11_f1jax"]
 [ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="12_rsto6"]
 [ext_resource type="PackedScene" uid="uid://da8cxn8q226je" path="res://scenes/dutch_ingredient.tscn" id="13_xg54h"]
+[ext_resource type="PackedScene" uid="uid://dir78bid8yy53" path="res://scenes/music.tscn" id="14_g5757"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_32snm"]
 a = Vector2(2205, -17)
@@ -92,3 +93,6 @@ shape = SubResource("SegmentShape2D_32snm")
 
 [node name="dutch_ingredient" parent="." instance=ExtResource("13_xg54h")]
 position = Vector2(1689, 701)
+
+[node name="Music" parent="." instance=ExtResource("14_g5757")]
+max_distance = 50000.0

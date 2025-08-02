@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://r56fgoqkr76x"
+path="res://.godot/imported/yeahquestion.wav-4af82d9a5b9e537b701d92f5c2abc7bc.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Orc Voice Pack/yeahquestion.wav"
+dest_files=["res://.godot/imported/yeahquestion.wav-4af82d9a5b9e537b701d92f5c2abc7bc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

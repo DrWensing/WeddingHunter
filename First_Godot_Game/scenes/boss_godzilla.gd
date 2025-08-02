@@ -1,7 +1,7 @@
 extends Node2D
 
 var direction = -1
-@onready var hp = 300
+@onready var hp = 500
 @onready var health_bar = $HealthBar
 @onready var can_move = false
 @onready var height_level = 1
@@ -52,19 +52,18 @@ func _on_move_timer_timeout():
 	#once this times out, godzilla changes position
 	can_move = true
 	disable_laser_killzone()
-	print('Move timer timeout')
+	#print('Move timer timeout')
 
 func _on_fire_timer_timeout():
 	#once this times out, the attack animation starts
 	$laser.show_animation()
 	enable_laser_killzone()
-	#TODO: activate killzone on laser beam
-	print('Fire timer timeout')
+	#print('Fire timer timeout')
 
 func _on_charge_timer_timeout():
 	#once this times out, the charge animation is shown
 	$laser.charging()
-	print('Charge timer timeout')
+	#print('Charge timer timeout')
 
 func receive_damage(dmg):
 	health_bar.take_dmg(dmg)

@@ -8,10 +8,13 @@ signal start_game
 @onready var message_timer = $MessageTimer
 @onready var ammo_henrik = %ammo_henrik
 @onready var ammo_tabea = %ammo_tabea
+@onready var pause_menu = $PauseMenu
 
 @onready var HP_bar_henrik = %HP_bar_henrik
 @onready var HP_bar_tabea = %HP_bar_tabea
 @onready var ingredients_collected = [0,0,0,0,0,0]
+
+
 
 func set_hp_henrik(hp):
 	HP_bar_henrik.value = hp
@@ -48,8 +51,7 @@ func show_game_over():
 	show_message("Game Over")
 	# Wait until the MessageTimer has counted down.
 	await $MessageTimer.timeout
-
-	$Message.text = "Dodge the Creeps!"
+	
 	$Message.show()
 	# Make a one-shot timer and wait for it to finish.
 	await get_tree().create_timer(1.0).timeout
@@ -107,13 +109,27 @@ func _ready():
 	$Message.text=""
 		
 	$dutch_ingredient.sprite.frame = 0
+	$dutch_ingredient.make_non_interactable()
 	$dutch_ingredient2.sprite.frame = 1
+	$dutch_ingredient2.make_non_interactable()	
 	$dutch_ingredient3.sprite.frame = 2
+	$dutch_ingredient3.make_non_interactable()
 	$dutch_ingredient4.sprite.frame = 3
+	$dutch_ingredient4.make_non_interactable()
 	$dutch_ingredient5.sprite.frame = 4
+	$dutch_ingredient5.make_non_interactable()
 	$dutch_ingredient6.sprite.frame = 5
+	$dutch_ingredient6.make_non_interactable()
 	
 	update_ingredients()
 	
 
-	
+func hide_all():
+	print('Hide all stuff')
+	score_label.hide()
+	HP_bar_henrik.hide()
+	$Henrik.visible = false
+	$Henrik.hide()
+	$Tabea.hide()
+	$Tabea.free()
+	self.visible = false

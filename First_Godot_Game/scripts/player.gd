@@ -5,6 +5,7 @@ const JUMP_VELOCITY = -300.0
 var hp = 100
 var ammo = 5
 var gun_equipped = false
+var movement_eneabled = true
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -39,6 +40,7 @@ func take_damage(dmg):
 	if hp <= 0:
 		#already dead
 		return
+	$damage_sound.play()
 	hp -= dmg
 	HUD.set_hp_henrik(hp)
 	print('Henrik HP remaining ' + str(hp))
@@ -80,7 +82,7 @@ func shoot():
 
 func shot_fired(dmg):	
 	var projectile = projectilePrefab.instantiate()
-	var offset = 30
+	var offset = 20
 	var direction = character.flip_h
 	
 	if direction:
@@ -107,6 +109,9 @@ func jump():
 	jump_sound.play()
 	
 func _physics_process(delta):
+	if not movement_eneabled:
+		pass
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta

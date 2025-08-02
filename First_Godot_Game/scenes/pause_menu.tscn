@@ -37,8 +37,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.277816, 0.510534, 0.193443, 1)
 theme_override_fonts/font = ExtResource("1_8a5ln")
 theme_override_font_sizes/font_size = 30
-text = "Honeymoon
-...hunting grounds"
+text = "Wedding Hunter"
 
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cjcpvj3k2dhwe"
+path="res://.godot/imported/surprised1.wav-f5a1105ce22518d03def5e6a5e6751ee.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Orc Voice Pack/surprised1.wav"
+dest_files=["res://.godot/imported/surprised1.wav-f5a1105ce22518d03def5e6a5e6751ee.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

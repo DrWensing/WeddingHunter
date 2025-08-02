@@ -20,14 +20,17 @@ func _ready():
 	henrik.equip_gun()
 	tabea.equip_gun()
 	
+	HUD.visible = true
 	HUD.show_message("Level 5: Tokio \n  2016 n. Chr.")
 	Boss_Godzilla.steps()
+	$Music.play()
 
 func _process(delta):
 	if !boss_activated:
 		if tabea.position.x > 525 or henrik.position.x > 525:
 			boss_activate()
 			boss_activated = true
+			$Music.stream_paused=true;
 	
 	if not is_instance_valid(Boss_Godzilla):
 		Boss_defeated()
@@ -44,5 +47,6 @@ func boss_activate():
 	
 func Boss_defeated():
 	BossMusic.stop()
+	$Music.stream_paused=false
 	HUD.show_message("Henrik & Tabea: \n Der König der Monster wurde soeben entthront")
 	$NextLevel.global_position = Vector2(650,25)

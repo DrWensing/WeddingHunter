@@ -37,3 +37,8 @@ func _on_area_2d_area_entered(area):
 	if area.name == "Fireball" or area.name.begins_with("@Area2D"):
 		receive_damage(area.dmg)
 		area.free()
+
+
+
+func _on_area_2d_body_entered(body):
+	print(body.name)

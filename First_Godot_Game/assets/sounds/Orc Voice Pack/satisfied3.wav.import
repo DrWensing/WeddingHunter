@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0g87d3gj7ek"
+path="res://.godot/imported/satisfied3.wav-ee28b6989a800e842f3e28ed46edcde7.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Orc Voice Pack/satisfied3.wav"
+dest_files=["res://.godot/imported/satisfied3.wav-ee28b6989a800e842f3e28ed46edcde7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -72,6 +72,7 @@ outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_enk7o")
 
 [node name="ScoreLabel" type="Label" parent="."]
@@ -177,9 +178,11 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="dutch_ingredient" parent="." instance=ExtResource("8_4w8fk")]
+visibility_layer = 4
 position = Vector2(981, 133)
 
 [node name="dutch_ingredient2" parent="." instance=ExtResource("8_4w8fk")]
+visibility_layer = 4
 position = Vector2(1013, 133)
 
 [node name="dutch_ingredient3" parent="." instance=ExtResource("8_4w8fk")]

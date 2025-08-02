@@ -17,7 +17,7 @@ func _ready():
 	var starting_level = 1
 	load_level(starting_level)
 	hud.update_score_label(score)
-
+	
 func receive_ingredient(ingredient_type):
 	var frame = ing_type_to_frame(ingredient_type)
 	HUD.ingredients_collected[frame] = 1
@@ -32,10 +32,13 @@ func load_level(level: int) -> void:
 		current_level = null
 		print('delete level, remove camera')
 		
-	# Instance the level scene and add it to the tree
-	get_tree().change_scene_to_file(LevelPath + "level_" + str(level) +".tscn")
-	hud = load("res://scenes/hud.tscn").instantiate()
-	add_child(hud)
+	# Instance the level scene and add it to the tree	
+	get_tree().change_scene_to_file(LevelPath + "level_" + str(level) +".tscn")	
+	
+	#for all scenes apart from the Abspann add the HUD
+	if level != 7:
+		hud = load("res://scenes/hud.tscn").instantiate()		
+		add_child(hud)
 	
 func switch_to_next_level():
 		var current_scene = get_tree().current_scene.scene_file_path

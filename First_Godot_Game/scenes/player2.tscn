@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://cwpg2sneyq6rf"]
+[gd_scene load_steps=67 format=3 uid="uid://cwpg2sneyq6rf"]
 
 [ext_resource type="Script" path="res://scenes/player2.gd" id="2_4v3kc"]
 [ext_resource type="PackedScene" uid="uid://otpk2la1v2fx" path="res://scenes/fireball.tscn" id="2_6k01a"]
@@ -10,7 +10,10 @@
 [ext_resource type="AudioStream" uid="uid://chuffcyfsuoaw" path="res://assets/sounds/gunshot1.mp3" id="9_18wnd"]
 [ext_resource type="AudioStream" uid="uid://drpcu2tosj3w1" path="res://assets/sounds/reload.mp3" id="10_ihl8k"]
 [ext_resource type="AudioStream" uid="uid://qviyd0m41myi" path="res://assets/sounds/jump.wav" id="11_leqsl"]
+[ext_resource type="AudioStream" uid="uid://dndpmwhse8g6a" path="res://assets/sounds/unsere_sounds/au_female.wav" id="12_l0hls"]
 [ext_resource type="AudioStream" uid="uid://ddex2h6d26ps0" path="res://assets/sounds/wah-wah-sad-trombone-6347.mp3" id="12_ubx1b"]
+[ext_resource type="AudioStream" uid="uid://cc1i10rmpg0b3" path="res://assets/sounds/unsere_sounds/ups_female.wav" id="13_13ory"]
+[ext_resource type="AudioStream" uid="uid://6xf3ioycb7gh" path="res://assets/sounds/unsere_sounds/ahh_female.wav" id="14_wi2bs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6nnpq"]
 atlas = ExtResource("3_3jk44")
@@ -416,6 +419,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_flaih"]
+streams_count = 3
+stream_0/stream = ExtResource("12_l0hls")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("13_13ory")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("14_wi2bs")
+stream_2/weight = 1.0
+
 [node name="Player2" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("2_4v3kc")
@@ -464,6 +476,11 @@ stream = ExtResource("11_leqsl")
 stream = ExtResource("12_ubx1b")
 volume_db = 19.945
 pitch_scale = 2.38
+
+[node name="damage_sound" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_flaih")
+volume_db = 19.945
+pitch_scale = 1.01
 
 [connection signal="ready" from="Character" to="." method="_on_character_ready"]
 [connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]

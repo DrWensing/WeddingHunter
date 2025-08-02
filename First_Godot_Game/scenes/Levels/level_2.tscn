@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bwavxmautjwpp"]
+[gd_scene load_steps=16 format=3 uid="uid://bwavxmautjwpp"]
 
 [ext_resource type="TileSet" uid="uid://d3k1ar04o4po5" path="res://scenes/tileset.tres" id="1_1yby7"]
 [ext_resource type="Script" path="res://scenes/Levels/level_2.gd" id="1_xt6kv"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" path="res://scenes/platform_long.tscn" id="11_xfvr6"]
 [ext_resource type="PackedScene" uid="uid://dicdpchxv8chk" path="res://scenes/platform.tscn" id="13_7rxmw"]
 [ext_resource type="PackedScene" uid="uid://da8cxn8q226je" path="res://scenes/dutch_ingredient.tscn" id="13_55t3u"]
+[ext_resource type="PackedScene" uid="uid://dir78bid8yy53" path="res://scenes/music.tscn" id="14_waf6m"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_4w60h"]
 a = Vector2(2205, -17)
@@ -128,3 +129,6 @@ position = Vector2(1733, -45)
 
 [node name="dutch_ingredient" parent="." instance=ExtResource("13_55t3u")]
 position = Vector2(1733, -216)
+
+[node name="Music" parent="." instance=ExtResource("14_waf6m")]
+max_distance = 50000.0

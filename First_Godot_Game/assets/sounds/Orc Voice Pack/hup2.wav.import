@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bw8a4fe8x60tu"
+path="res://.godot/imported/hup2.wav-49b6601bdd087e35ba3137e51ca60386.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Orc Voice Pack/hup2.wav"
+dest_files=["res://.godot/imported/hup2.wav-49b6601bdd087e35ba3137e51ca60386.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

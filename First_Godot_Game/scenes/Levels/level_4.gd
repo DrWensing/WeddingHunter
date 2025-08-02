@@ -21,8 +21,10 @@ func _ready():
 	henrik.equip_gun()
 	tabea.equip_gun()
 	
+	HUD.visible = true
 	HUD.show_message("Level 4: Khazad-dûm - Die Minen von Moria")
 	ingredient.set_type('carotte')
+	$Music.play()
 	
 func _process(delta):
 	if !Warnung_ausgesprochen:
@@ -38,6 +40,7 @@ func _process(delta):
 	if boss_alive:
 		if get_max_player_xpos() > 1000:
 			if not BossMusic.playing:
+				$Music.stream_paused = true
 				BossMusic.play()
 				Boss_Balrog.active = true
 		
@@ -48,14 +51,17 @@ func _process(delta):
 			if Boss_Balrog.position.x - henrik.position.x < 100:
 				henrik.take_damage(30)				
 				henrik.position.x = Boss_Balrog.position.x - 200
+				henrik.global_position.x = max(henrik.global_position.x, 1050)
 			if Boss_Balrog.position.x - tabea.position.x < 100:
 				tabea.take_damage(30)
 				tabea.position.x = Boss_Balrog.position.x - 200
+				tabea.global_position.x = max(tabea.global_position.x,1050)
 
 func get_max_player_xpos():
 	return max(henrik.position.x,tabea.position.x)
 
 func Boss_defeated():
+	$Music.stream_paused=false
 	BossMusic.stop()
 	HUD.show_message("Henrik & Tabea: 'DU KOMMST NICHT VORBEI!' \n Weiter geht's")
 	NextLevelPortal.global_position = Vector2(1500,270)

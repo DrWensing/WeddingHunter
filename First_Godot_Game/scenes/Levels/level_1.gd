@@ -16,7 +16,9 @@ func _ready():
 	MultiTargetCam.make_current()
 	ingredient.set_type('cauliflower')
 	$DutchOven.pause()
+	$Music.play()
 
+	HUD.visible = true
 	HUD.show_message("Level 1: \nTabea und Henrik sind in den Flitterwochen...im Wald. Plötzlich bleibt der Wagen liegen. Sie sind auf sich gestellt...", 5.0)
 
 func _process(delta):

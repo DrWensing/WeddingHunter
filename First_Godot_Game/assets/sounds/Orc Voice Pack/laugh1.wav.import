@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://br6mmktkn2f47"
+path="res://.godot/imported/laugh1.wav-6c071d61d0b73d01eaad599fae5c38cb.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Orc Voice Pack/laugh1.wav"
+dest_files=["res://.godot/imported/laugh1.wav-6c071d61d0b73d01eaad599fae5c38cb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

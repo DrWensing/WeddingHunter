@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://80d4pi5pdv3n"
+path="res://.godot/imported/hit5.wav-2dde17e8e60ee546200d28421bf731cd.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Orc Voice Pack/hit5.wav"
+dest_files=["res://.godot/imported/hit5.wav-2dde17e8e60ee546200d28421bf731cd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -17,12 +17,16 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Music="*res://scenes/music.tscn"
 InteractionManager="*res://interaction/InteractionManager.tscn"
 MultiTargetCam="*res://scenes/multi_target_cam.tscn"
 Main="*res://scripts/gamemanager.gd"
 HUD="*res://scenes/hud.tscn"
 Projectiles="*res://scenes/projectiles.tscn"
+
+[display]
+
+window/size/resizable=false
+window/stretch/aspect="expand"
 
 [input]
 

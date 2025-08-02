@@ -19,8 +19,10 @@ func _ready():
 	henrik.equip_gun()
 	tabea.equip_gun()
 	
+	HUD.visible = true
 	HUD.show_message("Level 3: England 932 n.Chr.")
 	ingredient.set_type('tomato')
+	$Music.play()
 	
 
 func _process(delta):
@@ -37,6 +39,7 @@ func _process(delta):
 		if henrik.position.x > 1000 or tabea.position.x > 1000:
 			if not BossMusic.playing:
 				BossMusic.play()
+				$Music.stream_paused = true
 				
 		# Der Boss verfolgt die Spieler
 		if henrik.position.x > 900:
@@ -50,6 +53,7 @@ func _process(delta):
 		
 	
 func Boss_defeated():
+	$Music.stream_paused = false
 	BossMusic.stop()
 	HUD.show_message('Waidmannsheil. Das Untier wurde erlegt. Der Weg ist nun frei.')
 	NextLevelPortal.global_position = Vector2(1270,820)

@@ -9,7 +9,8 @@ extends Area2D
 func _ready():
 	set_type(ing_type)
 	
-
+func make_non_interactable():
+	$CollisionShape2D.disabled = true
 	
 func set_type(input):
 	#convert string to frame ID 
@@ -21,6 +22,7 @@ func set_type(input):
 	ing_type = input
 
 func _on_body_entered(body):
+	print(body.name)
 	Main.receive_ingredient(ing_type)
 	pickup_sound.play()
 	coll_shape.disabled = true  # Prevent further collisions

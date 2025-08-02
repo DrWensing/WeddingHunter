@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cpn8c86kl6hgn"
+path="res://.godot/imported/sceptical2.wav-428facc48a51735b6c3d323c846d2ed2.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Orc Voice Pack/sceptical2.wav"
+dest_files=["res://.godot/imported/sceptical2.wav-428facc48a51735b6c3d323c846d2ed2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

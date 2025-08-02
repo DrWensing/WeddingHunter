@@ -23,12 +23,14 @@ func _ready():
 	health_bar.initialize(hp)
 
 func _on_alert_area_body_entered(body):
-	if body.name.begins_with("Player"):	
-		registered_player.append(body)
-		alert = true
-		animation_sprite.play("walk")
-		alert_label.text = "?!"
-		alert_label.show()
+	if not alert:
+		if body.name.begins_with("Player"):
+			registered_player.append(body)
+			alert = true
+			animation_sprite.play("walk")
+			alert_label.text = "?!"
+			alert_label.show()
+			$detect_sound.play()
 
 func _physics_process(delta):
 	# Add the gravity
@@ -41,7 +43,7 @@ func _physics_process(delta):
 	if not registered_player.is_empty():
 		var closest_player = get_closest_player()
 		var x_distance_to_closest_player = closest_player.position.x - self.position.x 
-		var y_distance_to_closest_player = closest_player.position.y - self.position.y
+		var y_distance_to_closest_player = closest_player.position.y - self.position.y + 110 #offset is a hotfix
 		if abs(x_distance_to_closest_player)>40 or abs(y_distance_to_closest_player)>30:
 			print(x_distance_to_closest_player, y_distance_to_closest_player)
 			animation_sprite.play("walk")
@@ -56,6 +58,7 @@ func _physics_process(delta):
 			velocity.x = SPEED*direction
 		else:
 			animation_sprite.play("attack")
+			$attack_sound.play()
 			velocity.x = 0
 			#deal damage
 			closest_player.take_damage(20)
@@ -92,6 +95,7 @@ func _on_attack_timer_timeout():
 	on_cooldown = false	
 
 func receive_damage(dmg):
+	$hit_sound.play()
 	health_bar.take_dmg(dmg)
 	if health_bar.is_dead():
 		print('Enemy slain!')

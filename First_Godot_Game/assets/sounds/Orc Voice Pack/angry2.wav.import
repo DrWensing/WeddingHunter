@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://v5elxgg7ohmu"
+path="res://.godot/imported/angry2.wav-10f009efcd3a31833b7e4b5ddd300d9b.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Orc Voice Pack/angry2.wav"
+dest_files=["res://.godot/imported/angry2.wav-10f009efcd3a31833b7e4b5ddd300d9b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

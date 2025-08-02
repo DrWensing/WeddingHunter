@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxy8na1q2c1qa"
+path="res://.godot/imported/thankful3.wav-024781d7332ef0b4c92873d062455ce7.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Orc Voice Pack/thankful3.wav"
+dest_files=["res://.godot/imported/thankful3.wav-024781d7332ef0b4c92873d062455ce7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

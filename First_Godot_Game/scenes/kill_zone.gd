@@ -2,6 +2,9 @@ extends Area2D
 
 @onready var timer = $Timer
 
-func _on_body_entered(body):
+func _on_body_entered(body):	
 	if body.name=="Player2" or body.name=="Player":
 		body.die()
+	else:
+		print(body.name, ' entered killzone')
+		body.free()

@@ -29,11 +29,9 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 
 	# Handle jump.
-	if player.position.y < position.y - 10 and is_on_floor():
+	if player.global_position.y < global_position.y - 15 and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	dist_p1 = (player.position.x - position.x)**2 + (player.position.y - position.y)**2
 	dist_p2 = (player2.position.x - position.x)**2+ (player2.position.y- position.y)**2
 	

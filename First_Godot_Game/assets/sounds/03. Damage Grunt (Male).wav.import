@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bjmgewt2xlr4l"
+path="res://.godot/imported/03. Damage Grunt (Male).wav-33c72e81641292cc9477e367f24b1584.sample"
+
+[deps]
+
+source_file="res://assets/sounds/03. Damage Grunt (Male).wav"
+dest_files=["res://.godot/imported/03. Damage Grunt (Male).wav-33c72e81641292cc9477e367f24b1584.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

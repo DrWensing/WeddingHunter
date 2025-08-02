@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://b4w1u18aercdb"]
+[gd_scene load_steps=67 format=3 uid="uid://b4w1u18aercdb"]
 
 [ext_resource type="Texture2D" uid="uid://b77djhovun4x6" path="res://assets/sprites/knight.png" id="1_ch1bd"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_h6jhj"]
@@ -11,6 +11,9 @@
 [ext_resource type="AudioStream" uid="uid://drpcu2tosj3w1" path="res://assets/sounds/reload.mp3" id="9_esq7u"]
 [ext_resource type="AudioStream" uid="uid://qviyd0m41myi" path="res://assets/sounds/jump.wav" id="11_c43vi"]
 [ext_resource type="AudioStream" uid="uid://ddex2h6d26ps0" path="res://assets/sounds/wah-wah-sad-trombone-6347.mp3" id="12_jdyn4"]
+[ext_resource type="AudioStream" uid="uid://dpdo67l2b07ti" path="res://assets/sounds/unsere_sounds/aua_male.wav" id="12_oaoya"]
+[ext_resource type="AudioStream" uid="uid://dgc0cne0rx8pb" path="res://assets/sounds/unsere_sounds/mhhh_male.wav" id="13_0w6nx"]
+[ext_resource type="AudioStream" uid="uid://b1bgi3e2541ev" path="res://assets/sounds/unsere_sounds/ahhh_male.wav" id="14_va178"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6nnpq"]
 atlas = ExtResource("2_p33h4")
@@ -416,6 +419,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_kxqt8"]
+streams_count = 3
+stream_0/stream = ExtResource("12_oaoya")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("13_0w6nx")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("14_va178")
+stream_2/weight = 1.0
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_h6jhj")
@@ -465,6 +477,10 @@ stream = ExtResource("11_c43vi")
 stream = ExtResource("12_jdyn4")
 volume_db = 19.945
 pitch_scale = 2.38
+
+[node name="damage_sound" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_kxqt8")
+volume_db = 10.0
 
 [connection signal="ready" from="Character" to="." method="_on_character_ready"]
 [connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]

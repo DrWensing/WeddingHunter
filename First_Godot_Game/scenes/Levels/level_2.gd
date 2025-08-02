@@ -14,8 +14,9 @@ func _ready():
 	henrik.equip_gun()
 	tabea.equip_gun()
 	
-	
+	HUD.visible = true
 	HUD.show_message("Level 2: Ballert euch den Weg frei.")
+	$Music.play()
 
 func _process(delta):
 	if get_max_player_xpos() > 3300:

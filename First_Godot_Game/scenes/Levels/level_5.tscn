@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bjf3udm32mp8s"]
+[gd_scene load_steps=17 format=3 uid="uid://bjf3udm32mp8s"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_5.gd" id="1_xgvtm"]
 [ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="2_sj70q"]
@@ -12,10 +12,13 @@
 [ext_resource type="PackedScene" path="res://scenes/platform_very_long.tscn" id="10_xnfvq"]
 [ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="11_xwh64"]
 [ext_resource type="PackedScene" uid="uid://da8cxn8q226je" path="res://scenes/dutch_ingredient.tscn" id="12_28qwd"]
+[ext_resource type="PackedScene" uid="uid://dicdpchxv8chk" path="res://scenes/platform.tscn" id="13_bjiyl"]
+[ext_resource type="PackedScene" uid="uid://c2ssddsnaoheu" path="res://scenes/ninja.tscn" id="14_ngdri"]
+[ext_resource type="PackedScene" uid="uid://dir78bid8yy53" path="res://scenes/music.tscn" id="15_3jjbv"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_klrri"]
 a = Vector2(2771, -18)
-b = Vector2(-2325, 3)
+b = Vector2(-3160, 3)
 
 [node name="Level5" type="Node2D"]
 position = Vector2(18, 132)
@@ -23,18 +26,22 @@ script = ExtResource("1_xgvtm")
 
 [node name="Player" parent="." instance=ExtResource("2_sj70q")]
 unique_name_in_owner = true
-position = Vector2(128, -36)
+top_level = true
+position = Vector2(-2222, 374)
 
 [node name="Player2" parent="." instance=ExtResource("3_kiwle")]
 unique_name_in_owner = true
-position = Vector2(71, -36)
+top_level = true
+position = Vector2(-2279, 374)
 
 [node name="Dog" parent="." instance=ExtResource("5_bo28f")]
-position = Vector2(172, -27)
+top_level = true
+position = Vector2(-2178, 383)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("4_uur56")
 format = 2
+layer_0/tile_data = PackedInt32Array(393199, 196613, 2, 458743, 393221, 4, 65542, 393221, 4, 720865, 393221, 4, 720869, 393221, 4, 720873, 393221, 4, 720877, 393221, 4, 720861, 393221, 4, 720857, 393221, 4, 524225, 196613, 2, 393166, 196613, 2, 524226, 393221, 4, 655292, 393221, 4)
 
 [node name="NextLevel" parent="." instance=ExtResource("6_lmep4")]
 position = Vector2(1521, -41)
@@ -59,13 +66,13 @@ position = Vector2(467, -44)
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Platform2" parent="Platforms" instance=ExtResource("10_xnfvq")]
-position = Vector2(597, 63)
+position = Vector2(582, 60)
 
 [node name="Platform" parent="Platforms" instance=ExtResource("10_xnfvq")]
-position = Vector2(204, 206)
+position = Vector2(204, 203)
 
 [node name="Platform3" parent="Platforms" instance=ExtResource("10_xnfvq")]
-position = Vector2(316, 206)
+position = Vector2(316, 203)
 
 [node name="Platform4" parent="Platforms" instance=ExtResource("10_xnfvq")]
 position = Vector2(409, 216)
@@ -82,12 +89,192 @@ position = Vector2(533, 185)
 [node name="Platform8" parent="Platforms" instance=ExtResource("10_xnfvq")]
 position = Vector2(86, 172)
 
+[node name="Platform9" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-28, 211)
+
+[node name="Platform10" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(24, 254)
+
+[node name="Platform11" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-156, 353)
+
+[node name="Platform12" parent="Platforms" instance=ExtResource("13_bjiyl")]
+position = Vector2(-217, 322)
+
+[node name="Platform13" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-329, 362)
+
+[node name="Platform14" parent="Platforms" instance=ExtResource("13_bjiyl")]
+position = Vector2(-396, 317)
+
+[node name="Platform15" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-535, 395)
+
+[node name="Platform16" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-531, 464)
+
+[node name="Platform17" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-633, 491)
+
+[node name="Platform18" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-747, 491)
+
+[node name="Platform19" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-861, 491)
+
+[node name="Platform20" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-1318, 491)
+
+[node name="Platform21" parent="Platforms" instance=ExtResource("13_bjiyl")]
+position = Vector2(-446, 362)
+
+[node name="Platform22" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-539, 331)
+
+[node name="Platform23" parent="Platforms" instance=ExtResource("13_bjiyl")]
+position = Vector2(-73, 269)
+
+[node name="Platform24" parent="Platforms" instance=ExtResource("13_bjiyl")]
+position = Vector2(-425, 426)
+
+[node name="Platform25" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-1088, 491)
+
+[node name="Platform26" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-1202, 491)
+
+[node name="Platform27" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-975, 491)
+
+[node name="Platform28" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-1623, 338)
+rotation = -0.0349066
+
+[node name="Platform29" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-1810, 401)
+rotation = 0.47822
+scale = Vector2(1, 1)
+
+[node name="Platform30" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-1415, 394)
+rotation = 0.485202
+
+[node name="Platform31" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-1513, 340)
+rotation = 0.520108
+
+[node name="Platform32" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-73, 304)
+
+[node name="Platform33" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-1156, 451)
+
+[node name="Platform34" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-521, 491)
+
+[node name="Platform35" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-409, 491)
+
+[node name="Platform36" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-1486, 445)
+
+[node name="Platform37" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-1376, 445)
+
+[node name="Platform39" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-297, 491)
+
+[node name="Platform40" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-2079, 446)
+rotation = -0.53058
+
+[node name="Platform41" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-1984, 396)
+
+[node name="Platform42" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-2300, 450)
+
+[node name="Platform43" parent="Platforms" instance=ExtResource("13_bjiyl")]
+position = Vector2(-1036, 267)
+
+[node name="Platform44" parent="Platforms" instance=ExtResource("13_bjiyl")]
+position = Vector2(-1035, 417)
+
+[node name="Platform45" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-1596, 445)
+
+[node name="Platform46" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-1706, 445)
+
+[node name="Platform47" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-1875, 393)
+rotation = -0.53058
+
+[node name="Platform48" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-1776, 344)
+
+[node name="Platform49" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-2188, 450)
+
+[node name="Platform50" parent="Platforms" instance=ExtResource("13_bjiyl")]
+position = Vector2(-1037, 343)
+
+[node name="Platform51" parent="Platforms" instance=ExtResource("13_bjiyl")]
+position = Vector2(-1087, 382)
+
+[node name="Platform53" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-186, 491)
+
+[node name="Platform54" parent="Platforms" instance=ExtResource("13_bjiyl")]
+position = Vector2(-1089, 308)
+
+[node name="Platform56" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(-73, 491)
+
+[node name="Platform58" parent="Platforms" instance=ExtResource("10_xnfvq")]
+position = Vector2(40, 491)
+
 [node name="KillZone" parent="." instance=ExtResource("11_xwh64")]
 position = Vector2(-567, 35)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(840, 160)
+position = Vector2(861, 403)
 shape = SubResource("SegmentShape2D_klrri")
 
 [node name="dutch_ingredient" parent="." instance=ExtResource("12_28qwd")]
-position = Vector2(101, 1)
+position = Vector2(-1049, 99)
+
+[node name="ninjas" type="Node" parent="."]
+
+[node name="CharacterBody2D6" parent="ninjas" instance=ExtResource("14_ngdri")]
+position = Vector2(-1028, 213)
+
+[node name="CharacterBody2D7" parent="ninjas" instance=ExtResource("14_ngdri")]
+position = Vector2(-1542, 379)
+
+[node name="CharacterBody2D" parent="ninjas" instance=ExtResource("14_ngdri")]
+position = Vector2(-476, 285)
+
+[node name="CharacterBody2D2" parent="ninjas" instance=ExtResource("14_ngdri")]
+position = Vector2(-370, 280)
+
+[node name="CharacterBody2D3" parent="ninjas" instance=ExtResource("14_ngdri")]
+position = Vector2(-200, 273)
+
+[node name="CharacterBody2D4" parent="ninjas" instance=ExtResource("14_ngdri")]
+position = Vector2(-606, 443)
+
+[node name="CharacterBody2D5" parent="ninjas" instance=ExtResource("14_ngdri")]
+position = Vector2(-1814, 297)
+
+[node name="CharacterBody2D8" parent="ninjas" instance=ExtResource("14_ngdri")]
+position = Vector2(-258, 441)
+
+[node name="CharacterBody2D9" parent="ninjas" instance=ExtResource("14_ngdri")]
+position = Vector2(-47, 436)
+
+[node name="CharacterBody2D10" parent="ninjas" instance=ExtResource("14_ngdri")]
+position = Vector2(-898, 392)
+
+[node name="Music" parent="." instance=ExtResource("15_3jjbv")]
+max_distance = 50000.0

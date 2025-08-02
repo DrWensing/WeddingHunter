@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://4umff17oj18j"
+path="res://.godot/imported/nooo.wav-33ce1e20806cae752d9daa21b7d21ff1.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Orc Voice Pack/nooo.wav"
+dest_files=["res://.godot/imported/nooo.wav-33ce1e20806cae752d9daa21b7d21ff1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

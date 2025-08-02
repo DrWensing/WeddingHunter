@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dvu6r3h0f5i3v"
+path="res://.godot/imported/yescommand.wav-39931e5e18aa3f33a38b97165eca0fe0.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Orc Voice Pack/yescommand.wav"
+dest_files=["res://.godot/imported/yescommand.wav-39931e5e18aa3f33a38b97165eca0fe0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
