@@ -1,7 +1,7 @@
 [gd_scene load_steps=107 format=3 uid="uid://cucqyq1204l7c"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_7.gd" id="1_qfg21"]
-[ext_resource type="AudioStream" uid="uid://f1dsxho8rc08" path="res://assets/sounds/Killswitch_Engage_Holy-Diver.mp3" id="3_3y437"]
+[ext_resource type="AudioStream" uid="uid://b0prwhd4pqagx" path="res://assets/sounds/abspann_musik.mp3" id="2_mskdx"]
 [ext_resource type="Texture2D" uid="uid://dick1114k4bpt" path="res://assets/background/7MF3Jn.png" id="4_q2sub"]
 [ext_resource type="Texture2D" uid="uid://bdud7uh4speyw" path="res://assets/background/tokio.png" id="5_esbkb"]
 [ext_resource type="Texture2D" uid="uid://d0ftkeprcgg5y" path="res://assets/background/wald3.jpg" id="6_6x7q5"]
@@ -628,7 +628,7 @@ script = ExtResource("1_qfg21")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-353, 74)
-stream = ExtResource("3_3y437")
+stream = ExtResource("2_mskdx")
 autoplay = true
 max_distance = 500000.0
 
@@ -873,19 +873,19 @@ texture = ExtResource("6_6x7q5")
 position = Vector2(324.375, 666)
 sprite_frames = SubResource("SpriteFrames_itwj4")
 autoplay = "default"
-frame_progress = 0.254453
+frame_progress = 0.726218
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(563.375, 2254)
 sprite_frames = SubResource("SpriteFrames_qlrwq")
 autoplay = "default"
-frame_progress = 0.53481
+frame_progress = 0.00657419
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
 position = Vector2(67.375, 2250)
 sprite_frames = SubResource("SpriteFrames_qlrwq")
 autoplay = "default"
-frame_progress = 0.684605
+frame_progress = 0.15637
 
 [node name="Sprite2D6" type="Sprite2D" parent="."]
 position = Vector2(782.375, 3034)
@@ -896,7 +896,7 @@ texture = ExtResource("10_xtkox")
 position = Vector2(219.375, 5685)
 sprite_frames = SubResource("SpriteFrames_3rln0")
 autoplay = "default"
-frame_progress = 0.115985
+frame_progress = 0.851871
 
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
 position = Vector2(384.375, 10589)
@@ -908,14 +908,14 @@ frame_progress = 0.690507
 position = Vector2(263.375, 5685)
 sprite_frames = SubResource("SpriteFrames_tmdi0")
 autoplay = "default"
-frame_progress = 0.738716
+frame_progress = 0.474603
 
 [node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="."]
 position = Vector2(173.375, 5704)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_cdv28")
 autoplay = "default"
-frame_progress = 0.998159
+frame_progress = 0.986867
 flip_h = true
 
 [node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="."]
@@ -923,7 +923,7 @@ position = Vector2(75.575, 5128.7)
 scale = Vector2(1.225, 1.20938)
 sprite_frames = SubResource("SpriteFrames_okg80")
 autoplay = "default"
-frame_progress = 0.292118
+frame_progress = 0.0280033
 flip_h = true
 
 [node name="Sprite2D7" type="Sprite2D" parent="."]
@@ -941,14 +941,14 @@ position = Vector2(78.375, 3426.5)
 scale = Vector2(1.6875, 1.53125)
 sprite_frames = SubResource("SpriteFrames_bendc")
 autoplay = "default"
-frame_progress = 0.483941
+frame_progress = 0.351881
 
 [node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="."]
 position = Vector2(67.125, 4373.75)
 scale = Vector2(2.31875, 2.59375)
 sprite_frames = SubResource("SpriteFrames_f7a1c")
 autoplay = "default"
-frame_progress = 0.533912
+frame_progress = 0.401852
 flip_h = true
 
 [node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="."]
@@ -962,7 +962,7 @@ position = Vector2(638.475, 4737.9)
 scale = Vector2(1.32917, 1.32917)
 sprite_frames = SubResource("SpriteFrames_07e0u")
 autoplay = "default"
-frame_progress = 0.386931
+frame_progress = 0.122817
 flip_h = true
 
 [node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="."]
@@ -970,7 +970,7 @@ position = Vector2(632.875, 5285)
 scale = Vector2(3.20833, 2.41667)
 sprite_frames = SubResource("SpriteFrames_1qxms")
 autoplay = "default"
-frame_progress = 0.220658
+frame_progress = 0.0885983
 
 [node name="Sprite2D9" type="Sprite2D" parent="."]
 position = Vector2(272.375, 5442)
