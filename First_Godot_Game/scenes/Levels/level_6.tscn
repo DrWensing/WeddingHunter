@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://y6j0g1eptb3m"]
+[gd_scene load_steps=24 format=3 uid="uid://y6j0g1eptb3m"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_6.gd" id="1_rr156"]
 [ext_resource type="TileSet" uid="uid://d3k1ar04o4po5" path="res://scenes/tileset.tres" id="2_yao40"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://di1hgs2r1hhlp" path="res://scenes/motor.tscn" id="19_4on6s"]
 [ext_resource type="AudioStream" uid="uid://cg6h7xaeicvq5" path="res://assets/sounds/car_starting.wav" id="20_qle51"]
 [ext_resource type="AudioStream" uid="uid://dydp6nbopkjvg" path="res://assets/sounds/double_honk.wav" id="21_qcl6i"]
+[ext_resource type="PackedScene" uid="uid://dnt8f4edl3thb" path="res://scenes/demon.tscn" id="22_0i4wh"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_66tvl"]
 a = Vector2(3200, 0)
@@ -41,11 +42,11 @@ layer_1/tile_data = PackedInt32Array(-393202, 196613, 3, -393201, 196613, 3, -39
 [node name="Player" parent="." instance=ExtResource("3_3tefw")]
 unique_name_in_owner = true
 z_index = 5
-position = Vector2(-633, -179)
+position = Vector2(-544, -280)
 
 [node name="Player2" parent="." instance=ExtResource("4_axsbn")]
 unique_name_in_owner = true
-position = Vector2(-734, -183)
+position = Vector2(-645, -284)
 
 [node name="Coins" type="Node" parent="."]
 
@@ -101,7 +102,7 @@ position = Vector2(1599, -346)
 
 [node name="Dog" parent="." instance=ExtResource("8_x8yxt")]
 unique_name_in_owner = true
-position = Vector2(-669, -197)
+position = Vector2(-580, -298)
 
 [node name="Car" parent="." instance=ExtResource("10_321n1")]
 position = Vector2(174, -222)
@@ -172,6 +173,9 @@ offset_top = -52.0
 offset_right = -636.0
 offset_bottom = -29.0
 text = "TODO: final Boss battle"
+
+[node name="Demon" parent="." instance=ExtResource("22_0i4wh")]
+position = Vector2(-912, -54)
 
 [connection signal="tree_exited" from="motor" to="." method="_on_motor_tree_exited"]
 [connection signal="finished" from="car_starting" to="." method="_on_car_starting_finished"]

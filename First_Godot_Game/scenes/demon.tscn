@@ -1,0 +1,125 @@
+[gd_scene load_steps=18 format=3 uid="uid://dnt8f4edl3thb"]
+
+[ext_resource type="Texture2D" uid="uid://bk576i717gvjo" path="res://assets/sprites/Flying Demon 2D Pixel Art/Sprites/with_outline/IDLE.png" id="1_1phek"]
+[ext_resource type="Script" path="res://scenes/demon.gd" id="1_i66a4"]
+[ext_resource type="Texture2D" uid="uid://cw2hsmusuvhyk" path="res://assets/sprites/Flying Demon 2D Pixel Art/Sprites/with_outline/ATTACK.png" id="1_txrtw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m24d0"]
+atlas = ExtResource("1_txrtw")
+region = Rect2(0, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpuyx"]
+atlas = ExtResource("1_txrtw")
+region = Rect2(81, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo55g"]
+atlas = ExtResource("1_txrtw")
+region = Rect2(162, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwwdy"]
+atlas = ExtResource("1_txrtw")
+region = Rect2(243, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u65p"]
+atlas = ExtResource("1_txrtw")
+region = Rect2(324, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pql65"]
+atlas = ExtResource("1_txrtw")
+region = Rect2(405, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wk80h"]
+atlas = ExtResource("1_txrtw")
+region = Rect2(486, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1p7h6"]
+atlas = ExtResource("1_txrtw")
+region = Rect2(567, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3r6r"]
+atlas = ExtResource("1_1phek")
+region = Rect2(0, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h51f1"]
+atlas = ExtResource("1_1phek")
+region = Rect2(81, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kr45l"]
+atlas = ExtResource("1_1phek")
+region = Rect2(162, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3x17"]
+atlas = ExtResource("1_1phek")
+region = Rect2(243, 0, 81, 71)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uh7h4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m24d0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpuyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xo55g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwwdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2u65p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pql65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wk80h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1p7h6")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3r6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h51f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kr45l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3x17")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vaci8"]
+radius = 22.0227
+
+[node name="Demon" type="Node2D"]
+script = ExtResource("1_i66a4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, -3)
+sprite_frames = SubResource("SpriteFrames_uh7h4")
+animation = &"attack"
+autoplay = "idle"
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_vaci8")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://cucqyq1204l7c"]
+[gd_scene load_steps=108 format=3 uid="uid://cucqyq1204l7c"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_7.gd" id="1_qfg21"]
 [ext_resource type="AudioStream" uid="uid://b0prwhd4pqagx" path="res://assets/sounds/abspann_musik.mp3" id="2_mskdx"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dvr6kwjl4xjju" path="res://assets/sprites/llama.png" id="20_b42oq"]
 [ext_resource type="Texture2D" uid="uid://pa7t4gfb5rf0" path="res://assets/sprites/slime_purple.png" id="21_0124h"]
 [ext_resource type="Texture2D" uid="uid://blrffggmh05hw" path="res://assets/godot_logo.png" id="22_glnwu"]
+[ext_resource type="Texture2D" uid="uid://x6cm55pk0dwy" path="res://assets/Wedding_Hunter_Logo.png" id="23_rsmr6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qyxwq"]
 atlas = ExtResource("7_fwk86")
@@ -976,5 +977,10 @@ frame_progress = 0.0885983
 position = Vector2(272.375, 5442)
 scale = Vector2(0.208297, 0.205593)
 texture = ExtResource("22_glnwu")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(328, 200)
+scale = Vector2(0.316406, 0.310547)
+texture = ExtResource("23_rsmr6")
 
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

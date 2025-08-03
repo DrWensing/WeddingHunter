@@ -19,7 +19,7 @@ func _ready():
 	$Music.play()
 
 	HUD.visible = true
-	HUD.show_message("Level 1: \nTabea und Henrik sind in den Flitterwochen...im Wald. Plötzlich bleibt der Wagen liegen. Sie sind auf sich gestellt...", 5.0)
+	HUD.show_message("Level 1: Tabea und Henrik sind in den Flitterwochen, doch der Wagen bleibt plötzlich liegen. Sie brauchen einen neuen Motor...", 7.0)
 
 func _process(delta):
 	#message box portal

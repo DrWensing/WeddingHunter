@@ -66,6 +66,13 @@ func update_ingredients():
 	var gray  = Color(0.1, 0.1, 0.1)
 	var white = Color(1, 1, 1)
 	
+	$dutch_ingredient.make_non_interactable()
+	$dutch_ingredient2.make_non_interactable()
+	$dutch_ingredient3.make_non_interactable()
+	$dutch_ingredient4.make_non_interactable()
+	$dutch_ingredient5.make_non_interactable()
+	$dutch_ingredient6.make_non_interactable()
+	
 	print('ingredients_collected', ingredients_collected)
 	#ingredient 1
 	if ingredients_collected[0]:
@@ -109,18 +116,12 @@ func _ready():
 	$Message.text=""
 		
 	$dutch_ingredient.sprite.frame = 0
-	$dutch_ingredient.make_non_interactable()
 	$dutch_ingredient2.sprite.frame = 1
-	$dutch_ingredient2.make_non_interactable()	
 	$dutch_ingredient3.sprite.frame = 2
-	$dutch_ingredient3.make_non_interactable()
 	$dutch_ingredient4.sprite.frame = 3
-	$dutch_ingredient4.make_non_interactable()
 	$dutch_ingredient5.sprite.frame = 4
-	$dutch_ingredient5.make_non_interactable()
 	$dutch_ingredient6.sprite.frame = 5
-	$dutch_ingredient6.make_non_interactable()
-	
+		
 	update_ingredients()
 	
 

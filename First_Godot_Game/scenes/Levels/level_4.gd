@@ -24,6 +24,7 @@ func _ready():
 	HUD.visible = true
 	HUD.show_message("Level 4: Khazad-dûm - Die Minen von Moria")
 	ingredient.set_type('carotte')
+	HUD.update_ingredients()
 	$Music.play()
 	
 func _process(delta):
@@ -38,7 +39,7 @@ func _process(delta):
 			Boss_defeated()
 			boss_alive = false
 	if boss_alive:
-		if get_max_player_xpos() > 1000:
+		if get_max_player_xpos() > 1050:
 			if not BossMusic.playing:
 				$Music.stream_paused = true
 				BossMusic.play()

@@ -60,10 +60,10 @@ func _process(delta):
 		HUD.show_message("Der neue Motor ist ruck-zuck eingebaut und der Wagen ist wie neu! Die Brüggemanns können jetzt ihre Flitterwochen genießen")
 		$Car.repair()
 		henrik.visible=false
-		henrik.movement_eneabled=false
+		henrik.movement_enabled=false
 		
 		tabea.visible=false
-		tabea.movement_eneabled=false
+		tabea.movement_enabled=false
 		
 		$Dog.visible = false
 		$Music.stop()
