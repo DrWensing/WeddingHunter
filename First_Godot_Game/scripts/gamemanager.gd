@@ -14,7 +14,7 @@ var current_level: Node = null
 var score: int = 0
 
 func _ready():
-	var starting_level = 6
+	var starting_level = 0
 	load_level(starting_level)
 	hud.update_score_label(score)
 	

@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://da8cxn8q226je" path="res://scenes/dutch_ingredient.tscn" id="15_mqrfl"]
 [ext_resource type="PackedScene" uid="uid://dn4hnn7jbsq05" path="res://scenes/dutch_oven.tscn" id="16_jv3j4"]
 [ext_resource type="PackedScene" uid="uid://dir78bid8yy53" path="res://scenes/music.tscn" id="17_gjgn7"]
-[ext_resource type="PackedScene" uid="uid://4gxtjuij6mdc" path="res://scenes/fireball_enemy.tscn" id="18_ytuds"]
+[ext_resource type="PackedScene" path="res://scenes/fireball_enemy.tscn" id="18_ytuds"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_66tvl"]
 a = Vector2(3200, 0)

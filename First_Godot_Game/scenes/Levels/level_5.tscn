@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dicdpchxv8chk" path="res://scenes/platform.tscn" id="13_bjiyl"]
 [ext_resource type="PackedScene" uid="uid://c2ssddsnaoheu" path="res://scenes/ninja.tscn" id="14_ngdri"]
 [ext_resource type="PackedScene" uid="uid://dir78bid8yy53" path="res://scenes/music.tscn" id="15_3jjbv"]
-[ext_resource type="PackedScene" uid="uid://3uhu2gbltnjs" path="res://scenes/werbung_schild.tscn" id="16_lg7a1"]
+[ext_resource type="PackedScene" path="res://scenes/werbung_schild.tscn" id="16_lg7a1"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_klrri"]
 a = Vector2(2771, -18)
