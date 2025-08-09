@@ -257,7 +257,6 @@ frame = 10
 modulate = Color(0.458405, 0.458405, 0.458405, 1)
 position = Vector2(-58, -12)
 rotation = 1.17984
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_77xql")
 animation = &"new_animation_1"
 autoplay = "new_animation_1"

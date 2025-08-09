@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1af5mna6qaa4"
-path="res://.godot/imported/Unbenannt.png-40e54155b24cd0c95a98bbc8247acba6.ctex"
+uid="uid://cp05hfnoyy020"
+path="res://.godot/imported/Werbung_Schild.png-d1891d9a9f4870b066fc9cf0a817648b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Unbenannt.png"
-dest_files=["res://.godot/imported/Unbenannt.png-40e54155b24cd0c95a98bbc8247acba6.ctex"]
+source_file="res://assets/Werbung_Schild.png"
+dest_files=["res://.godot/imported/Werbung_Schild.png-d1891d9a9f4870b066fc9cf0a817648b.ctex"]
 
 [params]
 

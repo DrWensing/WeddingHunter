@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsg86askm8jnb"
-path="res://.godot/imported/Point Bars_tileset.png-76d6366b3e1d423c28ab35f75c28c666.ctex"
+uid="uid://bv3oouygvcutr"
+path="res://.godot/imported/IDLE.png-f0015e16097017fc06731ce24ffbaa9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Point Bars_tileset.png"
-dest_files=["res://.godot/imported/Point Bars_tileset.png-76d6366b3e1d423c28ab35f75c28c666.ctex"]
+source_file="res://assets/sprites/Flying Demon 2D Pixel Art/Sprites/without_outline/IDLE.png"
+dest_files=["res://.godot/imported/IDLE.png-f0015e16097017fc06731ce24ffbaa9f.ctex"]
 
 [params]
 

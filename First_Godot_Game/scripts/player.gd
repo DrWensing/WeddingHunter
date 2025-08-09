@@ -5,7 +5,7 @@ const JUMP_VELOCITY = -300.0
 var hp = 100
 var ammo = 5
 var gun_equipped = false
-var movement_eneabled = true
+var movement_enabled = true
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -61,7 +61,7 @@ func unequip_gun():
 	fire_effect.visible=false
 
 func shoot():
-	if gun_equipped:
+	if gun_equipped and movement_enabled:
 		if ammo > 0:
 			if timer.is_stopped():
 				ammo -= 1
@@ -109,13 +109,13 @@ func jump():
 	jump_sound.play()
 	
 func _physics_process(delta):
-	if not movement_eneabled:
-		pass
-		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	#take_damage(delta/10)
+	
+	if not movement_enabled:
+		return
 	
 	# Handle shoot rifle
 	if Input.is_action_just_pressed("shoot"):
@@ -161,3 +161,11 @@ func _physics_process(delta):
 func _on_shot_timer_timeout():
 	fire_effect.visible=false
 	timer.stop()
+
+
+func _on_hitbox_area_entered(area):
+	print(area.name)
+	if area.name.begins_with("Fireball"):
+		take_damage(area.dmg)
+		area.free()
+	

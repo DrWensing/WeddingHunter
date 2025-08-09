@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=25 format=3 uid="uid://d3k1ar04o4po5"]
+[gd_resource type="TileSet" load_steps=27 format=3 uid="uid://d3k1ar04o4po5"]
 
 [ext_resource type="Texture2D" uid="uid://bxsfle0f2j4nu" path="res://assets/sprites/flowers.png" id="1_0uxxg"]
 [ext_resource type="Texture2D" uid="uid://dfyatufxodnfm" path="res://assets/sprites/world_tileset.png" id="2_bim8x"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cqbv270oxiwad" path="res://assets/sprites/tilesetOpenGame.png" id="3_w1jec"]
 [ext_resource type="Texture2D" uid="uid://b4jup3k4q21a7" path="res://scenes/Mine.png" id="4_0vyju"]
 [ext_resource type="Texture2D" uid="uid://ucda8q7q3p26" path="res://assets/sprites/tombstone.png" id="4_sno2j"]
+[ext_resource type="Texture2D" uid="uid://d3h232m7snl7y" path="res://assets/Chinatown.png" id="5_ke188"]
 [ext_resource type="Texture2D" uid="uid://b3fd2revxwpp4" path="res://assets/sprites/Goldlore.png" id="7_sb6f0"]
 [ext_resource type="Texture2D" uid="uid://cawirn0b5cwdx" path="res://assets/sprites/Geld.png" id="8_d0fei"]
 [ext_resource type="Texture2D" uid="uid://cmfk1kp5q0q7b" path="res://assets/sprites/Gieskanne.png" id="9_23m7c"]
@@ -866,6 +867,22 @@ texture_region_size = Vector2i(32, 32)
 1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:2/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3bnn0"]
+texture = ExtResource("5_ke188")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i813x"]
 texture = ExtResource("3_vnx1j")
 texture_region_size = Vector2i(32, 32)
@@ -1106,3 +1123,4 @@ sources/8 = SubResource("TileSetAtlasSource_icedn")
 sources/10 = SubResource("TileSetAtlasSource_borek")
 sources/11 = SubResource("TileSetAtlasSource_u1w0a")
 sources/9 = SubResource("TileSetAtlasSource_1mckb")
+sources/12 = SubResource("TileSetAtlasSource_3bnn0")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0r50j4xg7l0q"
-path="res://.godot/imported/wooden_board.jpg-52240e18d2068f80b8f6bbc68d87de7c.ctex"
+uid="uid://vqywn8lta62m"
+path="res://.godot/imported/HURT.png-9353ed8d3f4b0183e6420705a0ba555b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wooden_board.jpg"
-dest_files=["res://.godot/imported/wooden_board.jpg-52240e18d2068f80b8f6bbc68d87de7c.ctex"]
+source_file="res://assets/sprites/Flying Demon 2D Pixel Art/Sprites/without_outline/HURT.png"
+dest_files=["res://.godot/imported/HURT.png-9353ed8d3f4b0183e6420705a0ba555b.ctex"]
 
 [params]
 

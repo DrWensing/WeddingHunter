@@ -1,53 +1,53 @@
 [gd_scene load_steps=12 format=3 uid="uid://da8cxn8q226je"]
 
 [ext_resource type="Script" path="res://scenes/dutch_ingredient.gd" id="1_1756k"]
-[ext_resource type="Texture2D" uid="uid://hovxyg2wsnim" path="res://assets/sprites/FreePack.png" id="1_sxs4t"]
+[ext_resource type="Texture2D" uid="uid://csiqijvgqj3p" path="res://assets/sprites/dutch_oven.png" id="2_2evd6"]
 [ext_resource type="AudioStream" uid="uid://vqcendp8xyjq" path="res://assets/sounds/FreeSFX/GameSFX/PowerUp/Retro PowerUP 09.wav" id="3_n3jx1"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4vfyf"]
-atlas = ExtResource("1_sxs4t")
-region = Rect2(416, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnmws"]
+atlas = ExtResource("2_2evd6")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a20wi"]
-atlas = ExtResource("1_sxs4t")
-region = Rect2(448, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcky5"]
+atlas = ExtResource("2_2evd6")
+region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n88f8"]
-atlas = ExtResource("1_sxs4t")
-region = Rect2(480, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6ab2"]
+atlas = ExtResource("2_2evd6")
+region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4luqt"]
-atlas = ExtResource("1_sxs4t")
-region = Rect2(416, 96, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2c8w"]
+atlas = ExtResource("2_2evd6")
+region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xu7pr"]
-atlas = ExtResource("1_sxs4t")
-region = Rect2(448, 96, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ylhy"]
+atlas = ExtResource("2_2evd6")
+region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wtijp"]
-atlas = ExtResource("1_sxs4t")
-region = Rect2(480, 96, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu6yu"]
+atlas = ExtResource("2_2evd6")
+region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g0ssq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4vfyf")
+"texture": SubResource("AtlasTexture_bnmws")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a20wi")
+"texture": SubResource("AtlasTexture_kcky5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n88f8")
+"texture": SubResource("AtlasTexture_d6ab2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4luqt")
+"texture": SubResource("AtlasTexture_e2c8w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xu7pr")
+"texture": SubResource("AtlasTexture_0ylhy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wtijp")
+"texture": SubResource("AtlasTexture_uu6yu")
 }],
 "loop": true,
 "name": &"default",
