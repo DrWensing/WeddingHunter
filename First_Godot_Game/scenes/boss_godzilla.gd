@@ -21,10 +21,10 @@ func set_height_level(stage_ind):
 	
 func change_position():
 	if can_move:
-		if height_level ==1:
-			set_height_level(randi_range(2,4))
+		if height_level == 4:
+			set_height_level(randi_range(1,3))
 		else:
-			set_height_level(1)
+			set_height_level(4)
 		$MoveTimer.start()
 		$FireTimer.start()
 		$ChargeTimer.start()

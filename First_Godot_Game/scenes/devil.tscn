@@ -1,16 +1,12 @@
-[gd_scene load_steps=213 format=3 uid="uid://cpdlqvyp042np"]
+[gd_scene load_steps=197 format=3 uid="uid://cpdlqvyp042np"]
 
 [ext_resource type="Script" path="res://scenes/devil.gd" id="1_vm7ua"]
+[ext_resource type="AudioStream" uid="uid://drrvm6gkkk6uy" path="res://assets/music/fuck_fuck_fuuuuck.wav" id="2_8lgvv"]
+[ext_resource type="AudioStream" uid="uid://by80wi6x0l7r6" path="res://assets/music/taste_my_lightning.wav" id="3_2636d"]
+[ext_resource type="AudioStream" uid="uid://b0qyko3rvje2s" path="res://assets/music/beelzeboss_you_are_fucked.wav" id="4_wmla2"]
+[ext_resource type="AudioStream" uid="uid://dxvfu72gqu5ls" path="res://assets/music/beelzeboss_you_are_coming_with_me.wav" id="5_dsv86"]
 [ext_resource type="PackedScene" uid="uid://bwnmfy4o7oy0n" path="res://scenes/health_bar.tscn" id="5_v7pi5"]
-[ext_resource type="AudioStream" uid="uid://bkf1rc5qf7foo" path="res://assets/sounds/Orc Voice Pack/angry1.wav" id="6_1bkxe"]
-[ext_resource type="AudioStream" uid="uid://v5elxgg7ohmu" path="res://assets/sounds/Orc Voice Pack/angry2.wav" id="7_37bju"]
-[ext_resource type="AudioStream" uid="uid://2wkx4pfxkbc0" path="res://assets/sounds/Orc Voice Pack/angry3.wav" id="8_y447h"]
-[ext_resource type="AudioStream" uid="uid://cjcpvj3k2dhwe" path="res://assets/sounds/Orc Voice Pack/surprised1.wav" id="9_4t34y"]
-[ext_resource type="AudioStream" uid="uid://d1dg5xiru0qow" path="res://assets/sounds/Orc Voice Pack/surprised2.wav" id="10_uvwnp"]
-[ext_resource type="AudioStream" uid="uid://cgqljsoxhna82" path="res://assets/sounds/Orc Voice Pack/attack4.wav" id="11_cgoj7"]
-[ext_resource type="AudioStream" uid="uid://c62flvkgwqvsg" path="res://assets/sounds/Orc Voice Pack/attack1.wav" id="12_ihdqp"]
-[ext_resource type="AudioStream" uid="uid://liy88df1no4m" path="res://assets/sounds/Orc Voice Pack/attack2.wav" id="13_hlxry"]
-[ext_resource type="AudioStream" uid="uid://bxslh3j8gi2yh" path="res://assets/sounds/Orc Voice Pack/attack3.wav" id="14_nste5"]
+[ext_resource type="AudioStream" uid="uid://bdcfyfmsc3olp" path="res://assets/music/beelzeboss_you_guys_are_fucking_lame.wav" id="6_xm87h"]
 [ext_resource type="AudioStream" uid="uid://v3hm1bxnyvob" path="res://assets/sounds/Orc Voice Pack/hit1.wav" id="15_xlie5"]
 [ext_resource type="AudioStream" uid="uid://bkdti0jkbpwb0" path="res://assets/sounds/Orc Voice Pack/hit2.wav" id="16_1dpfg"]
 [ext_resource type="Texture2D" uid="uid://dq7ql440fi0yn" path="res://assets/sprites/devil/Devil_8_A.png" id="16_pbsbm"]
@@ -21,8 +17,6 @@
 [ext_resource type="AudioStream" uid="uid://80d4pi5pdv3n" path="res://assets/sounds/Orc Voice Pack/hit5.wav" id="19_o8rvv"]
 [ext_resource type="Texture2D" uid="uid://c4qkmigs18e7e" path="res://assets/sprites/devil/Devil_1_Walk.png" id="19_rbvjw"]
 [ext_resource type="LabelSettings" uid="uid://ii4fh6vh28xn" path="res://assets/fonts/BossLabelFont.tres" id="21_ej78i"]
-[ext_resource type="Texture2D" uid="uid://1v0wfgc2xk7f" path="res://assets/sprites/Red Effect Bullet Impact Explosion 32x32.png" id="22_ydv0q"]
-[ext_resource type="Texture2D" uid="uid://rrt2uf6ddyr7" path="res://assets/sprites/Purple Effect Bullet Impact Explosion 32x32.png" id="23_fvrkx"]
 [ext_resource type="Texture2D" uid="uid://bjrvrindt8vu" path="res://assets/sprites/RealisticSmokeFreePack/128/Smoke_1_128.png" id="24_si1lt"]
 [ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="25_lwn8n"]
 
@@ -32,30 +26,16 @@ size = Vector2(26, 80.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmedu"]
 size = Vector2(27, 81)
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5a8ks"]
-streams_count = 6
-stream_0/stream = ExtResource("6_1bkxe")
-stream_0/weight = 1.0
-stream_1/stream = ExtResource("7_37bju")
-stream_1/weight = 1.0
-stream_2/stream = ExtResource("8_y447h")
-stream_2/weight = 1.0
-stream_3/stream = ExtResource("9_4t34y")
-stream_3/weight = 1.0
-stream_4/stream = ExtResource("10_uvwnp")
-stream_4/weight = 1.0
-stream_5/weight = 1.0
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_i5il5"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5ygvg"]
 streams_count = 4
-stream_0/stream = ExtResource("11_cgoj7")
-stream_0/weight = 1.0
-stream_1/stream = ExtResource("12_ihdqp")
-stream_1/weight = 1.0
-stream_2/stream = ExtResource("13_hlxry")
-stream_2/weight = 1.0
-stream_3/stream = ExtResource("14_nste5")
-stream_3/weight = 1.0
+stream_0/stream = ExtResource("3_2636d")
+stream_0/weight = 31.808
+stream_1/stream = ExtResource("4_wmla2")
+stream_1/weight = 14.131
+stream_2/stream = ExtResource("5_dsv86")
+stream_2/weight = 12.112
+stream_3/stream = ExtResource("6_xm87h")
+stream_3/weight = 23.728
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_m01v1"]
 streams_count = 5
@@ -1216,75 +1196,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_uwqgl"]
 radius = 316.101
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6ya7r"]
-atlas = ExtResource("22_ydv0q")
-region = Rect2(352, 384, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vrjkw"]
-atlas = ExtResource("22_ydv0q")
-region = Rect2(384, 384, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_10ueh"]
-atlas = ExtResource("22_ydv0q")
-region = Rect2(416, 384, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nr70t"]
-atlas = ExtResource("22_ydv0q")
-region = Rect2(448, 384, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f3cxb"]
-atlas = ExtResource("23_fvrkx")
-region = Rect2(352, 256, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rqlpc"]
-atlas = ExtResource("23_fvrkx")
-region = Rect2(384, 256, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dupc4"]
-atlas = ExtResource("23_fvrkx")
-region = Rect2(416, 256, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iyt3l"]
-atlas = ExtResource("23_fvrkx")
-region = Rect2(448, 256, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_uq0us"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6ya7r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vrjkw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_10ueh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nr70t")
-}],
-"loop": true,
-"name": &"new_animation",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f3cxb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rqlpc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dupc4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iyt3l")
-}],
-"loop": true,
-"name": &"new_animation_1",
-"speed": 10.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_2jh76"]
 atlas = ExtResource("24_si1lt")
 region = Rect2(384, 128, 128, 128)
@@ -1372,13 +1283,14 @@ shape = SubResource("RectangleShape2D_avy4u")
 position = Vector2(3.5, -42.5)
 shape = SubResource("RectangleShape2D_fmedu")
 
-[node name="detect_sound" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStreamRandomizer_5a8ks")
-volume_db = -0.475
+[node name="fuck_fuck_fuuuuck" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_8lgvv")
+volume_db = 10.0
 
 [node name="attack_sound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(3, -30)
-stream = SubResource("AudioStreamRandomizer_i5il5")
+stream = SubResource("AudioStreamRandomizer_5ygvg")
+volume_db = 10.0
 
 [node name="hit_sound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-2, 9)
@@ -1411,13 +1323,6 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlertArea"]
 shape = SubResource("CircleShape2D_uwqgl")
-
-[node name="spawn_animation" type="AnimatedSprite2D" parent="."]
-position = Vector2(9, -7)
-scale = Vector2(3.23438, 1.06201)
-sprite_frames = SubResource("SpriteFrames_uq0us")
-animation = &"new_animation"
-frame_progress = 0.410873
 
 [node name="smoke" type="AnimatedSprite2D" parent="."]
 z_index = -265

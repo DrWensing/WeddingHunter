@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://y6j0g1eptb3m"]
+[gd_scene load_steps=29 format=3 uid="uid://y6j0g1eptb3m"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_6.gd" id="1_rr156"]
 [ext_resource type="TileSet" uid="uid://d3k1ar04o4po5" path="res://scenes/tileset.tres" id="2_yao40"]
@@ -24,6 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://dnt8f4edl3thb" path="res://scenes/demon.tscn" id="22_0i4wh"]
 [ext_resource type="PackedScene" uid="uid://cpdlqvyp042np" path="res://scenes/devil.tscn" id="23_23y28"]
 [ext_resource type="AudioStream" uid="uid://chtovm7p74sr2" path="res://assets/music/DS3_yhorm.mp3" id="24_3nj4h"]
+[ext_resource type="AudioStream" uid="uid://bhrclag3ym8pa" path="res://assets/music/i_am_complete.wav" id="25_icfrr"]
+[ext_resource type="AudioStream" uid="uid://bsvajqnicpx8b" path="res://assets/music/de_de_demm.wav" id="26_2tm7j"]
+[ext_resource type="AudioStream" uid="uid://ccmpfsomlb05g" path="res://assets/music/beelzeboss_laughing.wav" id="27_jsln3"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_66tvl"]
 a = Vector2(3200, 0)
@@ -44,11 +47,11 @@ layer_1/tile_data = PackedInt32Array(-393202, 196613, 3, -393201, 196613, 3, -39
 [node name="Player" parent="." instance=ExtResource("3_3tefw")]
 unique_name_in_owner = true
 z_index = 5
-position = Vector2(-735, -31)
+position = Vector2(1439, -431)
 
 [node name="Player2" parent="." instance=ExtResource("4_axsbn")]
 unique_name_in_owner = true
-position = Vector2(-836, -35)
+position = Vector2(1338, -435)
 
 [node name="Coins" type="Node" parent="."]
 
@@ -128,7 +131,7 @@ position = Vector2(1599, -346)
 
 [node name="Dog" parent="." instance=ExtResource("8_x8yxt")]
 unique_name_in_owner = true
-position = Vector2(-771, -49)
+position = Vector2(1403, -449)
 
 [node name="Car" parent="." instance=ExtResource("10_321n1")]
 position = Vector2(174, -222)
@@ -207,7 +210,23 @@ stream = ExtResource("24_3nj4h")
 autoplay = false
 max_distance = 50000.0
 
+[node name="SpawnMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_icfrr")
+
+[node name="BossSpawnTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="BossDefeated" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_2tm7j")
+volume_db = 10.0
+
+[node name="BossLaughing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("27_jsln3")
+volume_db = 10.0
+
 [connection signal="tree_exited" from="motor" to="." method="_on_motor_tree_exited"]
 [connection signal="finished" from="car_starting" to="." method="_on_car_starting_finished"]
 [connection signal="finished" from="honk" to="." method="_on_honk_finished"]
 [connection signal="tree_exited" from="Devil" to="." method="_on_devil_tree_exited"]
+[connection signal="finished" from="SpawnMusic" to="." method="_on_spawn_music_finished"]
+[connection signal="timeout" from="BossSpawnTimer" to="." method="_on_boss_spawn_timer_timeout"]

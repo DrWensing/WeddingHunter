@@ -22,20 +22,20 @@ func shot_fired(dmg):
 	
 	var projectile = fireball_scene.instantiate()
 	var offset = -30
-	#var direction = character.flip_h	
 	
 	# set entry position of fireball
 	projectile.global_position = self.global_position
 	projectile.position.x += offset*direction
-	
-	#set direction of the fireball
-	projectile.direction = direction
 		
 	#set damage fireball can deal
 	projectile.dmg = dmg
 			
 	#register fireball in its container
 	Projectiles.add_child(projectile)
+	projectile.set_animation("fireball")
+	
+	#set direction of the fireball
+	projectile.vx = projectile.vx*float(direction)
 	
 	
 func _physics_process(delta):
