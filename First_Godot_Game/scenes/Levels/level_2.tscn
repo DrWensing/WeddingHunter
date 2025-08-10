@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c15x1f3taw7mp" path="res://assets/background/wald2.jpg" id="8_gxuno"]
 [ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="9_6twdo"]
 [ext_resource type="PackedScene" uid="uid://dtpn5wksg1o0v" path="res://scenes/coin.tscn" id="10_w8ya5"]
-[ext_resource type="PackedScene" uid="uid://ccgmqb4bhtnis" path="res://scenes/platform_long.tscn" id="11_xfvr6"]
+[ext_resource type="PackedScene" path="res://scenes/platform_long.tscn" id="11_xfvr6"]
 [ext_resource type="PackedScene" uid="uid://dicdpchxv8chk" path="res://scenes/platform.tscn" id="13_7rxmw"]
 [ext_resource type="PackedScene" uid="uid://da8cxn8q226je" path="res://scenes/dutch_ingredient.tscn" id="13_55t3u"]
 [ext_resource type="PackedScene" uid="uid://dir78bid8yy53" path="res://scenes/music.tscn" id="14_waf6m"]

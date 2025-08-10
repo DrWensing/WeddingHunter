@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var vx = 500.0
-@onready var direction = +1
+var direction = +1
 @onready var dmg = 10 # default damage
 @onready var timer = $Timer
 
@@ -16,4 +16,10 @@ func _on_timer_timeout():
 
 func _process(delta):
 	#move fireball
-	self.position.x = self.position.x + delta*self.vx * self.direction
+	self.position.x += delta*self.vx * self.direction
+
+func set_animation(animation_type):
+	print('set fireball animation to ',animation_type)
+	$AnimatedSprite2D.play(animation_type)
+	$AnimatedSprite2D.animation = animation_type
+	

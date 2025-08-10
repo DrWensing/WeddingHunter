@@ -9,13 +9,13 @@
 [ext_resource type="AudioStream" uid="uid://dyhn4c7gm4cgu" path="res://assets/music/DS3_Demon_Prince.mp3" id="7_2uohg"]
 [ext_resource type="Texture2D" uid="uid://bdud7uh4speyw" path="res://assets/background/tokio.png" id="9_rmuej"]
 [ext_resource type="PackedScene" uid="uid://ctic5suotwouq" path="res://scenes/boss_godzilla.tscn" id="10_pstji"]
-[ext_resource type="PackedScene" uid="uid://0y22nk1jv1nx" path="res://scenes/platform_very_long.tscn" id="10_xnfvq"]
+[ext_resource type="PackedScene" path="res://scenes/platform_very_long.tscn" id="10_xnfvq"]
 [ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="11_xwh64"]
 [ext_resource type="PackedScene" uid="uid://da8cxn8q226je" path="res://scenes/dutch_ingredient.tscn" id="12_28qwd"]
 [ext_resource type="PackedScene" uid="uid://dicdpchxv8chk" path="res://scenes/platform.tscn" id="13_bjiyl"]
 [ext_resource type="PackedScene" uid="uid://c2ssddsnaoheu" path="res://scenes/ninja.tscn" id="14_ngdri"]
 [ext_resource type="PackedScene" uid="uid://dir78bid8yy53" path="res://scenes/music.tscn" id="15_3jjbv"]
-[ext_resource type="PackedScene" path="res://scenes/werbung_schild.tscn" id="16_lg7a1"]
+[ext_resource type="PackedScene" uid="uid://3uhu2gbltnjs" path="res://scenes/werbung_schild.tscn" id="16_lg7a1"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_klrri"]
 a = Vector2(2771, -18)

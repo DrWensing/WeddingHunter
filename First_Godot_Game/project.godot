@@ -13,7 +13,7 @@ config_version=5
 config/name="WeddingHunter"
 run/main_scene="res://scenes/maingame.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/Wedding_Hunter_Logo.png"
 
 [autoload]
 

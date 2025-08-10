@@ -9,6 +9,7 @@ extends Node2D
 var lama_activated = false
 var auto_text_activated = false
 var motor_collected = false
+var devil_spawned = false
 
 func _ready():
 	MultiTargetCam.add_target(henrik)
@@ -26,7 +27,7 @@ func _ready():
 	HUD.show_message("Level 6: Wir sind wieder zurück?")
 
 func _process(delta):
-	if lama_activated == false and Main.get_min_player_distance_to_node(henrik, tabea, lama) < 50:		
+	if lama_activated == false and Main.get_min_player_distance_to_node(henrik, tabea, lama) < 50:
 		#count collected ingredients
 		var N_ingredients = 0
 		for i in HUD.ingredients_collected:
@@ -42,6 +43,13 @@ func _process(delta):
 			HUD.show_message("Lama: 'Ihr habt alle Zutaten gesammelt! Ich schmeiß den Dutch Oven an!!!'",3.0)		
 			dutch_oven.play()
 			$win_sound.play()
+	
+	if devil_spawned == false and not is_instance_valid($Demon) and not is_instance_valid($Demon2):
+		#boss fight begins when the first minions are defeated
+		devil_spawned = true
+		$Devil.spawn()
+		$Music.stop()
+		$BossMusic.play()
 	
 	if auto_text_activated == false and get_min_player_xpos() < 275: 
 		auto_text_activated = true
@@ -81,7 +89,6 @@ func get_max_player_xpos():
 func get_min_player_xpos():
 	return min(henrik.position.x,tabea.position.x)
 
-
 func _on_motor_tree_exited():
 	#motor collected -> back to car
 	henrik.global_position.x = 250
@@ -98,7 +105,11 @@ func _on_motor_tree_exited():
 func _on_honk_finished():
 	$Car.SPEED = 150
 
-
 func _on_car_starting_finished():
 	#nachdem die Animation abgelaufen ist -> Abspann
 	Main.switch_to_next_level()
+
+
+func _on_devil_tree_exited():
+	$motor.global_position = Vector2(-750,-150)
+	HUD.show_message("Ihr habt den Teufel bezwungen... oh ein brandneuer Motor für einen Ford Focus.")
