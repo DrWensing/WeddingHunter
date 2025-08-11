@@ -185,13 +185,11 @@ script = ExtResource("1_ji1nm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vylyu")
-animation = &"all_fire"
+animation = &"fireball"
 autoplay = "lightning_bolt"
-frame_progress = 0.401058
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_j2thg")
 

@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dks5ja8qmje3m" path="res://scenes/car.tscn" id="10_321n1"]
 [ext_resource type="Texture2D" uid="uid://bo37ewqdac71x" path="res://assets/background/hell.JPG" id="11_mnnps"]
 [ext_resource type="Texture2D" uid="uid://dagfys8l4bq0" path="res://assets/background/forest.jpg" id="12_xip8o"]
-[ext_resource type="PackedScene" path="res://scenes/lama.tscn" id="13_gqusc"]
+[ext_resource type="PackedScene" uid="uid://umtsvb7pei0j" path="res://scenes/lama.tscn" id="13_gqusc"]
 [ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="14_lc4nj"]
 [ext_resource type="PackedScene" uid="uid://da8cxn8q226je" path="res://scenes/dutch_ingredient.tscn" id="15_cq2vn"]
 [ext_resource type="PackedScene" uid="uid://dn4hnn7jbsq05" path="res://scenes/dutch_oven.tscn" id="15_h76vs"]
@@ -23,8 +23,8 @@
 [ext_resource type="AudioStream" uid="uid://dydp6nbopkjvg" path="res://assets/sounds/double_honk.wav" id="21_qcl6i"]
 [ext_resource type="PackedScene" uid="uid://dnt8f4edl3thb" path="res://scenes/demon.tscn" id="22_0i4wh"]
 [ext_resource type="PackedScene" uid="uid://cpdlqvyp042np" path="res://scenes/devil.tscn" id="23_23y28"]
-[ext_resource type="AudioStream" uid="uid://chtovm7p74sr2" path="res://assets/music/DS3_yhorm.mp3" id="24_3nj4h"]
-[ext_resource type="AudioStream" uid="uid://bhrclag3ym8pa" path="res://assets/music/i_am_complete.wav" id="25_icfrr"]
+[ext_resource type="AudioStream" uid="uid://b474bllnemj7j" path="res://assets/music/DS3_dragon_slayer_armour.mp3" id="24_d0jug"]
+[ext_resource type="AudioStream" uid="uid://cgs2b8h5314fh" path="res://assets/sounds/beelzeboss_i_am_complete.wav" id="25_ilxd7"]
 [ext_resource type="AudioStream" uid="uid://bsvajqnicpx8b" path="res://assets/music/de_de_demm.wav" id="26_2tm7j"]
 [ext_resource type="AudioStream" uid="uid://ccmpfsomlb05g" path="res://assets/music/beelzeboss_laughing.wav" id="27_jsln3"]
 
@@ -47,11 +47,11 @@ layer_1/tile_data = PackedInt32Array(-393202, 196613, 3, -393201, 196613, 3, -39
 [node name="Player" parent="." instance=ExtResource("3_3tefw")]
 unique_name_in_owner = true
 z_index = 5
-position = Vector2(1439, -431)
+position = Vector2(-121, -351)
 
 [node name="Player2" parent="." instance=ExtResource("4_axsbn")]
 unique_name_in_owner = true
-position = Vector2(1338, -435)
+position = Vector2(-222, -355)
 
 [node name="Coins" type="Node" parent="."]
 
@@ -131,7 +131,7 @@ position = Vector2(1599, -346)
 
 [node name="Dog" parent="." instance=ExtResource("8_x8yxt")]
 unique_name_in_owner = true
-position = Vector2(1403, -449)
+position = Vector2(-157, -369)
 
 [node name="Car" parent="." instance=ExtResource("10_321n1")]
 position = Vector2(174, -222)
@@ -199,19 +199,14 @@ max_distance = 50000.0
 [node name="Devil" parent="." instance=ExtResource("23_23y28")]
 position = Vector2(-1656, -115)
 
-[node name="Demon" parent="." instance=ExtResource("22_0i4wh")]
-position = Vector2(-1002, -23)
-
-[node name="Demon2" parent="." instance=ExtResource("22_0i4wh")]
-position = Vector2(-853, -142)
-
 [node name="BossMusic" parent="." instance=ExtResource("17_p7mn8")]
-stream = ExtResource("24_3nj4h")
+stream = ExtResource("24_d0jug")
 autoplay = false
 max_distance = 50000.0
 
 [node name="SpawnMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("25_icfrr")
+stream = ExtResource("25_ilxd7")
+volume_db = 10.0
 
 [node name="BossSpawnTimer" type="Timer" parent="."]
 one_shot = true
@@ -223,6 +218,9 @@ volume_db = 10.0
 [node name="BossLaughing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("27_jsln3")
 volume_db = 10.0
+
+[node name="Demon" parent="." instance=ExtResource("22_0i4wh")]
+position = Vector2(-924, -112)
 
 [connection signal="tree_exited" from="motor" to="." method="_on_motor_tree_exited"]
 [connection signal="finished" from="car_starting" to="." method="_on_car_starting_finished"]

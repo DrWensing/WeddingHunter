@@ -11,6 +11,8 @@ var direction = +1
 func _ready():
 	#make sure that fireball is deleted after certain flight time
 	timer.start()
+	self.collision_layer =2 
+	self.collision_mask = 2
 
 func _on_timer_timeout():
 	#remove fireball after certain flight time
@@ -26,5 +28,4 @@ func _process(delta):
 	self.position.y += delta*self.vy 
 
 func set_animation(animation_type):
-	print("Set animation to ",animation_type)
 	sprite.play(animation_type)

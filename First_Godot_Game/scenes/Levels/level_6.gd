@@ -38,7 +38,7 @@ func summon_lava(position):
 
 	#register fireball in its container
 	%Enemies.add_child(lava)
-	lava.decay_time = 20
+	lava.decay_time = 10
 
 func _process(delta):
 	if lama_activated == false and Main.get_min_player_distance_to_node(henrik, tabea, lama) < 50:
@@ -63,8 +63,9 @@ func _process(delta):
 		devil_spawned = true
 		
 		$Music.stop()
+		$BossMusic.play()
 		$SpawnMusic.play()
-		$BossSpawnTimer.start(18)
+		$BossSpawnTimer.start(3)
 		summon_lava(Vector2(-725,-15))
 		summon_lava(Vector2(-750,-15))
 		summon_lava(Vector2(-775,-15))
@@ -145,5 +146,5 @@ func _on_devil_tree_exited():
 func _on_boss_spawn_timer_timeout():
 	$Devil.spawn()
 	
-func _on_spawn_music_finished():
-	$BossMusic.play()
+
+	

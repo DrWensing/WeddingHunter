@@ -36,7 +36,7 @@ const LAVA_SPAWN_POINTS =  {0: Vector2(-1000,-10), #possible spawn points of min
 
 var direction = 1
 @onready var animation_sprite = $AnimatedSprite2D
-@onready var hp = 400
+@onready var hp = 50
 @onready var health_bar = $HealthBar
 @onready var battle_phase =1 # after death goes into phase two
 
@@ -56,7 +56,8 @@ enum State {
 	MOVE,
 	ATTACK,
 	SUMMON,
-	FIREBALL
+	FIREBALL,
+	PHASE_2_START
 }
 
 var current_state = State.IDLE
@@ -90,8 +91,10 @@ func _process(delta):
 			state_summon(delta)
 		State.FIREBALL:
 			state_fireball(delta)
+		State.PHASE_2_START:
+			state_phase2(delta)
 	
-	move_and_slide()
+	
 	
 func spawn():
 	#spawn devil after minions are defeated
@@ -121,9 +124,22 @@ func change_state(new_state: int):
 		State.SUMMON:
 			anim.play("summon_minion")
 			state_timer = 1.0
+		State.PHASE_2_START:
+			anim.play("summon_minion")
+			state_timer = 6.0
 
 # --- State Logic ---
 func state_idle(delta):
+	if state_timer <= 0 and not registered_player.is_empty():
+		change_state(State.MOVE)
+		
+func state_phase2(delta):
+	if not action_completed:
+		#set the entire stage on fire
+		for i in range(18):
+			summon_lava(i)
+		action_completed = true
+		
 	if state_timer <= 0 and not registered_player.is_empty():
 		change_state(State.MOVE)
 
@@ -152,6 +168,8 @@ func state_move(delta):
 			change_state(State.SUMMON)
 		else:
 			change_state(State.FIREBALL)
+			
+	move_and_slide()
 
 func state_attack(delta):
 	if state_timer <= 0:
@@ -211,8 +229,8 @@ func summon_minion():
 	#register fireball in its container
 	%Enemies.add_child(minion)
 	
-func summon_lava():	
-	var rand_position = LAVA_SPAWN_POINTS[randi_range(0, 18)] # random position: 1,2 bottom, 3,4 first platform (L/R) and so on
+func summon_lava(position = randi_range(0, 18)):
+	var rand_position = LAVA_SPAWN_POINTS[position] # random position: 1,2 bottom, 3,4 first platform (L/R) and so on
 	
 	#summons a demon minion
 	var lava = lava_scene.instantiate()
@@ -281,7 +299,7 @@ func receive_damage(dmg):
 			$fuck_fuck_fuuuuck.play()
 			health_bar.initialize(hp)
 			battle_phase = 2
-			change_state(State.IDLE)
+			change_state(State.PHASE_2_START)
 		else:
 			print('Devil defeated!')
 			Main.add_point()
