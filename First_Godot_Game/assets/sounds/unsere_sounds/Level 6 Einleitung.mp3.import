@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1qobucpxb2lo"
+path="res://.godot/imported/Level 6 Einleitung.mp3-a3982e12f87305b59c9ef71c56b6277e.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/unsere_sounds/Level 6 Einleitung.mp3"
+dest_files=["res://.godot/imported/Level 6 Einleitung.mp3-a3982e12f87305b59c9ef71c56b6277e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

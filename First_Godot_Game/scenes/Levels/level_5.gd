@@ -54,5 +54,5 @@ func boss_activate():
 func Boss_defeated():
 	BossMusic.stop()
 	$Music.stream_paused=false
-	HUD.show_message("Henrik & Tabea: \n Der König der Monster wurde soeben entthront",5.0)
+	HUD.show_message("Henrik & Tabea: \n Ha, der König der Monster wurde soeben entthront",5.0)
 	$NextLevel.global_position = Vector2(650,25)

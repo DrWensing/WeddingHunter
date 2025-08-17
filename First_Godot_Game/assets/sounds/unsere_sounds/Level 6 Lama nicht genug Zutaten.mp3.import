@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfeu711p0er8e"
+path="res://.godot/imported/Level 6 Lama nicht genug Zutaten.mp3-d32c7cfdcc26826648d7186e9c7e73e7.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/unsere_sounds/Level 6 Lama nicht genug Zutaten.mp3"
+dest_files=["res://.godot/imported/Level 6 Lama nicht genug Zutaten.mp3-d32c7cfdcc26826648d7186e9c7e73e7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

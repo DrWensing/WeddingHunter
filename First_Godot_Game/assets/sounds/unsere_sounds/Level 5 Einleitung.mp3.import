@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctavow4oibijd"
+path="res://.godot/imported/Level 5 Einleitung.mp3-7db6f1c5332aa0eb4e5cc198baa79808.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/unsere_sounds/Level 5 Einleitung.mp3"
+dest_files=["res://.godot/imported/Level 5 Einleitung.mp3-7db6f1c5332aa0eb4e5cc198baa79808.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

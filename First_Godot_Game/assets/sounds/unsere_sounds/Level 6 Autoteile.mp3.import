@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b4842j5016t0w"
+path="res://.godot/imported/Level 6 Autoteile.mp3-bec6a75657402e95f6978787cbcd7c51.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/unsere_sounds/Level 6 Autoteile.mp3"
+dest_files=["res://.godot/imported/Level 6 Autoteile.mp3-bec6a75657402e95f6978787cbcd7c51.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

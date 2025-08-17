@@ -31,12 +31,16 @@ const LAVA_SPAWN_POINTS =  {0: Vector2(-1000,-10), #possible spawn points of min
 					17: Vector2(-575,-10),
 					18: Vector2(-550,-10),
 					19: Vector2(-525,-10),
-					20: Vector2(-1000,-10),
-					21: Vector2(-1000,-10),}
+					20: Vector2(-1025,-10),
+					21: Vector2(-500,-10),
+					22: Vector2(-475,-10),
+					23: Vector2(-450,-10),
+					24: Vector2(-425,-10),
+					25: Vector2(-400,-10)}
 
 var direction = 1
 @onready var animation_sprite = $AnimatedSprite2D
-@onready var hp = 50
+@onready var hp = 500
 @onready var health_bar = $HealthBar
 @onready var battle_phase =1 # after death goes into phase two
 
@@ -136,7 +140,7 @@ func state_idle(delta):
 func state_phase2(delta):
 	if not action_completed:
 		#set the entire stage on fire
-		for i in range(18):
+		for i in range(25):
 			summon_lava(i)
 		action_completed = true
 		

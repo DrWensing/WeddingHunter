@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cglo5uji07k8y"
+path="res://.godot/imported/Level 1 Einleitung.mp3-c59a25e8b08acee6df3d7f97b0d5f0ad.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/unsere_sounds/Level 1 Einleitung.mp3"
+dest_files=["res://.godot/imported/Level 1 Einleitung.mp3-c59a25e8b08acee6df3d7f97b0d5f0ad.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

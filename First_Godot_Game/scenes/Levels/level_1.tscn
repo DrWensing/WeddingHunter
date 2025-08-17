@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cuxswnst42fwe"]
+[gd_scene load_steps=22 format=3 uid="uid://cuxswnst42fwe"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_1.gd" id="1_3hmpi"]
 [ext_resource type="TileSet" uid="uid://d3k1ar04o4po5" path="res://scenes/tileset.tres" id="1_lufmf"]
@@ -17,6 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://da8cxn8q226je" path="res://scenes/dutch_ingredient.tscn" id="15_mqrfl"]
 [ext_resource type="PackedScene" uid="uid://dn4hnn7jbsq05" path="res://scenes/dutch_oven.tscn" id="16_jv3j4"]
 [ext_resource type="PackedScene" uid="uid://dir78bid8yy53" path="res://scenes/music.tscn" id="17_gjgn7"]
+[ext_resource type="AudioStream" uid="uid://cglo5uji07k8y" path="res://assets/sounds/unsere_sounds/Level 1 Einleitung.mp3" id="18_0ftn7"]
+[ext_resource type="AudioStream" uid="uid://7ox24feban8l" path="res://assets/sounds/unsere_sounds/Level 1 lama.mp3" id="19_63k0f"]
+[ext_resource type="AudioStream" uid="uid://bmm6m75oxgo8d" path="res://assets/sounds/unsere_sounds/Level 1 Portal.mp3" id="20_faphx"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_66tvl"]
 a = Vector2(3200, 0)
@@ -134,4 +137,16 @@ position = Vector2(1987, -308)
 position = Vector2(2033, -273)
 
 [node name="Music" parent="." instance=ExtResource("17_gjgn7")]
+max_distance = 50000.0
+
+[node name="intro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_0ftn7")
+max_distance = 50000.0
+
+[node name="lama_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_63k0f")
+max_distance = 50000.0
+
+[node name="portal_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_faphx")
 max_distance = 50000.0

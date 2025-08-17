@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1lhg571c1u60"
+path="res://.godot/imported/Level 4 Zwerg.mp3-5790b69bb9f7aaffecaf7d66ae586014.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/unsere_sounds/Level 4 Zwerg.mp3"
+dest_files=["res://.godot/imported/Level 4 Zwerg.mp3-5790b69bb9f7aaffecaf7d66ae586014.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

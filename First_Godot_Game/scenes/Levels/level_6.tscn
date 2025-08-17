@@ -47,11 +47,11 @@ layer_1/tile_data = PackedInt32Array(-393202, 196613, 3, -393201, 196613, 3, -39
 [node name="Player" parent="." instance=ExtResource("3_3tefw")]
 unique_name_in_owner = true
 z_index = 5
-position = Vector2(-121, -351)
+position = Vector2(1444, -424)
 
 [node name="Player2" parent="." instance=ExtResource("4_axsbn")]
 unique_name_in_owner = true
-position = Vector2(-222, -355)
+position = Vector2(1343, -428)
 
 [node name="Coins" type="Node" parent="."]
 
@@ -131,7 +131,7 @@ position = Vector2(1599, -346)
 
 [node name="Dog" parent="." instance=ExtResource("8_x8yxt")]
 unique_name_in_owner = true
-position = Vector2(-157, -369)
+position = Vector2(1408, -442)
 
 [node name="Car" parent="." instance=ExtResource("10_321n1")]
 position = Vector2(174, -222)

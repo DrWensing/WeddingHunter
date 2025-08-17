@@ -65,7 +65,7 @@ func _process(delta):
 		$Music.stop()
 		$BossMusic.play()
 		$SpawnMusic.play()
-		$BossSpawnTimer.start(3)
+		$BossSpawnTimer.start(5)
 		summon_lava(Vector2(-725,-15))
 		summon_lava(Vector2(-750,-15))
 		summon_lava(Vector2(-775,-15))
@@ -139,7 +139,7 @@ func _on_car_starting_finished():
 
 func _on_devil_tree_exited():
 	$motor.global_position = Vector2(-750,-150)
-	HUD.show_message("Ihr habt den Teufel bezwungen...als Preis bekommt ihr den Motor von seinem Auto.")
+	HUD.show_message("Ihr habt den Teufel bezwungen...als Preis bekommt ihr den Motor von seinem Auto.",5.0)
 	$BossMusic.stop()
 	$BossDefeated.play()
 
