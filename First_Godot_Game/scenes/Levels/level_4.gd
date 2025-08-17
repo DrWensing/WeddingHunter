@@ -22,7 +22,8 @@ func _ready():
 	tabea.equip_gun()
 	
 	HUD.visible = true
-	HUD.show_message("Level 4: Khazad-dûm - Die Minen von Moria")
+	HUD.show_message("Level 4: Khazad-dûm - Die Minen von Moria",5.0)
+	$story_intro.play()
 	ingredient.set_type('carotte')
 	HUD.update_ingredients()
 	$Music.play()
@@ -32,10 +33,10 @@ func _process(delta):
 		if abs(henrik.position.x - zwockel.position.x) < 50 or abs(tabea.position.x - zwockel.position.x) < 50:
 			HUD.show_message("Bei Balin's Bart was treiben Menschen in Khazad-dûm?\n Wie dem auch sei, geht ruhig weiter. Hier gibt es keinerlei Gefahren",10.0)
 			Warnung_ausgesprochen = true
-			
+			$story_zwerg.play()
 			
 		#start boss music once tabea and henrik enter arena
-	if not is_instance_valid(Boss_Balrog):
+	if boss_alive == true and not is_instance_valid(Boss_Balrog):
 			Boss_defeated()
 			boss_alive = false
 	if boss_alive:
@@ -64,6 +65,7 @@ func get_max_player_xpos():
 func Boss_defeated():
 	$Music.stream_paused=false
 	BossMusic.stop()
-	HUD.show_message("Henrik & Tabea: 'DU KOMMST NICHT VORBEI!' \n Weiter geht's")
+	HUD.show_message("Henrik & Tabea: 'DU KOMMST NICHT VORBEI!' \n Weiter geht's",4.0)
 	NextLevelPortal.global_position = Vector2(1500,270)
+	$story_ende.play()
 

@@ -21,7 +21,8 @@ func _ready():
 	tabea.equip_gun()
 	
 	HUD.visible = true
-	HUD.show_message("Level 5: Tokio \n  2016 n. Chr.")	
+	HUD.show_message("Level 5: Tokio \n  2016 n. Chr.",4.0)
+	$story_intro.play()
 	$Music.play()
 	
 	$Werbung/Werbung_Schild4/AnimatedSprite2D.play("hier_koennte_ihre_werbung")
@@ -35,15 +36,13 @@ func _process(delta):
 			$Music.stream_paused=true;
 		elif henrik.global_position.x > 0 or tabea.global_position.x > 0:
 			Boss_Godzilla.steps()
-	
-	if not is_instance_valid(Boss_Godzilla):
+
+	if boss_alive == true and not is_instance_valid(Boss_Godzilla):
 		Boss_defeated()
 		boss_alive = false
-		
+
 	if boss_alive:
 		Boss_Godzilla.change_position()
-
-	
 
 func boss_activate():	
 	MultiTargetCam.reset()
@@ -55,4 +54,5 @@ func Boss_defeated():
 	BossMusic.stop()
 	$Music.stream_paused=false
 	HUD.show_message("Henrik & Tabea: \n Ha, der König der Monster wurde soeben entthront",5.0)
+	$story_ende.play()
 	$NextLevel.global_position = Vector2(650,25)

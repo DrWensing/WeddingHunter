@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var maxhp = 500
 var direction = -1
 @onready var hp = 500
 @onready var health_bar = $HealthBar
@@ -25,9 +26,12 @@ func change_position():
 			set_height_level(randi_range(1,3))
 		else:
 			set_height_level(4)
-		$MoveTimer.start(7.0)
-		$FireTimer.start(5.0)
-		$ChargeTimer.start(2.0)
+		#Godzilla moves faster the lower its current hp is
+		var speedup_factor = 1.0-float(health_bar.hp)/float(maxhp)
+		print(speedup_factor)
+		$MoveTimer.start(7.0-3.0*speedup_factor)
+		$FireTimer.start(5.0-3.0*speedup_factor)
+		$ChargeTimer.start(2.0-1.0*speedup_factor)
 		can_move = false
 		$laser.hide_animation()
 
