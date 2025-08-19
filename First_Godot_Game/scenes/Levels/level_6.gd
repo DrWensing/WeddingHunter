@@ -28,6 +28,7 @@ func _ready():
 	
 	HUD.visible = true
 	HUD.show_message("Level 6: Wir sind wieder zurück?")
+	$story_intro.play()
 
 func summon_lava(position):
 	#summons a demon minion
@@ -38,7 +39,7 @@ func summon_lava(position):
 
 	#register fireball in its container
 	%Enemies.add_child(lava)
-	lava.decay_time = 10
+	lava.decay_time = 20
 
 func _process(delta):
 	if lama_activated == false and Main.get_min_player_distance_to_node(henrik, tabea, lama) < 50:
@@ -48,24 +49,28 @@ func _process(delta):
 			N_ingredients+=int(i)
 		
 		if N_ingredients <= 2:
-			HUD.show_message("Lama: 'Da seid ihr ja wieder. Man hab ich Hunger...schade, dass ihr nicht alle Zutaten dabei habt'",3.0)
+			HUD.show_message("Lama: 'Da seid ihr ja wieder. Man hab ich Hunger...schade, dass ihr nicht alle Zutaten dabei habt'",6.0)
+			$story_lama_opt1.play()
 		if N_ingredients > 2 and N_ingredients < 4:
-			HUD.show_message("Lama: 'Da seid ihr ja wieder. Ihr habt " + str(N_ingredients) + " Zutaten eingesammelt, aber das reicht noch nicht.'",3.0)
+			HUD.show_message("Lama: 'Da seid ihr ja wieder. Ihr habt " + str(N_ingredients) + " Zutaten eingesammelt, aber das reicht noch nicht.'",6.0)
+			$story_lama_opt2.play()
 		if N_ingredients >= 4 and N_ingredients < 6:
-			HUD.show_message("Lama: 'Da seid ihr ja wieder. Ihr habt " + str(N_ingredients) + " Zutaten eingesammelt, aber etwas fehlt noch...'",3.0)
-		if N_ingredients >= 5:
-			HUD.show_message("Lama: 'Ihr habt alle Zutaten gesammelt! Ich schmeiß den Dutch Oven an!!!'",3.0)		
+			HUD.show_message("Lama: 'Da seid ihr ja wieder. Ihr habt " + str(N_ingredients) + " Zutaten eingesammelt, aber etwas fehlt noch...'",6.0)
+			$story_lama_opt3.play()
+		if N_ingredients >= 6:
+			HUD.show_message("Lama: 'Ihr habt alle Zutaten gesammelt! Ich schmeiß den Dutch Oven an!!!'",6.0)		
+			$story_lama_opt4.play()
 			dutch_oven.play()
 			$win_sound.play()
+		lama_activated = true
 	
 	if devil_spawned == false and not is_instance_valid($Demon) and not is_instance_valid($Demon2):
 		#boss fight begins when the first minions are defeated
 		devil_spawned = true
 		
 		$Music.stop()
-		$BossMusic.play()
 		$SpawnMusic.play()
-		$BossSpawnTimer.start(5)
+		$BossSpawnTimer.start(20)
 		summon_lava(Vector2(-725,-15))
 		summon_lava(Vector2(-750,-15))
 		summon_lava(Vector2(-775,-15))
@@ -75,8 +80,9 @@ func _process(delta):
 	
 	if auto_text_activated == false and get_min_player_xpos() < 275: 
 		auto_text_activated = true
-		HUD.show_message("Ach Mist...stimmt ja, der Wagen ist noch kaputt. Moment mal ... das Schild war doch vorhin noch nicht da?", 5.0)
-	
+		HUD.show_message("Ach Mist...stimmt ja, der Wagen ist noch kaputt. Moment mal ... das Schild war doch vorhin noch nicht da?", 7.0)
+		$story_car_parts.play()
+		
 	#switch from forest to hell
 	if get_min_player_xpos() < -60 and scene_changed == false:		
 		scene_changed = true
@@ -92,6 +98,8 @@ func _process(delta):
 	
 	if motor_collected and get_min_player_xpos() < 225:
 		HUD.show_message("Der neue Motor ist ruck-zuck eingebaut und der Wagen ist wie neu! Die Brüggemanns können jetzt ihre Flitterwochen genießen")
+		$story_repair_car.play()
+		
 		$Car.repair()
 		henrik.visible=false
 		henrik.movement_enabled=false
@@ -140,11 +148,13 @@ func _on_car_starting_finished():
 func _on_devil_tree_exited():
 	$motor.global_position = Vector2(-750,-150)
 	HUD.show_message("Ihr habt den Teufel bezwungen...als Preis bekommt ihr den Motor von seinem Auto.",5.0)
+	$story_boss_defeated.play()
 	$BossMusic.stop()
 	$BossDefeated.play()
 
 func _on_boss_spawn_timer_timeout():
 	$Devil.spawn()
-	
 
-	
+func _on_spawn_music_finished():
+	#once tenacious d intro is finished: start suno music
+	$BossMusic.play()

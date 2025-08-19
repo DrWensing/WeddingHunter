@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://y6j0g1eptb3m"]
+[gd_scene load_steps=37 format=3 uid="uid://y6j0g1eptb3m"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_6.gd" id="1_rr156"]
 [ext_resource type="TileSet" uid="uid://d3k1ar04o4po5" path="res://scenes/tileset.tres" id="2_yao40"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dks5ja8qmje3m" path="res://scenes/car.tscn" id="10_321n1"]
 [ext_resource type="Texture2D" uid="uid://bo37ewqdac71x" path="res://assets/background/hell.JPG" id="11_mnnps"]
 [ext_resource type="Texture2D" uid="uid://dagfys8l4bq0" path="res://assets/background/forest.jpg" id="12_xip8o"]
-[ext_resource type="PackedScene" uid="uid://umtsvb7pei0j" path="res://scenes/lama.tscn" id="13_gqusc"]
+[ext_resource type="PackedScene" path="res://scenes/lama.tscn" id="13_gqusc"]
 [ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="14_lc4nj"]
 [ext_resource type="PackedScene" uid="uid://da8cxn8q226je" path="res://scenes/dutch_ingredient.tscn" id="15_cq2vn"]
 [ext_resource type="PackedScene" uid="uid://dn4hnn7jbsq05" path="res://scenes/dutch_oven.tscn" id="15_h76vs"]
@@ -22,11 +22,19 @@
 [ext_resource type="AudioStream" uid="uid://cg6h7xaeicvq5" path="res://assets/sounds/car_starting.wav" id="20_qle51"]
 [ext_resource type="AudioStream" uid="uid://dydp6nbopkjvg" path="res://assets/sounds/double_honk.wav" id="21_qcl6i"]
 [ext_resource type="PackedScene" uid="uid://dnt8f4edl3thb" path="res://scenes/demon.tscn" id="22_0i4wh"]
+[ext_resource type="AudioStream" uid="uid://ctwq2j5xigibb" path="res://assets/music/suno_infernal_duel.wav" id="23_5osj8"]
 [ext_resource type="PackedScene" uid="uid://cpdlqvyp042np" path="res://scenes/devil.tscn" id="23_23y28"]
-[ext_resource type="AudioStream" uid="uid://b474bllnemj7j" path="res://assets/music/DS3_dragon_slayer_armour.mp3" id="24_d0jug"]
-[ext_resource type="AudioStream" uid="uid://cgs2b8h5314fh" path="res://assets/sounds/beelzeboss_i_am_complete.wav" id="25_ilxd7"]
+[ext_resource type="AudioStream" uid="uid://bhrclag3ym8pa" path="res://assets/music/i_am_complete.wav" id="24_qah21"]
 [ext_resource type="AudioStream" uid="uid://bsvajqnicpx8b" path="res://assets/music/de_de_demm.wav" id="26_2tm7j"]
 [ext_resource type="AudioStream" uid="uid://ccmpfsomlb05g" path="res://assets/music/beelzeboss_laughing.wav" id="27_jsln3"]
+[ext_resource type="AudioStream" uid="uid://d1qobucpxb2lo" path="res://assets/sounds/unsere_sounds/Level 6 Einleitung.mp3" id="28_3amt2"]
+[ext_resource type="AudioStream" uid="uid://dfeu711p0er8e" path="res://assets/sounds/unsere_sounds/Level 6 Lama nicht genug Zutaten.mp3" id="29_cut1w"]
+[ext_resource type="AudioStream" uid="uid://cdinysmeyv1a5" path="res://assets/sounds/unsere_sounds/Level 6 Lama nicht genug 2.mp3" id="30_xk128"]
+[ext_resource type="AudioStream" uid="uid://d0n1bqc4n02y7" path="res://assets/sounds/unsere_sounds/Level 6 Lama fast ausreichend.mp3" id="31_de6qp"]
+[ext_resource type="AudioStream" uid="uid://ckffk2ottn70i" path="res://assets/sounds/unsere_sounds/Level 6 Lama genug Zutaten.mp3" id="32_7tqac"]
+[ext_resource type="AudioStream" uid="uid://tg0tawwvverv" path="res://assets/sounds/unsere_sounds/Level 6 Sieg gegen Satan.mp3" id="33_rik6n"]
+[ext_resource type="AudioStream" uid="uid://cuyduwpccb3x5" path="res://assets/sounds/unsere_sounds/Level 6 Auto reparieren.mp3" id="35_rbmv0"]
+[ext_resource type="AudioStream" uid="uid://b4842j5016t0w" path="res://assets/sounds/unsere_sounds/Level 6 Autoteile.mp3" id="36_0ptvj"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_66tvl"]
 a = Vector2(3200, 0)
@@ -47,11 +55,11 @@ layer_1/tile_data = PackedInt32Array(-393202, 196613, 3, -393201, 196613, 3, -39
 [node name="Player" parent="." instance=ExtResource("3_3tefw")]
 unique_name_in_owner = true
 z_index = 5
-position = Vector2(1444, -424)
+position = Vector2(1449, -426)
 
 [node name="Player2" parent="." instance=ExtResource("4_axsbn")]
 unique_name_in_owner = true
-position = Vector2(1343, -428)
+position = Vector2(1348, -430)
 
 [node name="Coins" type="Node" parent="."]
 
@@ -131,7 +139,7 @@ position = Vector2(1599, -346)
 
 [node name="Dog" parent="." instance=ExtResource("8_x8yxt")]
 unique_name_in_owner = true
-position = Vector2(1408, -442)
+position = Vector2(1413, -444)
 
 [node name="Car" parent="." instance=ExtResource("10_321n1")]
 position = Vector2(174, -222)
@@ -200,13 +208,14 @@ max_distance = 50000.0
 position = Vector2(-1656, -115)
 
 [node name="BossMusic" parent="." instance=ExtResource("17_p7mn8")]
-stream = ExtResource("24_d0jug")
+stream = ExtResource("23_5osj8")
+volume_db = 10.0
 autoplay = false
 max_distance = 50000.0
 
 [node name="SpawnMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("25_ilxd7")
-volume_db = 10.0
+stream = ExtResource("24_qah21")
+volume_db = 5.0
 
 [node name="BossSpawnTimer" type="Timer" parent="."]
 one_shot = true
@@ -221,6 +230,30 @@ volume_db = 10.0
 
 [node name="Demon" parent="." instance=ExtResource("22_0i4wh")]
 position = Vector2(-924, -112)
+
+[node name="story_intro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_3amt2")
+
+[node name="story_lama_opt1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_cut1w")
+
+[node name="story_lama_opt2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_xk128")
+
+[node name="story_lama_opt3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_de6qp")
+
+[node name="story_lama_opt4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("32_7tqac")
+
+[node name="story_boss_defeated" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_rik6n")
+
+[node name="story_repair_car" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("35_rbmv0")
+
+[node name="story_car_parts" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("36_0ptvj")
 
 [connection signal="tree_exited" from="motor" to="." method="_on_motor_tree_exited"]
 [connection signal="finished" from="car_starting" to="." method="_on_car_starting_finished"]

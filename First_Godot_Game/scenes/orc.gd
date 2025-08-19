@@ -45,7 +45,7 @@ func _physics_process(delta):
 		var x_distance_to_closest_player = closest_player.position.x - self.position.x 
 		var y_distance_to_closest_player = closest_player.position.y - self.position.y + 110 #offset is a hotfix
 		if abs(x_distance_to_closest_player)>40 or abs(y_distance_to_closest_player)>30:
-			print(x_distance_to_closest_player, y_distance_to_closest_player)
+			#print(x_distance_to_closest_player, y_distance_to_closest_player)
 			animation_sprite.play("walk")
 			#follow player
 			if x_distance_to_closest_player < 0:
@@ -98,7 +98,6 @@ func receive_damage(dmg):
 	$hit_sound.play()
 	health_bar.take_dmg(dmg)
 	if health_bar.is_dead():
-		print('Enemy slain!')
 		Main.add_point()
 		queue_free()
 

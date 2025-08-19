@@ -304,6 +304,7 @@ wait_time = 0.7
 
 [node name="gunshot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_l8hvo")
+volume_db = -5.0
 
 [node name="reload" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_esq7u")

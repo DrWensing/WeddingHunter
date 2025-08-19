@@ -1,0 +1,105 @@
+[gd_scene load_steps=16 format=3 uid="uid://che1e801xj2om"]
+
+[ext_resource type="Script" path="res://scenes/actionbox.gd" id="1_1gcvc"]
+[ext_resource type="Texture2D" uid="uid://dfyatufxodnfm" path="res://assets/sprites/world_tileset.png" id="2_ymfm0"]
+[ext_resource type="LabelSettings" uid="uid://c7b5ulxx3e5tu" path="res://scenes/message_font.tres" id="3_v8qqj"]
+[ext_resource type="AudioStream" uid="uid://4hhq5um0k4ka" path="res://assets/sounds/win_sound.mp3" id="4_h1m8v"]
+[ext_resource type="AudioStream" uid="uid://chkvmio61vb17" path="res://assets/sounds/FreeSFX/GameSFX/Events/Negative/Retro Negative Short 23.wav" id="5_b0xpa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jh3pr"]
+size = Vector2(31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_537v3"]
+atlas = ExtResource("2_ymfm0")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uaha"]
+atlas = ExtResource("2_ymfm0")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd63y"]
+atlas = ExtResource("2_ymfm0")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhh1q"]
+atlas = ExtResource("2_ymfm0")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7hy0"]
+atlas = ExtResource("2_ymfm0")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rafmd"]
+atlas = ExtResource("2_ymfm0")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gqkx"]
+atlas = ExtResource("2_ymfm0")
+region = Rect2(112, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cc423"]
+atlas = ExtResource("2_ymfm0")
+region = Rect2(128, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nmj3i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_537v3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8uaha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bd63y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhh1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7hy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rafmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gqkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cc423")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ActionBox" type="Node2D"]
+script = ExtResource("1_1gcvc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_jh3pr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nmj3i")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 23.0
+offset_top = -14.0
+offset_right = 281.0
+offset_bottom = 14.0
+scale = Vector2(0.5, 0.5)
+text = "Antwort"
+label_settings = ExtResource("3_v8qqj")
+autowrap_mode = 2
+
+[node name="win_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_h1m8v")
+
+[node name="fail_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_b0xpa")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

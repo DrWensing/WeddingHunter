@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c6aigfqfw3rwu"]
+[gd_scene load_steps=20 format=3 uid="uid://c6aigfqfw3rwu"]
 
 [ext_resource type="Script" path="res://scenes/hud.gd" id="1_enk7o"]
 [ext_resource type="FontFile" uid="uid://cb25e36ag81ju" path="res://assets/fonts/PixelOperator8.ttf" id="1_w1v4t"]
@@ -8,6 +8,8 @@
 [ext_resource type="FontFile" uid="uid://bea22tcsj8788" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_osbuy"]
 [ext_resource type="Texture2D" uid="uid://18s6in0jq12k" path="res://assets/sprites/ammo.png" id="6_bhvs4"]
 [ext_resource type="PackedScene" uid="uid://da8cxn8q226je" path="res://scenes/dutch_ingredient.tscn" id="8_4w8fk"]
+[ext_resource type="Texture2D" uid="uid://k7iyebw7kfuo" path="res://assets/Schild.png" id="9_y3ltl"]
+[ext_resource type="LabelSettings" uid="uid://c7b5ulxx3e5tu" path="res://scenes/message_font.tres" id="10_bnsgf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6id8"]
 bg_color = Color(0, 0, 0, 1)
@@ -64,12 +66,6 @@ animations = [{
 "name": &"ammo",
 "speed": 5.0
 }]
-
-[sub_resource type="LabelSettings" id="LabelSettings_mphff"]
-line_spacing = 1.0
-font_size = 24
-outline_size = 5
-outline_color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="CanvasLayer"]
 visible = false
@@ -156,27 +152,6 @@ sprite_frames = SubResource("SpriteFrames_eyfip")
 animation = &"ammo"
 flip_h = true
 
-[node name="MessageFrame" type="Polygon2D" parent="."]
-modulate = Color(0.383406, 0.744011, 0.363321, 1)
-position = Vector2(-29, -54.5)
-scale = Vector2(1.21859, 0.825)
-polygon = PackedVector2Array(300, 100, 700, 100, 700, 300, 502.032, 300, 300, 300)
-
-[node name="Message" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -237.0
-offset_top = 33.0
-offset_right = 249.0
-offset_bottom = 196.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_w1v4t")
-text = "Message"
-label_settings = SubResource("LabelSettings_mphff")
-horizontal_alignment = 1
-autowrap_mode = 3
-
 [node name="dutch_ingredient" parent="." instance=ExtResource("8_4w8fk")]
 visibility_layer = 4
 position = Vector2(981, 133)
@@ -196,5 +171,25 @@ position = Vector2(1107, 137)
 
 [node name="dutch_ingredient6" parent="." instance=ExtResource("8_4w8fk")]
 position = Vector2(1138, 137)
+
+[node name="MessageFrame" type="Sprite2D" parent="."]
+position = Vector2(580, 127.5)
+scale = Vector2(15.1875, 7.21875)
+texture = ExtResource("9_y3ltl")
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -202.0
+offset_top = 44.0
+offset_right = 213.0
+offset_bottom = 174.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_w1v4t")
+text = "Message"
+label_settings = ExtResource("10_bnsgf")
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
