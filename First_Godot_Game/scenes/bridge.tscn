@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://7vwphaksy7k3"]
+
+[ext_resource type="Texture2D" uid="uid://c641h3glfjipc" path="res://assets/bridge.png" id="1_avek8"]
+
+[node name="Bridge" type="AnimatableBody2D"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, -2)
+texture = ExtResource("1_avek8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-392, 48, -229, 107, -132, 121, 53, 130, 210, 117, 402, 54, 402, 173, -391, 174)
