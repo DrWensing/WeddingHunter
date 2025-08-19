@@ -69,7 +69,7 @@ func setup_question_boxes():
 		$Fragetext.hide()
 		HUD.show_message("Wächter der Brücke des Todes: Ähm....weiß ich nicht...AHHHHHH",5.0)
 		$ZwockelEjectTimer.start(2.0)
-		print('Let bridge appear')
+		$Bridge.appear()
 
 func eject_players():
 	#kicks players out of the screen
@@ -104,7 +104,8 @@ func _process(delta):
 	question_check()
 
 	if questions_answered == -1 and (henrik.position.x > -1000 or tabea.position.x > -1000):
-		HUD.show_message("Wächter der Brücke des Todes: Wer will über die Brücke gehen, muss 3 mal Rede und Antwort stehen.",5.0)
+		HUD.show_message("Wächter der Brücke: STOP! Wer will über die Brücke des Todes gehen, muss 3 mal Rede und Antwort stehen. Dann darf er die andere Seite sehen.",7.0)
+		$story_waechter.play()
 		questions_answered = 0
 		setup_question_boxes()
 
@@ -146,3 +147,5 @@ func _on_eject_timer_timeout():
 
 func _on_zwockel_eject_timer_timeout():
 	yspeed_zwockel = -500
+	$eject_zwerg_sound.play()
+	$story_waechter_eject.play()

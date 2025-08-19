@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://che1e801xj2om"]
+[gd_scene load_steps=16 format=3 uid="uid://3uf3ipga0aga"]
 
 [ext_resource type="Script" path="res://scenes/actionbox.gd" id="1_1gcvc"]
 [ext_resource type="Texture2D" uid="uid://dfyatufxodnfm" path="res://assets/sprites/world_tileset.png" id="2_ymfm0"]
-[ext_resource type="LabelSettings" uid="uid://c7b5ulxx3e5tu" path="res://scenes/message_font.tres" id="3_v8qqj"]
+[ext_resource type="LabelSettings" path="res://scenes/message_font.tres" id="3_v8qqj"]
 [ext_resource type="AudioStream" uid="uid://4hhq5um0k4ka" path="res://assets/sounds/win_sound.mp3" id="4_h1m8v"]
 [ext_resource type="AudioStream" uid="uid://chkvmio61vb17" path="res://assets/sounds/FreeSFX/GameSFX/Events/Negative/Retro Negative Short 23.wav" id="5_b0xpa"]
 
