@@ -2,57 +2,30 @@ extends CharacterBody2D
 
 const SPEED = 1000
 const DMG_fireball = 20
-const SPAWN_POINTS =  {0: Vector2(-1000,-15), #possible spawn points of minions
-					   1: Vector2(-500,-15), 
-					   2: Vector2(-1000,-60),
-					   3: Vector2(-500,-60),
-					   4: Vector2(-950,-100), 
-					   5: Vector2(-550,-100), 
-					   6: Vector2(-900,-150),
-					   7: Vector2(-600,-150)}
-					
-const LAVA_SPAWN_POINTS =  {0: Vector2(-1000,-10), #possible spawn points of minions
-					   1: Vector2(-975,-10),
-					2: Vector2(-950,-10),
-					3: Vector2(-925,-10),
-					4: Vector2(-900,-10),
-					5: Vector2(-875,-10),
-					6: Vector2(-850,-10),
-					7: Vector2(-825,-10),
-					8: Vector2(-800,-10),
-					9: Vector2(-775,-10),
-					10: Vector2(-750,-10),
-					11: Vector2(-725,-10),
-					12: Vector2(-700,-10),
-					13: Vector2(-675,-10),
-					14: Vector2(-650,-10),
-					15: Vector2(-625,-10),
-					16: Vector2(-600,-10),
-					17: Vector2(-575,-10),
-					18: Vector2(-550,-10),
-					19: Vector2(-525,-10),
-					20: Vector2(-1025,-10),
-					21: Vector2(-500,-10),
-					22: Vector2(-475,-10),
-					23: Vector2(-450,-10),
-					24: Vector2(-425,-10),
-					25: Vector2(-400,-10)}
 
 var direction = 1
 @onready var animation_sprite = $AnimatedSprite2D
-@onready var hp = 50
+@onready var hp = 500
 @onready var health_bar = $HealthBar
 @onready var battle_phase =1 # after death goes into phase two
 
 @export var fireball_scene: PackedScene = preload("res://scenes/fireball_enemy.tscn")
 @export var minion_scene: PackedScene = preload("res://scenes/demon.tscn")
-@export var lava_scene: PackedScene = preload("res://scenes/lava_floor.tscn")
 
 var registered_player = []
 var action_completed = false # boolean for 1-time actions per state
 var active = false
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+const SPAWN_POINTS =  {0: Vector2(-500,-1350), #possible spawn points of minions
+					   1: Vector2(-500,-1350), 
+					   2: Vector2(-500,-1350),
+					   3: Vector2(-500,-1350),
+					   4: Vector2(-500,-1350), 
+					   5: Vector2(-500,-1350), 
+					   6: Vector2(-500,-1350),
+					   7: Vector2(-500,-1350)}
 
 # --- State Definitions ---
 enum State {
@@ -83,6 +56,9 @@ func _process(delta):
 		anim.flip_h=false
 	else:
 		anim.flip_h=true
+	
+	if not active:
+		pass
 		
 	match current_state:
 		State.IDLE:
@@ -95,18 +71,6 @@ func _process(delta):
 			state_summon(delta)
 		State.FIREBALL:
 			state_fireball(delta)
-		State.PHASE_2_START:
-			state_phase2(delta)
-	
-	
-	
-func spawn():
-	#spawn devil after minions are defeated
-	self.global_position.x = -750
-	self.global_position.y = -20
-	$smoke.play()
-	change_state(State.IDLE)
-	$SpawnAnimationTimer.start(3.0)
 
 func change_state(new_state: int):
 	action_completed = false # boolean for 1-time actions per state
@@ -137,16 +101,6 @@ func state_idle(delta):
 	if state_timer <= 0 and not registered_player.is_empty():
 		change_state(State.MOVE)
 		
-func state_phase2(delta):
-	if not action_completed:
-		#set the entire stage on fire
-		for i in range(25):
-			summon_lava(i)
-		action_completed = true
-		
-	if state_timer <= 0 and not registered_player.is_empty():
-		change_state(State.MOVE)
-
 func state_move(delta):
 	# Example: Move horizontally
 	if not registered_player.is_empty():
@@ -183,7 +137,7 @@ func state_fireball(delta):
 	# Example: shoot a bullet
 	if not action_completed: # only fire once per attack cycle
 		shot_fired(DMG_fireball)
-		$attack_sound.play()
+		#$attack_sound.play()
 		action_completed = true
 	if state_timer <= 0:
 		change_state(State.IDLE)
@@ -191,25 +145,14 @@ func state_fireball(delta):
 func state_summon(delta):
 	if not action_completed: # only fire once per attack cycle
 		print('state_summon minion called')
-		if battle_phase==1:
-			#summon one minion in phase 1
-			summon_minion()
-			summon_lava()
-			summon_lava()
-			summon_lava()
-			summon_lava()
-		if battle_phase==2:
-			#summon two minions in phase 2
+
+		#summon one minion in phase 1
+		if health_bar.get_percentage() < 0.5:
 			summon_minion()
 			summon_minion()
-			summon_lava()
-			summon_lava()
-			summon_lava()
-			summon_lava()
-			summon_lava()
-			summon_lava()
-			summon_lava()
-			summon_lava()
+		else:
+			summon_minion()
+
 		action_completed = true	
 	if state_timer <= 0:
 		change_state(State.IDLE)
@@ -233,23 +176,11 @@ func summon_minion():
 	#register fireball in its container
 	%Enemies.add_child(minion)
 	
-func summon_lava(position = randi_range(0, 18)):
-	var rand_position = LAVA_SPAWN_POINTS[position] # random position: 1,2 bottom, 3,4 first platform (L/R) and so on
-	
-	#summons a demon minion
-	var lava = lava_scene.instantiate()
-	
-	# set entry position of fireball
-	lava.global_position = Vector2(rand_position[0],rand_position[1])
-
-	#register fireball in its container
-	%Enemies.add_child(lava)
-
 func shot_fired(dmg):	
 	#summons a fireball
 	var projectile = fireball_scene.instantiate()
 	var x_offset = -30
-	var y_offset = -30	
+	var y_offset = -130	
 	
 	if direction:
 		x_offset = x_offset *(-1)
@@ -265,7 +196,7 @@ func shot_fired(dmg):
 	#register fireball in its container
 	Projectiles.add_child(projectile)
 	#set different fireball animation
-	projectile.set_animation("lightning_bolt")
+	projectile.set_animation("ice_explosion")
 	
 	#set damage fireball can deal
 	projectile.dmg = dmg
@@ -275,6 +206,7 @@ func shot_fired(dmg):
 	var x_distance_to_closest_player = closest_player.position.x - self.position.x 
 	var y_distance_to_closest_player = closest_player.position.y - self.position.y 
 	var phi = atan2(y_distance_to_closest_player,x_distance_to_closest_player)
+	print(x_distance_to_closest_player, "y=", y_distance_to_closest_player)
 	projectile.vx = 300*cos(phi)
 	projectile.vy = 300*sin(phi)
 	$AttackTimer.start()
@@ -295,19 +227,12 @@ func get_closest_player():
 
 #Take damage
 func receive_damage(dmg):
-	$hit_sound.play()
+	#$hit_sound.play()
 	health_bar.take_dmg(dmg)
-	if health_bar.is_dead():
-		if battle_phase == 1:
-			HUD.show_message("Fuck. Fuck. Fuuuuuck.")
-			$fuck_fuck_fuuuuck.play()
-			health_bar.initialize(hp)
-			battle_phase = 2
-			change_state(State.PHASE_2_START)
-		else:
-			print('Devil defeated!')
-			Main.add_point()
-			queue_free()
+	if health_bar.is_dead():		
+		print('Witch defeated!')
+		Main.add_point()
+		queue_free()
 
 func _on_hit_box_area_entered(area):
 	if area.name == "Fireball" or area.name.begins_with("@Area2D"):

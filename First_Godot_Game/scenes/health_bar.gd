@@ -21,3 +21,7 @@ func take_dmg(dmg):
 
 func is_dead():
 	return hp <= 0 
+	
+func get_percentage():
+	#return the percentage of remaining hp
+	return float(hp)/float(maxhp)

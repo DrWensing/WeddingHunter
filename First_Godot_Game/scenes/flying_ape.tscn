@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://dyv03svs31lhd"]
+
+[ext_resource type="Script" path="res://scenes/flying_ape.gd" id="1_sojix"]
+[ext_resource type="Texture2D" uid="uid://bcxqejgqa1kt" path="res://assets/sprites/Fliegende Affen.png" id="3_0bcyw"]
+[ext_resource type="PackedScene" uid="uid://bwnmfy4o7oy0n" path="res://scenes/health_bar.tscn" id="4_ouba0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vaci8"]
+radius = 19.0263
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2wef"]
+atlas = ExtResource("3_0bcyw")
+region = Rect2(0, 0, 150, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hi37"]
+atlas = ExtResource("3_0bcyw")
+region = Rect2(150, 0, 150, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxxb3"]
+atlas = ExtResource("3_0bcyw")
+region = Rect2(0, 120, 150, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yapxt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2wef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hi37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxxb3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FlyingApe" type="Node2D"]
+script = ExtResource("1_sojix")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-2, 0)
+shape = SubResource("CircleShape2D_vaci8")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="HealthBar" parent="." instance=ExtResource("4_ouba0")]
+position = Vector2(-35, -37)
+scale = Vector2(0.1, 0.1)
+
+[node name="IdleTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -1)
+scale = Vector2(0.416667, 0.408333)
+sprite_frames = SubResource("SpriteFrames_yapxt")
+autoplay = "default"
+frame_progress = 0.864049
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]

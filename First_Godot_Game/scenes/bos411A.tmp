@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://bknn1rfi1wt41"]
+
+[ext_resource type="Script" path="res://scenes/boss_witch.gd" id="1_xh2wa"]
+[ext_resource type="PackedScene" uid="uid://dyv03svs31lhd" path="res://scenes/flying_ape.tscn" id="2_fac5u"]
+[ext_resource type="Texture2D" uid="uid://dygifc0ospya" path="res://assets/sprites/Hexe.png" id="3_fl1ov"]
+[ext_resource type="PackedScene" uid="uid://bwnmfy4o7oy0n" path="res://scenes/health_bar.tscn" id="16_2yswq"]
+[ext_resource type="LabelSettings" uid="uid://ii4fh6vh28xn" path="res://assets/fonts/BossLabelFont.tres" id="17_1fjie"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avy4u"]
+size = Vector2(53, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmedu"]
+size = Vector2(32, 88)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uwqgl"]
+radius = 316.101
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8blj"]
+atlas = ExtResource("3_fl1ov")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xb5r"]
+atlas = ExtResource("3_fl1ov")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wff4t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8blj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xb5r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Witch" type="CharacterBody2D"]
+script = ExtResource("1_xh2wa")
+minion_scene = ExtResource("2_fac5u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1.5, -36.5)
+shape = SubResource("RectangleShape2D_avy4u")
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+visible = false
+position = Vector2(1, -46)
+shape = SubResource("RectangleShape2D_fmedu")
+
+[node name="HealthBar" parent="." instance=ExtResource("16_2yswq")]
+position = Vector2(-178, -148)
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -80.0
+offset_top = -142.0
+offset_right = 173.0
+offset_bottom = -119.0
+text = "Elphaba - Hexe des Ostens"
+label_settings = ExtResource("17_1fjie")
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[node name="AlertArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AlertArea"]
+shape = SubResource("CircleShape2D_uwqgl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -49)
+sprite_frames = SubResource("SpriteFrames_wff4t")
+frame_progress = 0.825347
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="body_entered" from="AlertArea" to="." method="_on_alert_area_body_entered"]

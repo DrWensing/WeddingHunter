@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1m4n4dp6k5pn"]
+
+[ext_resource type="Texture2D" uid="uid://bw7jfyctttesg" path="res://assets/sprites/Kessel.png" id="1_wm3qi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7jgi"]
+atlas = ExtResource("1_wm3qi")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61y88"]
+atlas = ExtResource("1_wm3qi")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoj70"]
+atlas = ExtResource("1_wm3qi")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jykuw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7jgi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61y88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yoj70")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Kessel" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jykuw")
+autoplay = "default"
+frame_progress = 0.449975
