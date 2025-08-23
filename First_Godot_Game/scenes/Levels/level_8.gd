@@ -16,24 +16,16 @@ func _ready():
 	#set camera as the active one
 	MultiTargetCam.make_current()
 
-	$MovingPlatform3.set_move_mode('y')
-	$MovingPlatform7.set_move_mode('y')
-	$MovingPlatform4.set_move_mode('y')
-	$MovingPlatform9.set_move_mode('y')
-	$MovingPlatform13.set_move_mode('y')
+	$Platforms/MovingPlatform3.set_move_mode('y')
+	$Platforms/MovingPlatform7.set_move_mode('y')
+	$Platforms/MovingPlatform4.set_move_mode('y')
+	$Platforms/MovingPlatform9.set_move_mode('y')
+	$Platforms/MovingPlatform13.set_move_mode('y')
 	
 	henrik.equip_gun()
 	tabea.equip_gun()
 	
 	HUD.visible = true
-	HUD.show_message("Level 5: Tokio \n  2016 n. Chr.",4.0)
+	HUD.show_message("Level 6: Das Königreich OZ",4.0)
 
 	$Music.play()
-
-
-func _process(delta):
-	
-
-	pass
-
-	

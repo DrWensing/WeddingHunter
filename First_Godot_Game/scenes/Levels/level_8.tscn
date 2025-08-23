@@ -31,16 +31,16 @@ script = ExtResource("1_bcdax")
 [node name="Player" parent="." instance=ExtResource("2_is37i")]
 unique_name_in_owner = true
 top_level = true
-position = Vector2(-197, -186)
+position = Vector2(-109, -934)
 
 [node name="Player2" parent="." instance=ExtResource("3_4g7yi")]
 unique_name_in_owner = true
 top_level = true
-position = Vector2(-254, -186)
+position = Vector2(-166, -934)
 
 [node name="Dog" parent="." instance=ExtResource("4_v8efx")]
 top_level = true
-position = Vector2(-153, -177)
+position = Vector2(-65, -925)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("5_ruoml")
@@ -80,68 +80,73 @@ stream = ExtResource("17_4qw6i")
 [node name="story_ende" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_8lcul")
 
-[node name="MovingPlatform" parent="." instance=ExtResource("15_tx002")]
-position = Vector2(-379, -73)
-
-[node name="MovingPlatform2" parent="." instance=ExtResource("15_tx002")]
-position = Vector2(-287, -133)
-
-[node name="Platform" parent="." instance=ExtResource("14_8hb0q")]
-position = Vector2(-117, -185)
-
-[node name="MovingPlatform3" parent="." instance=ExtResource("15_tx002")]
-position = Vector2(-422, -481)
-
-[node name="FlyingApe" parent="." instance=ExtResource("15_us1hg")]
-position = Vector2(-143, 259)
-
-[node name="MovingPlatform4" parent="." instance=ExtResource("15_tx002")]
-position = Vector2(-407, -926)
-
-[node name="FlyingApe2" parent="." instance=ExtResource("15_us1hg")]
-position = Vector2(18, -327)
-
-[node name="FlyingApe3" parent="." instance=ExtResource("15_us1hg")]
-position = Vector2(-109, -562)
-
-[node name="FlyingApe4" parent="." instance=ExtResource("15_us1hg")]
-position = Vector2(-318, -738)
-
-[node name="FlyingApe5" parent="." instance=ExtResource("15_us1hg")]
-position = Vector2(-96, -891)
-
-[node name="FlyingApe6" parent="." instance=ExtResource("15_us1hg")]
-position = Vector2(-151, -923)
-
-[node name="FlyingApe7" parent="." instance=ExtResource("15_us1hg")]
-position = Vector2(-313, -1086)
-
 [node name="Witch" parent="." instance=ExtResource("16_stbsv")]
-position = Vector2(-430, -1441)
+position = Vector2(-613, -1473)
 
-[node name="MovingPlatform6" parent="." instance=ExtResource("15_tx002")]
-position = Vector2(-196, -583)
+[node name="Enemies" type="Node" parent="."]
+unique_name_in_owner = true
 
-[node name="MovingPlatform9" parent="." instance=ExtResource("15_tx002")]
-position = Vector2(-401, -1202)
+[node name="FlyingApe" parent="Enemies" instance=ExtResource("15_us1hg")]
+position = Vector2(-125, 391)
 
-[node name="MovingPlatform13" parent="." instance=ExtResource("15_tx002")]
-position = Vector2(-277, -1464)
+[node name="FlyingApe2" parent="Enemies" instance=ExtResource("15_us1hg")]
+position = Vector2(36, -195)
 
-[node name="MovingPlatform7" parent="." instance=ExtResource("15_tx002")]
-position = Vector2(-19, -722)
+[node name="FlyingApe3" parent="Enemies" instance=ExtResource("15_us1hg")]
+position = Vector2(-91, -430)
 
-[node name="Kessel" parent="." instance=ExtResource("17_tha6o")]
-position = Vector2(-566, -1496)
+[node name="FlyingApe4" parent="Enemies" instance=ExtResource("15_us1hg")]
+position = Vector2(-300, -606)
 
-[node name="Platform2" parent="." instance=ExtResource("11_ahxtb")]
-position = Vector2(-20, -919)
+[node name="FlyingApe5" parent="Enemies" instance=ExtResource("15_us1hg")]
+position = Vector2(-78, -759)
 
-[node name="Platform3" parent="." instance=ExtResource("11_ahxtb")]
-position = Vector2(31, -962)
+[node name="FlyingApe6" parent="Enemies" instance=ExtResource("15_us1hg")]
+position = Vector2(-133, -791)
 
-[node name="Platform4" parent="." instance=ExtResource("11_ahxtb")]
-position = Vector2(-29, -992)
+[node name="FlyingApe7" parent="Enemies" instance=ExtResource("15_us1hg")]
+position = Vector2(-295, -954)
 
-[node name="Platform5" parent="." instance=ExtResource("10_7s7k5")]
-position = Vector2(-28, -1028)
+[node name="Platforms" type="Node" parent="."]
+
+[node name="MovingPlatform6" parent="Platforms" instance=ExtResource("15_tx002")]
+position = Vector2(-178, -451)
+
+[node name="MovingPlatform9" parent="Platforms" instance=ExtResource("15_tx002")]
+position = Vector2(-383, -1070)
+
+[node name="MovingPlatform13" parent="Platforms" instance=ExtResource("15_tx002")]
+position = Vector2(-270, -1333)
+
+[node name="MovingPlatform7" parent="Platforms" instance=ExtResource("15_tx002")]
+position = Vector2(-1, -590)
+
+[node name="Kessel" parent="Platforms" instance=ExtResource("17_tha6o")]
+position = Vector2(-548, -1364)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("11_ahxtb")]
+position = Vector2(-2, -787)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("11_ahxtb")]
+position = Vector2(49, -830)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("11_ahxtb")]
+position = Vector2(-11, -860)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("10_7s7k5")]
+position = Vector2(-10, -896)
+
+[node name="MovingPlatform" parent="Platforms" instance=ExtResource("15_tx002")]
+position = Vector2(-361, 59)
+
+[node name="MovingPlatform2" parent="Platforms" instance=ExtResource("15_tx002")]
+position = Vector2(-269, -1)
+
+[node name="Platform" parent="Platforms" instance=ExtResource("14_8hb0q")]
+position = Vector2(-99, -53)
+
+[node name="MovingPlatform3" parent="Platforms" instance=ExtResource("15_tx002")]
+position = Vector2(-404, -349)
+
+[node name="MovingPlatform4" parent="Platforms" instance=ExtResource("15_tx002")]
+position = Vector2(-389, -794)
