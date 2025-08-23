@@ -97,7 +97,7 @@ func _process(delta):
 		$ParallaxBackground2.hide()
 	
 	if motor_collected and get_min_player_xpos() < 225:
-		HUD.show_message("Der neue Motor ist ruck-zuck eingebaut und der Wagen ist wie neu! Die Brüggemanns können jetzt ihre Flitterwochen genießen")
+		HUD.show_message("Der neue Motor ist ruck-zuck eingebaut und der Wagen ist wie neu! Die Brüggemanns können jetzt ihre Flitterwochen genießen",6.0)
 		$story_repair_car.play()
 		
 		$Car.repair()
@@ -111,8 +111,7 @@ func _process(delta):
 			$Dog.visible = false
 		$Music.stop()
 		
-		$honk.play()
-		$car_starting.play()
+		$CarTimer.start(1.0)
 		
 		#prevents calling this sequence again and again
 		motor_collected = false
@@ -158,3 +157,9 @@ func _on_boss_spawn_timer_timeout():
 func _on_spawn_music_finished():
 	#once tenacious d intro is finished: start suno music
 	$BossMusic.play()
+
+
+func _on_car_timer_timeout():
+	#nachdem henrik und tabea im wagen sitzen starte die sounds
+	$honk.play()
+	$car_starting.play()

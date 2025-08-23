@@ -40,7 +40,7 @@ const LAVA_SPAWN_POINTS =  {0: Vector2(-1000,-10), #possible spawn points of min
 
 var direction = 1
 @onready var animation_sprite = $AnimatedSprite2D
-@onready var hp = 500
+@onready var hp = 50
 @onready var health_bar = $HealthBar
 @onready var battle_phase =1 # after death goes into phase two
 

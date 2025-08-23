@@ -185,7 +185,7 @@ script = ExtResource("1_ji1nm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vylyu")
-animation = &"fireball"
+animation = &"purple"
 autoplay = "lightning_bolt"
 flip_h = true
 

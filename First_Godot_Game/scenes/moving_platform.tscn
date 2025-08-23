@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bur4it7ummybo"]
+
+[ext_resource type="PackedScene" uid="uid://dicdpchxv8chk" path="res://scenes/platform.tscn" id="1_4t86c"]
+[ext_resource type="Script" path="res://scenes/moving_platform.gd" id="2_ok1sx"]
+
+[node name="MovingPlatform" instance=ExtResource("1_4t86c")]
+script = ExtResource("2_ok1sx")
+
+[node name="DirChangeTimer" type="Timer" parent="." index="2"]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="DirChangeTimer" to="." method="_on_dir_change_timer_timeout"]

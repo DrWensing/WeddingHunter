@@ -1,0 +1,147 @@
+[gd_scene load_steps=21 format=3 uid="uid://bqqv3c608boie"]
+
+[ext_resource type="Script" path="res://scenes/Levels/level_8.gd" id="1_bcdax"]
+[ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="2_is37i"]
+[ext_resource type="PackedScene" uid="uid://cwpg2sneyq6rf" path="res://scenes/player2.tscn" id="3_4g7yi"]
+[ext_resource type="PackedScene" uid="uid://cmr01mlt3f52b" path="res://scenes/dog.tscn" id="4_v8efx"]
+[ext_resource type="TileSet" uid="uid://d3k1ar04o4po5" path="res://scenes/tileset.tres" id="5_ruoml"]
+[ext_resource type="PackedScene" uid="uid://cgboi5v27efyg" path="res://scenes/next_level.tscn" id="6_xxn48"]
+[ext_resource type="Texture2D" uid="uid://cxm4jatmms7hg" path="res://assets/background/wicked_level.png" id="7_fox2n"]
+[ext_resource type="AudioStream" uid="uid://dyhn4c7gm4cgu" path="res://assets/music/DS3_Demon_Prince.mp3" id="7_yruwg"]
+[ext_resource type="PackedScene" path="res://scenes/platform_very_long.tscn" id="10_7s7k5"]
+[ext_resource type="PackedScene" uid="uid://dicdpchxv8chk" path="res://scenes/platform.tscn" id="11_ahxtb"]
+[ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="12_sbm7d"]
+[ext_resource type="PackedScene" path="res://scenes/platform_long.tscn" id="14_8hb0q"]
+[ext_resource type="PackedScene" uid="uid://dir78bid8yy53" path="res://scenes/music.tscn" id="15_si8yx"]
+[ext_resource type="PackedScene" uid="uid://bur4it7ummybo" path="res://scenes/moving_platform.tscn" id="15_tx002"]
+[ext_resource type="PackedScene" uid="uid://dyv03svs31lhd" path="res://scenes/flying_ape.tscn" id="15_us1hg"]
+[ext_resource type="PackedScene" uid="uid://bknn1rfi1wt41" path="res://scenes/boss_witch.tscn" id="16_stbsv"]
+[ext_resource type="AudioStream" uid="uid://ctavow4oibijd" path="res://assets/sounds/unsere_sounds/Level 5 Einleitung.mp3" id="17_4qw6i"]
+[ext_resource type="PackedScene" uid="uid://c1m4n4dp6k5pn" path="res://scenes/kessel.tscn" id="17_tha6o"]
+[ext_resource type="AudioStream" uid="uid://b0m7e3autoq2p" path="res://assets/sounds/unsere_sounds/Level 5 Sieg gegen Godzilla.mp3" id="18_8lcul"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_klrri"]
+a = Vector2(2771, -18)
+b = Vector2(-3160, 3)
+
+[node name="Level8" type="Node2D"]
+position = Vector2(18, 132)
+script = ExtResource("1_bcdax")
+
+[node name="Player" parent="." instance=ExtResource("2_is37i")]
+unique_name_in_owner = true
+top_level = true
+position = Vector2(-197, -186)
+
+[node name="Player2" parent="." instance=ExtResource("3_4g7yi")]
+unique_name_in_owner = true
+top_level = true
+position = Vector2(-254, -186)
+
+[node name="Dog" parent="." instance=ExtResource("4_v8efx")]
+top_level = true
+position = Vector2(-153, -177)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("5_ruoml")
+format = 2
+layer_0/tile_data = PackedInt32Array(786417, 196613, 3, 786418, 196613, 3, 786419, 196613, 3, 786420, 196613, 3, 786421, 196613, 3, 786422, 196613, 3, 786423, 196613, 3, 786424, 196613, 3, 786425, 196613, 3, 786426, 196613, 3, 786427, 196613, 3, 786428, 196613, 3, 786429, 196613, 3, 720894, 131077, 3, 720895, 131077, 3, 655359, 131077, 3, 524288, 131077, 3, 458753, 131077, 3, 393218, 262149, 3, 327681, 262149, 3, 262144, 262149, 3, 262143, 262149, 3, 196606, 262149, 3, 131069, 262149, 3, 65532, 262149, 3, -5, 262149, 3, 458754, 196613, 3, 458755, 196613, 3, 458756, 196613, 3, -6, 196613, 3, -7, 196613, 3, -8, 196613, 3, -9, 196613, 3, -10, 196613, 3, -11, 196613, 3, -12, 196613, 3, -13, 196613, 3, -196616, 131076, 2, -262151, 131076, 2, -196615, 131076, 2, -262150, 131076, 2, -262149, 131076, 2, -262148, 131076, 2, -262147, 131076, 2, -524290, 196613, 3, -524291, 196613, 3, -524292, 196613, 3, -524293, 196613, 3, -524294, 196613, 3, -524295, 196613, 3, -524296, 196613, 3, -524297, 196613, 3, -524298, 196613, 3, -524299, 196613, 3, -393217, 131077, 3, -524288, 131077, 3, -589823, 131077, 3, -983051, 196613, 3, -983050, 196613, 3, -1048585, 196613, 3, -1048584, 196613, 3, -1048583, 196613, 3, -1048582, 196613, 3, -917512, 196613, 3, -917511, 196613, 3, -917510, 196613, 3, -917509, 196613, 3, -917508, 196613, 3, -917507, 196613, 3, -917506, 196613, 3, -983049, 262149, 3, -1048586, 131077, 3, -1048581, 262149, 3, -983044, 196613, 3, -983043, 196613, 3, -851977, 5, 5, -851978, 5, 5, -851979, 5, 5, -1376266, 196613, 3, -1376265, 196613, 3, -1376264, 196613, 3, -1376263, 196613, 3, -1376262, 196613, 3, -1376261, 196613, 3, -1376260, 196613, 3, -1376259, 196613, 3, -1376258, 262149, 3, -1769483, 262149, 3, -1703946, 196613, 3, -1703945, 196613, 3, -1703944, 196613, 3, -1703943, 196613, 3, -1703942, 196613, 3, -1703941, 196613, 3, -1703940, 196613, 3, -1703939, 196613, 3, -1769474, 131077, 3, -1638411, 5, 5, -1638402, 5, 5, -2097163, 196613, 3, -2097162, 196613, 3, -2097161, 196613, 3, -2097160, 196613, 3, -2097159, 262149, 3, -2031622, 196613, 3, -2031621, 196613, 3, -2031620, 196613, 3, -2031619, 196613, 3, -1966091, 5, 5, -1966090, 5, 5, -1966089, 5, 5, -1966088, 5, 5, -1966087, 5, 5, -2424843, 131077, 3, -2490378, 131077, 3, -2490377, 196613, 3, -2490376, 196613, 3, -2490375, 196613, 3, -2490374, 196613, 3, -2490373, 196613, 3, -2490372, 196613, 3, -2490371, 196613, 3, -2555908, 262149, 3, -2621445, 262149, 3, -2686982, 262149, 3, -2686983, 196613, 3, -2686984, 196613, 3, -2686985, 196613, 3, -2686986, 196613, 3, -2686987, 196613, 3, -524289, 196613, 3, -2883601, 196613, 3, -2883600, 196613, 3, -2883599, 196613, 3, -2883598, 196613, 3, -2883597, 196613, 3, -2883596, 196613, 3, -2883595, 196613, 3, -2883594, 196613, 3, -2883593, 196613, 3, -2883592, 196613, 3, -2883591, 196613, 3, -2949127, 196613, 3, -2949126, 196613, 3, -2949125, 196613, 3, -2949138, 196613, 3, -2949139, 196613, 3, -2949140, 196613, 3, -2949141, 196613, 3, -589822, 196613, 3, -589821, 196613, 3, -589820, 196613, 3, -1376267, 196613, 3)
+
+[node name="NextLevel" parent="." instance=ExtResource("6_xxn48")]
+position = Vector2(1521, -41)
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_yruwg")
+volume_db = 4.274
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(345, 177)
+scale = Vector2(0.45309, 0.373153)
+texture = ExtResource("7_fox2n")
+
+[node name="KillZone" parent="." instance=ExtResource("12_sbm7d")]
+position = Vector2(-563, 47)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(861, 403)
+shape = SubResource("SegmentShape2D_klrri")
+
+[node name="Music" parent="." instance=ExtResource("15_si8yx")]
+max_distance = 50000.0
+
+[node name="story_intro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_4qw6i")
+
+[node name="story_ende" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_8lcul")
+
+[node name="MovingPlatform" parent="." instance=ExtResource("15_tx002")]
+position = Vector2(-379, -73)
+
+[node name="MovingPlatform2" parent="." instance=ExtResource("15_tx002")]
+position = Vector2(-287, -133)
+
+[node name="Platform" parent="." instance=ExtResource("14_8hb0q")]
+position = Vector2(-117, -185)
+
+[node name="MovingPlatform3" parent="." instance=ExtResource("15_tx002")]
+position = Vector2(-422, -481)
+
+[node name="FlyingApe" parent="." instance=ExtResource("15_us1hg")]
+position = Vector2(-143, 259)
+
+[node name="MovingPlatform4" parent="." instance=ExtResource("15_tx002")]
+position = Vector2(-407, -926)
+
+[node name="FlyingApe2" parent="." instance=ExtResource("15_us1hg")]
+position = Vector2(18, -327)
+
+[node name="FlyingApe3" parent="." instance=ExtResource("15_us1hg")]
+position = Vector2(-109, -562)
+
+[node name="FlyingApe4" parent="." instance=ExtResource("15_us1hg")]
+position = Vector2(-318, -738)
+
+[node name="FlyingApe5" parent="." instance=ExtResource("15_us1hg")]
+position = Vector2(-96, -891)
+
+[node name="FlyingApe6" parent="." instance=ExtResource("15_us1hg")]
+position = Vector2(-151, -923)
+
+[node name="FlyingApe7" parent="." instance=ExtResource("15_us1hg")]
+position = Vector2(-313, -1086)
+
+[node name="Witch" parent="." instance=ExtResource("16_stbsv")]
+position = Vector2(-430, -1441)
+
+[node name="MovingPlatform6" parent="." instance=ExtResource("15_tx002")]
+position = Vector2(-196, -583)
+
+[node name="MovingPlatform9" parent="." instance=ExtResource("15_tx002")]
+position = Vector2(-401, -1202)
+
+[node name="MovingPlatform13" parent="." instance=ExtResource("15_tx002")]
+position = Vector2(-277, -1464)
+
+[node name="MovingPlatform7" parent="." instance=ExtResource("15_tx002")]
+position = Vector2(-19, -722)
+
+[node name="Kessel" parent="." instance=ExtResource("17_tha6o")]
+position = Vector2(-566, -1496)
+
+[node name="Platform2" parent="." instance=ExtResource("11_ahxtb")]
+position = Vector2(-20, -919)
+
+[node name="Platform3" parent="." instance=ExtResource("11_ahxtb")]
+position = Vector2(31, -962)
+
+[node name="Platform4" parent="." instance=ExtResource("11_ahxtb")]
+position = Vector2(-29, -992)
+
+[node name="Platform5" parent="." instance=ExtResource("10_7s7k5")]
+position = Vector2(-28, -1028)
