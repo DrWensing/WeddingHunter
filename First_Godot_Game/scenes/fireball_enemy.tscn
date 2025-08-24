@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://4gxtjuij6mdc"]
+[gd_scene load_steps=36 format=3 uid="uid://4gxtjuij6mdc"]
 
 [ext_resource type="Script" path="res://scenes/fireball.gd" id="1_ji1nm"]
 [ext_resource type="Texture2D" uid="uid://1v0wfgc2xk7f" path="res://assets/sprites/Red Effect Bullet Impact Explosion 32x32.png" id="2_x632p"]
@@ -70,6 +70,22 @@ region = Rect2(416, 160, 32, 32)
 atlas = ExtResource("5_v0joq")
 region = Rect2(448, 160, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sotfu"]
+atlas = ExtResource("2_x632p")
+region = Rect2(352, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6aw5k"]
+atlas = ExtResource("2_x632p")
+region = Rect2(384, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh7h8"]
+atlas = ExtResource("2_x632p")
+region = Rect2(416, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjpsc"]
+atlas = ExtResource("2_x632p")
+region = Rect2(448, 224, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qym7s"]
 atlas = ExtResource("3_ljp8v")
 region = Rect2(352, 352, 32, 32)
@@ -85,6 +101,22 @@ region = Rect2(416, 352, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_nuxqk"]
 atlas = ExtResource("3_ljp8v")
 region = Rect2(448, 352, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7eie"]
+atlas = ExtResource("2_x632p")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjtqs"]
+atlas = ExtResource("2_x632p")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1frkx"]
+atlas = ExtResource("2_x632p")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ofqt"]
+atlas = ExtResource("2_x632p")
+region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vylyu"]
 animations = [{
@@ -158,6 +190,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_sotfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6aw5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nh7h8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjpsc")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qym7s")
 }, {
 "duration": 1.0,
@@ -172,6 +221,23 @@ animations = [{
 "loop": true,
 "name": &"purple",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7eie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjtqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1frkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ofqt")
+}],
+"loop": true,
+"name": &"wirbelsturm",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j2thg"]
@@ -185,11 +251,13 @@ script = ExtResource("1_ji1nm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vylyu")
-animation = &"purple"
-autoplay = "lightning_bolt"
+animation = &"wirbelsturm"
+autoplay = "purple"
+frame_progress = 0.713431
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_j2thg")
 

@@ -1,31 +1,23 @@
 extends Node2D
 
-@onready var henrik = %Player
-@onready var tabea = %Player2
-@onready var BossMusic = $BossMusic
-@onready var Boss_Godzilla = $Boss_Godzilla
-@onready var NextLevelPortal = $NextLevel
-@onready var ingredient = $dutch_ingredient
+var SCROLL_SPEED = 24
 
-var boss_activated = false
-var boss_alive = true
-
-func _ready():
-	MultiTargetCam.add_target(henrik)
-	MultiTargetCam.add_target(tabea)
-	#set camera as the active one
-	MultiTargetCam.make_current()
-
-	$Platforms/MovingPlatform3.set_move_mode('y')
-	$Platforms/MovingPlatform7.set_move_mode('y')
-	$Platforms/MovingPlatform4.set_move_mode('y')
-	$Platforms/MovingPlatform9.set_move_mode('y')
-	$Platforms/MovingPlatform13.set_move_mode('y')
+func _ready():	
+	HUD.visible=0
+	HUD.hide_all()
+	HUD.hide()
+	MultiTargetCam.free()
 	
-	henrik.equip_gun()
-	tabea.equip_gun()
 	
-	HUD.visible = true
-	HUD.show_message("Level 6: Das Königreich OZ",4.0)
+func _physics_process(delta):
+	$Abspann_Label.position.y -= SCROLL_SPEED*delta
+	$Logo_Label.position.y -= SCROLL_SPEED*delta
 
-	$Music.play()
+	for child in get_children():
+		if child is Node2D:
+			child.position.y -= SCROLL_SPEED * delta
+
+
+func _on_audio_stream_player_2d_finished():
+	#sobald das Lied zuende gespielt ist, schließe das Spiel
+	get_tree().quit()

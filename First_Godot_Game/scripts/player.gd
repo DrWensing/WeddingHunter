@@ -163,9 +163,9 @@ func _on_shot_timer_timeout():
 	timer.stop()
 
 
-func _on_hitbox_area_entered(area):
-	print(area.name)
-	if area.name.begins_with("Fireball"):
+func _on_hitbox_area_entered(area):	
+	if is_instance_of(area,Fireball_Enemy):
 		take_damage(area.dmg)
 		area.free()
+	
 	

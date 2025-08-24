@@ -14,6 +14,8 @@ const y_offset = -20
 
 func reset():
 	targets = []
+	min_zoom = 2
+	max_zoom = 5
 
 func _process(delta):
 	if !targets:

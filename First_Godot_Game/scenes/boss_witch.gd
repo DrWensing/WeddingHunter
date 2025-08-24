@@ -18,14 +18,14 @@ var active = false
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-const SPAWN_POINTS =  {0: Vector2(-500,-1350), #possible spawn points of minions
-					   1: Vector2(-500,-1350), 
-					   2: Vector2(-500,-1350),
-					   3: Vector2(-500,-1350),
-					   4: Vector2(-500,-1350), 
-					   5: Vector2(-500,-1350), 
-					   6: Vector2(-500,-1350),
-					   7: Vector2(-500,-1350)}
+const SPAWN_POINTS =  {0: Vector2(-100,-1360), #possible spawn points of minions
+					   1: Vector2(-200,-1360), 
+					   2: Vector2(-650,-1360),
+					   3: Vector2(-700,-1360),
+					   4: Vector2(-100,-1400), #possible spawn points of minions
+					   5: Vector2(-200,-1400), 
+					   6: Vector2(-650,-1400),
+					   7: Vector2(-700,-1400)}
 
 # --- State Definitions ---
 enum State {
@@ -34,7 +34,7 @@ enum State {
 	ATTACK,
 	SUMMON,
 	FIREBALL,
-	PHASE_2_START
+	RAINFALL
 }
 
 var current_state = State.IDLE
@@ -46,16 +46,17 @@ var state_timer = 0.0
 func _ready():
 	change_state(State.IDLE)
 	health_bar.initialize(hp)
+	hide()
 
 func _process(delta):	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
 	state_timer -= delta
-	if direction==1:
-		anim.flip_h=false
-	else:
+	if direction>0:
 		anim.flip_h=true
+	else:
+		anim.flip_h=false
 	
 	if not active:
 		pass
@@ -71,6 +72,8 @@ func _process(delta):
 			state_summon(delta)
 		State.FIREBALL:
 			state_fireball(delta)
+		State.RAINFALL:
+			state_rainfall(delta)
 
 func change_state(new_state: int):
 	action_completed = false # boolean for 1-time actions per state
@@ -86,14 +89,11 @@ func change_state(new_state: int):
 		State.ATTACK:
 			anim.play("attack")
 			state_timer = 1.0
-		State.FIREBALL:
-			anim.play("cast_fireball")
+		State.FIREBALL:			
 			state_timer = 1.0
-		State.SUMMON:
-			anim.play("summon_minion")
+		State.SUMMON:			
 			state_timer = 1.0
-		State.PHASE_2_START:
-			anim.play("summon_minion")
+		State.RAINFALL:			
 			state_timer = 6.0
 
 # --- State Logic ---
@@ -111,10 +111,8 @@ func state_move(delta):
 			#follow player
 			if x_distance_to_closest_player < 0:
 				direction = -1
-				animation_sprite.flip_h = false
 			else:
 				direction = +1
-				animation_sprite.flip_h = true
 	else:
 		#if no player is present simply move right
 		direction = +1
@@ -122,9 +120,16 @@ func state_move(delta):
 	velocity.x = SPEED*direction*delta
 	if state_timer <= 0:
 		#after timer ended either summon a minion (30% chance) or cast fireball
-		if randf()<0.3:
+		var randchoice = randf()
+		print('Random number: ', randchoice)
+		if randchoice <0.3:
+			#30% chance
 			change_state(State.SUMMON)
+		elif randchoice >=0.3 and randchoice <=0.5:
+			#20% chance
+			change_state(State.RAINFALL)
 		else:
+			#50% chance
 			change_state(State.FIREBALL)
 			
 	move_and_slide()
@@ -141,24 +146,29 @@ func state_fireball(delta):
 		action_completed = true
 	if state_timer <= 0:
 		change_state(State.IDLE)
+		
+func state_rainfall(delta):
+	# Example: shoot a bullet
+	if not action_completed: # only fire once per attack cycle
+		rainfall(DMG_fireball)
+		#$attack_sound.play()
+		action_completed = true
+	if state_timer <= 0:
+		change_state(State.IDLE)
 
 func state_summon(delta):
 	if not action_completed: # only fire once per attack cycle
 		print('state_summon minion called')
 
-		#summon one minion in phase 1
-		if health_bar.get_percentage() < 0.5:
-			summon_minion()
-			summon_minion()
-		else:
-			summon_minion()
+		#summon one minion
+		summon_minion()
 
-		action_completed = true	
+		action_completed = true
 	if state_timer <= 0:
 		change_state(State.IDLE)
 
 func summon_minion():	
-	var rand_position = SPAWN_POINTS[randi_range(0, 7)] # random position: 1,2 bottom, 3,4 first platform (L/R) and so on
+	var rand_position = SPAWN_POINTS[randi_range(0, SPAWN_POINTS.size()-1)] # random position
 	
 	print('function summon minion called ', rand_position)
 	#summons a demon minion
@@ -168,7 +178,7 @@ func summon_minion():
 	minion.global_position = Vector2(rand_position[0],rand_position[1])
 
 	#set direction of the fireball
-	if minion.global_position.x > -750:
+	if minion.global_position.x > -500:
 		minion.direction=-1
 	else:
 		minion.direction=+1
@@ -176,13 +186,35 @@ func summon_minion():
 	#register fireball in its container
 	%Enemies.add_child(minion)
 	
+func rainfall(dmg):
+	#casts 20 fireballs coming from the top
+	$laughter.play()
+	for i in range(8):
+		var xpos = randf_range(-650,-100)
+		var ypos = randf_range(-1750,-1500)
+		var projectile = fireball_scene.instantiate()		
+		
+		projectile.global_position.x = xpos
+		projectile.global_position.y = ypos
+		
+		#register fireball in its container
+		Projectiles.add_child(projectile)
+		#set different fireball animation
+		projectile.set_animation("fireball")
+	
+		#set damage fireball can deal
+		projectile.dmg = dmg
+		
+		projectile.vx = 0
+		projectile.vy = 300
+	
 func shot_fired(dmg):	
 	#summons a fireball
 	var projectile = fireball_scene.instantiate()
 	var x_offset = -30
 	var y_offset = -130	
 	
-	if direction:
+	if direction>0:
 		x_offset = x_offset *(-1)
 	
 	# set entry position of fireball
@@ -196,7 +228,7 @@ func shot_fired(dmg):
 	#register fireball in its container
 	Projectiles.add_child(projectile)
 	#set different fireball animation
-	projectile.set_animation("ice_explosion")
+	projectile.set_animation("wirbelsturm")
 	
 	#set damage fireball can deal
 	projectile.dmg = dmg
@@ -223,7 +255,7 @@ func get_closest_player():
 	if abs(dist0) < abs(dist1):
 		return registered_player[0]
 	else:
-		return registered_player[1]	
+		return registered_player[1]
 
 #Take damage
 func receive_damage(dmg):
@@ -242,5 +274,8 @@ func _on_hit_box_area_entered(area):
 func _on_alert_area_body_entered(body):
 	if body.name.begins_with("Player"):
 		registered_player.append(body)
-		animation_sprite.play("walk")
+		animation_sprite.play("default")
 		print('Registered ',body.name)
+		active = true
+		$laughter.play()
+		show()

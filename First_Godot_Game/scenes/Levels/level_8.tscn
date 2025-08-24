@@ -1,152 +1,986 @@
-[gd_scene load_steps=21 format=3 uid="uid://bqqv3c608boie"]
+[gd_scene load_steps=108 format=3 uid="uid://cucqyq1204l7c"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_8.gd" id="1_bcdax"]
-[ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="2_is37i"]
-[ext_resource type="PackedScene" uid="uid://cwpg2sneyq6rf" path="res://scenes/player2.tscn" id="3_4g7yi"]
-[ext_resource type="PackedScene" uid="uid://cmr01mlt3f52b" path="res://scenes/dog.tscn" id="4_v8efx"]
-[ext_resource type="TileSet" uid="uid://d3k1ar04o4po5" path="res://scenes/tileset.tres" id="5_ruoml"]
-[ext_resource type="PackedScene" uid="uid://cgboi5v27efyg" path="res://scenes/next_level.tscn" id="6_xxn48"]
-[ext_resource type="Texture2D" uid="uid://cxm4jatmms7hg" path="res://assets/background/wicked_level.png" id="7_fox2n"]
-[ext_resource type="AudioStream" uid="uid://dyhn4c7gm4cgu" path="res://assets/music/DS3_Demon_Prince.mp3" id="7_yruwg"]
-[ext_resource type="PackedScene" path="res://scenes/platform_very_long.tscn" id="10_7s7k5"]
-[ext_resource type="PackedScene" uid="uid://dicdpchxv8chk" path="res://scenes/platform.tscn" id="11_ahxtb"]
-[ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="12_sbm7d"]
-[ext_resource type="PackedScene" path="res://scenes/platform_long.tscn" id="14_8hb0q"]
-[ext_resource type="PackedScene" uid="uid://dir78bid8yy53" path="res://scenes/music.tscn" id="15_si8yx"]
-[ext_resource type="PackedScene" uid="uid://bur4it7ummybo" path="res://scenes/moving_platform.tscn" id="15_tx002"]
-[ext_resource type="PackedScene" uid="uid://dyv03svs31lhd" path="res://scenes/flying_ape.tscn" id="15_us1hg"]
-[ext_resource type="PackedScene" uid="uid://bknn1rfi1wt41" path="res://scenes/boss_witch.tscn" id="16_stbsv"]
-[ext_resource type="AudioStream" uid="uid://ctavow4oibijd" path="res://assets/sounds/unsere_sounds/Level 5 Einleitung.mp3" id="17_4qw6i"]
-[ext_resource type="PackedScene" uid="uid://c1m4n4dp6k5pn" path="res://scenes/kessel.tscn" id="17_tha6o"]
-[ext_resource type="AudioStream" uid="uid://b0m7e3autoq2p" path="res://assets/sounds/unsere_sounds/Level 5 Sieg gegen Godzilla.mp3" id="18_8lcul"]
+[ext_resource type="AudioStream" uid="uid://b0prwhd4pqagx" path="res://assets/sounds/abspann_musik.mp3" id="2_ax28h"]
+[ext_resource type="Texture2D" uid="uid://dick1114k4bpt" path="res://assets/background/7MF3Jn.png" id="3_vkvjg"]
+[ext_resource type="Texture2D" uid="uid://dagfys8l4bq0" path="res://assets/background/forest.jpg" id="4_lioa6"]
+[ext_resource type="Texture2D" uid="uid://bdud7uh4speyw" path="res://assets/background/tokio.png" id="5_wvalq"]
+[ext_resource type="Texture2D" uid="uid://d0ftkeprcgg5y" path="res://assets/background/wald3.jpg" id="6_06vqk"]
+[ext_resource type="Texture2D" uid="uid://do0qejw7r3652" path="res://assets/sprites/orc/attack.png" id="7_hj2iq"]
+[ext_resource type="Texture2D" uid="uid://b8gyb7uilbru5" path="res://assets/sprites/orc/walk.png" id="8_gwxx2"]
+[ext_resource type="Texture2D" uid="uid://bukupfqky0xtq" path="res://assets/sprites/orc/orc.png" id="9_ghj53"]
+[ext_resource type="Texture2D" uid="uid://c6y6lhliqb1mb" path="res://assets/sprites/godzilla.png" id="10_xr3tr"]
+[ext_resource type="Texture2D" uid="uid://b1yb4ritr43ln" path="res://assets/sprites/henrik_character.png" id="11_2f0kf"]
+[ext_resource type="Texture2D" uid="uid://ci08ml0oa3bwy" path="res://assets/sprites/tabea_character.png" id="12_tqwaw"]
+[ext_resource type="Texture2D" uid="uid://cvhfpk00b4op8" path="res://assets/sprites/hermann.png" id="13_xi1dh"]
+[ext_resource type="Texture2D" uid="uid://q7n8h3y7m8b3" path="res://assets/sprites/Ninja.png" id="14_6iyen"]
+[ext_resource type="Texture2D" uid="uid://c15x1f3taw7mp" path="res://assets/background/wald2.jpg" id="15_t5go7"]
+[ext_resource type="Texture2D" uid="uid://crp6mq54cc360" path="res://assets/sprites/ford_focus.png" id="16_8cbwu"]
+[ext_resource type="Texture2D" uid="uid://bjd7vunvs86r6" path="res://assets/sprites/zwockel.png" id="17_vb3wg"]
+[ext_resource type="Texture2D" uid="uid://mp04jipovpv5" path="res://assets/sprites/Balrog 2.png" id="18_u0ixw"]
+[ext_resource type="Texture2D" uid="uid://djeenui7qwhu4" path="res://assets/sprites/bunny.png" id="19_13t17"]
+[ext_resource type="Texture2D" uid="uid://dvr6kwjl4xjju" path="res://assets/sprites/llama.png" id="20_tn0l1"]
+[ext_resource type="Texture2D" uid="uid://pa7t4gfb5rf0" path="res://assets/sprites/slime_purple.png" id="21_es50y"]
+[ext_resource type="Texture2D" uid="uid://blrffggmh05hw" path="res://assets/godot_logo.png" id="22_37ioo"]
+[ext_resource type="Texture2D" uid="uid://x6cm55pk0dwy" path="res://assets/Wedding_Hunter_Logo.png" id="23_2tmat"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_klrri"]
-a = Vector2(2771, -18)
-b = Vector2(-3160, 3)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyxwq"]
+atlas = ExtResource("7_hj2iq")
+region = Rect2(0, 0, 64, 64)
 
-[node name="Level8" type="Node2D"]
-position = Vector2(18, 132)
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy1kh"]
+atlas = ExtResource("7_hj2iq")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjiap"]
+atlas = ExtResource("7_hj2iq")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o34n"]
+atlas = ExtResource("7_hj2iq")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ki1ab"]
+atlas = ExtResource("7_hj2iq")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebs8f"]
+atlas = ExtResource("7_hj2iq")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arnhs"]
+atlas = ExtResource("7_hj2iq")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmnbb"]
+atlas = ExtResource("7_hj2iq")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlfky"]
+atlas = ExtResource("7_hj2iq")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g0uw"]
+atlas = ExtResource("7_hj2iq")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjxbi"]
+atlas = ExtResource("7_hj2iq")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhitq"]
+atlas = ExtResource("7_hj2iq")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh6ko"]
+atlas = ExtResource("7_hj2iq")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lms0j"]
+atlas = ExtResource("7_hj2iq")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2x7xn"]
+atlas = ExtResource("7_hj2iq")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m46sv"]
+atlas = ExtResource("7_hj2iq")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_itwj4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyxwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy1kh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjiap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o34n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ki1ab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebs8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arnhs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmnbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlfky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g0uw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjxbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhitq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh6ko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lms0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2x7xn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m46sv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68d7y"]
+atlas = ExtResource("8_gwxx2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3gww"]
+atlas = ExtResource("8_gwxx2")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2r4b"]
+atlas = ExtResource("8_gwxx2")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wq33"]
+atlas = ExtResource("8_gwxx2")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hje6o"]
+atlas = ExtResource("8_gwxx2")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yimxu"]
+atlas = ExtResource("8_gwxx2")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6an2"]
+atlas = ExtResource("8_gwxx2")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atp20"]
+atlas = ExtResource("8_gwxx2")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j05it"]
+atlas = ExtResource("8_gwxx2")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mttw"]
+atlas = ExtResource("8_gwxx2")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_keb3j"]
+atlas = ExtResource("8_gwxx2")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7lrx"]
+atlas = ExtResource("8_gwxx2")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03t4f"]
+atlas = ExtResource("8_gwxx2")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hb8s8"]
+atlas = ExtResource("8_gwxx2")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcbqe"]
+atlas = ExtResource("9_ghj53")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y40ku"]
+atlas = ExtResource("9_ghj53")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cf8x"]
+atlas = ExtResource("9_ghj53")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pc72"]
+atlas = ExtResource("9_ghj53")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yyno"]
+atlas = ExtResource("9_ghj53")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3d4y"]
+atlas = ExtResource("9_ghj53")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hmm3"]
+atlas = ExtResource("9_ghj53")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3g38g"]
+atlas = ExtResource("9_ghj53")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4ynq"]
+atlas = ExtResource("9_ghj53")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq5xu"]
+atlas = ExtResource("9_ghj53")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qlrwq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68d7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3gww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2r4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wq33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hje6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yimxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6an2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atp20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j05it")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mttw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_keb3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7lrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03t4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hb8s8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcbqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y40ku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cf8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pc72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yyno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3d4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hmm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3g38g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4ynq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq5xu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snsdg"]
+atlas = ExtResource("11_2f0kf")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6frj"]
+atlas = ExtResource("11_2f0kf")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8a6mr"]
+atlas = ExtResource("11_2f0kf")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3rln0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snsdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6frj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8a6mr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp1gw"]
+atlas = ExtResource("12_tqwaw")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pm6q"]
+atlas = ExtResource("12_tqwaw")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3jph"]
+atlas = ExtResource("12_tqwaw")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tmdi0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hp1gw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pm6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3jph")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xie2e"]
+atlas = ExtResource("13_xi1dh")
+region = Rect2(0, 0, 60, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onqpq"]
+atlas = ExtResource("13_xi1dh")
+region = Rect2(0, 45, 60, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cdv28"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xie2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onqpq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8info"]
+atlas = ExtResource("14_6iyen")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8021y"]
+atlas = ExtResource("14_6iyen")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6trvq"]
+atlas = ExtResource("14_6iyen")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7qiv"]
+atlas = ExtResource("14_6iyen")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_okg80"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8info")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8021y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6trvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7qiv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyq0n"]
+atlas = ExtResource("17_vb3wg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pb0wp"]
+atlas = ExtResource("17_vb3wg")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bendc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyq0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pb0wp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_teqm8"]
+atlas = ExtResource("18_u0ixw")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guto8"]
+atlas = ExtResource("18_u0ixw")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2sb3"]
+atlas = ExtResource("18_u0ixw")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkck6"]
+atlas = ExtResource("18_u0ixw")
+region = Rect2(0, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns3in"]
+atlas = ExtResource("18_u0ixw")
+region = Rect2(80, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cxb1"]
+atlas = ExtResource("18_u0ixw")
+region = Rect2(160, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a5no"]
+atlas = ExtResource("18_u0ixw")
+region = Rect2(0, 160, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f7a1c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_teqm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_guto8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2sb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkck6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns3in")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cxb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6a5no")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yak4"]
+atlas = ExtResource("19_13t17")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl83y"]
+atlas = ExtResource("19_13t17")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t7oth"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yak4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl83y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvdhm"]
+atlas = ExtResource("20_tn0l1")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvht5"]
+atlas = ExtResource("20_tn0l1")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghb8m"]
+atlas = ExtResource("20_tn0l1")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imfhp"]
+atlas = ExtResource("20_tn0l1")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhxbe"]
+atlas = ExtResource("20_tn0l1")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw5l1"]
+atlas = ExtResource("20_tn0l1")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_07e0u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvdhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvht5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghb8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imfhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhxbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rw5l1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ep8ns"]
+atlas = ExtResource("21_es50y")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh85y"]
+atlas = ExtResource("21_es50y")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83xtq"]
+atlas = ExtResource("21_es50y")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7f3g"]
+atlas = ExtResource("21_es50y")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qxms"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ep8ns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh85y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83xtq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7f3g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Abspann" type="Node2D"]
+position = Vector2(239, 141)
 script = ExtResource("1_bcdax")
 
-[node name="Player" parent="." instance=ExtResource("2_is37i")]
-unique_name_in_owner = true
-top_level = true
-position = Vector2(-109, -934)
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-353, 74)
+stream = ExtResource("2_ax28h")
+autoplay = true
+max_distance = 500000.0
 
-[node name="Player2" parent="." instance=ExtResource("3_4g7yi")]
-unique_name_in_owner = true
-top_level = true
-position = Vector2(-166, -934)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(65.375, 993)
+scale = Vector2(0.169151, 0.252666)
+texture = ExtResource("3_vkvjg")
 
-[node name="Dog" parent="." instance=ExtResource("4_v8efx")]
-top_level = true
-position = Vector2(-65, -925)
+[node name="Abspann_Label" type="Label" parent="."]
+z_index = 1
+offset_left = 145.375
+offset_top = 737.0
+offset_right = 638.375
+offset_bottom = 5960.0
+text = "Game Director – Clara & Mirko Wensing
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource("5_ruoml")
-format = 2
-layer_0/tile_data = PackedInt32Array(786417, 196613, 3, 786418, 196613, 3, 786419, 196613, 3, 786420, 196613, 3, 786421, 196613, 3, 786422, 196613, 3, 786423, 196613, 3, 786424, 196613, 3, 786425, 196613, 3, 786426, 196613, 3, 786427, 196613, 3, 786428, 196613, 3, 786429, 196613, 3, 720894, 131077, 3, 720895, 131077, 3, 655359, 131077, 3, 524288, 131077, 3, 458753, 131077, 3, 393218, 262149, 3, 327681, 262149, 3, 262144, 262149, 3, 262143, 262149, 3, 196606, 262149, 3, 131069, 262149, 3, 65532, 262149, 3, -5, 262149, 3, 458754, 196613, 3, 458755, 196613, 3, 458756, 196613, 3, -6, 196613, 3, -7, 196613, 3, -8, 196613, 3, -9, 196613, 3, -10, 196613, 3, -11, 196613, 3, -12, 196613, 3, -13, 196613, 3, -196616, 131076, 2, -262151, 131076, 2, -196615, 131076, 2, -262150, 131076, 2, -262149, 131076, 2, -262148, 131076, 2, -262147, 131076, 2, -524290, 196613, 3, -524291, 196613, 3, -524292, 196613, 3, -524293, 196613, 3, -524294, 196613, 3, -524295, 196613, 3, -524296, 196613, 3, -524297, 196613, 3, -524298, 196613, 3, -524299, 196613, 3, -393217, 131077, 3, -524288, 131077, 3, -589823, 131077, 3, -983051, 196613, 3, -983050, 196613, 3, -1048585, 196613, 3, -1048584, 196613, 3, -1048583, 196613, 3, -1048582, 196613, 3, -917512, 196613, 3, -917511, 196613, 3, -917510, 196613, 3, -917509, 196613, 3, -917508, 196613, 3, -917507, 196613, 3, -917506, 196613, 3, -983049, 262149, 3, -1048586, 131077, 3, -1048581, 262149, 3, -983044, 196613, 3, -983043, 196613, 3, -851977, 5, 5, -851978, 5, 5, -851979, 5, 5, -1376266, 196613, 3, -1376265, 196613, 3, -1376264, 196613, 3, -1376263, 196613, 3, -1376262, 196613, 3, -1376261, 196613, 3, -1376260, 196613, 3, -1376259, 196613, 3, -1376258, 262149, 3, -1769483, 262149, 3, -1703946, 196613, 3, -1703945, 196613, 3, -1703944, 196613, 3, -1703943, 196613, 3, -1703942, 196613, 3, -1703941, 196613, 3, -1703940, 196613, 3, -1703939, 196613, 3, -1769474, 131077, 3, -1638411, 5, 5, -1638402, 5, 5, -2097163, 196613, 3, -2097162, 196613, 3, -2097161, 196613, 3, -2097160, 196613, 3, -2097159, 262149, 3, -2031622, 196613, 3, -2031621, 196613, 3, -2031620, 196613, 3, -2031619, 196613, 3, -1966091, 5, 5, -1966090, 5, 5, -1966089, 5, 5, -1966088, 5, 5, -1966087, 5, 5, -2424843, 131077, 3, -2490378, 131077, 3, -2490377, 196613, 3, -2490376, 196613, 3, -2490375, 196613, 3, -2490374, 196613, 3, -2490373, 196613, 3, -2490372, 196613, 3, -2490371, 196613, 3, -2555908, 262149, 3, -2621445, 262149, 3, -2686982, 262149, 3, -2686983, 196613, 3, -2686984, 196613, 3, -2686985, 196613, 3, -2686986, 196613, 3, -2686987, 196613, 3, -524289, 196613, 3, -2883601, 196613, 3, -2883600, 196613, 3, -2883599, 196613, 3, -2883598, 196613, 3, -2883597, 196613, 3, -2883596, 196613, 3, -2883595, 196613, 3, -2883594, 196613, 3, -2883593, 196613, 3, -2883592, 196613, 3, -2883591, 196613, 3, -2949127, 196613, 3, -2949126, 196613, 3, -2949125, 196613, 3, -2949138, 196613, 3, -2949139, 196613, 3, -2949140, 196613, 3, -2949141, 196613, 3, -589822, 196613, 3, -589821, 196613, 3, -589820, 196613, 3, -1376267, 196613, 3)
+Assistant Director – Clara & Mirko Wensing
 
-[node name="NextLevel" parent="." instance=ExtResource("6_xxn48")]
-position = Vector2(1521, -41)
+Creative Director – Clara & Mirko Wensing
 
-[node name="BossMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_yruwg")
-volume_db = 4.274
+Lead Producer – Clara & Mirko Wensing
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+Associate Producer – Clara & Mirko Wensing
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0, 0)
+Production Coordinator – Clara & Mirko Wensing
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(345, 177)
-scale = Vector2(0.45309, 0.373153)
-texture = ExtResource("7_fox2n")
+Executive Producer – Clara & Mirko Wensing
 
-[node name="KillZone" parent="." instance=ExtResource("12_sbm7d")]
-position = Vector2(-563, 47)
+Game Designer – Clara & Mirko Wensing
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(861, 403)
-shape = SubResource("SegmentShape2D_klrri")
+Lead Game Designer – Clara & Mirko Wensing
 
-[node name="Music" parent="." instance=ExtResource("15_si8yx")]
-max_distance = 50000.0
+Level Designer – Clara & Mirko Wensing
 
-[node name="story_intro" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("17_4qw6i")
+Puzzle Designer – Clara & Mirko Wensing
 
-[node name="story_ende" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("18_8lcul")
+Narrative Designer – Clara & Mirko Wensing
 
-[node name="Witch" parent="." instance=ExtResource("16_stbsv")]
-position = Vector2(-613, -1473)
+Quest Designer – Clara & Mirko Wensing
 
-[node name="Enemies" type="Node" parent="."]
-unique_name_in_owner = true
+Dialogue Writer – Clara & Mirko Wensing
 
-[node name="FlyingApe" parent="Enemies" instance=ExtResource("15_us1hg")]
-position = Vector2(-125, 391)
+Screenwriter – Clara & Mirko Wensing
 
-[node name="FlyingApe2" parent="Enemies" instance=ExtResource("15_us1hg")]
-position = Vector2(36, -195)
+Storyboard Artist – Clara & Mirko Wensing
 
-[node name="FlyingApe3" parent="Enemies" instance=ExtResource("15_us1hg")]
-position = Vector2(-91, -430)
+Script Editor – Clara & Mirko Wensing
 
-[node name="FlyingApe4" parent="Enemies" instance=ExtResource("15_us1hg")]
-position = Vector2(-300, -606)
+World Builder – Clara & Mirko Wensing
 
-[node name="FlyingApe5" parent="Enemies" instance=ExtResource("15_us1hg")]
-position = Vector2(-78, -759)
+Gameplay Programmer – Clara & Mirko Wensing
 
-[node name="FlyingApe6" parent="Enemies" instance=ExtResource("15_us1hg")]
-position = Vector2(-133, -791)
+Lead Programmer – Clara & Mirko Wensing
 
-[node name="FlyingApe7" parent="Enemies" instance=ExtResource("15_us1hg")]
-position = Vector2(-295, -954)
+AI Programmer – Clara & Mirko Wensing
 
-[node name="Platforms" type="Node" parent="."]
+Physics Programmer – Dr. Mirko Wensing
 
-[node name="MovingPlatform6" parent="Platforms" instance=ExtResource("15_tx002")]
-position = Vector2(-178, -451)
+UI Programmer – Clara & Mirko Wensing
 
-[node name="MovingPlatform9" parent="Platforms" instance=ExtResource("15_tx002")]
-position = Vector2(-383, -1070)
+Tools Programmer – Clara & Mirko Wensing
 
-[node name="MovingPlatform13" parent="Platforms" instance=ExtResource("15_tx002")]
-position = Vector2(-270, -1333)
+Network Programmer – Clara & Mirko Wensing
 
-[node name="MovingPlatform7" parent="Platforms" instance=ExtResource("15_tx002")]
-position = Vector2(-1, -590)
+Engine Programmer – Clara & Mirko Wensing
 
-[node name="Kessel" parent="Platforms" instance=ExtResource("17_tha6o")]
-position = Vector2(-548, -1364)
+Scripting Specialist – Clara & Mirko Wensing
 
-[node name="Platform2" parent="Platforms" instance=ExtResource("11_ahxtb")]
-position = Vector2(-2, -787)
+Optimization Engineer – Clara & Mirko Wensing
 
-[node name="Platform3" parent="Platforms" instance=ExtResource("11_ahxtb")]
-position = Vector2(49, -830)
+Gameplay Scripter – Clara & Mirko Wensing
 
-[node name="Platform4" parent="Platforms" instance=ExtResource("11_ahxtb")]
-position = Vector2(-11, -860)
+Technical Director – Clara & Mirko Wensing
 
-[node name="Platform5" parent="Platforms" instance=ExtResource("10_7s7k5")]
-position = Vector2(-10, -896)
+Grafik & Kunst
+Art Director – Clara & Mirko Wensing
+Concept Artist – Clara & Mirko Wensing
+Lead Artist – Clara & Mirko Wensing
+Character Artist – Clara & Mirko Wensing
+Environment Artist – Clara & Mirko Wensing
+Prop Artist – Clara & Mirko Wensing
+Texture Artist – Clara & Mirko Wensing
+Lighting Artist – Clara & Mirko Wensing
+ Technical Artist – Clara & Mirko Wensing
+2D Artist – Clara & Mirko Wensing
+Pixel Artist – Clara & Mirko Wensing
+Animation Director – Clara & Mirko Wensing
+Lead Animator – Clara & Mirko Wensing
+2D Animator – Clara & Mirko Wensing
+3D Animator – Clara & Mirko Wensing
+Rigging Artist – Clara & Mirko Wensing
+Motion Capture Actor – Clara & Mirko Wensing
+Motion Capture Technician – Clara & Mirko Wensing
+Cinematic Artist – Clara & Mirko Wensing
+Storyboard Illustrator – Clara & Mirko Wensing
 
-[node name="MovingPlatform" parent="Platforms" instance=ExtResource("15_tx002")]
-position = Vector2(-361, 59)
+Sound & Musik
+Audio Director – Clara & Mirko Wensing
+Sound Designer – Clara & Mirko Wensing
+Foley Artist – Clara & Mirko Wensing
+Sound Effects Editor – Clara & Mirko Wensing
+Dialogue Editor – Clara & Mirko Wensing
+Audio Programmer – Clara & Mirko Wensing
+Lead Composer – Clara & Mirko Wensing
+Orchestral Composer – Clara & Mirko Wensing
+Synth Composer – Clara & Mirko Wensing
+Music Arranger – Clara & Mirko Wensing
+Mixing Engineer – Clara & Mirko Wensing
+Mastering Engineer – Clara & Mirko Wensing
+Voice Director – Clara & Mirko Wensing
+Voice Actor – Hauptcharakter – Clara & Mirko Wensing
+Voice Actor – Nebencharakter – Clara & Mirko Wensing
+Background Vocalist – Clara & Mirko Wensing
+Choir Coordinator – Clara & Mirko Wensing
+Studio Technician – Clara & Mirko Wensing
+Abspannmucke - Killswitch Engage - Holy Diver
 
-[node name="MovingPlatform2" parent="Platforms" instance=ExtResource("15_tx002")]
-position = Vector2(-269, -1)
+QA & Testing
+QA Lead – Clara & Mirko Wensing
+QA Tester – Clara & Mirko Wensing
+Playtester – Clara & Mirko Wensing
+Bug Reporter – Clara & Mirko Wensing
+Compliance Tester – Clara & Mirko Wensing
+Beta Test Coordinator – Clara & Mirko Wensing
+Localization QA Tester – Clara & Mirko Wensing
+Senior Test Engineer - Katharina Haase
 
-[node name="Platform" parent="Platforms" instance=ExtResource("14_8hb0q")]
-position = Vector2(-99, -53)
+Lokalisierung & Übersetzung
+Localization Manager – Clara & Mirko Wensing
+Translator – Deutsch – Clara & Mirko Wensing
+Translator – Englisch – Clara & Mirko Wensing
+Translator – Französisch – Clara & Mirko Wensing
+Translator – Spanisch – Clara & Mirko Wensing
+Translator – Japanisch – Clara & Mirko Wensing
+Proofreader – Clara & Mirko Wensing
+Cultural Consultant – Clara & Mirko Wensing
 
-[node name="MovingPlatform3" parent="Platforms" instance=ExtResource("15_tx002")]
-position = Vector2(-404, -349)
+Marketing & Vertrieb
+Marketing Director – Clara & Mirko Wensing
+Marketing Coordinator – Clara & Mirko Wensing
+Social Media Manager – Clara & Mirko Wensing
+Community Manager – Clara & Mirko Wensing
+PR Manager – Clara & Mirko Wensing
+Press Kit Designer – Clara & Mirko Wensing
+Video Trailer Editor – Clara & Mirko Wensing
+Merchandise Designer – Clara & Mirko Wensing
+Event Coordinator – Clara & Mirko Wensing
 
-[node name="MovingPlatform4" parent="Platforms" instance=ExtResource("15_tx002")]
-position = Vector2(-389, -794)
+Sonstiges
+
+Catering - Clara Wensing
+Chief Coffee Officer – Clara & Mirko Wensing
+Head of Pizza Logistics – Mirko Wensing
+Keyboard Smash Specialist – Clara & Mirko Wensing
+Chair Testing Engineer – Clara & Mirko Wensing
+Meme Quality Control – Clara & Mirko Wensing
+Caffeine Supply Manager – Clara & Mirko Wensing
+Late-Night Motivation Officer – Clara & Mirko Wensing
+Cat Distraction Coordinator – Clara & Mirko Wensing
+Intern for Intern Management – Clara & Mirko Wensing
+Chief Button Masher – Clara & Mirko Wensing
+Sandwich Architect – Clara & Mirko Wensing
+Pixel Polisher – Clara & Mirko Wensing
+Bug Summoner – Clara & Mirko Wensing
+Mood Lighting Supervisor – Clara & Mirko Wensing
+Chocolate Distribution Manager – Clara & Mirko Wensing
+Desk Plant Watering Technician – Clara & Mirko Wensing
+Keyboard Crumb Cleaner – Clara & Mirko Wensing
+Head of Sticky Notes – Clara & Mirko Wensing
+Procrastination Consultant – Clara & Mirko Wensing
+Gaming Break Coordinator – Clara & Mirko Wensing
+Mouse Pad Alignment Expert – Clara & Mirko Wensing
+Rage Quit Prevention Officer – Clara & Mirko Wensing
+Snack Procurement Manager – Clara & Mirko Wensing
+Internet Meme Historian – Clara & Mirko Wensing
+Potato Chip Sound Designer – Clara & Mirko Wensing
+Emergency Pizza Delivery Liaison – Clara & Mirko Wensing
+Artificial Fun Intelligence Director – Clara & Mirko Wensing
+USB Cable Untangler – Clara & Mirko Wensing
+Chief \"It Works on My Machine\" Officer – Clara & Mirko Wensing
+
+Technische Unterstützung
+IT Support – Clara & Mirko Wensing
+Build Engineer – Clara & Mirko Wensing
+Server Administrator – Clara & Mirko Wensing
+Security Engineer – Clara & Mirko Wensing
+
+
+No rights reserved - Wensing Electronics 2025 ©
+
+
+Made with Godot Engine
+
+
+
+
+
+
+No animals were harmed during the making of this game
+
+
+Thanks for playing!
+
+
+
+
+
+
+
+THE END
+
+
+"
+
+[node name="Logo_Label" type="Label" parent="."]
+z_index = 1
+offset_left = 96.375
+offset_top = 520.0
+offset_right = 551.375
+offset_bottom = 707.0
+text = "WEDDING HUNTER
+
+A game by Wensing Electronics"
+horizontal_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(517.375, 1875)
+scale = Vector2(0.232575, 0.30669)
+texture = ExtResource("4_lioa6")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(59.375, 1552)
+scale = Vector2(0.257486, 0.33388)
+texture = ExtResource("5_wvalq")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(527.375, 1334)
+scale = Vector2(0.199575, 0.30669)
+texture = ExtResource("6_06vqk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(324.375, 666)
+sprite_frames = SubResource("SpriteFrames_itwj4")
+autoplay = "default"
+frame_progress = 0.726218
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(563.375, 2254)
+sprite_frames = SubResource("SpriteFrames_qlrwq")
+autoplay = "default"
+frame_progress = 0.00657419
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(67.375, 2250)
+sprite_frames = SubResource("SpriteFrames_qlrwq")
+autoplay = "default"
+frame_progress = 0.15637
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(782.375, 3034)
+scale = Vector2(0.199575, 0.30669)
+texture = ExtResource("10_xr3tr")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(219.375, 5685)
+sprite_frames = SubResource("SpriteFrames_3rln0")
+autoplay = "default"
+frame_progress = 0.851871
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+position = Vector2(384.375, 10589)
+sprite_frames = SubResource("SpriteFrames_3rln0")
+autoplay = "default"
+frame_progress = 0.690507
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="."]
+position = Vector2(263.375, 5685)
+sprite_frames = SubResource("SpriteFrames_tmdi0")
+autoplay = "default"
+frame_progress = 0.474603
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="."]
+position = Vector2(173.375, 5704)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_cdv28")
+autoplay = "default"
+frame_progress = 0.986867
+flip_h = true
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="."]
+position = Vector2(75.575, 5128.7)
+scale = Vector2(1.225, 1.20938)
+sprite_frames = SubResource("SpriteFrames_okg80")
+autoplay = "default"
+frame_progress = 0.0280033
+flip_h = true
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(616.375, 2566)
+scale = Vector2(0.257486, 0.33388)
+texture = ExtResource("15_t5go7")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(38.5383, 2812.6)
+scale = Vector2(0.349927, 0.50452)
+texture = ExtResource("16_8cbwu")
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="."]
+position = Vector2(78.375, 3426.5)
+scale = Vector2(1.6875, 1.53125)
+sprite_frames = SubResource("SpriteFrames_bendc")
+autoplay = "default"
+frame_progress = 0.351881
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="."]
+position = Vector2(67.125, 4373.75)
+scale = Vector2(2.31875, 2.59375)
+sprite_frames = SubResource("SpriteFrames_f7a1c")
+autoplay = "default"
+frame_progress = 0.401852
+flip_h = true
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="."]
+position = Vector2(672.375, 3964)
+scale = Vector2(1.8375, 1.9625)
+sprite_frames = SubResource("SpriteFrames_t7oth")
+autoplay = "default"
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="."]
+position = Vector2(638.475, 4737.9)
+scale = Vector2(1.32917, 1.32917)
+sprite_frames = SubResource("SpriteFrames_07e0u")
+autoplay = "default"
+frame_progress = 0.122817
+flip_h = true
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="."]
+position = Vector2(632.875, 5285)
+scale = Vector2(3.20833, 2.41667)
+sprite_frames = SubResource("SpriteFrames_1qxms")
+autoplay = "default"
+frame_progress = 0.0885983
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+position = Vector2(272.375, 5442)
+scale = Vector2(0.208297, 0.205593)
+texture = ExtResource("22_37ioo")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(328, 200)
+scale = Vector2(0.316406, 0.310547)
+texture = ExtResource("23_2tmat")
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

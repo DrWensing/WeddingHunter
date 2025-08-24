@@ -1,4 +1,5 @@
 extends Area2D
+class_name Fireball_Enemy
 
 @onready var vx = 500.0
 @onready var vy = 0.0 #typically zero
@@ -13,6 +14,7 @@ func _ready():
 	timer.start()
 	self.collision_layer =2 
 	self.collision_mask = 2
+	self.z_index = +2 #make sure this is always shown on top
 
 func _on_timer_timeout():
 	#remove fireball after certain flight time

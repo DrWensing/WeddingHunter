@@ -23,7 +23,7 @@
 a = Vector2(2771, -18)
 b = Vector2(-3160, 3)
 
-[node name="Level5" type="Node2D"]
+[node name="Tokio" type="Node2D"]
 position = Vector2(18, 132)
 script = ExtResource("1_xgvtm")
 
