@@ -29,8 +29,8 @@ func change_position():
 		#Godzilla moves faster the lower its current hp is
 		var speedup_factor = 1.0-float(health_bar.hp)/float(maxhp)
 		print(speedup_factor)
-		$MoveTimer.start(7.0-3.0*speedup_factor)
-		$FireTimer.start(5.0-3.0*speedup_factor)
+		$MoveTimer.start(6.0-3.0*speedup_factor)
+		$FireTimer.start(5.0-2.5*speedup_factor)
 		$ChargeTimer.start(2.0-1.0*speedup_factor)
 		can_move = false
 		$laser.hide_animation()

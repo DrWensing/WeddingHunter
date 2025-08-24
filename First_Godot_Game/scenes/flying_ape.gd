@@ -35,7 +35,7 @@ func shot_fired(dmg):
 	#register fireball in its container
 	Projectiles.add_child(projectile)
 	projectile.set_animation("purple")
-	projectile.scale = Vector2(1.2, 1.2)
+	projectile.scale = Vector2(1.1, 1.1)
 	
 	#set direction of the fireball
 	projectile.vx = projectile.vx*float(direction)

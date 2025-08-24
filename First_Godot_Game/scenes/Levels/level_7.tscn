@@ -27,7 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://bsvajqnicpx8b" path="res://assets/music/de_de_demm.wav" id="25_wgyr5"]
 [ext_resource type="AudioStream" uid="uid://ccmpfsomlb05g" path="res://assets/music/beelzeboss_laughing.wav" id="26_gn0qb"]
 [ext_resource type="PackedScene" uid="uid://dnt8f4edl3thb" path="res://scenes/demon.tscn" id="27_g08ex"]
-[ext_resource type="AudioStream" uid="uid://d1qobucpxb2lo" path="res://assets/sounds/unsere_sounds/Level 6 Einleitung.mp3" id="28_7hard"]
+[ext_resource type="AudioStream" uid="uid://cdqf31mswlo1n" path="res://assets/sounds/unsere_sounds/story_level_7.wav" id="28_b7cx1"]
 [ext_resource type="AudioStream" uid="uid://dfeu711p0er8e" path="res://assets/sounds/unsere_sounds/Level 6 Lama nicht genug Zutaten.mp3" id="29_bivho"]
 [ext_resource type="AudioStream" uid="uid://cdinysmeyv1a5" path="res://assets/sounds/unsere_sounds/Level 6 Lama nicht genug 2.mp3" id="30_2rhth"]
 [ext_resource type="AudioStream" uid="uid://d0n1bqc4n02y7" path="res://assets/sounds/unsere_sounds/Level 6 Lama fast ausreichend.mp3" id="31_t5tu6"]
@@ -232,7 +232,7 @@ volume_db = 10.0
 position = Vector2(-924, -112)
 
 [node name="story_intro" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("28_7hard")
+stream = ExtResource("28_b7cx1")
 
 [node name="story_lama_opt1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("29_bivho")

@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cgboi5v27efyg" path="res://scenes/next_level.tscn" id="6_hgokl"]
 [ext_resource type="Texture2D" uid="uid://cxm4jatmms7hg" path="res://assets/background/wicked_level.png" id="7_phfet"]
 [ext_resource type="PackedScene" uid="uid://cmr01mlt3f52b" path="res://scenes/dog.tscn" id="8_x8yxt"]
-[ext_resource type="AudioStream" uid="uid://ctavow4oibijd" path="res://assets/sounds/unsere_sounds/Level 5 Einleitung.mp3" id="10_jw5fn"]
-[ext_resource type="AudioStream" uid="uid://b0m7e3autoq2p" path="res://assets/sounds/unsere_sounds/Level 5 Sieg gegen Godzilla.mp3" id="11_1thl7"]
+[ext_resource type="AudioStream" uid="uid://c7y6xdpjag3hy" path="res://assets/sounds/unsere_sounds/story_level_6.wav" id="10_xh58g"]
+[ext_resource type="AudioStream" uid="uid://byftgb1jq4vla" path="res://assets/sounds/unsere_sounds/game_over_hexe_1.wav" id="11_rgrts"]
 [ext_resource type="PackedScene" uid="uid://bknn1rfi1wt41" path="res://scenes/boss_witch.tscn" id="12_ne8sl"]
 [ext_resource type="PackedScene" uid="uid://dyv03svs31lhd" path="res://scenes/flying_ape.tscn" id="13_271fb"]
 [ext_resource type="PackedScene" uid="uid://bur4it7ummybo" path="res://scenes/moving_platform.tscn" id="14_elqsv"]
@@ -30,16 +30,16 @@ script = ExtResource("1_4c52e")
 [node name="Player" parent="." instance=ExtResource("3_3tefw")]
 unique_name_in_owner = true
 top_level = true
-position = Vector2(-264, 440)
+position = Vector2(-299, 428)
 
 [node name="Player2" parent="." instance=ExtResource("4_axsbn")]
 unique_name_in_owner = true
 top_level = true
-position = Vector2(-287, 441)
+position = Vector2(-322, 429)
 
 [node name="Dog" parent="." instance=ExtResource("8_x8yxt")]
 top_level = true
-position = Vector2(-220, 449)
+position = Vector2(-255, 437)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_yao40")
@@ -70,14 +70,15 @@ shape = SubResource("SegmentShape2D_klrri")
 max_distance = 50000.0
 
 [node name="story_intro" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_jw5fn")
+stream = ExtResource("10_xh58g")
 
 [node name="story_ende" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_1thl7")
+stream = ExtResource("11_rgrts")
+volume_db = 6.0
 
 [node name="Witch" parent="." instance=ExtResource("12_ne8sl")]
 z_index = 1
-position = Vector2(-613, -1473)
+position = Vector2(-1015, -1467)
 
 [node name="Enemies" type="Node" parent="."]
 unique_name_in_owner = true
@@ -150,5 +151,8 @@ position = Vector2(-647, -1498)
 
 [node name="BossMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_2mvji")
+
+[node name="Platform" parent="." instance=ExtResource("16_xo72o")]
+position = Vector2(-1059, -1456)
 
 [connection signal="tree_exited" from="Witch" to="." method="_on_witch_tree_exited"]

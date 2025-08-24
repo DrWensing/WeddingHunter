@@ -19,9 +19,6 @@ func _ready():
 	
 func die():
 	Main.player_died(self)
-
-func _pet_dog():
-	print("Wuff wuff")
 	
 func _physics_process(delta):
 	# Add the gravity.
@@ -31,6 +28,9 @@ func _physics_process(delta):
 	# Handle jump.
 	if player.global_position.y < global_position.y - 15 and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		#sometimes play sound
+		if randf()<0.1:
+			$sounds.play()
 
 	dist_p1 = (player.position.x - position.x)**2 + (player.position.y - position.y)**2
 	dist_p2 = (player2.position.x - position.x)**2+ (player2.position.y- position.y)**2

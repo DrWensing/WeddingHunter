@@ -46,9 +46,11 @@ var state_timer = 0.0
 func _ready():
 	change_state(State.IDLE)
 	health_bar.initialize(hp)
-	hide()
 
-func _process(delta):	
+
+func _process(delta):
+	print(self.position)
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
@@ -151,7 +153,7 @@ func state_rainfall(delta):
 	# Example: shoot a bullet
 	if not action_completed: # only fire once per attack cycle
 		rainfall(DMG_fireball)
-		#$attack_sound.play()
+		$rainfall.play()
 		action_completed = true
 	if state_timer <= 0:
 		change_state(State.IDLE)
@@ -276,6 +278,8 @@ func _on_alert_area_body_entered(body):
 		registered_player.append(body)
 		animation_sprite.play("default")
 		print('Registered ',body.name)
+		if not active:
+			$laughter.play() 
+			position = Vector2(-600,-1550)
+		
 		active = true
-		$laughter.play()
-		show()

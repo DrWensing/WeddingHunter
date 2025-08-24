@@ -32,6 +32,7 @@ func _ready():
 	
 	HUD.visible = true
 	HUD.show_message("Level 6: Das Königreich Oz",4.0)
+	$story_intro.play()
 
 	$Music.play()
 	
@@ -47,3 +48,4 @@ func _on_witch_tree_exited():
 	#$story_boss_defeated.play()
 	$BossMusic.stop()
 	$Music.play()
+	$story_ende.play()

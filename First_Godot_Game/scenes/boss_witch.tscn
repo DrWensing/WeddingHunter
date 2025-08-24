@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bknn1rfi1wt41"]
+[gd_scene load_steps=14 format=3 uid="uid://bknn1rfi1wt41"]
 
 [ext_resource type="Script" path="res://scenes/boss_witch.gd" id="1_xh2wa"]
 [ext_resource type="PackedScene" uid="uid://dyv03svs31lhd" path="res://scenes/flying_ape.tscn" id="2_fac5u"]
 [ext_resource type="Texture2D" uid="uid://dygifc0ospya" path="res://assets/sprites/Hexe.png" id="3_fl1ov"]
 [ext_resource type="AudioStream" uid="uid://ixursj0clekd" path="res://assets/sounds/unsere_sounds/witch_laughter.wav" id="6_au4ke"]
+[ext_resource type="AudioStream" uid="uid://e2dolt24pawi" path="res://assets/sounds/unsere_sounds/witch_mwuahaha.wav" id="7_0gon6"]
 [ext_resource type="PackedScene" uid="uid://bwnmfy4o7oy0n" path="res://scenes/health_bar.tscn" id="16_2yswq"]
 [ext_resource type="LabelSettings" uid="uid://ii4fh6vh28xn" path="res://assets/fonts/BossLabelFont.tres" id="17_1fjie"]
 
@@ -11,7 +12,7 @@
 size = Vector2(53, 69)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmedu"]
-size = Vector2(32, 88)
+size = Vector2(28.75, 80.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwadt"]
 size = Vector2(1882, 143)
@@ -53,8 +54,8 @@ shape = SubResource("RectangleShape2D_avy4u")
 [node name="HitBox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-visible = false
-position = Vector2(1, -46)
+position = Vector2(-0.625, -42.25)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_fmedu")
 
 [node name="HealthBar" parent="." instance=ExtResource("16_2yswq")]
@@ -72,7 +73,6 @@ label_settings = ExtResource("17_1fjie")
 [node name="AttackTimer" type="Timer" parent="."]
 
 [node name="AlertArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 3
 collision_mask = 3
 
@@ -87,6 +87,10 @@ frame_progress = 0.825347
 
 [node name="laughter" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_au4ke")
+
+[node name="rainfall" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_0gon6")
+volume_db = 6.0
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="body_entered" from="AlertArea" to="." method="_on_alert_area_body_entered"]
