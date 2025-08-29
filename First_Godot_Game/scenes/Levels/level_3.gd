@@ -55,7 +55,7 @@ func setup_question_boxes():
 		$ActionBox_2.set_label("Assur")		
 		$ActionBox_3.set_label("Bethlehem")
 	elif questions_answered==2:
-		$Fragetext.text = "Was ist die durchschnittliche Geschwindigkeit einer Schwalbe?"
+		$Fragetext.text = "Was ist die durchschnittliche \nGeschwindigkeit einer Schwalbe?"
 		$ActionBox_1.correct = false
 		$ActionBox_2.correct = false
 		$ActionBox_3.correct = true

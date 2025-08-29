@@ -37,8 +37,9 @@ func _ready():
 	$Music.play()
 	
 func _process(delta):
-	if not boss_activated and $Witch.active:
+	if boss_activated == false and (henrik.global_position.y <=-1250 or tabea.global_position.y <= -1250):
 		boss_activated = true
+		$Witch.activate()
 		$Music.stop()
 		$BossMusic.play()
 

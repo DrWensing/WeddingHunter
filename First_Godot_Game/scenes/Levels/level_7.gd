@@ -20,7 +20,7 @@ func _ready():
 	MultiTargetCam.add_target(tabea)
 	#set camera as the active one	
 	MultiTargetCam.make_current()	
-	ingredient.set_type('carotte')
+	#ingredient.set_type('apple')
 	dutch_oven.pause()
 	
 	henrik.equip_gun()
@@ -97,7 +97,7 @@ func _process(delta):
 		$ParallaxBackground.show()
 		$ParallaxBackground2.hide()
 	
-	if motor_collected and get_min_player_xpos() < 225:
+	if motor_collected and get_min_player_xpos() < 200:
 		HUD.show_message("Der neue Motor ist ruck-zuck eingebaut und der Wagen ist wie neu! Die Brüggemanns können jetzt ihre Flitterwochen genießen",6.0)
 		$story_repair_car.play()
 		
@@ -119,10 +119,10 @@ func _process(delta):
 		
 	
 func get_max_player_xpos():
-	return max(henrik.position.x,tabea.position.x)
+	return max(henrik.global_position.x,tabea.global_position.x)
 	
 func get_min_player_xpos():
-	return min(henrik.position.x,tabea.position.x)
+	return min(henrik.global_position.x,tabea.global_position.x)
 
 func _on_motor_tree_exited():
 	#motor collected -> back to car

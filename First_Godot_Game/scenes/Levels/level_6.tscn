@@ -30,16 +30,16 @@ script = ExtResource("1_4c52e")
 [node name="Player" parent="." instance=ExtResource("3_3tefw")]
 unique_name_in_owner = true
 top_level = true
-position = Vector2(-299, 428)
+position = Vector2(-309, 447)
 
 [node name="Player2" parent="." instance=ExtResource("4_axsbn")]
 unique_name_in_owner = true
 top_level = true
-position = Vector2(-322, 429)
+position = Vector2(-332, 448)
 
 [node name="Dog" parent="." instance=ExtResource("8_x8yxt")]
 top_level = true
-position = Vector2(-255, 437)
+position = Vector2(-265, 456)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_yao40")

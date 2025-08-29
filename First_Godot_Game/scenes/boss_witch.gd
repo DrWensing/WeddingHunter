@@ -47,9 +47,17 @@ func _ready():
 	change_state(State.IDLE)
 	health_bar.initialize(hp)
 
+func activate():
+	#Spawn Witch to location
+	active = true
+	global_position = Vector2(-600,-1400)
+	$laughter.play() 
+	print('Boss activated')
 
 func _process(delta):
 	print(self.position)
+	
+	move_and_slide()
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -60,9 +68,10 @@ func _process(delta):
 	else:
 		anim.flip_h=false
 	
-	if not active:
-		pass
+	if active == false:
+		return
 		
+	print('Boss active')	
 	match current_state:
 		State.IDLE:
 			state_idle(delta)
@@ -96,7 +105,7 @@ func change_state(new_state: int):
 		State.SUMMON:			
 			state_timer = 1.0
 		State.RAINFALL:			
-			state_timer = 6.0
+			state_timer = 3.0 + 3.0* health_bar.get_percentage()
 
 # --- State Logic ---
 func state_idle(delta):
@@ -278,8 +287,4 @@ func _on_alert_area_body_entered(body):
 		registered_player.append(body)
 		animation_sprite.play("default")
 		print('Registered ',body.name)
-		if not active:
-			$laughter.play() 
-			position = Vector2(-600,-1550)
-		
-		active = true
+

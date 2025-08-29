@@ -14,9 +14,9 @@ var current_level: Node = null
 var score: int = 0
 
 func _ready():
-	var starting_level = 0
+	var starting_level = 7
 	load_level(starting_level)
-	hud.update_score_label(score)
+	#hud.update_score_label(score)
 	
 func receive_ingredient(ingredient_type):
 	var frame = ing_type_to_frame(ingredient_type)
@@ -54,7 +54,7 @@ func add_point():
 	
 func set_score(points):
 	score = points
-	hud.update_score_label(score)
+	HUD.update_score_label(score)
 	
 func players_receive_guns():
 	var player = get_tree().current_scene.get_node("Player") 
@@ -63,7 +63,7 @@ func players_receive_guns():
 	player2.equip_gun()
 	
 func show_message(str, time_delay):
-	hud.show_message(str, time_delay)
+	HUD.show_message(str, time_delay)
 	
 func player_died(body):
 	set_score(0)

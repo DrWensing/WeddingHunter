@@ -1,6 +1,6 @@
 extends AnimatableBody2D
 
-const SPEED = 100
+const SPEED = 50
 @onready var direction = 1
 @onready var movemode = 'x'
 

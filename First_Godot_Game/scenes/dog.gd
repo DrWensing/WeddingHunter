@@ -14,23 +14,26 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var interaction_area = $InteractionArea
 
-func _ready():
-	interaction_area.interact = Callable(self, "_pet_dog")
-	
+
 func die():
 	Main.player_died(self)
-	
+
+func bark():
+	$sounds.play()
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		
+	if Input.is_action_just_pressed("Bark"):
+		bark()
 
-	# Handle jump.
+	# Handle jump
 	if player.global_position.y < global_position.y - 15 and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		#sometimes play sound
-		if randf()<0.1:
-			$sounds.play()
+		if randf()<0.03:
+			bark()
 
 	dist_p1 = (player.position.x - position.x)**2 + (player.position.y - position.y)**2
 	dist_p2 = (player2.position.x - position.x)**2+ (player2.position.y- position.y)**2

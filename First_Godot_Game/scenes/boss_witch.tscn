@@ -15,7 +15,7 @@ size = Vector2(53, 69)
 size = Vector2(28.75, 80.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwadt"]
-size = Vector2(1882, 143)
+size = Vector2(1010, 143)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8blj"]
 atlas = ExtResource("3_fl1ov")
@@ -47,7 +47,6 @@ script = ExtResource("1_xh2wa")
 minion_scene = ExtResource("2_fac5u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(1.5, -36.5)
 shape = SubResource("RectangleShape2D_avy4u")
 
@@ -55,7 +54,6 @@ shape = SubResource("RectangleShape2D_avy4u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(-0.625, -42.25)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_fmedu")
 
 [node name="HealthBar" parent="." instance=ExtResource("16_2yswq")]
@@ -77,7 +75,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlertArea"]
-position = Vector2(1, -40)
+position = Vector2(8.75, -41.25)
 shape = SubResource("RectangleShape2D_xwadt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

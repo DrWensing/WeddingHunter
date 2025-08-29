@@ -37,7 +37,6 @@ func get_ammo_tabea():
 func update_score_label(score):
 	#sets the score at the top of the screen
 	score_label.text = "Score: " + str(score)
-	print(score_label.text)
 	
 func show_message(text, delaytime = 2):
 	#delaytime is an optional parameter in [s]
