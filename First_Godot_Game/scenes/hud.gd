@@ -8,7 +8,6 @@ signal start_game
 @onready var message_timer = $MessageTimer
 @onready var ammo_henrik = %ammo_henrik
 @onready var ammo_tabea = %ammo_tabea
-@onready var pause_menu = $PauseMenu
 
 @onready var HP_bar_henrik = %HP_bar_henrik
 @onready var HP_bar_tabea = %HP_bar_tabea
@@ -122,7 +121,7 @@ func _ready():
 	$dutch_ingredient6.sprite.frame = 5
 		
 	update_ingredients()
-	
+
 
 func hide_all():
 	print('Hide all stuff')
@@ -133,3 +132,8 @@ func hide_all():
 	$Tabea.hide()
 	$Tabea.free()
 	self.visible = false
+
+func _process(delta):
+	#if game is paused: show pause menu
+	$PauseMenu.visible = get_tree().paused == true
+	

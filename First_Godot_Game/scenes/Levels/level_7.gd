@@ -26,7 +26,7 @@ func _ready():
 	henrik.equip_gun()
 	tabea.equip_gun()
 	$Music.play()
-	
+
 	HUD.visible = true
 	HUD.show_message("Level 7: Wir sind wieder zurück?")
 	$story_intro.play()
@@ -125,18 +125,17 @@ func get_min_player_xpos():
 	return min(henrik.global_position.x,tabea.global_position.x)
 
 func _on_motor_tree_exited():
-	#motor collected -> back to car
+	#motor collected -> back to car	
+	henrik.global_position.x = 250
+	tabea.global_position.x = 260
+	henrik.global_position.y = -300
+	tabea.global_position.y = -300
+	
 	if is_instance_valid($Dog): #hotfix, this function is also called when the scene is reloaded appearantly
-		henrik.global_position.x = 250
-		tabea.global_position.x = 260
 		$Dog.global_position.x = 240
-	
-		henrik.global_position.y = -300
-		tabea.global_position.y = -300
 		$Dog.global_position.y = -300
-	
+		
 	motor_collected = true
-	
 
 func _on_honk_finished():
 	$Car.SPEED = 150
