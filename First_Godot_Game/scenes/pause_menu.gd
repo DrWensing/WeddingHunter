@@ -26,10 +26,7 @@ func _process(delta):
 		if get_tree().paused == false:
 			print("esc pressed -> pause")
 			pause_game()
-	
 
-
-
-
-
-
+func _on_option_button_item_selected(index):
+	#change to level
+	Main.load_level(index+1)

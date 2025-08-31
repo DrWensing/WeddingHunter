@@ -54,6 +54,11 @@ func _physics_process(delta):
 	if $LavaTimer.time_left <= 0:
 		summon_lava()
 	
+	#every 10s do random attack
+	if $RandomAttackTimer.is_stopped():
+		attack()
+		$RandomAttackTimer.start(10.0)
+	
 func receive_damage(dmg):
 	health_bar.take_dmg(dmg)
 	if health_bar.is_dead():
