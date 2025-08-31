@@ -1,10 +1,108 @@
-[gd_scene load_steps=5 format=3 uid="uid://ehpaempejv58"]
+[gd_scene load_steps=22 format=3 uid="uid://ehpaempejv58"]
 
 [ext_resource type="FontFile" uid="uid://bea22tcsj8788" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_8a5ln"]
 [ext_resource type="Script" path="res://scenes/pause_menu.gd" id="1_o6vp7"]
 [ext_resource type="Texture2D" uid="uid://x6cm55pk0dwy" path="res://assets/Wedding_Hunter_Logo.png" id="3_k4vn3"]
+[ext_resource type="Texture2D" uid="uid://dilat73d0n63r" path="res://assets/sprites/Anleitung.png" id="4_bmo5n"]
+[ext_resource type="Texture2D" uid="uid://b1yb4ritr43ln" path="res://assets/sprites/henrik_character.png" id="5_bbk8h"]
+[ext_resource type="Texture2D" uid="uid://ci08ml0oa3bwy" path="res://assets/sprites/tabea_character.png" id="6_ba1ri"]
+[ext_resource type="Texture2D" uid="uid://cvhfpk00b4op8" path="res://assets/sprites/hermann.png" id="7_dov5f"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_uandq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64hnc"]
+atlas = ExtResource("5_bbk8h")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tieuv"]
+atlas = ExtResource("5_bbk8h")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7mi7"]
+atlas = ExtResource("5_bbk8h")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fawqw"]
+atlas = ExtResource("5_bbk8h")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vg3hl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64hnc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tieuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7mi7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fawqw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybbjm"]
+atlas = ExtResource("6_ba1ri")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjhe5"]
+atlas = ExtResource("6_ba1ri")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_401c8"]
+atlas = ExtResource("6_ba1ri")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxdoh"]
+atlas = ExtResource("6_ba1ri")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_may4q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybbjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjhe5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_401c8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxdoh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2ore"]
+atlas = ExtResource("7_dov5f")
+region = Rect2(0, 0, 60, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn0wq"]
+atlas = ExtResource("7_dov5f")
+region = Rect2(0, 45, 60, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mrunl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2ore")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn0wq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -22,10 +120,10 @@ script = ExtResource("1_o6vp7")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = -99.0
-offset_top = -28.0
-offset_right = 444.0
-offset_bottom = 215.0
+offset_left = -88.0
+offset_top = -21.0
+offset_right = 471.0
+offset_bottom = 256.0
 color = Color(0.0941176, 0.168627, 0.2, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -63,6 +161,12 @@ theme_override_fonts/font = ExtResource("1_8a5ln")
 theme_override_font_sizes/font_size = 30
 text = "Exit"
 
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8a5ln")
+theme_override_font_sizes/font_size = 30
+text = "Steuerung"
+
 [node name="LevelSelect" type="OptionButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 button_group = SubResource("ButtonGroup_uandq")
@@ -83,11 +187,44 @@ popup/item_6/text = "Level 7"
 popup/item_6/id = 7
 
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(33, 94)
+position = Vector2(47, 113)
 scale = Vector2(0.257813, 0.237305)
 texture = ExtResource("3_k4vn3")
+
+[node name="Steuerung" type="ColorRect" parent="."]
+offset_left = 478.0
+offset_top = 29.0
+offset_right = 750.0
+offset_bottom = 212.0
+color = Color(0.495676, 0.571832, 0.604695, 1)
+
+[node name="Logo2" type="Sprite2D" parent="Steuerung"]
+position = Vector2(139, 88)
+scale = Vector2(2.12402, 1.76208)
+texture = ExtResource("4_bmo5n")
+
+[node name="henrik" type="AnimatedSprite2D" parent="Steuerung"]
+position = Vector2(51, 39)
+sprite_frames = SubResource("SpriteFrames_vg3hl")
+autoplay = "default"
+frame_progress = 0.911573
+
+[node name="tabea" type="AnimatedSprite2D" parent="Steuerung"]
+position = Vector2(226, 34)
+sprite_frames = SubResource("SpriteFrames_may4q")
+autoplay = "default"
+frame_progress = 0.770635
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Steuerung"]
+position = Vector2(78, 163)
+scale = Vector2(0.633334, 0.591667)
+sprite_frames = SubResource("SpriteFrames_mrunl")
+autoplay = "default"
+frame_progress = 0.732922
+flip_h = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/LevelSelect" to="." method="_on_option_button_item_selected"]

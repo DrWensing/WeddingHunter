@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5hlt0s8c173l"]
+
+[ext_resource type="Script" path="res://scenes/fledermaus.gd" id="1_2dv8h"]
+[ext_resource type="Texture2D" uid="uid://y5ss3earv3d7" path="res://assets/sprites/Fledermaus_kann fliegen.png" id="1_yjh8m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gp0j"]
+atlas = ExtResource("1_yjh8m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xccuo"]
+atlas = ExtResource("1_yjh8m")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jv5ei"]
+atlas = ExtResource("1_yjh8m")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xegbx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gp0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xccuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jv5ei")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Fledermaus" type="Node2D"]
+script = ExtResource("1_2dv8h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xegbx")
+autoplay = "default"
+frame_progress = 0.694479
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="UpDownTimer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="UpDownTimer" to="." method="_on_up_down_timer_timeout"]

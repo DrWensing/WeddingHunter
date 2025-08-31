@@ -1,5 +1,8 @@
 extends Control
 
+func _ready():
+	$Steuerung.visible=false
+
 func _on_resume_pressed():
 	resume_game()
 	
@@ -32,3 +35,7 @@ func _on_option_button_item_selected(index):
 	Main.score = 0
 	#change to level
 	Main.load_level(index+1)
+
+
+func _on_button_pressed():
+	$Steuerung.visible = not $Steuerung.visible
