@@ -39,6 +39,10 @@ const DMG_fireball = 20
 
 func _ready():
 	health_bar.initialize(hp)
+	
+func activate():
+	active = true
+	$LavaTimer.start()
 
 func _physics_process(delta):
 	#move enemy from left to right (switching direction on collision)

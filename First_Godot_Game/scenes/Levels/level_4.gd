@@ -50,7 +50,7 @@ func _process(delta):
 			if not BossMusic.playing:
 				$Music.stream_paused = true
 				BossMusic.play()
-				Boss_Balrog.active = true
+				Boss_Balrog.activate()
 		
 		#if Boss is close enough, perform attack, stop walking
 		#player is pushed back
