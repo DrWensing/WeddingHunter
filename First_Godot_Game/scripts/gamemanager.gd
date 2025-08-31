@@ -14,7 +14,7 @@ var current_level: Node = null
 var score: int = 0
 
 func _ready():
-	var starting_level = 1
+	var starting_level = 0
 	load_level(starting_level)
 	#hud.update_score_label(score)
 	
@@ -39,7 +39,7 @@ func load_level(level: int) -> void:
 	if level != 7:
 		hud = load("res://scenes/hud.tscn").instantiate()		
 		add_child(hud)
-	
+
 func switch_to_next_level():
 		var current_scene = get_tree().current_scene.scene_file_path
 		var next_level_number = current_scene.to_int() + 1
@@ -48,13 +48,31 @@ func switch_to_next_level():
 		print("Switch to level " + next_level_scene)
 		
 		load_level(next_level_number)
-		
+
+func try_equip_doppelgewehr():
+	
+	if score >= 100:
+		var player = get_tree().current_scene.get_node("Player") 
+		var player2 = get_tree().current_scene.get_node("Player2") 
+		if player != null:
+			player.equip_doppelgewehr()
+		if player2 != null:
+			player2.equip_doppelgewehr()
+
+
 func add_point():
 	set_score(score + 1)
 	
 func set_score(points):
 	score = points
 	HUD.update_score_label(score)
+	
+	# wenn mehr als 100 Punkt erreicht wurden: erhalte Doppelgewehr
+	var player = get_tree().current_scene.get_node("Player") 
+	
+	if score >= 100 and player.doppelgewehr == false:
+		try_equip_doppelgewehr()
+		HUD.show_message("100 Punkte erreicht! Doppelläufige Schrotflinte freigeschaltet!")
 	
 func players_receive_guns():
 	var player = get_tree().current_scene.get_node("Player") 

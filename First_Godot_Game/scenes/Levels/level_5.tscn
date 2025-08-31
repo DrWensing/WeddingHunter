@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bjf3udm32mp8s"]
+[gd_scene load_steps=21 format=3 uid="uid://bjf3udm32mp8s"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_5.gd" id="1_xgvtm"]
 [ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="2_sj70q"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://3uhu2gbltnjs" path="res://scenes/werbung_schild.tscn" id="16_lg7a1"]
 [ext_resource type="AudioStream" uid="uid://ctavow4oibijd" path="res://assets/sounds/unsere_sounds/Level 5 Einleitung.mp3" id="17_7f2we"]
 [ext_resource type="AudioStream" uid="uid://b0m7e3autoq2p" path="res://assets/sounds/unsere_sounds/Level 5 Sieg gegen Godzilla.mp3" id="18_hjjm1"]
+[ext_resource type="PackedScene" uid="uid://dtpn5wksg1o0v" path="res://scenes/coin.tscn" id="19_aj0qa"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_klrri"]
 a = Vector2(2771, -18)
@@ -308,3 +309,45 @@ stream = ExtResource("17_7f2we")
 
 [node name="story_ende" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_hjjm1")
+
+[node name="Coin" parent="." instance=ExtResource("19_aj0qa")]
+position = Vector2(-1940, 231)
+
+[node name="Coin2" parent="." instance=ExtResource("19_aj0qa")]
+position = Vector2(-1711, 184)
+
+[node name="Coin3" parent="." instance=ExtResource("19_aj0qa")]
+position = Vector2(-1102, 292)
+
+[node name="Coin4" parent="." instance=ExtResource("19_aj0qa")]
+position = Vector2(-1090, 149)
+
+[node name="Coin5" parent="." instance=ExtResource("19_aj0qa")]
+position = Vector2(91, 330)
+
+[node name="Coin6" parent="." instance=ExtResource("19_aj0qa")]
+position = Vector2(67, 307)
+
+[node name="Coin7" parent="." instance=ExtResource("19_aj0qa")]
+position = Vector2(46, 329)
+
+[node name="Coin8" parent="." instance=ExtResource("19_aj0qa")]
+position = Vector2(-425, 270)
+
+[node name="Coin9" parent="." instance=ExtResource("19_aj0qa")]
+position = Vector2(-446, 206)
+
+[node name="Coin10" parent="." instance=ExtResource("19_aj0qa")]
+position = Vector2(-44, 56)
+
+[node name="Coin11" parent="." instance=ExtResource("19_aj0qa")]
+position = Vector2(254, 43)
+
+[node name="Coin12" parent="." instance=ExtResource("19_aj0qa")]
+position = Vector2(573, -101)
+
+[node name="Coin13" parent="." instance=ExtResource("19_aj0qa")]
+position = Vector2(640, -101)
+
+[node name="Coin14" parent="." instance=ExtResource("19_aj0qa")]
+position = Vector2(607, -124)

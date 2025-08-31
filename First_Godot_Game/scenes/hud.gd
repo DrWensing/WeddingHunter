@@ -13,8 +13,6 @@ signal start_game
 @onready var HP_bar_tabea = %HP_bar_tabea
 @onready var ingredients_collected = [0,0,0,0,0,0]
 
-
-
 func set_hp_henrik(hp):
 	HP_bar_henrik.value = hp
 	

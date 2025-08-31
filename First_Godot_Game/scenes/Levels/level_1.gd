@@ -18,6 +18,7 @@ func _ready():
 	ingredient.set_type('cauliflower')
 	$DutchOven.pause()
 	$Music.play()
+	Main.try_equip_doppelgewehr()
 
 	HUD.visible = true
 	HUD.show_message("Level 1: Tabea und Henrik sind in den Flitterwochen, doch der Wagen bleibt plötzlich liegen. Sie brauchen einen neuen Motor...", 9.2)

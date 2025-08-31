@@ -258,6 +258,51 @@ stream = ExtResource("35_lbcie")
 [node name="CarTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Coin" parent="." instance=ExtResource("5_vxxtb")]
+position = Vector2(972, -215)
+
+[node name="Coin2" parent="." instance=ExtResource("5_vxxtb")]
+position = Vector2(1021, -216)
+
+[node name="Coin3" parent="." instance=ExtResource("5_vxxtb")]
+position = Vector2(994, -242)
+
+[node name="Coin4" parent="." instance=ExtResource("5_vxxtb")]
+position = Vector2(1550, -90)
+
+[node name="Coin5" parent="." instance=ExtResource("5_vxxtb")]
+position = Vector2(1793, -92)
+
+[node name="Coin6" parent="." instance=ExtResource("5_vxxtb")]
+position = Vector2(-578, -66)
+
+[node name="Coin7" parent="." instance=ExtResource("5_vxxtb")]
+position = Vector2(-708, -139)
+
+[node name="Coin8" parent="." instance=ExtResource("5_vxxtb")]
+position = Vector2(-790, -142)
+
+[node name="Coin9" parent="." instance=ExtResource("5_vxxtb")]
+position = Vector2(-925, -71)
+
+[node name="Coin10" parent="." instance=ExtResource("5_vxxtb")]
+position = Vector2(2237, -289)
+
+[node name="Coin11" parent="." instance=ExtResource("5_vxxtb")]
+position = Vector2(2148, -382)
+
+[node name="Coin12" parent="." instance=ExtResource("5_vxxtb")]
+position = Vector2(2019, -159)
+
+[node name="Coin13" parent="." instance=ExtResource("5_vxxtb")]
+position = Vector2(2100, -237)
+
+[node name="Coin14" parent="." instance=ExtResource("5_vxxtb")]
+position = Vector2(1597, -364)
+
+[node name="Coin15" parent="." instance=ExtResource("5_vxxtb")]
+position = Vector2(1596, -391)
+
 [connection signal="tree_exited" from="motor" to="." method="_on_motor_tree_exited"]
 [connection signal="finished" from="car_starting" to="." method="_on_car_starting_finished"]
 [connection signal="finished" from="honk" to="." method="_on_honk_finished"]

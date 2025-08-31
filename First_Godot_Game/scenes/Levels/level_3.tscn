@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cqs0wwguahnsp"]
+[gd_scene load_steps=28 format=3 uid="uid://cqs0wwguahnsp"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_3.gd" id="1_ihune"]
 [ext_resource type="PackedScene" uid="uid://b4w1u18aercdb" path="res://scenes/player.tscn" id="2_g8cr8"]
@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://chkvmio61vb17" path="res://assets/sounds/FreeSFX/GameSFX/Events/Negative/Retro Negative Short 23.wav" id="23_d8n38"]
 [ext_resource type="AudioStream" uid="uid://cp4dkeseqke8q" path="res://assets/sounds/unsere_sounds/waechter.mp3" id="24_vsh7s"]
 [ext_resource type="AudioStream" uid="uid://rnd3k5wqhbeq" path="res://assets/sounds/unsere_sounds/waechter_schrei_1.mp3" id="25_i6nry"]
+[ext_resource type="PackedScene" uid="uid://dtpn5wksg1o0v" path="res://scenes/coin.tscn" id="26_02okk"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_32snm"]
 a = Vector2(2205, -17)
@@ -179,6 +180,57 @@ stream = ExtResource("24_vsh7s")
 
 [node name="story_waechter_eject" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_i6nry")
+
+[node name="Coin" parent="." instance=ExtResource("26_02okk")]
+position = Vector2(-1163, 81)
+
+[node name="Coin2" parent="." instance=ExtResource("26_02okk")]
+position = Vector2(-977, 26)
+
+[node name="Coin3" parent="." instance=ExtResource("26_02okk")]
+position = Vector2(505, 301)
+
+[node name="Coin4" parent="." instance=ExtResource("26_02okk")]
+position = Vector2(495, 267)
+
+[node name="Coin5" parent="." instance=ExtResource("26_02okk")]
+position = Vector2(473, 232)
+
+[node name="Coin6" parent="." instance=ExtResource("26_02okk")]
+position = Vector2(238, 97)
+
+[node name="Coin7" parent="." instance=ExtResource("26_02okk")]
+position = Vector2(257, 126)
+
+[node name="Coin8" parent="." instance=ExtResource("26_02okk")]
+position = Vector2(272, 159)
+
+[node name="Coin9" parent="." instance=ExtResource("26_02okk")]
+position = Vector2(-341, 112)
+
+[node name="Coin10" parent="." instance=ExtResource("26_02okk")]
+position = Vector2(-199, 129)
+
+[node name="Coin11" parent="." instance=ExtResource("26_02okk")]
+position = Vector2(-63, 114)
+
+[node name="Coin12" parent="." instance=ExtResource("26_02okk")]
+position = Vector2(-1554, 48)
+
+[node name="Coin13" parent="." instance=ExtResource("26_02okk")]
+position = Vector2(-1554, 24)
+
+[node name="Coin14" parent="." instance=ExtResource("26_02okk")]
+position = Vector2(1118, 735)
+
+[node name="Coin15" parent="." instance=ExtResource("26_02okk")]
+position = Vector2(1188, 693)
+
+[node name="Coin16" parent="." instance=ExtResource("26_02okk")]
+position = Vector2(1264, 693)
+
+[node name="Coin17" parent="." instance=ExtResource("26_02okk")]
+position = Vector2(1335, 737)
 
 [connection signal="timeout" from="EjectTimer" to="." method="_on_eject_timer_timeout"]
 [connection signal="timeout" from="ZwockelEjectTimer" to="." method="_on_zwockel_eject_timer_timeout"]

@@ -313,8 +313,9 @@ stream = ExtResource("10_ihl8k")
 stream = ExtResource("11_leqsl")
 
 [node name="death_sound" type="AudioStreamPlayer2D" parent="."]
+z_index = 5
 stream = ExtResource("12_ubx1b")
-volume_db = 19.945
+volume_db = 12.0
 pitch_scale = 2.38
 
 [node name="damage_sound" type="AudioStreamPlayer2D" parent="."]
@@ -330,6 +331,11 @@ collision_mask = 2
 position = Vector2(1, -26)
 shape = SubResource("RectangleShape2D_q7mvk")
 
+[node name="DoubleShotTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="ready" from="Character" to="." method="_on_character_ready"]
 [connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="DoubleShotTimer" to="." method="_on_double_shot_timer_timeout"]

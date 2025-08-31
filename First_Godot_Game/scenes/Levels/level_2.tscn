@@ -136,3 +136,57 @@ stream = ExtResource("14_ua0kv")
 
 [node name="sound_ende" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_amikv")
+
+[node name="Coin" parent="." instance=ExtResource("10_w8ya5")]
+position = Vector2(559, 21)
+
+[node name="Coin2" parent="." instance=ExtResource("10_w8ya5")]
+position = Vector2(558, -8)
+
+[node name="Coin3" parent="." instance=ExtResource("10_w8ya5")]
+position = Vector2(973, 119)
+
+[node name="Coin4" parent="." instance=ExtResource("10_w8ya5")]
+position = Vector2(973, 97)
+
+[node name="Coin5" parent="." instance=ExtResource("10_w8ya5")]
+position = Vector2(1801, -181)
+
+[node name="Coin6" parent="." instance=ExtResource("10_w8ya5")]
+position = Vector2(2067, -87)
+
+[node name="Coin7" parent="." instance=ExtResource("10_w8ya5")]
+position = Vector2(2224, -149)
+
+[node name="Coin8" parent="." instance=ExtResource("10_w8ya5")]
+position = Vector2(2413, 8)
+
+[node name="Coin9" parent="." instance=ExtResource("10_w8ya5")]
+position = Vector2(2703, 99)
+
+[node name="Coin10" parent="." instance=ExtResource("10_w8ya5")]
+position = Vector2(2924, 46)
+
+[node name="Coin11" parent="." instance=ExtResource("10_w8ya5")]
+position = Vector2(2808, -11)
+
+[node name="Coin12" parent="." instance=ExtResource("10_w8ya5")]
+position = Vector2(2322, -244)
+
+[node name="Coin13" parent="." instance=ExtResource("10_w8ya5")]
+position = Vector2(2354, -206)
+
+[node name="Coin14" parent="." instance=ExtResource("10_w8ya5")]
+position = Vector2(2544, -235)
+
+[node name="Coin15" parent="." instance=ExtResource("10_w8ya5")]
+position = Vector2(2476, -212)
+
+[node name="Coin16" parent="." instance=ExtResource("10_w8ya5")]
+position = Vector2(2612, -236)
+
+[node name="Coin17" parent="." instance=ExtResource("10_w8ya5")]
+position = Vector2(3088, -128)
+
+[node name="Coin18" parent="." instance=ExtResource("10_w8ya5")]
+position = Vector2(3088, -154)

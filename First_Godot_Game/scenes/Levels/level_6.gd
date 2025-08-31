@@ -25,7 +25,6 @@ func _ready():
 	$Platforms/MovingPlatform13.set_move_mode('y')
 	$Enemies/FlyingApe2.direction = -1
 	$Enemies/FlyingApe3.direction = -1
-	$Enemies/FlyingApe6.direction = -1
 	
 	henrik.equip_gun()
 	tabea.equip_gun()
@@ -35,6 +34,9 @@ func _ready():
 	$story_intro.play()
 
 	$Music.play()
+	
+	#to trigger equiping doppelgewehr if available
+	Main.try_equip_doppelgewehr()
 	
 func _process(delta):
 	if boss_activated == false and (henrik.global_position.y <=-1250 or tabea.global_position.y <= -1250):

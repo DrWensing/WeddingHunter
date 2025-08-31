@@ -26,6 +26,7 @@ func _ready():
 	$sound_intro.play()
 	ingredient.set_type('tomato')
 	$Music.play()
+	Main.try_equip_doppelgewehr()
 	
 func setup_question_boxes():
 	print('Setup Question boxes ', questions_answered)

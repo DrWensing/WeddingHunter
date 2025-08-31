@@ -27,6 +27,10 @@ func _ready():
 	
 	$Werbung/Werbung_Schild4/AnimatedSprite2D.play("hier_koennte_ihre_werbung")
 	$Werbung/Werbung_Schild3/AnimatedSprite2D.play("hier_koennte_ihre_werbung")
+	
+	#to trigger equiping doppelgewehr if available
+	Main.set_score(Main.score)
+	Main.try_equip_doppelgewehr()
 
 func _process(delta):
 	if !boss_activated:

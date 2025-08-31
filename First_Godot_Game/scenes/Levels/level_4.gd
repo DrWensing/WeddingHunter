@@ -27,6 +27,7 @@ func _ready():
 	ingredient.set_type('carotte')
 	HUD.update_ingredients()
 	$Music.play()
+	Main.try_equip_doppelgewehr()
 	
 func _process(delta):
 	if !Warnung_ausgesprochen:

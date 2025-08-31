@@ -11,8 +11,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var ray_cast_right = $RayCast_Right
 @onready var ray_cast_left = $RayCast_Left
 
+const DMG = 40
+
 func _ready():
 	health_bar.initialize(hp)
+	$DmgZone.DMG = DMG
 
 func _process(delta):
 	if ray_cast_right.is_colliding():
@@ -37,8 +40,3 @@ func _on_area_2d_area_entered(area):
 	if area.name == "Fireball" or area.name.begins_with("@Area2D"):
 		receive_damage(area.dmg)
 		area.free()
-
-
-
-func _on_area_2d_body_entered(body):
-	print(body.name)

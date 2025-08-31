@@ -889,7 +889,7 @@ autoplay = "default"
 frame_progress = 0.15637
 
 [node name="Sprite2D6" type="Sprite2D" parent="."]
-position = Vector2(782.375, 3034)
+position = Vector2(799.375, 3034)
 scale = Vector2(0.199575, 0.30669)
 texture = ExtResource("10_xr3tr")
 

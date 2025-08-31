@@ -9,6 +9,8 @@ func _on_body_entered(body):
 	pickup_sound.play()
 	coll_shape.disabled = true  # Prevent further collisions
 	sprite.visible = false      # Optional: hide coin immediately
+	collision_layer = 5
+	collision_mask = 5
 		
 func _on_pickup_sound_finished():
 	queue_free()

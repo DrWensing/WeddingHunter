@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bqqv3c608boie"]
+[gd_scene load_steps=22 format=3 uid="uid://bqqv3c608boie"]
 
 [ext_resource type="Script" path="res://scenes/Levels/level_6.gd" id="1_4c52e"]
 [ext_resource type="TileSet" uid="uid://d3k1ar04o4po5" path="res://scenes/tileset.tres" id="2_yao40"]
@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://c1m4n4dp6k5pn" path="res://scenes/kessel.tscn" id="17_gerp1"]
 [ext_resource type="PackedScene" uid="uid://dir78bid8yy53" path="res://scenes/music.tscn" id="17_p7mn8"]
 [ext_resource type="AudioStream" uid="uid://dyhn4c7gm4cgu" path="res://assets/music/DS3_Demon_Prince.mp3" id="18_2mvji"]
+[ext_resource type="PackedScene" uid="uid://dtpn5wksg1o0v" path="res://scenes/coin.tscn" id="19_o0uxc"]
+[ext_resource type="PackedScene" uid="uid://duiiwlk637k1h" path="res://scenes/enemy.tscn" id="20_ukqn3"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_klrri"]
 a = Vector2(2771, -18)
@@ -95,9 +97,6 @@ position = Vector2(-91, -430)
 [node name="FlyingApe4" parent="Enemies" instance=ExtResource("13_271fb")]
 position = Vector2(-308, -597)
 
-[node name="FlyingApe6" parent="Enemies" instance=ExtResource("13_271fb")]
-position = Vector2(-49, -777)
-
 [node name="FlyingApe7" parent="Enemies" instance=ExtResource("13_271fb")]
 position = Vector2(-163, -917)
 
@@ -140,7 +139,7 @@ position = Vector2(-404, -395)
 position = Vector2(-404, -793)
 
 [node name="Platform6" parent="Platforms" instance=ExtResource("16_xo72o")]
-position = Vector2(-484, -1358)
+position = Vector2(-492, -1359)
 
 [node name="Platform7" parent="Platforms" instance=ExtResource("16_xo72o")]
 position = Vector2(-303, -1360)
@@ -154,5 +153,62 @@ stream = ExtResource("18_2mvji")
 
 [node name="Platform" parent="." instance=ExtResource("16_xo72o")]
 position = Vector2(-1059, -1456)
+
+[node name="Coin" parent="." instance=ExtResource("19_o0uxc")]
+position = Vector2(-435, 306)
+
+[node name="Coin2" parent="." instance=ExtResource("19_o0uxc")]
+position = Vector2(-204, 300)
+
+[node name="Coin3" parent="." instance=ExtResource("19_o0uxc")]
+position = Vector2(36, 133)
+
+[node name="Coin4" parent="." instance=ExtResource("19_o0uxc")]
+position = Vector2(-48, 44)
+
+[node name="Coin5" parent="." instance=ExtResource("19_o0uxc")]
+position = Vector2(-120, -36)
+
+[node name="Coin6" parent="." instance=ExtResource("19_o0uxc")]
+position = Vector2(-208, -210)
+
+[node name="Coin7" parent="." instance=ExtResource("19_o0uxc")]
+position = Vector2(-82, -213)
+
+[node name="Coin8" parent="." instance=ExtResource("19_o0uxc")]
+position = Vector2(-48, -498)
+
+[node name="Coin9" parent="." instance=ExtResource("19_o0uxc")]
+position = Vector2(-405, -461)
+
+[node name="Coin10" parent="." instance=ExtResource("19_o0uxc")]
+position = Vector2(-404, -763)
+
+[node name="Coin11" parent="." instance=ExtResource("19_o0uxc")]
+position = Vector2(-282, -885)
+
+[node name="Coin12" parent="." instance=ExtResource("19_o0uxc")]
+position = Vector2(-140, -885)
+
+[node name="Coin13" parent="." instance=ExtResource("19_o0uxc")]
+position = Vector2(-322, -1084)
+
+[node name="Coin14" parent="." instance=ExtResource("19_o0uxc")]
+position = Vector2(-275, -1265)
+
+[node name="Coin15" parent="." instance=ExtResource("19_o0uxc")]
+position = Vector2(-166, -1265)
+
+[node name="Coin16" parent="." instance=ExtResource("19_o0uxc")]
+position = Vector2(-222, -1266)
+
+[node name="Platform2" parent="." instance=ExtResource("6_6nhp5")]
+position = Vector2(-388, -1528)
+
+[node name="Enemy" parent="." instance=ExtResource("20_ukqn3")]
+position = Vector2(-278, -889)
+
+[node name="Enemy2" parent="." instance=ExtResource("20_ukqn3")]
+position = Vector2(-115, -889)
 
 [connection signal="tree_exited" from="Witch" to="." method="_on_witch_tree_exited"]

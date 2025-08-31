@@ -21,8 +21,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var jump_sound = $jump
 @onready var death_sound = $death_sound
 @onready var projectile_container = %projectile_container
+@onready var doppelgewehr = false
 
 @export var projectilePrefab:PackedScene
+
+@onready var dmg = 20
 
 func _ready():
 	HUD.set_hp_henrik(hp)
@@ -55,6 +58,11 @@ func equip_gun():
 	HUD.set_ammo_henrik(ammo)
 	reload.play()
 	
+func equip_doppelgewehr():
+	doppelgewehr = true
+	equip_gun()
+	dmg = 15 # reduce damage per shot to 15
+	
 func unequip_gun():
 	gun.visible = false
 	gun_equipped = false
@@ -70,8 +78,11 @@ func shoot():
 				fire_effect.visible=true
 				gunshot.play()
 				#apply damage to everything within range
-				var dmg=20
-				shot_fired(dmg)
+				if doppelgewehr:
+					shot_fired(dmg)
+					$DoubleShotTimer.start(0.1)
+				else:
+					shot_fired(dmg)
 
 		else:
 			print('Out of ammo: reloading')
@@ -103,6 +114,8 @@ func shot_fired(dmg):
 			
 	#register fireball in its container
 	Projectiles.add_child(projectile)
+	#ensure that shots are shown on top
+	projectile.z_index = 5
 	
 func jump():
 	velocity.y = JUMP_VELOCITY
@@ -168,4 +181,5 @@ func _on_hitbox_area_entered(area):
 		take_damage(area.dmg)
 		area.free()
 	
-	
+func _on_double_shot_timer_timeout():
+	shot_fired(dmg)

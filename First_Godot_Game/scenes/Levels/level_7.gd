@@ -30,6 +30,7 @@ func _ready():
 	HUD.visible = true
 	HUD.show_message("Level 7: Wir sind wieder zurück?")
 	$story_intro.play()
+	Main.try_equip_doppelgewehr()
 
 func summon_lava(position):
 	#summons a demon minion
@@ -59,10 +60,12 @@ func _process(delta):
 			HUD.show_message("Lama: 'Da seid ihr ja wieder. Ihr habt " + str(N_ingredients) + " Zutaten eingesammelt, aber etwas fehlt noch...'",6.0)
 			$story_lama_opt3.play()
 		if N_ingredients >= 6:
-			HUD.show_message("Lama: 'Ihr habt alle Zutaten gesammelt! Ich schmeiß den Dutch Oven an!!!'",6.0)		
+			HUD.show_message("Lama: 'Ihr habt alle Zutaten gesammelt! Ich schmeiß den Dutch Oven an!!! (80 Punkte)'",6.0)
 			$story_lama_opt4.play()
 			dutch_oven.play()
 			$win_sound.play()
+			for i in range(80):
+				Main.add_point()
 		lama_activated = true
 	
 	if devil_spawned == false and not is_instance_valid($Demon) and not is_instance_valid($Demon2):

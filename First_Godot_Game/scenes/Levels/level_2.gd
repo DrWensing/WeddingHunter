@@ -20,6 +20,7 @@ func _ready():
 	HUD.show_message("Level 2: Ballert euch den Weg frei.",3.0)
 	$sound_einleitung.play()
 	$Music.play()
+	Main.try_equip_doppelgewehr()
 
 func _process(delta):
 	if ende_notice_activated == false and get_max_player_xpos() > 3300:

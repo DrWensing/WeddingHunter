@@ -150,3 +150,21 @@ max_distance = 50000.0
 [node name="portal_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("20_faphx")
 max_distance = 50000.0
+
+[node name="Coin" parent="." instance=ExtResource("4_v0epo")]
+position = Vector2(1791, -90)
+
+[node name="Coin2" parent="." instance=ExtResource("4_v0epo")]
+position = Vector2(1747, -275)
+
+[node name="Coin3" parent="." instance=ExtResource("4_v0epo")]
+position = Vector2(2228, -298)
+
+[node name="Coin4" parent="." instance=ExtResource("4_v0epo")]
+position = Vector2(2148, -384)
+
+[node name="Coin5" parent="." instance=ExtResource("4_v0epo")]
+position = Vector2(1744, -408)
+
+[node name="Coin6" parent="." instance=ExtResource("4_v0epo")]
+position = Vector2(1456, -410)

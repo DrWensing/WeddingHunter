@@ -28,5 +28,7 @@ func _process(delta):
 			pause_game()
 
 func _on_option_button_item_selected(index):
+	#choose level
+	Main.score = 0
 	#change to level
 	Main.load_level(index+1)
