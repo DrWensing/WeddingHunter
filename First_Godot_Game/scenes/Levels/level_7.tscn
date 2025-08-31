@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dks5ja8qmje3m" path="res://scenes/car.tscn" id="9_tg5g4"]
 [ext_resource type="Texture2D" uid="uid://dagfys8l4bq0" path="res://assets/background/forest.jpg" id="10_aul3a"]
 [ext_resource type="Texture2D" uid="uid://bo37ewqdac71x" path="res://assets/background/hell.JPG" id="11_gsjx8"]
-[ext_resource type="PackedScene" path="res://scenes/lama.tscn" id="12_6bkkb"]
+[ext_resource type="PackedScene" uid="uid://umtsvb7pei0j" path="res://scenes/lama.tscn" id="12_6bkkb"]
 [ext_resource type="PackedScene" uid="uid://274q48wo4um8" path="res://scenes/kill_zone.tscn" id="13_kemiw"]
 [ext_resource type="PackedScene" uid="uid://da8cxn8q226je" path="res://scenes/dutch_ingredient.tscn" id="14_uodve"]
 [ext_resource type="PackedScene" uid="uid://dn4hnn7jbsq05" path="res://scenes/dutch_oven.tscn" id="15_p3lvc"]

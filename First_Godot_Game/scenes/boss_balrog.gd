@@ -30,10 +30,12 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var KillZone = $KillZone
 @onready var attack_timer = $Timer
 @onready var active = false
+const DMG_fireball = 20
 
 @onready var is_attacking = false
 
 @export var lava_scene: PackedScene = preload("res://scenes/lava_floor.tscn")
+@export var fireball_scene: PackedScene = preload("res://scenes/fireball_enemy.tscn")
 
 func _ready():
 	health_bar.initialize(hp)
@@ -51,8 +53,8 @@ func _physics_process(delta):
 	else:
 		animated_sprite_2d.play("walk2")
 	
-	if $LavaTimer.time_left <= 0:
-		summon_lava()
+	#if $LavaTimer.time_left <= 0:
+	#	summon_lava()
 	
 	#every 10s do random attack
 	if $RandomAttackTimer.is_stopped():
@@ -75,6 +77,32 @@ func _on_area_2d_area_entered(area):
 func attack():
 	is_attacking = true
 	attack_timer.start()
+	shot_fired(DMG_fireball)
+	
+func shot_fired(dmg):	
+	#summons a fireball
+	var projectile = fireball_scene.instantiate()
+	var x_offset = -30
+	var y_offset = -30	
+	
+	# set entry position of fireball
+	projectile.global_position = self.global_position
+	projectile.position.x += x_offset
+	projectile.position.y += y_offset	
+	
+	#register fireball in its container
+	Projectiles.add_child(projectile)
+	#set different fireball animation
+	projectile.set_animation("red_bolt")
+	
+	#set damage fireball can deal
+	projectile.dmg = dmg
+	
+	#shoot fireball towards closest player
+	projectile.vx = -300
+	
+	#set direction of the fireball
+	projectile.flipsprite = false
 
 func walk():
 	is_attacking = false
@@ -84,7 +112,6 @@ func _on_timer_timeout():
 
 func summon_lava(position = randi_range(0, 14)):
 	var rand_position = LAVA_SPAWN_POINTS[position] # random position: 1,2 bottom, 3,4 first platform (L/R) and so on
-	print(rand_position)
 	#summons a lava
 	var lava = lava_scene.instantiate()
 	
@@ -93,4 +120,27 @@ func summon_lava(position = randi_range(0, 14)):
 
 	#register fireball in its container
 	%Enemies.add_child(lava)
-	$LavaTimer.start(1)
+	$LavaTimer.start(2.0)
+	
+func rainfall(dmg):
+	for i in range(6):
+		var xpos = randf_range(1000,1400)
+		var ypos = randf_range(0,100)
+		var projectile = fireball_scene.instantiate()		
+		
+		projectile.global_position.x = xpos
+		projectile.global_position.y = ypos
+		
+		#register fireball in its container
+		Projectiles.add_child(projectile)
+		#set different fireball animation
+		projectile.set_animation("fireball")
+	
+		#set damage fireball can deal
+		projectile.dmg = dmg
+		
+		projectile.vx = 0
+		projectile.vy = 300
+
+func _on_lava_timer_timeout():
+	rainfall(DMG_fireball)

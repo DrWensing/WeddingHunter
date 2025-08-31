@@ -11,6 +11,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var ray_cast_right = $RayCast_Right
 @onready var ray_cast_left = $RayCast_Left
 
+@onready var velocity_y = 0
+
 func _ready():
 	health_bar.initialize(hp)
 
@@ -24,6 +26,7 @@ func _process(delta):
 	
 	#move enemy from left to right (switching direction on collision)
 	position.x +=  direction * SPEED * delta
+	position.y += velocity_y * delta
 	
 func receive_damage(dmg):
 	health_bar.take_dmg(dmg)
@@ -38,3 +41,15 @@ func _on_area_2d_area_entered(area):
 	if area.name == "Fireball" or area.name.begins_with("@Area2D"):
 		receive_damage(area.dmg)
 		area.free()
+
+func _on_jump_timer_timeout():
+	velocity_y = -150
+	$JumpReturnTimer.start(0.2)
+
+func _on_jump_return_timer_timeout():
+	velocity_y = +150
+	$JumpEndTimer.start(0.2)
+	
+func _on_jump_end_timer_timeout():
+	velocity_y = 0
+	$JumpTimer.start(3.0)

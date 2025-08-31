@@ -29,6 +29,11 @@ func _ready():
 	$Music.play()
 	Main.try_equip_doppelgewehr()
 	
+	$LavaFloor.decay_time = 100000
+	$LavaFloor2.decay_time = 100000
+	$LavaFloor3.decay_time = 100000
+	$LavaFloor4.decay_time = 100000
+	
 func _process(delta):
 	if !Warnung_ausgesprochen:
 		if abs(henrik.position.x - zwockel.position.x) < 50 or abs(tabea.position.x - zwockel.position.x) < 50:

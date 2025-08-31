@@ -181,7 +181,7 @@ label_settings = ExtResource("6_wuqkq")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="LavaTimer" type="Timer" parent="."]
-one_shot = true
+wait_time = 5.0
 autostart = true
 
 [node name="RandomAttackTimer" type="Timer" parent="."]
@@ -191,3 +191,4 @@ one_shot = true
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="LavaTimer" to="." method="_on_lava_timer_timeout"]

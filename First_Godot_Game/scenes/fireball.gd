@@ -3,10 +3,10 @@ class_name Fireball_Enemy
 
 @onready var vx = 500.0
 @onready var vy = 0.0 #typically zero
-var direction = +1
 @onready var dmg = 10 # default damage
 @onready var timer = $Timer
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var flipsprite = true
 
 
 func _ready():
@@ -23,7 +23,9 @@ func _on_timer_timeout():
 
 func _process(delta):
 	if vx < 0:
-		$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.flip_h = flipsprite
+	else:
+		$AnimatedSprite2D.flip_h = not flipsprite
 		
 	#move fireball	
 	self.position.x += delta*self.vx 
